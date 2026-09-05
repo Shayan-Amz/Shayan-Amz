@@ -3,10 +3,10 @@
 
 Experienced in designing clean backend architectures and automation pipelines using **C# (.NET Core)** and **Python**.
 
-- 🔭 **Focus Areas:** Scalable APIs, Microservices, Automation, and Data Engineering
-- 🛠️ **Languages & Frameworks:** C#, Python, ASP.NET Core, FastAPI, SQL
-- ⚙️ **DevOps & Tools:** Docker, Git/GitHub Actions, Linux, Selenium
-- 🎓 **Education:** B.Sc. in Computer Engineering
+- 🔭 **Focus Areas:** Data Engineering, Game Development, Microservices, Scalable APIs and Automation 
+- 🛠️ **Languages & Frameworks:** C++, C#, Python, ASP.NET Core, FastAPI, SQL
+- ⚙️ **DevOps & Tools:** Unity, Programing Frameworks, Git/GitHub Actions
+- - 🎓 **Education:** B.Sc. in Computer Engineering
 
 ---
 

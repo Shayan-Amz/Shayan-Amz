@@ -1,16 +1,27 @@
-## Hi there 👋
+# Hi there, I'm Shayan 👋
+### Software Engineer | Backend & Systems Specialist
 
-<!--
-**Shayan-Amz/Shayan-Amz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Experienced in designing clean backend architectures and automation pipelines using **C# (.NET Core)** and **Python**.
 
-Here are some ideas to get you started:
+- 🔭 **Focus Areas:** Scalable APIs, Microservices, Automation, and Data Engineering
+- 🛠️ **Languages & Frameworks:** C#, Python, ASP.NET Core, FastAPI, SQL
+- ⚙️ **DevOps & Tools:** Docker, Git/GitHub Actions, Linux, Selenium
+- 🎓 **Education:** B.Sc. in Computer Engineering
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+### 💻 Core Tech Stack
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=flat&logo=c-sharp&logoColor=white)
+![.Net](https://img.shields.io/badge/.NET-512BD4?style=flat&logo=dotnet&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgresql-4169e1?style=flat&logo=postgresql&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=flat&logo=git&logoColor=white)
+
+---
+
+### 📌 Featured Engineering Projects
+1. **[Enterprise REST API / CRM Core]** - Modular service built with ASP.NET Core / Clean Architecture.
+2. **[Automation Pipeline & Web Scraper]** - High-throughput data extractor built with Python & Selenium.
+3. **[Interactive Engine / OOP Framework]** - Core mechanics and state machines built in C#.

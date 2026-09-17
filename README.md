@@ -38,7 +38,7 @@ recommender front-end and a full-stack tournament simulator.
 | **Computer Architecture & Systems Programming** | How arithmetic, memory and I/O really work below the language runtime | IEEE-754 adder, ARM framebuffer renderer |
 | **Algorithms & Optimization** | Provably good solutions under resource constraints | Greedy fractional knapsack |
 | **Data-Intensive Systems & Applied ML** | Reliable pipelines from raw sources to models and user-facing tools | Movie analytics & recommender pipeline |
-| **Interactive Systems, Simulation & Graphics** | Real-time rendering, game UI, and stochastic simulation | Unity directory UI, OpenGL scene, World Cup simulator |
+| **Interactive Systems, Simulation & Graphics** | Real-time rendering, user-facing applications, and stochastic simulation | Real-estate manager, Unity directory UI, OpenGL scene, World Cup simulator |
 
 ---
 
@@ -49,13 +49,13 @@ recommender front-end and a full-stack tournament simulator.
 | 🎬 **[Movie Analytics & Recommender Pipeline](https://github.com/Shayan-Amz/Movie-ML-Pipeline)** | Python · pandas · BeautifulSoup · Streamlit | End-to-end pipeline over 12 years (2013 – 2024) of Iranian box-office archives: HTML scraping → cleaning & multi-label one-hot encoding of 43 genres (686-film dataset) → interactive Streamlit recommender that matches exact genre fingerprints and ranks by rating and box-office revenue. |
 | 🏆 **[World Cup Tournament Simulator](https://github.com/Shayan-Amz/World-Cup-Simulator-And-Analyzer)** | JavaScript · PHP (PDO) · MySQL · CSS | Full-stack web app that runs a 16-team tournament drawn from a 178-team rated dataset: rating-driven stochastic match engine, group tables with tie-breakers, seeded knockout bracket, dark/light theming, and a JSON API that persists tournament history in MySQL. |
 | ⚙️ **[IEEE-754 Floating-Point Adder](https://github.com/Shayan-Amz/Floating-Point-ALU)** | C++ | Bit-level software model of a single-precision FPU add/subtract path: field extraction, hidden-bit restoration, exponent alignment, signed mantissa arithmetic, post-normalization, and re-packing — the arithmetic is done on integer bit fields, not with native `float` operations. |
+| 🏠 **[Real-Estate Listing Manager](https://github.com/Shayan-Amz/RealStateHTML)** | HTML · CSS · JavaScript | Offline-first, mobile-friendly RTL (Persian) single-page app for managing property listings: three deal types (sale, deposit + rent, full-deposit lease) with a context-aware form, `localStorage` persistence, filtering by usage / deal type / price range, five sort orders, live thousands-separated price formatting, and a confirmation modal for deletes — zero dependencies, no build step. |
 | 🇮🇷 **[Bare-Metal ARM Framebuffer Renderer](https://github.com/Shayan-Amz/Drawing-Flag-Assembly-Project)** | ARMv7 Assembly | Draws the Iranian flag by streaming packed RGB565 pixel pairs directly into the DE1-SoC memory-mapped VGA framebuffer (`0xC8000000`); runs on CPUlator or the GNU ARM toolchain. |
 
 ### More Projects
 
 - 🧃 **[Fractional Knapsack — Greedy Algorithm](https://github.com/Shayan-Amz/Greedy-Algorithm-Project-Like-Fractional-Knapsack-Problem)** · C++ — `O(n log n)` density-ratio greedy solver for the classic fractional knapsack ("juice happiness") problem.
 - 🏫 **[School Directory UI](https://github.com/Shayan-Amz/Unity_First)** · Unity 6 · C# — tabbed student/teacher directory with prefab-based list rendering, live search, and LINQ-powered sorting on uGUI + TextMeshPro.
-- 🏠 **[Real-Estate Listing Manager](https://github.com/Shayan-Amz/RealStateHTML)** · HTML · CSS · JavaScript — offline-first, RTL (Persian) single-page app with `localStorage` persistence, multi-criteria filtering, sorting, and formatted pricing for sale, rent, and full-deposit lease listings.
 - 🏡 **[OpenGL Dream Village](https://github.com/Shayan-Amz/Cool-Computer-Graphics-Project-Using-Shapes)** · C++ · OpenGL / FreeGLUT — animated 2D village scene with day / night / rain modes and keyboard & mouse control; ported to Visual Studio 2022 with NuGet OpenGL packages (based on [krishnodey/Dream-Village](https://github.com/krishnodey/Dream-Village)).
 
 ---

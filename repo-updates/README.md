@@ -5,8 +5,9 @@ content** of that repository: files that are not in the ZIP must be removed from
 
 | Repository | Snapshot | Status |
 | :--- | :--- | :--- |
-| [Movie-ML-Pipeline](https://github.com/Shayan-Amz/Movie-ML-Pipeline) | [`Movie-ML-Pipeline.zip`](Movie-ML-Pipeline.zip) | ✅ ready |
-| [RealStateHTML](https://github.com/Shayan-Amz/RealStateHTML) | [`RealStateHTML.zip`](RealStateHTML.zip) | ✅ ready |
+| [Movie-ML-Pipeline](https://github.com/Shayan-Amz/Movie-ML-Pipeline) | [`Movie-ML-Pipeline.zip`](Movie-ML-Pipeline.zip) | ✅ uploaded & verified (CI green) — Description/Topics still to set |
+| [RealStateHTML](https://github.com/Shayan-Amz/RealStateHTML) | [`RealStateHTML.zip`](RealStateHTML.zip) | ⏳ ready, not uploaded yet |
+| [World-Cup-Simulator-And-Analyzer](https://github.com/Shayan-Amz/World-Cup-Simulator-And-Analyzer) | [`World-Cup-Simulator-And-Analyzer.zip`](World-Cup-Simulator-And-Analyzer.zip) | ⏳ ready, not uploaded yet |
 
 ---
 
@@ -35,7 +36,16 @@ git push origin main
    (including the hidden `.github`, `.gitignore` files — enable "show hidden files" in your file manager).
 4. Commit.
 
-> Hidden files (`.github/`, `.gitignore`, `.editorconfig`) are easy to miss in the web UI; Option A avoids that.
+> Hidden files (`.github/`, `.gitignore`, `.editorconfig`, `public/.htaccess`) are **skipped by drag & drop**
+> in the web UI. After uploading, create them by hand with *Add file → Create new file* (typing a path such
+> as `.github/workflows/ci.yml` creates the folders) and paste the contents from the ZIP.
+
+### Files to delete / create per repository
+
+| Repository | Delete first | Create by hand after drag & drop |
+| :--- | :--- | :--- |
+| RealStateHTML | *(nothing — `index.html` is overwritten)* | `.gitignore`, `.editorconfig` |
+| World-Cup-Simulator-And-Analyzer | `WorldCup.zip` (`README.md` is overwritten) | `.gitignore`, `public/.htaccess` |
 
 ---
 
@@ -53,3 +63,8 @@ For each repository also set (Settings → General, and the ⚙️ next to *Abou
 - **Topics:** `javascript` `html5` `css3` `single-page-application` `localstorage` `rtl` `persian` `real-estate` `offline-first` `vanilla-js`
 - Optional: **Settings → Pages → Deploy from branch `main` / (root)** gives you a live demo at
   `https://shayan-amz.github.io/RealStateHTML/` — add that link to the README and the About box.
+
+### World-Cup-Simulator-And-Analyzer
+- **Description:** `Full-stack World Cup simulator: rating-based stochastic match model, group & knockout stages in vanilla JS, PHP 8 REST API with session auth, MySQL/SQLite persistence of every simulated edition`
+- **Topics:** `php` `javascript` `mysql` `sqlite` `rest-api` `simulation` `monte-carlo` `football` `world-cup` `tournament` `docker` `rtl` `persian`
+- Demo login is `admin` / `admin123` (documented in the README); it is a bcrypt hash in `config/config.example.php`, not a plaintext password.

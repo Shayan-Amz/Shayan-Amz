@@ -7,7 +7,8 @@ content** of that repository: files that are not in the ZIP must be removed from
 | :--- | :--- | :--- |
 | [Movie-ML-Pipeline](https://github.com/Shayan-Amz/Movie-ML-Pipeline) | [`Movie-ML-Pipeline.zip`](Movie-ML-Pipeline.zip) | ✅ uploaded & verified (CI green) — Description/Topics still to set |
 | [RealStateHTML](https://github.com/Shayan-Amz/RealStateHTML) | [`RealStateHTML.zip`](RealStateHTML.zip) | ⏳ ready, not uploaded yet |
-| [World-Cup-Simulator-And-Analyzer](https://github.com/Shayan-Amz/World-Cup-Simulator-And-Analyzer) | [`World-Cup-Simulator-And-Analyzer.zip`](World-Cup-Simulator-And-Analyzer.zip) | ⏳ ready, not uploaded yet |
+| [World-Cup-Simulator-And-Analyzer](https://github.com/Shayan-Amz/World-Cup-Simulator-And-Analyzer) | [`World-Cup-Simulator-And-Analyzer.zip`](World-Cup-Simulator-And-Analyzer.zip) | ✅ uploaded & verified |
+| [Floating-Point-ALU](https://github.com/Shayan-Amz/Floating-Point-ALU) | [`Floating-Point-ALU.zip`](Floating-Point-ALU.zip) | ⏳ ready, not uploaded yet |
 
 ---
 
@@ -46,6 +47,7 @@ git push origin main
 | :--- | :--- | :--- |
 | RealStateHTML | *(nothing — `index.html` is overwritten)* | `.gitignore`, `.editorconfig` |
 | World-Cup-Simulator-And-Analyzer | `WorldCup.zip` (`README.md` is overwritten) | `.gitignore`, `public/.htaccess` |
+| Floating-Point-ALU | `Project_Final.cpp` (it moves to `legacy/`; `README.md` is overwritten) | `.gitignore`, `.clang-format`, `.editorconfig`, `.github/workflows/ci.yml` |
 
 ---
 
@@ -68,3 +70,8 @@ For each repository also set (Settings → General, and the ⚙️ next to *Abou
 - **Description:** `Full-stack World Cup simulator: rating-based stochastic match model, group & knockout stages in vanilla JS, PHP 8 REST API with session auth, MySQL/SQLite persistence of every simulated edition`
 - **Topics:** `php` `javascript` `mysql` `sqlite` `rest-api` `simulation` `monte-carlo` `football` `world-cup` `tournament` `docker` `rtl` `persian`
 - Demo login is `admin` / `admin123` (documented in the README); it is a bcrypt hash in `config/config.example.php`, not a plaintext password.
+
+### Floating-Point-ALU
+- **Description:** `Bit-exact software model of an IEEE 754 binary32 ALU in C++17 — add/sub/mul/div with guard-round-sticky rounding in all four modes, subnormals/Inf/NaN, differential tests against the host FPU`
+- **Topics:** `cpp` `cpp17` `ieee754` `floating-point` `computer-arithmetic` `computer-architecture` `fpu` `header-only` `cmake` `simulation`
+- The CI badge turns green after the first push (GitHub Actions builds with GCC, Clang, MSVC and on macOS and runs ~32 M bit-exact comparisons).

@@ -8,7 +8,8 @@ content** of that repository: files that are not in the ZIP must be removed from
 | [Movie-ML-Pipeline](https://github.com/Shayan-Amz/Movie-ML-Pipeline) | [`Movie-ML-Pipeline.zip`](Movie-ML-Pipeline.zip) | ✅ uploaded & verified (CI green) — Description/Topics still to set |
 | [RealStateHTML](https://github.com/Shayan-Amz/RealStateHTML) | [`RealStateHTML.zip`](RealStateHTML.zip) | ⏳ ready, not uploaded yet |
 | [World-Cup-Simulator-And-Analyzer](https://github.com/Shayan-Amz/World-Cup-Simulator-And-Analyzer) | [`World-Cup-Simulator-And-Analyzer.zip`](World-Cup-Simulator-And-Analyzer.zip) | ✅ uploaded & verified |
-| [Floating-Point-ALU](https://github.com/Shayan-Amz/Floating-Point-ALU) | [`Floating-Point-ALU.zip`](Floating-Point-ALU.zip) | ⏳ ready, not uploaded yet |
+| [Floating-Point-ALU](https://github.com/Shayan-Amz/Floating-Point-ALU) | [`Floating-Point-ALU.zip`](Floating-Point-ALU.zip) | ✅ uploaded & verified (CI green on 4 platforms) |
+| [Greedy-Algorithm-Project-Like-Fractional-Knapsack-Problem](https://github.com/Shayan-Amz/Greedy-Algorithm-Project-Like-Fractional-Knapsack-Problem) → rename to **Fractional-Knapsack-Greedy** | [`Fractional-Knapsack-Greedy.zip`](Fractional-Knapsack-Greedy.zip) | ⏳ ready, not uploaded yet |
 
 ---
 
@@ -48,6 +49,7 @@ git push origin main
 | RealStateHTML | *(nothing — `index.html` is overwritten)* | `.gitignore`, `.editorconfig` |
 | World-Cup-Simulator-And-Analyzer | `WorldCup.zip` (`README.md` is overwritten) | `.gitignore`, `public/.htaccess` |
 | Floating-Point-ALU | `Project_Final.cpp` (it moves to `legacy/`; `README.md` is overwritten) | `.gitignore`, `.clang-format`, `.editorconfig`, `.github/workflows/ci.yml` |
+| Fractional-Knapsack-Greedy | `Juice_Happiness.cpp` (`README.md` is overwritten) | `.gitignore`, `.clang-format`, `.editorconfig`, `.github/workflows/ci.yml` |
 
 ---
 
@@ -75,3 +77,8 @@ For each repository also set (Settings → General, and the ⚙️ next to *Abou
 - **Description:** `Bit-exact software model of an IEEE 754 binary32 ALU in C++17 — add/sub/mul/div with guard-round-sticky rounding in all four modes, subnormals/Inf/NaN, differential tests against the host FPU`
 - **Topics:** `cpp` `cpp17` `ieee754` `floating-point` `computer-arithmetic` `computer-architecture` `fpu` `header-only` `cmake` `simulation`
 - The CI badge turns green after the first push (GitHub Actions builds with GCC, Clang, MSVC and on macOS and runs ~32 M bit-exact comparisons).
+
+### Fractional-Knapsack-Greedy  (currently *Greedy-Algorithm-Project-Like-Fractional-Knapsack-Problem*)
+- **Rename first:** Settings → General → Repository name → `Fractional-Knapsack-Greedy` (GitHub redirects the old URL; the profile README already points to the new name).
+- **Description:** `Greedy O(n log n) solver for the fractional knapsack problem — header-only C++17, exchange-argument proof, randomized tests against exhaustive enumeration, 0/1 DP comparison and integrality-gap benchmark`
+- **Topics:** `cpp` `cpp17` `algorithms` `greedy-algorithm` `knapsack-problem` `fractional-knapsack` `optimization` `linear-programming` `header-only` `cmake`

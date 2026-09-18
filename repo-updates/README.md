@@ -9,7 +9,8 @@ content** of that repository: files that are not in the ZIP must be removed from
 | [RealStateHTML](https://github.com/Shayan-Amz/RealStateHTML) | [`RealStateHTML.zip`](RealStateHTML.zip) | ⏳ ready, not uploaded yet |
 | [World-Cup-Simulator-And-Analyzer](https://github.com/Shayan-Amz/World-Cup-Simulator-And-Analyzer) | [`World-Cup-Simulator-And-Analyzer.zip`](World-Cup-Simulator-And-Analyzer.zip) | ✅ uploaded & verified |
 | [Floating-Point-ALU](https://github.com/Shayan-Amz/Floating-Point-ALU) | [`Floating-Point-ALU.zip`](Floating-Point-ALU.zip) | ✅ uploaded & verified (CI green on 4 platforms) |
-| [Greedy-Algorithm-Project-Like-Fractional-Knapsack-Problem](https://github.com/Shayan-Amz/Greedy-Algorithm-Project-Like-Fractional-Knapsack-Problem) → rename to **Fractional-Knapsack-Greedy** | [`Fractional-Knapsack-Greedy.zip`](Fractional-Knapsack-Greedy.zip) | ⏳ ready, not uploaded yet |
+| [Fractional-Knapsack-Greedy](https://github.com/Shayan-Amz/Fractional-Knapsack-Greedy) (renamed) | [`Fractional-Knapsack-Greedy.zip`](Fractional-Knapsack-Greedy.zip) | ✅ uploaded & verified (CI green on 4 platforms) |
+| [Drawing-Flag-Assembly-Project](https://github.com/Shayan-Amz/Drawing-Flag-Assembly-Project) → rename to **ARM-Assembly-Flag-Renderer** | [`ARM-Assembly-Flag-Renderer.zip`](ARM-Assembly-Flag-Renderer.zip) | ⏳ ready, not uploaded yet |
 
 ---
 
@@ -50,6 +51,7 @@ git push origin main
 | World-Cup-Simulator-And-Analyzer | `WorldCup.zip` (`README.md` is overwritten) | `.gitignore`, `public/.htaccess` |
 | Floating-Point-ALU | `Project_Final.cpp` (it moves to `legacy/`; `README.md` is overwritten) | `.gitignore`, `.clang-format`, `.editorconfig`, `.github/workflows/ci.yml` |
 | Fractional-Knapsack-Greedy | `Juice_Happiness.cpp` (`README.md` is overwritten) | `.gitignore`, `.clang-format`, `.editorconfig`, `.github/workflows/ci.yml` |
+| ARM-Assembly-Flag-Renderer | `Flag.s` (it moves to `legacy/`; `README.md` is overwritten) | `.gitignore`, `.editorconfig`, `.github/workflows/ci.yml` |
 
 ---
 
@@ -82,3 +84,9 @@ For each repository also set (Settings → General, and the ⚙️ next to *Abou
 - **Rename first:** Settings → General → Repository name → `Fractional-Knapsack-Greedy` (GitHub redirects the old URL; the profile README already points to the new name).
 - **Description:** `Greedy O(n log n) solver for the fractional knapsack problem — header-only C++17, exchange-argument proof, randomized tests against exhaustive enumeration, 0/1 DP comparison and integrality-gap benchmark`
 - **Topics:** `cpp` `cpp17` `algorithms` `greedy-algorithm` `knapsack-problem` `fractional-knapsack` `optimization` `linear-programming` `header-only` `cmake`
+
+### ARM-Assembly-Flag-Renderer  (currently *Drawing-Flag-Assembly-Project*)
+- **Rename first:** Settings → General → Repository name → `ARM-Assembly-Flag-Renderer`.
+- **Description:** `Bare-metal ARMv7 assembly that draws the Iranian flag into the DE1-SoC VGA pixel buffer (RGB565) — AAPCS subroutine, data-driven stripes, Unicorn-based emulator harness that verifies geometry, memory bounds and termination in CI`
+- **Topics:** `arm` `armv7` `assembly` `bare-metal` `de1-soc` `cpulator` `framebuffer` `vga` `rgb565` `unicorn-engine` `computer-architecture`
+- CI assembles with both GNU binutils and zig and uploads the rendered frame as an artifact.

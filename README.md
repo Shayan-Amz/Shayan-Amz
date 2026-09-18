@@ -56,7 +56,7 @@ recommender front-end and a full-stack tournament simulator.
 
 - 🧃 **[Fractional Knapsack — Greedy Algorithm](https://github.com/Shayan-Amz/Fractional-Knapsack-Greedy)** · C++ — `O(n log n)` density-ratio greedy solver for the classic fractional knapsack ("juice happiness") problem.
 - 🏫 **[School Directory UI](https://github.com/Shayan-Amz/Unity-School-Directory-UI)** · Unity 6 · C# — tabbed student/teacher directory with prefab-based list rendering, live search, and LINQ-powered sorting on uGUI + TextMeshPro.
-- 🏡 **[OpenGL Dream Village](https://github.com/Shayan-Amz/Cool-Computer-Graphics-Project-Using-Shapes)** · C++ · OpenGL / FreeGLUT — animated 2D village scene with day / night / rain modes and keyboard & mouse control; ported to Visual Studio 2022 with NuGet OpenGL packages (based on [krishnodey/Dream-Village](https://github.com/krishnodey/Dream-Village)).
+- 🏡 **[OpenGL Dream Village](https://github.com/Shayan-Amz/OpenGL-Dream-Village)** · C++17 · OpenGL 1.1 / FreeGLUT — animated 2D village scene (day / night / rain) restructured into an explicit animation state and a pure render function, built on Windows / Linux / macOS, and regression-tested pixel-for-pixel on CI with a purpose-written software rasteriser; geometry by [krishnodey/Dream-Village](https://github.com/krishnodey/Dream-Village), used with attribution.
 
 ---
 

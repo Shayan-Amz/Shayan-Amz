@@ -11,7 +11,8 @@ content** of that repository: files that are not in the ZIP must be removed from
 | [Floating-Point-ALU](https://github.com/Shayan-Amz/Floating-Point-ALU) | [`Floating-Point-ALU.zip`](Floating-Point-ALU.zip) | ✅ uploaded & verified (CI green on 4 platforms) |
 | [Fractional-Knapsack-Greedy](https://github.com/Shayan-Amz/Fractional-Knapsack-Greedy) (renamed) | [`Fractional-Knapsack-Greedy.zip`](Fractional-Knapsack-Greedy.zip) | ✅ uploaded & verified (CI green on 4 platforms) |
 | [ARM-Assembly-Flag-Renderer](https://github.com/Shayan-Amz/ARM-Assembly-Flag-Renderer) (renamed) | [`ARM-Assembly-Flag-Renderer.zip`](ARM-Assembly-Flag-Renderer.zip) | ✅ uploaded & verified (CI green: gnu + zig) |
-| [Unity_First](https://github.com/Shayan-Amz/Unity_First) → rename to **Unity-School-Directory-UI** | [`Unity-School-Directory-UI.zip`](Unity-School-Directory-UI.zip) — **delta**: only the 4 changed files | ⏳ ready, not uploaded yet |
+| [Unity-School-Directory-UI](https://github.com/Shayan-Amz/Unity-School-Directory-UI) (renamed) | [`Unity-School-Directory-UI.zip`](Unity-School-Directory-UI.zip) (delta) | ✅ uploaded & verified |
+| [Cool-Computer-Graphics-Project-Using-Shapes](https://github.com/Shayan-Amz/Cool-Computer-Graphics-Project-Using-Shapes) → rename to **OpenGL-Dream-Village** | [`OpenGL-Dream-Village.zip`](OpenGL-Dream-Village.zip) | ⏳ ready, not uploaded yet |
 
 ---
 
@@ -54,6 +55,7 @@ git push origin main
 | Fractional-Knapsack-Greedy | `Juice_Happiness.cpp` (`README.md` is overwritten) | `.gitignore`, `.clang-format`, `.editorconfig`, `.github/workflows/ci.yml` |
 | ARM-Assembly-Flag-Renderer | `Flag.s` (it moves to `legacy/`; `README.md` is overwritten) | `.gitignore`, `.editorconfig`, `.github/workflows/ci.yml` |
 | Unity-School-Directory-UI | nothing (`README.md`, `Assets/UIManager.cs`, `ProjectSettings/ProjectSettings.asset` are overwritten; `LICENSE` is new) | none |
+| OpenGL-Dream-Village | the whole `Dream-Village-master/` folder, `Shapes.sln`, `Shapes.vcxproj`, `Shapes.vcxproj.filters` (`README.md`, `.gitignore`, `.gitattributes`, `packages.config` are overwritten) | `.gitignore`, `.gitattributes`, `.editorconfig`, `.clang-format`, `.github/workflows/ci.yml` |
 
 ---
 
@@ -98,3 +100,10 @@ For each repository also set (Settings → General, and the ⚙️ next to *Abou
 - The ZIP is a *delta*: extract it and drag the four items (`README.md`, `LICENSE`, the `Assets` folder, the `ProjectSettings` folder) onto the repository root — GitHub merges them into the existing tree, nothing else is touched.
 - **Description:** `Tabbed student/teacher directory built with Unity 6 uGUI + TextMeshPro — prefab-based list rendering, live search and LINQ sorting wired through UnityEvents (URP 2D, Input System)`
 - **Topics:** `unity` `unity6` `csharp` `ugui` `textmeshpro` `urp` `linq` `ui` `game-development`
+
+### OpenGL-Dream-Village  (currently *Cool-Computer-Graphics-Project-Using-Shapes*)
+- **Rename first:** Settings → General → Repository name → `OpenGL-Dream-Village`.
+- Delete the `Dream-Village-master/` folder and the three `Shapes.*` files, then upload the ZIP contents (the `.sln`/`.vcxproj` keep their GUIDs, only the names changed).
+- **Description:** `Animated 2D village in immediate-mode OpenGL (C++17, FreeGLUT) — restructured into explicit animation state + pure render function, cross-platform CMake/VS2022 build, and pixel-exact regression tests on CI via a purpose-written software rasteriser. Geometry by krishnodey/Dream-Village (attributed).`
+- **Topics:** `opengl` `cpp` `cpp17` `computer-graphics` `freeglut` `2d-graphics` `software-rasterizer` `cmake` `visual-studio` `animation`
+- CI has three jobs (Ubuntu GCC, macOS Clang, Windows MSVC — the Windows one builds the VS solution with NuGet restore and runs the CTest suite too).

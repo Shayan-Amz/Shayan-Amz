@@ -55,7 +55,7 @@ git push origin main
 | Fractional-Knapsack-Greedy | `Juice_Happiness.cpp` (`README.md` is overwritten) | `.gitignore`, `.clang-format`, `.editorconfig`, `.github/workflows/ci.yml` |
 | ARM-Assembly-Flag-Renderer | `Flag.s` (it moves to `legacy/`; `README.md` is overwritten) | `.gitignore`, `.editorconfig`, `.github/workflows/ci.yml` |
 | Unity-School-Directory-UI | nothing (`README.md`, `Assets/UIManager.cs`, `ProjectSettings/ProjectSettings.asset` are overwritten; `LICENSE` is new) | none |
-| OpenGL-Dream-Village | the whole `Dream-Village-master/` folder, `Shapes.sln`, `Shapes.vcxproj`, `Shapes.vcxproj.filters` (`README.md`, `.gitignore`, `.gitattributes`, `packages.config` are overwritten). **v2 snapshot** — fixes MSVC error C4996 caused by the vendored `stb_image_write.h` (`_CRT_SECURE_NO_WARNINGS`); re-extract if you already unpacked v1. | `.gitignore`, `.gitattributes`, `.editorconfig`, `.clang-format`, `.github/workflows/ci.yml` |
+| OpenGL-Dream-Village | the whole `Dream-Village-master/` folder, `Shapes.sln`, `Shapes.vcxproj`, `Shapes.vcxproj.filters` (`README.md`, `.gitignore`, `.gitattributes`, `packages.config` are overwritten). **v3 snapshot** — (a) MSVC error C4996 from the vendored `stb_image_write.h` fixed, (b) the real VS2022 screenshots you took replace the placeholder figure, and (c) CI now also runs on `master`.  Drag-and-drop never uploads dot-files, so the five of them have to be created by hand — see the dot-file list below. | `.gitignore`, `.gitattributes`, `.editorconfig`, `.clang-format`, `.github/workflows/ci.yml` |
 
 ---
 

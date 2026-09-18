@@ -101,9 +101,23 @@ For each repository also set (Settings → General, and the ⚙️ next to *Abou
 - **Description:** `Tabbed student/teacher directory built with Unity 6 uGUI + TextMeshPro — prefab-based list rendering, live search and LINQ sorting wired through UnityEvents (URP 2D, Input System)`
 - **Topics:** `unity` `unity6` `csharp` `ugui` `textmeshpro` `urp` `linq` `ui` `game-development`
 
-### OpenGL-Dream-Village  (currently *Cool-Computer-Graphics-Project-Using-Shapes*)
-- **Rename first:** Settings → General → Repository name → `OpenGL-Dream-Village`.
-- Delete the `Dream-Village-master/` folder and the three `Shapes.*` files, then upload the ZIP contents (the `.sln`/`.vcxproj` keep their GUIDs, only the names changed).
-- **Description:** `Animated 2D village in immediate-mode OpenGL (C++17, FreeGLUT) — restructured into explicit animation state + pure render function, cross-platform CMake/VS2022 build, and pixel-exact regression tests on CI via a purpose-written software rasteriser. Geometry by krishnodey/Dream-Village (attributed).`
-- **Topics:** `opengl` `cpp` `cpp17` `computer-graphics` `freeglut` `2d-graphics` `software-rasterizer` `cmake` `visual-studio` `animation`
-- CI has three jobs (Ubuntu GCC, macOS Clang, Windows MSVC — the Windows one builds the VS solution with NuGet restore and runs the CTest suite too).
+### OpenGL-Dream-Village
+*(the repository is already renamed — the URL is https://github.com/Shayan-Amz/OpenGL-Dream-Village and the profile links to it)*
+
+The drag & drop upload missed the dot-files (GitHub silently skips them) and pulled in the build output of your local run.  After the v3 upload:
+
+1. **Delete** — in the repository root, remove
+   - `Dream-Village-master/` (the old Code::Blocks sources — the same file is kept, verbatim, as `legacy/main.cpp`)
+   - `Shapes.sln`, `Shapes.vcxproj`, `Shapes.vcxproj.filters`
+   - `DreamVillage.vcxproj.user`
+   - `packages/` (NuGet restore re-creates it: `packages.config` stays)
+   - `x64/` and `DreamVillage/` (build output: `.obj`, `.pdb`, `.ilk`, `.tlog`, a copied `freeglut.dll`)
+   - optionally the four `dream_village_*.png` in the root — their content already lives in `docs/figures/scenes_gpu.png`, which the README shows
+2. **Upload** the v3 ZIP: extract it into an empty folder, select everything **except** the dot-files, drag it onto the repository root.  `README.md`, `packages.config`, `src/`, `tools/`, `legacy/`, `docs/`, `third_party/`, `CMakeLists.txt` and the `.sln`/`.vcxproj` are replaced; nothing else in the repository is touched.
+3. **Create the five dot-files by hand** (Add file → Create new file — type the whole name, leading dot included; drag & drop cannot do this):
+   `.gitignore` · `.gitattributes` · `.editorconfig` · `.clang-format` · `.github/workflows/ci.yml`
+   — with exactly the content they have in the ZIP.  The workflow file is what turns CI on; without `.gitignore` the next `git add .` would commit `packages/`, `x64/` and the screenshots again.
+4. **Settings → General → Description:**
+   `Animated 2D village in immediate-mode OpenGL (C++17, FreeGLUT) — restructured into explicit animation state + pure render function, cross-platform CMake/VS2022 build, and pixel-exact regression tests on CI via a purpose-written software rasteriser. Geometry by krishnodey/Dream-Village (attributed).`
+5. **Topics:** `opengl` `cpp` `cpp17` `computer-graphics` `freeglut` `2d-graphics` `software-rasterizer` `cmake` `visual-studio` `animation`
+6. This repository's default branch is `master` (not `main`) — the workflow now triggers on both, so CI starts with the push that contains `.github/workflows/ci.yml`.  Three jobs: Ubuntu GCC, macOS Clang, and Windows MSVC (NuGet restore → `msbuild` with `-warnAsError` → CTest).

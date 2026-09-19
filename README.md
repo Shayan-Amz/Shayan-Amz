@@ -30,7 +30,8 @@ I recently completed my B.Sc. in Computer Engineering at **Semnan University** a
 preparing applications for **M.Sc. programs abroad**. My coursework and personal projects span
 the full stack of computing — from simulating an IEEE-754 floating-point unit and writing to a
 memory-mapped framebuffer in ARM assembly, to building an end-to-end data pipeline with a
-recommender front-end and a full-stack tournament simulator.
+recommender front-end, a full-stack tournament simulator, and a production multi-tenant
+property platform with voice-driven AI data entry.
 
 - 💼 **Currently:** computer specialist at **Khak Ab Sazeh Qumis**; preparing M.Sc. applications and documenting my project portfolio
 - 🧩 **Enjoy:** problems that sit between hardware and software, and turning messy data into working tools
@@ -44,8 +45,8 @@ recommender front-end and a full-stack tournament simulator.
 | :--- | :--- | :--- |
 | **Computer Architecture & Systems Programming** | How arithmetic, memory and I/O really work below the language runtime | IEEE-754 adder, ARM framebuffer renderer |
 | **Algorithms & Optimization** | Provably good solutions under resource constraints | Greedy fractional knapsack |
-| **Data-Intensive Systems & Applied ML** | Reliable pipelines from raw sources to models and user-facing tools | Movie analytics & recommender pipeline |
-| **Interactive Systems, Simulation & Graphics** | Real-time rendering, user-facing applications, and stochastic simulation | Real-estate manager, Unity directory UI, OpenGL scene, World Cup simulator |
+| **Data-Intensive Systems & Applied ML** | Reliable pipelines from raw sources to models and user-facing tools | Movie analytics & recommender pipeline; speech-to-text and LLM structured-field extraction |
+| **Interactive Systems, Simulation & Graphics** | Real-time rendering, user-facing applications, and stochastic simulation | AI-assisted real-estate platform, Unity directory UI, OpenGL scene, World Cup simulator |
 
 ---
 
@@ -56,7 +57,7 @@ recommender front-end and a full-stack tournament simulator.
 | 🎬 **[Movie Analytics & Recommender Pipeline](https://github.com/Shayan-Amz/Movie-ML-Pipeline)** | Python · pandas · BeautifulSoup · Streamlit | End-to-end pipeline over 12 years (2013 – 2024) of Iranian box-office archives: HTML scraping → cleaning & multi-label one-hot encoding of 43 genres (686-film dataset) → interactive Streamlit recommender that matches exact genre fingerprints and ranks by rating and box-office revenue. |
 | 🏆 **[World Cup Tournament Simulator](https://github.com/Shayan-Amz/World-Cup-Simulator-And-Analyzer)** | JavaScript · PHP (PDO) · MySQL · CSS | Full-stack web app that runs a 16-team tournament drawn from a 178-team rated dataset: rating-driven stochastic match engine, group tables with tie-breakers, seeded knockout bracket, dark/light theming, and a JSON API that persists tournament history in MySQL. |
 | ⚙️ **[IEEE-754 Floating-Point Adder](https://github.com/Shayan-Amz/Floating-Point-ALU)** | C++ | Bit-level software model of a single-precision FPU add/subtract path: field extraction, hidden-bit restoration, exponent alignment, signed mantissa arithmetic, post-normalization, and re-packing — the arithmetic is done on integer bit fields, not with native `float` operations. |
-| 🏠 **[Real-Estate Listing Manager](https://github.com/Shayan-Amz/RealStateHTML)** | HTML · CSS · JavaScript | Offline-first, mobile-friendly RTL (Persian) single-page app for managing property listings: three deal types (sale, deposit + rent, full-deposit lease) with a context-aware form, `localStorage` persistence, filtering by usage / deal type / price range, five sort orders, live thousands-separated price formatting, and a confirmation modal for deletes — zero dependencies, no build step. |
+| 🏢 **[Intelligent Real-Estate Management Platform — Amlak-e-Man](https://github.com/Shayan-Amz/Real-Estate-File-Manager-Project)** | PHP · MySQL · Vanilla JS · Whisper · LLM · PWA | Production-deployed multi-tenant platform for Iranian property agencies (university capstone thesis): property listings, client demands with automatic matching, image gallery with compression and agency-name watermarking, interactive Neshan map, analytics dashboard and team management; its Jarvis assistant covers voice-to-form (Whisper speech-to-text), natural-language entry, Persian number parsing and conflict warnings; per-agency data isolation with three subscription tiers and role-based licensing; full-text search across 12+ filter criteria, guest mode, CSV export, print catalog, auto-sync, dark mode and a fully RTL Persian PWA (Vazirmatn, Jalali date picker). |
 | 🇮🇷 **[Bare-Metal ARM Framebuffer Renderer](https://github.com/Shayan-Amz/ARM-Assembly-Flag-Renderer)** | ARMv7 Assembly | Draws the Iranian flag by streaming packed RGB565 pixel pairs directly into the DE1-SoC memory-mapped VGA framebuffer (`0xC8000000`); runs on CPUlator or the GNU ARM toolchain. |
 
 ### More Projects
@@ -76,8 +77,8 @@ recommender front-end and a full-stack tournament simulator.
 | Category | Skills |
 | :--- | :--- |
 | **Languages** | C++, C, C#, Python, JavaScript, PHP, ARM Assembly, SQL, HTML / CSS |
-| **Data & ML** | pandas, BeautifulSoup, Selenium, Jupyter / Google Colab, Streamlit, feature engineering (multi-label one-hot encoding), content-based recommendation |
-| **Web & Databases** | REST-style JSON APIs with PHP (PDO), MySQL, Fetch API, `localStorage`, responsive & RTL UI design |
+| **Data & ML** | pandas, BeautifulSoup, Selenium, Jupyter / Google Colab, Streamlit, Whisper speech-to-text & LLM structured-field extraction, feature engineering (multi-label one-hot encoding), content-based recommendation |
+| **Web & Databases** | REST-style JSON APIs with PHP (PDO), multi-tenant MySQL schemas, Fetch API, `localStorage`, PWA / service workers, responsive & RTL UI design |
 | **Game & Graphics** | Unity 6 (URP 2D, uGUI, TextMeshPro, Input System), OpenGL / FreeGLUT, C# LINQ |
 | **Systems & Tools** | IEEE-754 arithmetic, memory-mapped I/O, CPUlator (ARMv7 simulator), Visual Studio 2022, VS Code, Code::Blocks |
 | **Version Control** | Git — branching, merging, pull requests, GitHub Actions; Plastic SCM (now Unity Version Control) — both used in professional team projects |
@@ -105,6 +106,8 @@ recommender front-end and a full-stack tournament simulator.
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
 ![PostgreSQL](https://img.shields.io/badge/postgresql-4169e1?style=flat&logo=postgresql&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=flat&logo=git&logoColor=white)
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=flat&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%234479A1.svg?style=flat&logo=mysql&logoColor=white)
 ## 🎓 Education
 
 **B.Sc. in Computer Engineering** — Semnan University, Iran · 2022 – 2026

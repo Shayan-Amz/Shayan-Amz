@@ -72,7 +72,9 @@ recommender front-end and a full-stack tournament simulator.
 | **Data & ML** | pandas, BeautifulSoup, Selenium, Jupyter / Google Colab, Streamlit, feature engineering (multi-label one-hot encoding), content-based recommendation |
 | **Web & Databases** | REST-style JSON APIs with PHP (PDO), MySQL, Fetch API, `localStorage`, responsive & RTL UI design |
 | **Game & Graphics** | Unity 6 (URP 2D, uGUI, TextMeshPro, Input System), OpenGL / FreeGLUT, C# LINQ |
-| **Systems & Tools** | IEEE-754 arithmetic, memory-mapped I/O, CPUlator (ARMv7 simulator), Git / GitHub, Visual Studio 2022, VS Code, Code::Blocks |
+| **Systems & Tools** | IEEE-754 arithmetic, memory-mapped I/O, CPUlator (ARMv7 simulator), Visual Studio 2022, VS Code, Code::Blocks |
+| **Version Control** | Git — branching, merging, pull requests, GitHub Actions; Plastic SCM (now Unity Version Control) — both used in professional team projects |
+| **Office & Productivity** | Microsoft Word · Excel · PowerPoint · Access · Visio · Project — documents, spreadsheets, presentations, relational data, flowcharts and project schedules |
 
 ---
 

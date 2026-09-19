@@ -1,4 +1,8 @@
 # repo-updates (temporary — will be deleted at the end of the clean-up)
+> **README rewrites.**  `repo-updates/readmes/<Repo>/README.md` holds the current README for each of
+> the four repositories whose README described the changes instead of the project
+> (ARM-Assembly-Flag-Renderer, Floating-Point-ALU, Fractional-Knapsack-Greedy, OpenGL-Dream-Village).
+> Download the file and drop it on the repository root — it is already named `README.md`.
 
 Ready-to-upload snapshots of the other repositories. Each ZIP contains the **complete new
 content** of that repository: files that are not in the ZIP must be removed from the repo.

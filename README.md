@@ -25,7 +25,7 @@ the full stack of computing — from simulating an IEEE-754 floating-point unit 
 memory-mapped framebuffer in ARM assembly, to building an end-to-end data pipeline with a
 recommender front-end and a full-stack tournament simulator.
 
-- 🎯 **Currently:** preparing M.Sc. applications and refactoring / documenting my project portfolio
+- 💼 **Currently:** computer specialist at **Khak Ab Sazeh Qumis**; preparing M.Sc. applications and documenting my project portfolio
 - 🧩 **Enjoy:** problems that sit between hardware and software, and turning messy data into working tools
 - 🤝 **Open to:** research collaborations, open-source contributions, and internships
 
@@ -76,12 +76,40 @@ recommender front-end and a full-stack tournament simulator.
 | **Version Control** | Git — branching, merging, pull requests, GitHub Actions; Plastic SCM (now Unity Version Control) — both used in professional team projects |
 | **Office & Productivity** | Microsoft Word · Excel · PowerPoint · Access · Visio · Project — documents, spreadsheets, presentations, relational data, flowcharts and project schedules |
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+  <img src="https://img.shields.io/badge/Plastic_SCM_%28Unity_Version_Control%29-000000?style=flat-square&logo=unity&logoColor=white" alt="Plastic SCM (Unity Version Control)" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Microsoft_Word-2B579A?style=flat-square" alt="Microsoft Word" />
+  <img src="https://img.shields.io/badge/Microsoft_Excel-217346?style=flat-square" alt="Microsoft Excel" />
+  <img src="https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=flat-square" alt="Microsoft PowerPoint" />
+  <img src="https://img.shields.io/badge/Microsoft_Access-A4373A?style=flat-square" alt="Microsoft Access" />
+  <img src="https://img.shields.io/badge/Microsoft_Visio-3955A3?style=flat-square" alt="Microsoft Visio" />
+  <img src="https://img.shields.io/badge/Microsoft_Project-31752F?style=flat-square" alt="Microsoft Project" />
+</p>
+
 ---
 
 ## 🎓 Education
 
 **B.Sc. in Computer Engineering** — Semnan University, Iran · 2022 – 2026
 Project work in computer architecture, algorithm design, computer graphics, web programming, and data analysis (see projects above).
+
+---
+
+## 💼 Experience
+
+**Computer Specialist** · Khak Ab Sazeh Qumis, Semnan, Iran · *Mar 2025 – Present*
+- Maintain the company's computers, network and user accounts — installation, troubleshooting and day-to-day IT support.
+- Build data and reporting workflows in Microsoft Excel: structured entry sheets, formulas and pivot-based summaries for engineering and management reports.
+- Automate recurring office and documentation tasks with scripts and small utilities, reducing manual data handling.
+
+**Game Developer** · SinSin Studio, Semnan, Iran · *Jun 2025 – Jan 2026*
+- Developed gameplay systems in Unity / C#: core mechanics, player interaction and game logic.
+- Built UI and menu systems with uGUI and TextMeshPro, wiring screens, transitions and in-game feedback to the gameplay layer.
+- Implemented supporting game systems and internal tooling, with profiling and optimisation passes on builds.
+- Worked in a small multidisciplinary team using Git and Plastic SCM (Unity Version Control).
 
 ---
 

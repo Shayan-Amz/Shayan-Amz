@@ -1,4 +1,8 @@
 # repo-updates (temporary — will be deleted at the end of the clean-up)
+> **legacy cleanup.**  `repo-updates/legacy-cleanup/` holds the updated `Makefile`/`ci.yml`/
+> `emulate.py` (ARM flag) and `CMakeLists.txt`/`Makefile`/`.gitignore` (Floating-Point-ALU) needed to
+> delete the left-over course submissions — see `legacy-cleanup/README.md` for the step-by-step.
+
 > **README rewrites.**  `repo-updates/readmes/<Repo>/README.md` holds the current README for each of
 > the four repositories whose README described the changes instead of the project
 > (ARM-Assembly-Flag-Renderer, Floating-Point-ALU, Fractional-Knapsack-Greedy, OpenGL-Dream-Village).

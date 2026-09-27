@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 Data for the two extra sheets of Table_final.xlsx:
-  «برنامه‌ها»           — one row per English-taught master's programme (all 6 countries, 8 fields)
+  «برنامه‌ها»           — one row per English-taught master's programme (all 6 countries incl. Switzerland, 8 fields)
   «حوزه‌ها و بازار کار» — the 8 computing fields, their 2026 job market and fit with Shayan's profile
 Figures checked on 2026-09-27 against the programme/fee pages listed in the source column.
 """
 
 # ---- FX (same as main table) ------------------------------------------------
-RATES = {"EUR": 1.14, "GBP": 1.325, "SEK": 1 / 9.9, "DKK": 1 / 6.55}
+RATES = {"EUR": 1.14, "GBP": 1.325, "SEK": 1 / 9.9, "DKK": 1 / 6.55, "CHF": 1.21}
 
 # ---- fields -----------------------------------------------------------------
 # key: (label, market score 1-5, one-line market note used in the programme sheet)
@@ -38,35 +38,35 @@ FIELD_ROWS = [
     ["هوش مصنوعی / یادگیری ماشین", "۵ — قوی‌ترین رشد",
      "بالاتر (+۱۰ تا +۲۵٪؛ در آلمان €52–60k، انگلستان £35–45k خارج لندن)",
      "بسیار خوب — تیم‌های AI/ML در همهٔ ۶ کشور انگلیسی‌زبان‌اند",
-     "خوب: پیش‌زمینهٔ Computer Engineering + Python؛ ولی برای برنامه‌های Reach (Tübingen، UvA، KTH، Sheffield) معدل ۱۵.۷۷ کافی نیست — برنامه‌های کاربردی (Passau AI Eng، FAU، Northumbria/Teesside AI، UL AI&ML، Umeå) هدف بگیرید",
+     "خوب: پیش‌زمینهٔ Computer Engineering + Python؛ ولی برای برنامه‌های Reach (Tübingen، UvA، KTH، Sheffield) معدل ۱۵.۷۷ کافی نیست — برنامه‌های کاربردی (Passau AI Eng، FAU، Northumbria/Teesside AI، USI AI (Lugano)، Umeå) هدف بگیرید",
      "رقابت ورودی شدید؛ بخشی از آگهی‌ها «AI» در عنوان دارند ولی کار مهندسی نرم‌افزار معمولی است؛ مدرک به‌تنهایی بدون پورتفولیو/پروژه کافی نیست",
      "LinkedIn/WEF ژانویه ۲۰۲۶ (۱.۳ میلیون شغل جدید AI؛ AI Engineer سریع‌ترین‌رشد)؛ Bitkom 2025"],
     ["مهندسی نرم‌افزار / علوم کامپیوتر", "۴ — بیشترین حجم",
-     "مرجع (آلمان €48–55k · هلند €40–50k · سوئد SEK 420–540k · دانمارک DKK 500–540k · ایرلند €35–45k · انگلستان £28–35k)",
+     "مرجع (آلمان €48–55k · هلند €40–50k · سوئد SEK 420–540k · دانمارک DKK 500–540k · سوئیس CHF 85–105k (بالاترین) · انگلستان £28–35k)",
      "بسیار خوب",
      "بهترین تناسب با سابقهٔ شما (۲ سال IT + Unity/C#)؛ پذیرش ساده‌تر (2:2)؛ در همهٔ کشورها گزینهٔ Safe دارد",
      "آگهی‌های جونیور از ۲۰۲۳ کم شده (اثر GenAI)؛ در بریتانیا ۶–۷٪ بیکاری فارغ‌التحصیلان CS — سابقهٔ کار واقعی شما را از این گروه جدا می‌کند",
      "Bitkom 2025 (۱۰۹ هزار جای خالی IT در آلمان، ۷.۷ ماه زمان پرکردن)؛ IW 2024 (آگهی‌ها ۲۶٪ کمتر از ۲۰۲۳)"],
     ["امنیت سایبری", "۴ — کمبود ساختاری",
-     "مساوی تا کمی بالاتر؛ در انگلستان (NCSC-certified) و ایرلند (مراکز امنیت شرکت‌های آمریکایی) خوب",
+     "مساوی تا کمی بالاتر؛ در انگلستان (NCSC-certified) و سوئیس (بانک‌ها، بیمه‌ها، ETH/EPFL Cyber؛ حقوق بالا) خوب",
      "خوب — ولی مشاغل دولتی/دفاعی معمولاً به تابعیت یا اقامت بلندمدت نیاز دارند",
-     "خوب: MSc Cyber با 2:2 در Teesside/Northumbria/MMU/Kent/Royal Holloway/TU Dublin؛ Saarland (رایگان ولی IELTS 7)؛ AAU کپنهاگ",
+     "خوب: MSc Cyber با 2:2 در Teesside/Northumbria/MMU/Kent/Royal Holloway؛ Saarland (رایگان ولی IELTS 7)؛ AAU کپنهاگ؛ ZHAW MSE Information & Cyber Security (سوئیس، نیاز به معدل A/B)",
      "عدد «۴.۸ میلیون کمبود» ISC2 در گزارش ۲۰۲۵ حذف شد (نیاز اعلام‌شده بود نه آگهی واقعی)؛ کمبود بودجه دلیل اول جای خالی؛ ۳۱٪ تیم‌ها صفر جونیور دارند → برای اولین شغل، کارآموزی + گواهی (Security+، AZ-500) لازم است",
      "ISC2 Workforce Study 2024/2025؛ Kent/Surrey NCSC certification"],
     ["ابری / سیستم‌های توزیع‌شده / DevOps", "۴ — پایدار",
      "بالاتر از توسعه‌دهندهٔ عمومی (+۵ تا +۱۵٪)؛ DevOps/SRE در دانمارک و سوئد پرتقاضا",
      "بسیار خوب",
-     "خوب: Leicester Cloud Computing، TU Darmstadt DSS، KTH SEDS، DCU Cloud major؛ گواهی AWS/Azure کنار مدرک",
+     "خوب: Leicester Cloud Computing، TU Darmstadt DSS، KTH SEDS، USI Software & Data Engineering؛ گواهی AWS/Azure کنار مدرک",
      "کمتر «مدرک‌محور» است؛ برنامه‌های خالص Cloud کم‌اند — معمولاً گرایشِ CS/SE است",
      "tribexyz 2026 (Data/Cloud Engineer پرجست‌وجوترین در UK/DE)؛ آگهی‌های شرکت‌ها"],
     ["علم داده / تحلیل داده", "۳ — جونیور اشباع",
      "مساوی CS در سطح جونیور؛ بالاتر بعد از ۲–۳ سال",
      "بسیار خوب",
-     "متوسط: مدرک‌های ارزان و Safe زیاد است (Maynooth €17k، Skövde، Brunel، ITU €16.5k) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
+     "متوسط: مدرک‌های ارزان و Safe زیاد است (HSLU Lucerne ≈ CHF 3,150/سال، Skövde، Brunel، ITU €16.5k) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
      "تعداد فارغ‌التحصیل خیلی بیشتر از جای خالی جونیور؛ آگهی جونیور Data Engineering هم ↓۶۷٪؛ مسیر رایج: تحلیلگر/بک‌اند → مهندس داده",
      "research.com 2026؛ careery.pro 2026؛ datadriven.io 2026"],
     ["سیستم‌های نهفته / رباتیک / خودران", "۴ در آلمان/سوئد؛ ۳ در بقیه",
-     "مساوی تا کمی بالاتر در صنعت (Bosch، Continental، ABB، Volvo)؛ پایین‌تر در بریتانیا/ایرلند",
+     "مساوی تا کمی بالاتر در صنعت (Bosch، Continental، ABB، Volvo)؛ پایین‌تر در بریتانیا؛ در سوئیس (ABB، رباتیک ETH) بالا ولی آلمانی‌محور",
      "متوسط ⚠️ — تیم‌های R&D انگلیسی‌اند ولی شرکت‌های صنعتی متوسط آلمان/سوئد در عمل زبان محلی می‌خواهند",
      "خوب از نظر پیش‌زمینه (Computer Engineering)؛ گزینه‌ها: Twente ES، Stuttgart INFOTECH، H-BRS Autonomous Systems، FAU Autonomy Tech، Halmstad، MDU، SDU Robot Systems، DTU Autonomous Systems",
      "با معیار «فقط انگلیسی» شما ضعیف‌تر از AI/SE/Cyber؛ وابسته به صنعت خودرو که در ۲۰۲۴–۲۵ آگهی‌هایش کم شد",
@@ -104,14 +104,15 @@ CITIES = {
     "York": ("York (یورک) — شمال انگلستان", "متوسط — £1,000–1,350"),
     "Lancaster": ("Lancaster (لنکستر) — شمال غرب", "ارزان تا متوسط — £950–1,250"),
     "Sheffield": ("Sheffield (شفیلد) — یورکشایر", "ارزان تا متوسط — £950–1,250"),
-    # ایرلند
-    "Dublin-Blanchardstown": ("Dublin – Blanchardstown (دوبلین، حومهٔ غربی)", "خیلی گران — €1,300–1,700"),
-    "Dublin-Grangegorman": ("Dublin – Grangegorman (دوبلین، مرکز شهر)", "خیلی گران — €1,400–1,800"),
-    "Dublin": ("Dublin – Glasnevin (دوبلین، شمال شهر؛ DCU)", "خیلی گران — €1,400–1,800"),
-    "Maynooth": ("Maynooth (مینوث) — ۲۵ کیلومتری دوبلین", "گران — €1,100–1,400"),
-    "Limerick": ("Limerick (لیمریک) — سومین شهر ایرلند", "متوسط — €1,100–1,400"),
-    "Cork": ("Cork (کورک) — دومین شهر؛ مقر اروپایی Apple", "گران — €1,200–1,500"),
-    "Galway": ("Galway (گالوی) — غرب ایرلند", "گران — €1,150–1,450"),
+    # سوئیس
+    "Zuerich": ("Zürich (زوریخ) — Google، UBS، ETH؛ گران‌ترین شهر دانشگاهی اروپا", "خیلی گران — CHF 1,900–2,500"),
+    "Zuerich-Winterthur": ("Zürich / Winterthur (زوریخ / وینترتور؛ کمپوس‌های ZHAW)", "خیلی گران — CHF 1,800–2,400"),
+    "Lausanne": ("Lausanne (لوزان) — کنار دریاچهٔ ژنو؛ فرانسه‌زبان؛ EPFL", "خیلی گران — CHF 1,700–2,200"),
+    "Bern": ("Bern (برن) — پایتخت؛ آلمانی‌زبان", "گران — CHF 1,600–2,000"),
+    "Basel": ("Basel (بازل) — Roche، Novartis؛ مرز آلمان/فرانسه", "گران — CHF 1,600–2,100"),
+    "Fribourg": ("Fribourg (فریبورگ) — دوزبانه (آلمانی/فرانسه)", "گران — CHF 1,450–1,800"),
+    "Lugano": ("Lugano (لوگانو) — تیچینو، ایتالیایی‌زبان؛ IDSIA؛ ارزان‌ترین شهر دانشگاهی سوئیس", "گران — CHF 1,400–1,800"),
+    "Luzern": ("Lucerne / Luzern (لوسرن) — مرکز سوئیس، ۴۵ دقیقه تا زوریخ", "گران — CHF 1,550–1,950"),
     # آلمان
     "Stuttgart": ("Stuttgart (اشتوتگارت) — Bosch، Mercedes، Porsche", "گران — €1,100–1,350"),
     "Erlangen": ("Erlangen / Nürnberg (ارلانگن / نورنبرگ) — Siemens", "متوسط — €950–1,150"),
@@ -244,43 +245,46 @@ add("انگلستان", "University of Sheffield (Russell Group)", "Sheffield", 
     "2:1", "6.5", "82", "Reach", "رتبهٔ بالا، شهریه و شرط ورود بالا؛ رقم دقیق MSc AI را از صفحهٔ رسمی بگیرید",
     "https://www.sheffield.ac.uk/postgraduate/taught/courses")
 
-# ===== ایرلند (EUR) =====
-add("ایرلند", "TU Dublin", "Dublin-Blanchardstown", "MSc Computing in Applied Cyber Security", "CY", "۱ سال (حضوری + آنلاین)", "€14,500 (کل دوره)", ("EUR", 14500, None),
-    "2:2 (GPA 2.5) در Computing", "6.5 (6.0)", "791–800", "Safe", "ارزان‌ترین ارشد امنیت ایرلند در یک دانشگاه دولتی",
-    "https://www.tudublin.ie/study/postgraduate/courses/applied-cyber-security/")
-add("ایرلند", "TU Dublin", "Dublin-Grangegorman", "MSc Computer Science (Data Science)", "DS", "۱–۱.۵ سال", "€21,750 (کل دوره)", ("EUR", 21750, None),
-    "2:1، یا 2:2 + ۲ سال سابقهٔ توسعهٔ نرم‌افزار", "6.5 (6.0)", "791–800", "Target", "۲ سال سابقهٔ کار شما اینجا شرط ورود را جبران می‌کند",
-    "https://www.tudublin.ie/study/postgraduate/courses/computing-data-science/")
-add("ایرلند", "TU Dublin", "Dublin-Grangegorman", "MSc Computing (Advanced Software Development)", "SE", "۱ سال", "≈ €15,000–15,500", ("EUR", 15000, 15500),
-    "2:2", "6.5", "791–800", "Safe", "گزینهٔ Safe جدول اصلی",
-    "https://www.tudublin.ie/study/postgraduate/")
-add("ایرلند", "Maynooth University", "Maynooth", "MSc Data Science and Analytics (۱۲ ماهه، conversion)", "DS", "۱ سال", "≈ €17,000", ("EUR", 17000, None),
-    "مدرک Level 8 با محتوای ریاضی", "6.5", "721–730", "Safe", "ورود آسان؛ ولی حوزهٔ اشباع جونیور",
-    "https://www.maynoothuniversity.ie/study-maynooth/postgraduate-studies/courses/msc-data-science-and-analytics")
-add("ایرلند", "Maynooth University", "Maynooth", "MSc (Computer Science) Software Engineering", "SE", "۱ سال", "€18,000 (2025/26) → ≈ €18,500", ("EUR", 18500, None),
-    "2:2", "6.5", "721–730", "Safe/Target", "۲۵ دقیقه تا Dublin با قطار؛ اجاره کمتر از Dublin",
-    "https://www.maynoothuniversity.ie/study-maynooth/postgraduate-studies")
-add("ایرلند", "University of Limerick (UL)", "Limerick", "MSc Artificial Intelligence and Machine Learning", "AI", "۱ سال", "€20,800", ("EUR", 20800, None),
-    "first یا second class honours در CS/Computer Engineering", "6.5", "388", "Target", "شهریهٔ رسمی 2026/27؛ Limerick ارزان‌تر از Dublin",
-    "https://www.ul.ie/study/postgraduate/artificial-intelligence-and-machine-learning-msc")
-add("ایرلند", "University of Limerick (UL)", "Limerick", "MSc Software Engineering", "SE", "۱ سال", "€20,800", ("EUR", 20800, None),
-    "2:2", "6.5", "388", "Target", "گزینهٔ Target جدول اصلی",
-    "https://www.ul.ie/study/postgraduate")
-add("ایرلند", "Munster Technological University (MTU)", "Cork", "MSc Cybersecurity", "CY", "۱ سال", "≈ €12,000–15,000", ("EUR", 12000, 15000),
-    "مدرک Level 8 honours در Computing", "6.0", "—", "Safe", "Cork: مقر اروپایی Apple و ده‌ها شرکت امنیت؛ رقم از مراجع ثانویه",
-    "https://www.mtu.ie/courses/")
-add("ایرلند", "Munster Technological University (MTU)", "Cork", "MSc Artificial Intelligence", "AI", "۱ سال", "≈ €15,000", ("EUR", 15000, None),
-    "Level 8 honours در CS/Eng + ریاضی و کدنویسی قوی", "6.5", "—", "Safe/Target", "",
-    "https://www.mtu.ie/courses/")
-add("ایرلند", "Dublin City University (DCU)", "Dublin", "MSc in Computing — Majors: AI with NLP / Data Analytics / Secure Software Engineering / Cloud Computing", "MULTI", "۱ سال", "€25,000 (−€5,000 بورس دانشکده برای غیر-EU ⇒ €20,000)", ("EUR", 20000, 25000),
-    "2:1 در CS/Computing", "6.5", "408", "Target/Reach", "شرط 2:1؛ ورودی ژانویه ۲۰۲۷ هم دارد",
-    "https://www.dcu.ie/courses/postgraduate/school-computing/msc-computing-major-options")
-add("ایرلند", "University of Galway", "Galway", "MSc Computer Science (Artificial Intelligence)", "AI", "۱ سال", "≈ €28,000 (IDP/collegedunia 2025–26؛ صفحهٔ رسمی چک شود)", ("EUR", 28000, None),
-    "First Class (یا 2:1 خوب با تأیید مدیر برنامه)", "6.5", "275", "Reach", "شرط ورود بالا؛ گران",
-    "http://cs.universityofgalway.ie/")
-add("ایرلند", "University College Cork (UCC)", "Cork", "MSc Data Science and Artificial Intelligence", "DS", "۱ سال", "€28,000", ("EUR", 28000, None),
-    "2:1 در CS/ریاضی", "6.5", "220", "Reach", "UCD (QS 100) و TCD (QS 75) هم ≈ €30k و 2:1 → برای معدل شما Reach",
-    "https://www.ucc.ie/en/study/postgrad/")
+# ===== سوئیس (CHF) =====
+add("سوئیس", "USI – Università della Svizzera italiana", "Lugano", "MSc Informatics (گرایش‌ها: Artificial Intelligence، Software Development، Systems…)", "SE", "۲ سال (120 ECTS)", "CHF 4,000 در ترم برای غیرمقیم سوئیس (CHF 8,000/سال)", ("CHF", 8000, None),
+    "کارشناسی CS/مرتبط؛ فارغ‌التحصیل UAS با ۳۰–۶۰ ECTS تکمیلی؛ بررسی موردی", "B2 در ورود (IELTS 5.5) → C1 (7.0) تا فارغ‌التحصیلی", "=456", "Target", "کم‌شرط‌ترین ورود سوئیس؛ Lugano ارزان‌ترین شهر دانشگاهی سوئیس؛ مهلت غیر-EU ۳۰ آوریل ۲۰۲۷؛ زبان شهر ایتالیایی",
+    "https://www.usi.ch/en/education/master/informatics")
+add("سوئیس", "USI – Università della Svizzera italiana", "Lugano", "MSc Artificial Intelligence (با IDSIA)", "AI", "۲ سال (120 ECTS)", "CHF 4,000 در ترم برای غیرمقیم (CHF 8,000/سال)", ("CHF", 8000, None),
+    "کارشناسی CS/مرتبط با ریاضی و برنامه‌نویسی قوی؛ بررسی موردی", "6.5 (B2؛ C1 تا پایان دوره)", "=456", "Target", "اولین ارشد AI سوئیس؛ IDSIA (آزمایشگاه Schmidhuber/LSTM)؛ رقابتی‌تر از Informatics",
+    "https://www.usi.ch/en/education/master/artificial-intelligence")
+add("سوئیس", "USI – Università della Svizzera italiana", "Lugano", "MSc Software and Data Engineering", "DS", "۲ سال (120 ECTS)", "CHF 4,000 در ترم برای غیرمقیم (CHF 8,000/سال)", ("CHF", 8000, None),
+    "کارشناسی CS/مرتبط", "B2 → C1", "=456", "Target", "ترکیب مهندسی نرم‌افزار + مهندسی داده (Data Engineering — همان توصیهٔ شیت حوزه‌ها)؛ کم‌رقابت‌تر از AI",
+    "https://www.usi.ch/en/education/master/software-and-data-engineering")
+add("سوئیس", "Hochschule Luzern (HSLU)", "Luzern", "MSc Applied Information and Data Science", "DS", "۲ سال (120 ECTS)", "CHF 1,300 در ترم (خارجی) + ≈ CHF 275 هزینهٔ جانبی ≈ CHF 3,150/سال", ("CHF", 3150, None),
+    "هر کارشناسی ۱۸۰ ECTS؛ خوداظهاری + آزمون انگلیسی HSLU + مصاحبه در صورت نیاز", "C1 (B2 مشروط)", "—", "Safe/Target", "«باز برای تغییر رشته‌ای‌ها»، کاربردی و مدیریتی؛ آلمانی لازم نیست؛ شروع سپتامبر/فوریه؛ مهلت ≈ ۳۰ آوریل (چک شود)",
+    "https://www.hslu.ch/en/lucerne-school-of-business/degree-programmes/master/applied-information-and-data-science/")
+add("سوئیس", "University of Bern", "Bern", "Swiss Joint MSc Computer Science (Bern / Neuchâtel / Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 750 + 200 (خارجی) = CHF 950 در ترم (CHF 1,900/سال)", ("CHF", 1900, None),
+    "کارشناسی Computer Science (یا معادل با حداکثر ۶۰ ECTS تکمیلی)؛ تأیید ادارهٔ پذیرش برای مدرک خارجی", "معمولاً 6.5 (C1 توصیه)", "=191", "Target", "ارزان‌ترین مسیر سوئیس با رتبهٔ زیر ۲۰۰؛ مهلت ۳۰ آوریل — ویزایی‌ها مهلت دیرهنگام ندارند؛ شهریه از mastersportal (≈)",
+    "https://www.philnat.unibe.ch/studies/study_programs/master_s_in_computer_science/index_eng.html")
+add("سوئیس", "University of Fribourg", "Fribourg", "Swiss Joint MSc Computer Science (ثبت‌نام در Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 870 در ترم (خارجی) + CHF 115 = ≈ CHF 1,970/سال", ("CHF", 1970, None),
+    "کارشناسی CS/مرتبط", "معمولاً 6.5", "=670", "Target", "همان برنامهٔ مشترک Bern؛ شهر دوزبانه و ارزان‌تر؛ ⚠️ مهلت ویزایی‌ها ۲۸ فوریه ۲۰۲۷",
+    "https://www.unifr.ch/inf/en/")
+add("سوئیس", "University of Basel", "Basel", "MSc Computer Science", "SE", "۱.۵ سال (90 ECTS)", "≈ CHF 850 در ترم (+ هزینهٔ احتمالی خارجی‌ها؛ صفحهٔ رسمی چک شود) ≈ CHF 1,700–2,100/سال", ("CHF", 1700, 2100),
+    "کارشناسی CS با نمرات خوب؛ بررسی فردی", "B2–C1 (چک شود)", "=150", "Target/Reach", "رتبهٔ ۱۵۰؛ ⚠️ کانتون Basel تمکن CHF 24,000/سال می‌خواهد؛ مهلت ۳۰ آوریل",
+    "https://www.unibas.ch/en/Studies/Degree-Programs.html")
+add("سوئیس", "University of Zurich (UZH)", "Zuerich", "MSc Informatics (گرایش‌ها: Software Systems، Data Science، People-Oriented Computing…)", "SE", "۱.۵–۲ سال (90/120 ECTS)", "CHF 720 + 100 (خارجی) + 59 = CHF 879 در ترم (≈ CHF 1,760/سال)", ("CHF", 1760, None),
+    "کارشناسی Informatics/CS با نمرات بسیار خوب؛ فقط یک درخواست در هر ترم؛ هزینهٔ درخواست CHF 150", "C1 / IELTS 7.0", "=98", "Reach", "⚠️ مهلت ویزایی‌ها ۲۸ فوریه ۲۰۲۷ (بدون ویزا ۳۰ آوریل)؛ کانتون زوریخ: تمکن CHF 21,000 فقط در بانک سوئیسی به نام خودتان",
+    "https://www.ifi.uzh.ch/en/studies/master.html")
+add("سوئیس", "ZHAW School of Engineering", "Zuerich-Winterthur", "MSc in Engineering (MSE) — پروفایل Computer Science / Data Science / Information & Cyber Security", "MULTI", "۱.۵ سال (90 ECTS؛ پاره‌وقت تا ۳ سال)", "CHF 1,220 در ترم (خارجی) + CHF 60 ≈ CHF 2,560/سال", ("CHF", 2560, None),
+    "کارشناسی با نمرات A یا B (≈ یک‌سوم بالای کلاس) — گواهی رتبهٔ کلاسی از سمنان بگیرید", "B2–C1", "851–900", "Target/Reach", "کاربردی و پروژه‌محور (کار در مؤسسات ZHAW، اغلب با حقوق دستیاری)؛ مهلت پایان آوریل؛ کانتون زوریخ (تمکن در بانک سوئیسی)",
+    "https://www.zhaw.ch/en/engineering/study/masters-degree-programme")
+add("سوئیس", "EPFL", "Lausanne", "MSc Computer Science", "SE", "۲ سال (120 ECTS)", "CHF 2,240 در ترم برای خارجی‌های غیرمقیم (از پاییز ۲۰۲۵؛ ≈ CHF 4,480/سال)", ("CHF", 4480, None),
+    "کارشناسی CS با نمرات عالی (بالای کلاس)؛ فقط یک برنامه در سال", "مدرک زبان الزامی نیست (C1 عملاً لازم)", "=22", "Reach", "دور اول ۱۵ دسامبر ۲۰۲۶ (توصیه برای ویزایی‌ها؛ پاسخ اوایل آوریل)، دور دوم ۳۱ مارس ۲۰۲۷؛ ⚠️ احتمال افزایش دوبارهٔ شهریه (EP27)",
+    "https://www.epfl.ch/education/master/programs/computer-science/")
+add("سوئیس", "EPFL", "Lausanne", "MSc Data Science", "DS", "۲ سال (120 ECTS)", "CHF 2,240 در ترم (≈ CHF 4,480/سال)", ("CHF", 4480, None),
+    "کارشناسی CS/ریاضی/مهندسی با نمرات عالی", "مدرک زبان الزامی نیست", "=22", "Reach", "بسیار رقابتی؛ کارآموزی صنعتی جزو برنامه است",
+    "https://www.epfl.ch/education/master/programs/data-science/")
+add("سوئیس", "ETH Zürich", "Zuerich", "MSc Computer Science", "SE", "۲ سال (120 ECTS)", "CHF 2,190 + ≈ CHF 74 = ≈ CHF 2,264 در ترم (≈ CHF 4,530/سال)", ("CHF", 4530, None),
+    "کارشناسی CS با نمرات ممتاز (عملاً ۱۰٪ بالای کلاس)؛ هزینهٔ درخواست CHF 150؛ تا ۲ برنامه", "C1 / IELTS 7.0", "=8", "Reach", "بهترین دانشگاه قارهٔ اروپا؛ اپلای فقط ۱–۳۰ نوامبر ۲۰۲۶، پاسخ تا پایان مارس ۲۰۲۷، شروع ۲۰ سپتامبر ۲۰۲۷؛ با معدل ۱۵.۷۷ احتمال پذیرش کم",
+    "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/computer-science.html")
+add("سوئیس", "ETH Zürich + EPFL", "Zuerich", "MSc Cyber Security (مشترک ETH–EPFL؛ یک سال در هر کدام)", "CY", "۲ سال (120 ECTS)", "شهریهٔ ETH: ≈ CHF 2,264 در ترم (≈ CHF 4,530/سال)", ("CHF", 4530, None),
+    "کارشناسی CS با نمرات ممتاز؛ پیش‌زمینهٔ ریاضی/سیستم قوی", "C1 / IELTS 7.0", "=8", "Reach", "قوی‌ترین ارشد امنیت اروپا؛ همان پنجرهٔ نوامبر ETH؛ Reach",
+    "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/cyber-security.html")
 
 # ===== آلمان (EUR) =====
 add("آلمان", "Universität Stuttgart", "Stuttgart", "M.Sc. Computer Science (انگلیسی، بدون NC)", "SE", "۲ سال", "€1,500 در ترم + ≈ €200 سهم ترم = ≈ €3,400/سال", ("EUR", 3400, None),

@@ -104,6 +104,10 @@ CITIES = {
     "York": ("York (یورک) — شمال انگلستان", "متوسط — £1,000–1,350"),
     "Lancaster": ("Lancaster (لنکستر) — شمال غرب", "ارزان تا متوسط — £950–1,250"),
     "Sheffield": ("Sheffield (شفیلد) — یورکشایر", "ارزان تا متوسط — £950–1,250"),
+    "London-Central": ("London – مرکز (South Kensington / Bloomsbury / Strand؛ Imperial، UCL، KCL)", "خیلی گران — £1,600–1,900 (برآورد خود Imperial: £16.4–17k برای ۹ ماه)"),
+    "Coventry": ("Coventry (کاونتری) — کمپوس Warwick؛ میدلندز", "متوسط — £1,000–1,250"),
+    "Bristol": ("Bristol (بریستول) — جنوب غرب؛ قطب فناوری/هوافضا", "گران — £1,200–1,450"),
+    "Durham": ("Durham (دورهام) — شمال شرق؛ ۱۵ دقیقه تا نیوکاسل", "ارزان تا متوسط — £950–1,200"),
     # سوئیس
     "Zuerich": ("Zürich (زوریخ) — Google، UBS، ETH؛ گران‌ترین شهر دانشگاهی اروپا", "خیلی گران — CHF 1,900–2,500"),
     "Zuerich-Winterthur": ("Zürich / Winterthur (زوریخ / وینترتور؛ کمپوس‌های ZHAW)", "خیلی گران — CHF 1,800–2,400"),
@@ -247,6 +251,24 @@ add("انگلستان", "University of Sheffield (Russell Group)", "Sheffield", 
     "https://www.sheffield.ac.uk/postgraduate/taught/courses")
 
 # ===== سوئیس (CHF) =====
+add("انگلستان", "Imperial College London (Russell Group)", "London-Central", "MSc Computing (Artificial Intelligence and Machine Learning) / MSc Computing", "AI", "۱ سال", "£46,000 (2026/27 رسمی؛ 2027/28 هنوز اعلام نشده)", ("GBP", 46000, None),
+    "First-class honours در رشته‌ای با محتوای قابل توجه Computing — برای مدرک ایرانی ≥ ۱۷–۱۸/۲۰ → با ۱۵.۷۷ رسماً واجد شرایط نیستید", "7.0 (higher requirement؛ هر بخش ≥ 6.5)", "=2", "Reach", "QS 2027 #2 · LEO: میانهٔ درآمد فارغ‌التحصیلان Computing پنج سال بعد £79,600 · دورهای ۲۰۲۷: ۶ ژانویه / ۱۰ مارس / ۲۸ آوریل · Imperial Inspires £15,000 (رقابتی) · ❌ عملاً بسته برای معدل شما",
+    "https://www.imperial.ac.uk/study/courses/postgraduate-taught/computing-artificial-intelligence-msc/")
+add("انگلستان", "UCL – University College London (Russell Group)", "London-Central", "MSc Software Systems Engineering / MSc Machine Learning (MSc Computer Science تبدیلی است و برای فارغ‌التحصیل CS باز نیست)", "SE", "۱ سال", "≈ £42,700–46,700 (2026/27؛ MSc Computer Science رسماً £42,700)", ("GBP", 42700, 46700),
+    "2:1 (upper second) — جدول تطبیق ایرانِ UCL را نتوانستم رسمی تأیید کنم (معمولاً ۱۵–۱۶/۲۰)؛ ریاضی قوی؛ هزینهٔ درخواست £90؛ ودیعهٔ ۱۰٪ شهریه", "7.0 (Level 2؛ هر بخش ≥ 6.5)", "=9", "Reach", "QS 2027 #9 · High Fliers 2026: پنجمین دانشگاه هدف کارفرمایان بزرگ · لندن گران‌ترین زندگی · با ۱۵.۷۷ مرزی-پایین",
+    "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/computer-science-msc-2026")
+add("انگلستان", "King's College London (Russell Group)", "London-Central", "MSc Advanced Computing / MSc Artificial Intelligence", "SE", "۱ سال", "£40,450 (2026)", ("GBP", 40450, None),
+    "«high 2:1» = ۶۵٪ — جدول رسمی KCL برای ایران: ۱۷/۲۰ (2:1 معمولی = ۱۵/۲۰، First = ۱۸/۲۰) → با ۱۵.۷۷ زیر خط، مگر با سابقهٔ کار قابل توجه", "7.0 (هر بخش ≥ 6.5)", "=31", "Reach", "QS 2027 ≈ 31 · Strand، مرکز لندن · نیاز به ۱۷/۲۰ یعنی «high 2:1» — سابقهٔ کار ۲ ساله ممکن است جبران کند (خود KCL این را می‌گوید)، ولی امیدوار نباشید",
+    "https://www.kcl.ac.uk/study-legacy/postgraduate/apply/entry-requirements/international")
+add("انگلستان", "University of Warwick (Russell Group)", "Coventry", "MSc Computer Science", "SE", "۱ سال", "£37,460 (2026 entry)", ("GBP", 37460, None),
+    "2:1 — جدول رسمی Warwick برای ایران: 1st = ۱۷/۲۰، 2:1 = ۱۵/۲۰، 2:2 = ۱۳/۲۰ → ۱۵.۷۷ ✓ (پذیرش PGT ≈ ۲۲٪، رقابتی)", "7.0 (اکثر PGT؛ بعضی 6.5)", "=69", "Target/Reach", "QS 2027 ≈ 69 · High Fliers 2026: چهارمین دانشگاه هدف کارفرمایان · Coventry ارزان‌تر از لندن · هزینهٔ درخواست £75، ودیعهٔ £2,500 · واقع‌بینانه‌ترین «برند بزرگ» برای معدل شما",
+    "https://warwick.ac.uk/study/international/countryinformation/middleeast/iran/")
+add("انگلستان", "University of Bristol (Russell Group)", "Bristol", "MSc Data Science (برای فارغ‌التحصیل CS/مهندسی؛ MSc Computer Science بریستول تبدیلی است)", "DS", "۱ سال", "£37,900 (2027/28 رسمی — ورودی سپتامبر ۲۰۲۷)", ("GBP", 37900, None),
+    "«strong 2:1 (۶۵٪+)» در CS/مهندسی/علوم عددی؛ صفحهٔ ایرانِ بریستول: کارشناسی ۴ ساله از دانشگاه مورد تأیید با حداقل ۱۵/۲۰ → ۱۵.۷۷ حداقل را رد می‌کند ولی «strong» نیست", "6.5 (Profile E) — چک شود", "=54", "Reach", "QS 2027 ≈ 54 · LEO: میانهٔ Computing پنج سال بعد £70,300 · High Fliers: پنجم (۲۰۲۵) · Think Big Scholarship (رقابتی) · با ۱۵.۷۷ Reach",
+    "https://www.bristol.ac.uk/study/postgraduate/taught/msc-data-science/")
+add("انگلستان", "Durham University (Russell Group)", "Durham", "MSc Advanced Computer Science (و MSc Data Science)", "SE", "۱ سال", "£34,500 (2026 entry)", ("GBP", 34500, None),
+    "2:1 در CS — جدول رسمی Durham برای ایران: 1st ≥ ۱۷/۲۰، 2:1 = ۱۴–۱۶/۲۰، 2:2 = ۱۲–۱۳/۲۰ (دانشگاه باید در فهرست Ecctis باشد) → ۱۵.۷۷ ✓", "6.5 (هر بخش ≥ 6.0)", "=94", "Target", "QS 2027 ≈ 94 · High Fliers 2025: دهم · ارزان‌ترین شهر بین این شش · ارزان‌ترین Russell Group این فهرست بعد از York/Newcastle · شروع سپتامبر ۲۰۲۶ اعلام شده؛ ۲۰۲۷ مشابه",
+    "https://www.durham.ac.uk/study/courses/advanced-computer-science-g5t609/")
 add("سوئیس", "USI – Università della Svizzera italiana", "Lugano", "MSc Informatics (گرایش‌ها: Artificial Intelligence، Software Development، Systems…)", "SE", "۲ سال (120 ECTS)", "CHF 4,000 در ترم برای غیرمقیم سوئیس (CHF 8,000/سال)", ("CHF", 8000, None),
     "کارشناسی CS/مرتبط؛ فارغ‌التحصیل UAS با ۳۰–۶۰ ECTS تکمیلی؛ بررسی موردی", "B2 در ورود (IELTS 5.5) → C1 (7.0) تا فارغ‌التحصیلی", "=456", "Target", "کم‌شرط‌ترین ورود سوئیس؛ Lugano ارزان‌ترین شهر دانشگاهی سوئیس؛ مهلت غیر-EU ۳۰ آوریل ۲۰۲۷؛ زبان شهر ایتالیایی",
     "https://www.usi.ch/en/education/master/informatics")

@@ -15,10 +15,10 @@ HEAD = ["ردیف", "معیار", "آلمان 🇩🇪", "هلند 🇳🇱", "�
 
 ROWS = [
  ["۱", "برنامه‌های هدف واقع‌بینانه (Safe / Target / Reach) — با معدل ≈ ۱۵.۷ از ۲۰ و IELTS ≈ 7",
-  "Stuttgart (اشتوتگارت) – MSc Computer Science (انگلیسی، بدون NC، IELTS 7) → Target\nFAU (Erlangen/Nürnberg) – MSc Artificial Intelligence (انگلیسی، B2) → Target\nTU Darmstadt (دارمشتات) – MSc Computer Science (انگلیسی، IELTS 7) → Target/Reach\nTU Dresden (درسدن) – MSc Computer Science (انگلیسی، IELTS 7، ارزیابی استعداد) → Reach\nSafe: RPTU Kaiserslautern، Passau، Saarland (Saarbrücken)، TU Chemnitz، OVGU Magdeburg",
+  "Stuttgart (اشتوتگارت) – MSc Computer Science (انگلیسی، بدون NC، IELTS 7) → Target\nFAU (Erlangen/Nürnberg) – MSc Artificial Intelligence (انگلیسی، B2؛ ⚠️ از تابستان ۲۰۲۷ شهریهٔ €4,000/ترم برای غیر-EU) → Target\nTU Darmstadt (دارمشتات) – MSc Computer Science (انگلیسی، IELTS 7) → Target/Reach\nTU Dresden (درسدن) – MSc Computer Science (انگلیسی، IELTS 7، ارزیابی استعداد) → Reach\nSafe: RPTU Kaiserslautern، Passau، Saarland (Saarbrücken)، TU Chemnitz، OVGU Magdeburg",
   "Twente (Enschede) – MSc Computer Science (حداقل رسمی برای مدرک ایرانی: ۱۵/۲۰) → Target\nRadboud (Nijmegen) – MSc Computing Science → Target\n(هر دو روی واحدهای ریاضی/الگوریتم/CS نظری در ریزنمرات حساس‌اند)",
   "Linköping (لینشوپینگ) – MSc Computer Science (گزینش بر اساس گروه معدل) → Target\nBTH – MSc Software Engineering 120 واحدی، Karlskrona (≥ ۹۰ واحد CS/SE در کارشناسی) → Safe/Target\nHalmstad (هالمستاد) – MSc Information Technology 120 واحدی → Safe\n⚠️ برنامه ۶۰ واحدی BTH از راه دور/نیمه‌وقت است و برای ویزا کاربرد ندارد",
-  "AAU (Aalborg) – MSc Computer Science (IT) (انگلیسی؛ نه برنامه Computer Science دانمارکی‌زبان) → Target\nSDU (Odense) – MSc Computer Science → Target\n(پذیرش بر اساس داشتن ≥ ۱۰۰ ECTS دروس کامپیوتر)",
+  "AAU (Aalborg) – MSc Computer Science (IT) (انگلیسی؛ نه برنامه Computer Science دانمارکی‌زبان) → Target\nSDU (Odense) – MSc Computer Science → Target\n(AAU رسماً حداقل ۱۵۰ ECTS دروس مرتبط با CS می‌خواهد و از ۲۰۲۷ سابقهٔ کار را هم در رتبه‌بندی حساب می‌کند؛ SDU هم واحدهای CS ریزنمرات را ارزیابی می‌کند)",
   "TU Dublin (Dublin) – MSc Computing (Advanced Software Development) → Safe\nMaynooth (۲۵ km از Dublin) – MSc (CS) Software Engineering، ۱ ساله → Safe/Target\nUL (Limerick) – MSc Software Engineering → Target\n(شرط 2.2 honours ≈ معدل شما OK)",
   "Teesside (Middlesbrough) – MSc Computer Science (2:2، IELTS 6.0) → Safe\nNorthumbria (Newcastle) – MSc Advanced Computer Science (2:2 در رشته کامپیوتری) → Safe\nEssex (Colchester) – MSc Advanced Computer Science (2:2؛ Computer Engineering پذیرفته می‌شود) → Safe/Target\nBrunel (London) – MSc AI / Data Science (2:2) → Safe/Target\nLeicester (لستر) – MSc Advanced Computer Science (2:1؛ سابقه کار مرتبط جبران می‌کند) → Target\nYork (یورک) – MSc Advanced Computer Science (2:2 با پیش‌زمینه قوی، IELTS 6.5) → Reach\nفقط انگلستان — Strathclyde (اسکاتلند) و Swansea (ولز) حذف شدند",
   "سایت برنامه‌ها؛ utwente.nl (Iran 15/20)؛ bth.se؛ «۷۵٪ قبولی» جدول اول حذف شد — چنین آماری وجود ندارد.\n➜ فهرست کامل ≈۱۰۰ برنامه در ۸ حوزه (AI، امنیت، داده، نرم‌افزار، ابری، نهفته/رباتیک، HCI، بازی) با شهریه و شرط ورود: شیت «برنامه‌ها»؛ مقایسهٔ بازار کار حوزه‌ها: شیت «حوزه‌ها و بازار کار»"],
@@ -39,16 +39,16 @@ ROWS = [
   "سایت برنامه‌ها"],
 
  ["۴", "شهریه سالانه رسمی، بدون بورس (سال تحصیلی 2026/27، ارز محلی)",
-  "€0 + سهم ترمی €150–400 (≈ €300–800 در سال)\nStuttgart: €1,500 در ترم = €3,000 در سال (بادن-وورتمبرگ)",
-  "Twente: €21,700\nRadboud: ≈ €19,700 (2025/26) → 2026/27 ≈ €20,500",
+  "€0 + سهم ترمی €150–400 (≈ €300–800 در سال)\nStuttgart: €1,500 در ترم = €3,000 در سال (بادن-وورتمبرگ)\n⚠️ FAU: از ترم تابستان ۲۰۲۷ برای ورودی‌های جدید غیر-EU €4,000 در ترم (AI/CS) = €8,000 در سال (BayHIG §13)؛ Passau فعلاً بدون شهریه",
+  "Twente: €21,700\nRadboud: €19,714 (2026/27، رسمی)",
   "Linköping: SEK 166,000\nHalmstad: ≈ SEK 151,000\nBTH: SEK 140,000 (70,000 در ترم)",
-  "AAU: €14,910 (7,455 در ترم)\nSDU: €17,300 (نرخ رسمی برای ورودی سپتامبر ۲۰۲۶ به بعد — رقم قدیمی €13,900 دیگر معتبر نیست)",
+  "AAU: ≈ €14,910 (2025/26: 7,455 در ترم؛ نرخ ۲۰۲۶ هنوز روی سایت AAU نیست)\nSDU: €17,300 (نرخ رسمی برای ورودی سپتامبر ۲۰۲۶ به بعد — رقم قدیمی €13,900 دیگر معتبر نیست)",
   "TU Dublin: ≈ €15,000–15,500\nMaynooth: €18,000 (2025/26) → ≈ €18,500\nUL: €20,800",
   "Teesside: £17,000\nNorthumbria: £21,500\nLeicester: £24,250\nEssex: £24,675\nBrunel: £24,795\nYork: £32,900 (Newcastle ≈ £31,700)\nکف قیمت انگلستان: Chester £15,500 (بدون رتبه). بورس‌ها (مثلاً Brunel تا £6,000) جدا حساب شوند، تضمینی نیستند",
   "utwente.nl؛ liu.se؛ bth.se؛ sdu.dk؛ studyindenmark.dk؛ ul.ie؛ maynoothuniversity.ie؛ brunel.ac.uk؛ tees.ac.uk؛ northumbria.ac.uk؛ le.ac.uk؛ essex.ac.uk؛ york.ac.uk"],
 
  ["۵", "شهریه سالانه به دلار",
-  "$350–900 (Stuttgart ≈ $3,400)", "$22,500–24,700", "$14,100–16,800",
+  "$350–900 (Stuttgart ≈ $3,400؛ FAU از ۲۰۲۷ ≈ $9,300)", "$22,500–24,700", "$14,100–16,800",
   "$17,000–19,700", "$17,100–23,700", "$22,500–43,600 (Teesside $22,500 · Northumbria $28,500 · Leicester/Essex/Brunel ≈ $32,100–32,900 · York $43,600)",
   FX],
 
@@ -62,7 +62,7 @@ ROWS = [
   "make-it-in-germany.com؛ ind.nl؛ migrationsverket.se؛ nyidanmark.dk؛ irishimmigration.ie؛ gov.uk (HC 584)"],
 
  ["۷", "هزینه سال اول = شهریه + ۱۲ ماه زندگی (دلار)",
-  "$13,000–18,000 (Stuttgart تا $20,500)",
+  "$13,000–18,000 (Stuttgart تا $20,500؛ FAU از ۲۰۲۷ تا ≈ $26,000)",
   "$37,500–45,000",
   "$27,000–32,500",
   "$31,500–38,000",
@@ -71,7 +71,7 @@ ROWS = [
   "محاسبه از ردیف‌های ۴ و ۶؛ بدون بلیت، ویزا، بیمه، ودیعه (۱۰–۱۵٪ اضافه کنید)"],
 
  ["۸", "هزینه کل تا فارغ‌التحصیلی (شهریه × سال‌ها + زندگی) — مهم‌ترین عدد مالی",
-  "$27,000–36,000 (۲ سال؛ Stuttgart تا $41,000) — ارزان‌ترین",
+  "$27,000–36,000 (۲ سال؛ Stuttgart تا $41,000؛ FAU از ۲۰۲۷ تا ≈ $53,000) — ارزان‌ترین",
   "$75,000–90,000 (۲ سال) — گران‌ترین",
   "$54,000–65,000 (۲ سال)",
   "$63,000–76,000 (۲ سال)",
@@ -255,7 +255,7 @@ SUMMARY = [
  ["رتبه‌بندی هزینه کل تا فارغ‌التحصیلی", "آلمان $27–36k  <  ایرلند $32–48k  <  انگلستان $38–65k  <  سوئد $54–65k  <  دانمارک $63–76k  <  هلند $75–90k"],
  ["فقط با انگلیسی (تحصیل + کار + اداری + اقامت)", "ایرلند و انگلستان کامل؛ هلند و سوئد برای زندگی/کار خوب ولی برای اقامت دائم/تابعیت زبان می‌خواهند (هلند B1 در راه، سوئد آزمون تابعیت)؛ دانمارک و آلمان بدون زبان محلی هم بازار کار و هم PR محدود."],
  ["بازار کار و حقوق جونیور", "حقوق ناخالص: دانمارک > آلمان > هلند ≈ سوئد > ایرلند > انگلستان. دسترسی برای جونیورِ فقط‌انگلیسی: ایرلند ≈ هلند > آلمان > سوئد ≈ دانمارک ≈ انگلستان."],
- ["نتیجه با وزن برابر برای ۳ معیار", "ایرلند ۲۵ › آلمان ۲۲ › سوئد ۱۹ = انگلستان ۱۹ › هلند ۱۸ › دانمارک ۱۶.  پیشنهاد: اپلای هم‌زمان به ۲–۳ برنامه ایرلند (UL، Maynooth، TU Dublin) + ۲ برنامه آلمان (Stuttgart، FAU یا یک گزینه Safe)؛ تصمیم نهایی با پذیرش/بورس و وضعیت سفارت‌ها در ۲۰۲۸."],
+ ["نتیجه با وزن برابر برای ۳ معیار", "ایرلند ۲۵ › آلمان ۲۲ › سوئد ۱۹ = انگلستان ۱۹ › هلند ۱۸ › دانمارک ۱۶.  پیشنهاد: اپلای هم‌زمان به ۲–۳ برنامه ایرلند (UL، Maynooth، TU Dublin) + ۲ برنامه آلمان (Stuttgart + یک گزینه Safe مثل Passau/Saarland؛ FAU فقط اگر شهریهٔ جدید €8,000/سال را می‌پذیرید)؛ تصمیم نهایی با پذیرش/بورس و وضعیت سفارت‌ها در ۲۰۲۸."],
  ["ریسک شماره یک", "دسترسی به سفارت‌ها از داخل ایران (ردیف ۲۳): در سپتامبر ۲۰۲۶ هیچ‌کدام از ۶ کشور خدمات عادی ویزای دانشجویی در تهران ندارند. از الان هزینه «برنامه B» (اقدام از ترکیه/ارمنستان/امارات) را در بودجه ببینید."],
  ["برنامه زمانی ورودی سپتامبر ۲۰۲۸", "تا بهار ۲۰۲۷: IELTS 7.0 (هر بخش ≥ 6.5) · تابستان ۲۰۲۷: ریزنمرات رسمی + تأییدیه‌ها + VPD uni-assist · پاییز ۲۰۲۷ تا زمستان ۲۰۲۸: اپلای (ایرلند rolling از اکتبر؛ سوئد ۱۵ ژانویه؛ هلند تا ۱ می؛ آلمان ۱۵ ژانویه–۱۵ ژوئیه؛ انگلستان rolling) · بهار ۲۰۲۸: شهریه/تمکن → خوابگاه → ویزا یا برنامه B."],
  ["تغییرات اصلی نسبت به جدول اول", "• هزینه کل دوره اضافه شد (هلند از «نیاز به تأمین سال دوم» به گران‌ترین گزینه تبدیل شد)\n• فقط انگلستان (به خواست شما): Strathclyde و Swansea حذف شدند؛ گزینه‌ها Teesside £17,000 · Northumbria £21,500 · Leicester £24,250 · Essex £24,675 · Brunel £24,795 · York £32,900؛ Graduate visa ۱۸ ماه؛ کف اسپانسری £54,700 / £38,290؛ طرح PR ۱۰ ساله؛ عوارض £925 از ۲۰۲۸ شامل همهٔ گزینه‌ها\n• کف حقوق ۲۰۲۶ همه کشورها به‌روز شد (آلمان €50,700/€45,934؛ هلند €3,122/ماه؛ سوئد SEK 34,470؛ ایرلند €40,904)\n• ایرلند: ۲ سال CSEP = Stamp 4 نه PR؛ تمکن €10,000\n• سوئد: کار دانشجویی ۱۵ ساعت/هفته (ژوئن ۲۰۲۶)؛ شهروندی ۸ سال؛ «BTH یک‌ساله» حذف شد؛ خوابگاه فقط LiU\n• QS 2027؛ شهریه‌های واقعی 2026/27؛ «۷۵٪ قبولی» حذف شد\n• «۱۰۰٪ انگلیسی» برای هلند/سوئد/دانمارک تعدیل شد؛ دانمارک PD2/PD3 تفکیک شد\n• ردیف ویزا برای وضعیت ۲۰۲۶ بازنویسی شد؛ ردیف‌های IELTS، تمکن مالی، پس‌انداز، شهروندی و امتیاز اضافه شد"],
@@ -280,7 +280,7 @@ SOURCES = [
  ("هلند – Twente شهریه 2026/27 €21,700", "https://www.utwente.nl/en/education/master/programmes/computer-science/finance/"),
  ("هلند – Twente حداقل معدل برای مدرک ایرانی (۱۵/۲۰)", "https://www.utwente.nl/en/education/master/programmes/european-studies/admission/international/"),
  ("هلند – Twente QS 2027 = 223", "https://www.utwente.nl/en/about-us/impact-ambitions/rankings/"),
- ("هلند – Radboud Computing Science شهریه", "https://www.mastersportal.com/studies/8984/computing-science.html"),
+ ("هلند – Radboud شهریهٔ رسمی 2026/27 غیر-EEA €19,714 (Data Science and AI؛ دانشکدهٔ علوم)", "https://www.ru.nl/en/education/masters/data-science-and-ai/tuition"),
  ("هلند – MVV در ایران (سفارت در باکو)", "https://www.netherlandsworldwide.nl/visa-the-netherlands/mvv-long-stay/apply-iran"),
  ("هلند – B1 برای PR/تابعیت (تصمیم کابینه ۲۰۲۶)", "https://thedutchdaily.nl/dutch-citizenship-b1-language-requirement-confirmed-2026/"),
  ("سوئد – قوانین جدید اقامت تحصیلی از ۱۱ ژوئن ۲۰۲۶ (۱۵ ساعت/هفته)", "https://www.migrationsverket.se/nyheter/news-archive/2026-05-25-new-rules-for-residence-permits-for-studies-in-higher-education.html"),
@@ -363,10 +363,10 @@ SOURCES = [
  ("هلند – Utrecht Game & Media Technology 2026/27: €25,306", "https://www.uu.nl/en/masters/game-and-media-technology"),
  ("هلند – QS 2027 فهرست دانشگاه‌های هلند", "https://dub.uu.nl/en/news/dutch-universities-fall-global-qs-rankings"),
  ("سوئد – Gothenburg Game Design & Technology: SEK 290,000 کل", "https://www.gu.se/en/study-gothenburg/game-design-technology-masters-programme-n2gdt"),
- ("سوئد – KTH Machine Learning: SEK 190,000", "https://www.kth.se/en/studies/master/machine-learning"),
+ ("سوئد – KTH Machine Learning: ≈ SEK 180,000–190,000 (کل دوره 360k طبق راهنمای ۲۰۲۶؛ kth.se رقم را فقط در سامانه نشان می‌دهد)", "https://www.kth.se/en/studies/master/machine-learning"),
  ("سوئد – Umeå AI: SEK 152,300", "https://www.umu.se/en/education/master/masters-programme-in-artificial-intelligence/"),
  ("سوئد – QS 2027 فهرست دانشگاه‌های سوئد", "https://www.study.eu/best-universities/sweden"),
- ("دانمارک – ITU شهریه €6,700 در ترم (Games / CS / Data Science)", "https://studyindenmark.dk/portal/it-university-of-copenhagen-itu/kobenhavn/games"),
+ ("دانمارک – ITU شهریهٔ رسمی ورودی ۲۰۲۶: €8,250 در ترم = €16,500 در سال (رقم قدیمی €6,700 منسوخ)", "https://en.itu.dk/Programmes/MSc-Programmes/Applying-to-a-MSc-programme/Non-EU-EOES"),
  ("دانمارک – AAU Cyber Security / Medialogy €7,455 در ترم", "https://studyindenmark.dk/portal/aalborg-university-aau/copenhagen/cyber-security-msc-in-engineering"),
  ("دانمارک – DTU €15,000 (Human-Centered AI / Autonomous Systems)", "https://www.dtu.dk/english/education/graduate/msc-programmes/autonomous-systems/prerequisites"),
  ("دانمارک – Aarhus CS €17,300", "https://masters.au.dk/computerscience"),
@@ -378,6 +378,14 @@ SOURCES = [
  ("انگلستان – York MSc Human-Centred Interactive Technologies £32,900", "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-human-centred-interactive-technologies/"),
  ("انگلستان – Lancaster MSc Cyber Security £30,000", "https://www.lancaster.ac.uk/study/postgraduate/postgraduate-courses/cyber-security-msc/2026/"),
  ("انگلستان – NTU QS 2027 =639", "https://collegedunia.com/uk/university/862-nottingham-trent-university-nottingham/ranking"),
+ ("آلمان – FAU: شهریهٔ غیر-EU از ترم تابستان ۲۰۲۷ (AI/CS €4,000، Autonomy Tech €2,000 در ترم؛ BayHIG §13)", "https://www.fau.eu/studying/international-students/application-and-enrollment-for-international-applicants/tuition-fees-for-students-from-non-eu-states/"),
+ ("آلمان – Passau: «فعلاً» بدون شهریه برای غیر-EU (اعلام رسمی)", "https://www.uni-passau.de/en/study/news/news/no-tuition-fees-for-international-students-at-the-university-of-passau"),
+ ("دانمارک – Aarhus نرخ رسمی 2026/27: Computer Science / Data Science / Computer Engineering €17,300", "https://masters.au.dk/tuitionfees/current-tuition-fee-rates"),
+ ("دانمارک – AAU Computer Science (IT): شرط رسمی ≥ ۱۵۰ ECTS دروس CS؛ معیار رتبه‌بندی ۲۰۲۷ شامل سابقهٔ کار", "https://www.en.aau.dk/education/master/computer-science-it"),
+ ("سوئد – Chalmers شهریهٔ استاندارد 2026/27 ≈ SEK 175,000 (collegedunia به نقل از صفحهٔ شهریهٔ Chalmers)", "https://collegedunia.com/sweden/university/769-chalmers-university-of-technology-gothenburg/programs?stream_id=48&degree_type=Master"),
+ ("انگلستان – Surrey MSc Cyber Security ورودی ۲۰۲۷: £25,900 (فوریه) / £26,900 (سپتامبر)", "https://www.surrey.ac.uk/postgraduate/cyber-security-msc"),
+ ("انگلستان – Newcastle MSc Computer Game Engineering £32,300، شرط 2:2 (QS TopUniversities)", "https://www.topuniversities.com/universities/newcastle-university/postgrad/msc-computer-game-engineering"),
+ ("هلند – TU/e شهریهٔ رسمی 2026/27 €21,700 (2027/28: €22,400)", "https://www.tue.nl/en/education/become-a-tue-student/tuition-fees"),
 ]
 
 # ---------------------------------------------------------------- styling
@@ -460,6 +468,7 @@ notes4 = [
     "شهریهٔ دلاری با نرخ " + FX + " و گرد شده به $100. برای ورودی ۲۰۲۸ شهریه‌ها را ۵–۱۰٪ در سال بالاتر فرض کنید. آلمان: عدد فقط سهم ترم (Semesterbeitrag) است که بلیت حمل‌ونقل را هم شامل می‌شود.",
     "امتیاز بازار کار (۱–۵) ارزیابی من بر پایهٔ منابع شیت «حوزه‌ها و بازار کار» است، نه آمار رسمی؛ برای هر برنامه فقط حوزه را نشان می‌دهد، نه کیفیت آن دانشگاه.",
     "ستون «هزینهٔ زندگی شهر» برآورد تقریبی هزینهٔ ماهانهٔ دانشجو با اجارهٔ اتاق در همان شهر است (سازگار با ردیف ۶ جدول اصلی)؛ برچسب‌ها: ارزان / متوسط / گران / خیلی گران. برای مقایسهٔ کشورها همچنان ردیف‌های ۶–۸ جدول اصلی معیار است.",
+    "بازبینی صحت اعداد (۲۷ سپتامبر ۲۰۲۶): ≈۷۰٪ شهریه‌ها مستقیماً از صفحهٔ رسمی 2026/27 است؛ ردیف‌های «≈» از منبع ثانویه یا سال قبل‌اند. اصلاح‌های این بازبینی: FAU از تابستان ۲۰۲۷ شهریه می‌گیرد (AI/CS €4,000/ترم)؛ ITU €16,500 (نه €13,400)؛ Radboud €19,714 رسمی؛ Chalmers ≈ SEK 175k (نه 160k)؛ KTH ≈ 180–190k؛ AAU شرط ≥ ۱۵۰ ECTS؛ Surrey Cyber ورودی ۲۰۲۷؛ Newcastle Games 2:2؛ Sheffield AI ≈ £32.9–34.3k. رتبه‌بندی Safe/Target/Reach، امتیاز بازار و ردهٔ هزینهٔ شهر ارزیابی‌اند، نه دادهٔ رسمی.",
     "حذف‌شده‌ها: Essex MSc Computer Games (برای 2025/26 و 2026/27 تعلیق شده)، Hull AI & Data Science (سه رقم متناقض شهریه)، UCD/TCD (2:1 و ≈ €30k → Reach، بررسی نشد)، KU Copenhagen (شهریه تأیید نشد)، NCI/DBS ایرلند (کالج خصوصی، اعتبار کمتر).",
 ]
 for k, t in enumerate(notes4):

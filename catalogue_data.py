@@ -62,7 +62,7 @@ FIELD_ROWS = [
     ["علم داده / تحلیل داده", "۳ — جونیور اشباع",
      "مساوی CS در سطح جونیور؛ بالاتر بعد از ۲–۳ سال",
      "بسیار خوب",
-     "متوسط: مدرک‌های ارزان و Safe زیاد است (Maynooth €17k، Skövde، Brunel، ITU) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
+     "متوسط: مدرک‌های ارزان و Safe زیاد است (Maynooth €17k، Skövde، Brunel، ITU €16.5k) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
      "تعداد فارغ‌التحصیل خیلی بیشتر از جای خالی جونیور؛ آگهی جونیور Data Engineering هم ↓۶۷٪؛ مسیر رایج: تحلیلگر/بک‌اند → مهندس داده",
      "research.com 2026؛ careery.pro 2026؛ datadriven.io 2026"],
     ["سیستم‌های نهفته / رباتیک / خودران", "۴ در آلمان/سوئد؛ ۳ در بقیه",
@@ -223,10 +223,10 @@ add("انگلستان", "Goldsmiths, University of London", "London-NewCross", "
     "مدرک second-class در رشتهٔ برنامه‌نویسی", "6.5 (6.0)", "≈ 800–1000", "Safe/Target", "پورتفولیوی Unity/C# شما اینجا مستقیماً به کار می‌آید؛ بازار بازی ۲۰۲۲–۲۵ ضعیف",
     "https://www.gold.ac.uk/pg/msc-computer-games-programming/")
 add("انگلستان", "University of Surrey", "Guildford", "MSc Artificial Intelligence", "AI", "۱ سال", "≈ £26,900–27,500", ("GBP", 26900, 27500),
-    "2:2", "6.5", "=246", "Target", "Guildford قطب بازی‌سازی و امنیت بریتانیا (نزدیک لندن)؛ رقم 2025/26 + برآورد 2026/27",
+    "2:2", "6.5", "=246", "Target", "Guildford قطب بازی‌سازی و امنیت بریتانیا (نزدیک لندن)؛ رقم AI برآورد است (Cyber همین دانشگاه: £26,900 برای سپتامبر ۲۰۲۷ رسمی)",
     "https://www.surrey.ac.uk/postgraduate/artificial-intelligence-msc")
-add("انگلستان", "University of Surrey", "Guildford", "MSc Cyber Security (NCSC)", "CY", "۱ سال", "£25,900", ("GBP", 25900, None),
-    "2:2", "6.5 (W 6.0)", "=246", "Target", "",
+add("انگلستان", "University of Surrey", "Guildford", "MSc Cyber Security (NCSC)", "CY", "۱ سال", "£25,900 (ورودی فوریه ۲۰۲۷) / £26,900 (سپتامبر ۲۰۲۷)", ("GBP", 25900, 26900),
+    "2:2", "6.5 (W 6.0)", "=246", "Target", "صفحهٔ رسمی الان ورودی ۲۰۲۷ را نشان می‌دهد (رقم رسمی)؛ برای ۲۰۲۸ ≈ £27,900 انتظار داشته باشید",
     "https://www.surrey.ac.uk/postgraduate/cyber-security-msc")
 add("انگلستان", "University of York", "York", "MSc Advanced Computer Science", "SE", "۱ سال", "£32,900", ("GBP", 32900, None),
     "2:2 با پیش‌زمینهٔ قوی", "6.5", "=158", "Target/Reach", "Russell Group؛ گران",
@@ -234,14 +234,14 @@ add("انگلستان", "University of York", "York", "MSc Advanced Computer Sci
 add("انگلستان", "University of York", "York", "MSc Human-Centred Interactive Technologies", "HCI", "۱ سال", "£32,900", ("GBP", 32900, None),
     "2:2", "6.5", "=158", "Target", "بهترین برنامهٔ HCI انگلستان برای معدل شما؛ ولی بازار UX ضعیف",
     "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-human-centred-interactive-technologies/")
-add("انگلستان", "Newcastle University (Russell Group)", "Newcastle", "MSc Computer Game Engineering", "GD", "۱ سال", "£32,300", ("GBP", 32300, None),
-    "2:1 (2:2 با سابقه بررسی می‌شود)", "6.5", "149", "Reach", "معتبرترین ارشد مهندسی بازی انگلستان؛ گران",
+add("انگلستان", "Newcastle University (Russell Group)", "Newcastle", "MSc Computer Game Engineering", "GD", "۱ سال", "£32,300 (2026)", ("GBP", 32300, None),
+    "2:2 در رشتهٔ کامپیوتری/ریاضی‌محور (طبق QS TopUniversities و IDP — صفحهٔ رسمی را چک کنید)", "6.5", "149", "Target/Reach", "معتبرترین ارشد مهندسی بازی انگلستان؛ گران",
     "https://www.ncl.ac.uk/postgraduate/")
 add("انگلستان", "Lancaster University", "Lancaster", "MSc Cyber Security", "CY", "۱ سال", "£30,000 (بورس خودکار £4,500 با 2:1)", ("GBP", 30000, None),
     "2:1", "6.5", "164", "Reach", "NCSC-certified؛ شرط 2:1 برای معدل شما سخت است",
     "https://www.lancaster.ac.uk/study/postgraduate/postgraduate-courses/cyber-security-msc/2026/")
-add("انگلستان", "University of Sheffield (Russell Group)", "Sheffield", "MSc Artificial Intelligence", "AI", "۱ سال", "£34,340", ("GBP", 34340, None),
-    "2:1", "6.5", "82", "Reach", "رتبهٔ بالا، شهریه و شرط ورود بالا",
+add("انگلستان", "University of Sheffield (Russell Group)", "Sheffield", "MSc Artificial Intelligence", "AI", "۱ سال", "≈ £32,900–34,340 (2026؛ MSc AI for Engineering همین دانشگاه رسماً £32,905)", ("GBP", 32900, 34340),
+    "2:1", "6.5", "82", "Reach", "رتبهٔ بالا، شهریه و شرط ورود بالا؛ رقم دقیق MSc AI را از صفحهٔ رسمی بگیرید",
     "https://www.sheffield.ac.uk/postgraduate/taught/courses")
 
 # ===== ایرلند (EUR) =====
@@ -275,7 +275,7 @@ add("ایرلند", "Munster Technological University (MTU)", "Cork", "MSc Artif
 add("ایرلند", "Dublin City University (DCU)", "Dublin", "MSc in Computing — Majors: AI with NLP / Data Analytics / Secure Software Engineering / Cloud Computing", "MULTI", "۱ سال", "€25,000 (−€5,000 بورس دانشکده برای غیر-EU ⇒ €20,000)", ("EUR", 20000, 25000),
     "2:1 در CS/Computing", "6.5", "408", "Target/Reach", "شرط 2:1؛ ورودی ژانویه ۲۰۲۷ هم دارد",
     "https://www.dcu.ie/courses/postgraduate/school-computing/msc-computing-major-options")
-add("ایرلند", "University of Galway", "Galway", "MSc Computer Science (Artificial Intelligence)", "AI", "۱ سال", "€28,000", ("EUR", 28000, None),
+add("ایرلند", "University of Galway", "Galway", "MSc Computer Science (Artificial Intelligence)", "AI", "۱ سال", "≈ €28,000 (IDP/collegedunia 2025–26؛ صفحهٔ رسمی چک شود)", ("EUR", 28000, None),
     "First Class (یا 2:1 خوب با تأیید مدیر برنامه)", "6.5", "275", "Reach", "شرط ورود بالا؛ گران",
     "http://cs.universityofgalway.ie/")
 add("ایرلند", "University College Cork (UCC)", "Cork", "MSc Data Science and Artificial Intelligence", "DS", "۱ سال", "€28,000", ("EUR", 28000, None),
@@ -289,11 +289,11 @@ add("آلمان", "Universität Stuttgart", "Stuttgart", "M.Sc. Computer Science
 add("آلمان", "Universität Stuttgart", "Stuttgart", "M.Sc. Information Technology (INFOTECH)", "EMB", "۲ سال", "€1,500 در ترم + سهم ترم ≈ €3,400/سال", ("EUR", 3400, None),
     "کارشناسی EE/CS/Computer Engineering؛ گزینش", "7.0 (C1)", "318", "Target", "گرایش‌های Embedded/Communication؛ Bosch و Daimler همان شهر",
     "https://www.mygermanuniversity.com/master/information-technology-infotech/678")
-add("آلمان", "FAU Erlangen-Nürnberg", "Erlangen", "M.Sc. Artificial Intelligence", "AI", "۲ سال", "€0 + ≈ €130 سهم ترم (≈ €260/سال)", ("EUR", 260, None),
-    "کارشناسی CS/مرتبط؛ بررسی ریزنمرات", "B2 (IELTS 6.0)", "218", "Target", "Siemens/adidas/Schaeffler در منطقه",
+add("آلمان", "FAU Erlangen-Nürnberg", "Erlangen", "M.Sc. Artificial Intelligence", "AI", "۲ سال", "€4,000 در ترم برای غیر-EU از ترم تابستان ۲۰۲۷ (€8,000/سال) + €82 سهم ترم", ("EUR", 8164, None),
+    "کارشناسی CS/مرتبط؛ بررسی ریزنمرات", "B2 (IELTS 6.0)", "218", "Target", "⚠️ FAU طبق BayHIG §13 از تابستان ۲۰۲۷ برای ورودی‌های جدید غیر-EU شهریه می‌گیرد (AI و CS: €4,000/ترم) — ورودی ۲۰۲۸ مشمول است؛ دیگر «رایگان» نیست. Siemens/adidas/Schaeffler در منطقه",
     "https://www.fau.eu/degree-program/artificial-intelligence-m-sc/")
-add("آلمان", "FAU Erlangen-Nürnberg", "Erlangen", "M.Sc. Autonomy Technologies", "EMB", "۲ سال", "€0 + ≈ €130 سهم ترم", ("EUR", 260, None),
-    "کارشناسی مرتبط؛ آلمانی لازم نیست", "B2 (IELTS 6.0)", "218", "Target", "رباتیک/خودران؛ صفحهٔ رسمی سپتامبر ۲۰۲۶",
+add("آلمان", "FAU Erlangen-Nürnberg", "Erlangen", "M.Sc. Autonomy Technologies", "EMB", "۲ سال", "€2,000 در ترم از تابستان ۲۰۲۷ (€4,000/سال) + €82 سهم ترم", ("EUR", 4164, None),
+    "کارشناسی مرتبط؛ آلمانی لازم نیست", "B2 (IELTS 6.0)", "218", "Target", "رباتیک/خودران؛ ⚠️ مشمول شهریهٔ جدید FAU از ۲۰۲۷ (صفحهٔ رسمی شهریه، ۲۰۲۶)",
     "https://www.fau.eu/degree-program/autonomy-technologies-m-sc/")
 add("آلمان", "TU Darmstadt", "Darmstadt", "M.Sc. Distributed Software Systems (انگلیسی)", "CLOUD", "۲ سال", "€0 + ≈ €300 سهم ترم (≈ €600/سال)", ("EUR", 600, None),
     "کارشناسی CS با پیش‌نیازهای مشخص", "≈ 7.0 (C1) — چک شود", "250", "Target/Reach", "منطقهٔ Rhein-Main (SAP، Deutsche Bank، Software AG)",
@@ -311,7 +311,7 @@ add("آلمان", "TU Chemnitz", "Chemnitz", "M.Sc. Automotive Software Engineer
     "کارشناسی CS/مرتبط؛ بدون محدودیت پذیرش", "B2 (IELTS 5.5)", "—", "Safe", "آسان‌ترین ورود؛ شهر ارزان؛ ولی صنعت خودرو ۲۰۲۴–۲۵ ضعیف و آلمانی در کارفرمایان محلی",
     "https://www.mygermanuniversity.com/master/automotive-software-engineering/91")
 add("آلمان", "Universität Passau", "Passau", "M.Sc. Artificial Intelligence Engineering", "AI", "۲ سال", "€0 + ≈ €100–200 سهم ترم", ("EUR", 300, None),
-    "معدل آلمانی ≤ 2.7 (معدل شما ≈ 2.3 ✓)؛ ۳۵ ECTS ریاضی + ۴۰ ECTS CS", "B2؛ + آلمانی A1 تا پایان سال اول (کلاس رایگان)", "—", "Safe", "کاملاً انگلیسی؛ شهر کوچک و ارزان",
+    "معدل آلمانی ≤ 2.7 (معدل شما ≈ 2.3 ✓)؛ ۳۵ ECTS ریاضی + ۴۰ ECTS CS", "B2؛ + آلمانی A1 تا پایان سال اول (کلاس رایگان)", "—", "Safe", "کاملاً انگلیسی؛ شهر کوچک و ارزان؛ Passau رسماً اعلام کرده «فعلاً» شهریهٔ غیر-EU نمی‌گیرد (برخلاف FAU/TUM) ولی طبق قانون باواریا می‌تواند — قبل از اپلای چک کنید",
     "https://www.uni-passau.de/en/msc-ai-eng")
 add("آلمان", "Otto-von-Guericke-Universität (OVGU)", "Magdeburg", "M.Sc. Data and Knowledge Engineering", "DS", "۲ سال", "€0 + ≈ €311 سهم ترم", ("EUR", 620, None),
     "معدل آلمانی ≤ 2.3 (معدل شما ≈ 2.27 — دقیقاً مرزی)؛ کارشناسی CS", "6.0–7.0 (منابع متناقض؛ رسمی را چک کنید)", "—", "Safe/Target", "",
@@ -345,10 +345,10 @@ add("هلند", "University of Twente (UT)", "Enschede", "MSc Embedded Systems",
 add("هلند", "University of Twente (UT)", "Enschede", "MSc Interaction Technology", "HCI", "۲ سال", "€21,700", ("EUR", 21700, None),
     "کارشناسی CS/مرتبط", "6.5", "223", "Target", "HCI فنی (نه طراحی صرف)",
     "https://www.utwente.nl/en/education/master/programmes/interaction-technology/")
-add("هلند", "Radboud University", "Nijmegen", "MSc Computing Science (گرایش‌ها: Cyber Security، Data Science، Software Science)", "SE", "۲ سال", "€19,714 (2025/26) → ≈ €20,500", ("EUR", 20500, None),
+add("هلند", "Radboud University", "Nijmegen", "MSc Computing Science (گرایش‌ها: Cyber Security، Data Science، Software Science)", "SE", "۲ سال", "€19,714 (2026/27 — نرخ رسمی دانشکدهٔ علوم)", ("EUR", 19714, None),
     "کارشناسی CS با ریاضی/الگوریتم کافی", "6.5", "283", "Target", "گزینهٔ Target جدول اصلی",
     "https://www.ru.nl/en/education/masters/computing-science")
-add("هلند", "Radboud University", "Nijmegen", "MSc Artificial Intelligence", "AI", "۲ سال", "€19,714 (2025/26) → ≈ €20,500", ("EUR", 20500, None),
+add("هلند", "Radboud University", "Nijmegen", "MSc Artificial Intelligence", "AI", "۲ سال", "€19,714 (2026/27 — نرخ رسمی دانشکدهٔ علوم)", ("EUR", 19714, None),
     "کارشناسی CS/AI/مرتبط", "6.5", "283", "Target", "AI شناختی (Donders Institute)",
     "https://www.ru.nl/en/education/masters/artificial-intelligence")
 add("هلند", "Leiden University", "Leiden", "MSc Computer Science (گرایش‌ها: Artificial Intelligence، Data Science، ...)", "MULTI", "۲ سال", "€22,500", ("EUR", 22500, None),
@@ -398,22 +398,22 @@ add("سوئد", "Halmstad University", "Halmstad", "MSc Embedded and Intelligent
 add("سوئد", "Blekinge Institute of Technology (BTH)", "Karlskrona", "MSc Software Engineering (120 cr)", "SE", "۲ سال", "SEK 140,000", ("SEK", 140000, None),
     "≥ ۹۰ واحد CS/SE", "6.5", "—", "Safe/Target", "Ericsson و Telenor در Karlskrona؛ ⚠️ نسخهٔ ۶۰ واحدی از راه دور است",
     "https://www.bth.se/eng/programmes/")
-add("سوئد", "KTH Royal Institute of Technology", "Stockholm", "MSc Machine Learning", "AI", "۲ سال", "SEK 190,000", ("SEK", 190000, None),
-    "کارشناسی CS/ریاضی قوی؛ بسیار رقابتی", "6.5", "82", "Reach", "Stockholm گران (اتاق SEK 7–10k)",
+add("سوئد", "KTH Royal Institute of Technology", "Stockholm", "MSc Machine Learning", "AI", "۲ سال", "≈ SEK 180,000–190,000 (کل دوره ≈ 360k–380k)", ("SEK", 180000, 190000),
+    "کارشناسی CS/ریاضی قوی؛ بسیار رقابتی", "6.5", "82", "Reach", "Stockholm گران (اتاق SEK 7–10k)؛ رقم دقیق روی kth.se فقط در سامانهٔ اپلای نمایش داده می‌شود",
     "https://www.kth.se/en/studies/master/machine-learning")
-add("سوئد", "KTH Royal Institute of Technology", "Stockholm", "MSc Cybersecurity", "CY", "۲ سال", "SEK 190,000", ("SEK", 190000, None),
+add("سوئد", "KTH Royal Institute of Technology", "Stockholm", "MSc Cybersecurity", "CY", "۲ سال", "≈ SEK 180,000–190,000", ("SEK", 180000, 190000),
     "کارشناسی CS", "6.5", "82", "Reach", "",
     "https://www.kth.se/en/studies/master/cybersecurity")
 add("سوئد", "KTH Royal Institute of Technology", "Stockholm-Kista", "MSc Software Engineering of Distributed Systems", "CLOUD", "۲ سال", "SEK 180,000–190,000", ("SEK", 180000, 190000),
     "کارشناسی CS", "6.5", "82", "Target/Reach", "Kista = قطب ICT سوئد (Ericsson)",
     "https://www.kth.se/en/studies/master/software-engineering-of-distributed-systems")
-add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Data Science and AI", "DS", "۲ سال", "SEK 160,000", ("SEK", 160000, None),
-    "کارشناسی CS/ریاضی", "6.5", "174", "Target/Reach", "Volvo، Ericsson، Zenseact؛ مهلت ۱۵ ژانویه",
+add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Data Science and AI", "DS", "۲ سال", "≈ SEK 175,000 (2026/27؛ 2025/26: 160,000)", ("SEK", 175000, None),
+    "کارشناسی CS/ریاضی", "6.5", "174", "Target/Reach", "Volvo، Ericsson، Zenseact؛ مهلت ۱۵ ژانویه؛ ⚠️ طبق صفحهٔ شهریهٔ Chalmers دانشگاه‌های سوئد فعلاً نمی‌توانند از ایران پول دریافت کنند (تحریم بانکی) — پرداخت از کشور ثالث",
     "https://www.chalmers.se/en/education/find-masters-programme/data-science-and-ai-msc/")
-add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Software Engineering and Technology", "SE", "۲ سال", "SEK 160,000", ("SEK", 160000, None),
+add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Software Engineering and Technology", "SE", "۲ سال", "≈ SEK 175,000 (2026/27)", ("SEK", 175000, None),
     "کارشناسی CS/SE", "6.5", "174", "Target", "",
     "https://www.chalmers.se/en/education/find-masters-programme/software-engineering-and-technology-msc/")
-add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Interaction Design and Technologies", "HCI", "۲ سال", "SEK 160,000", ("SEK", 160000, None),
+add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Interaction Design and Technologies", "HCI", "۲ سال", "≈ SEK 175,000 (2026/27)", ("SEK", 175000, None),
     "کارشناسی CS/Design", "6.5", "174", "Target", "",
     "https://www.chalmers.se/en/education/find-masters-programme/interaction-design-and-technologies-msc/")
 add("سوئد", "University of Gothenburg (مشترک با Chalmers)", "Gothenburg", "MSc Game Design & Technology", "GD", "۲ سال", "SEK 145,000 (کل ۲۹۰k؛ ورودی ۲۰۲۷: ۲۹۴k)", ("SEK", 145000, 147000),
@@ -436,16 +436,16 @@ add("سوئد", "Mälardalen University (MDU)", "Vasteras", "MSc Software Engine
     "https://www.mdu.se/en/malardalen-university/education")
 
 # ===== دانمارک (EUR/DKK) =====
-add("دانمارک", "Aalborg University (AAU)", "Aalborg", "MSc Computer Science (IT)", "SE", "۲ سال", "€14,910 (€7,455 در ترم)", ("EUR", 14910, None),
-    "کارشناسی CS/SE", "6.5", "=329", "Target", "گزینهٔ Target جدول اصلی؛ PBL (پروژه‌محور)",
+add("دانمارک", "Aalborg University (AAU)", "Aalborg", "MSc Computer Science (IT)", "SE", "۲ سال", "≈ €14,910 (2025/26: €7,455 در ترم؛ نرخ ۲۰۲۶ روی سایت AAU منتشر نشده — mastersportal: €15,340)", ("EUR", 14910, 15340),
+    "رسمی: حداقل ۱۵۰ ECTS دروس مرتبط با CS (برنامه‌نویسی ۱۵، مهندسی نرم‌افزار ۵، الگوریتم ۵، پایگاه داده ۵، ریاضیات گسسته ۵)؛ از ورودی ۲۰۲۷ سابقهٔ کار و انگیزه‌نامه هم در رتبه‌بندی حساب می‌شود", "6.5 (هر بخش ≥ 6.0)", "=329", "Target", "گزینهٔ Target جدول اصلی؛ PBL (پروژه‌محور)؛ ظرفیت محدود",
     "https://www.en.aau.dk/education/master/computer-science-it")
-add("دانمارک", "Aalborg University (AAU)", "Aalborg", "MSc Software", "SE", "۲ سال", "€14,910", ("EUR", 14910, None),
+add("دانمارک", "Aalborg University (AAU)", "Aalborg", "MSc Software", "SE", "۲ سال", "≈ €14,910–15,340", ("EUR", 14910, 15340),
     "کارشناسی SE/CS", "6.5", "=329", "Target", "",
     "https://www.en.aau.dk/education/master/software")
-add("دانمارک", "Aalborg University (AAU)", "Copenhagen-AAU", "MSc Eng Cyber Security", "CY", "۲ سال", "€14,910", ("EUR", 14910, None),
+add("دانمارک", "Aalborg University (AAU)", "Copenhagen-AAU", "MSc Eng Cyber Security", "CY", "۲ سال", "≈ €14,910–15,340", ("EUR", 14910, 15340),
     "کارشناسی CS/EE مرتبط؛ مهلت ۱ مارس", "6.5", "=329", "Target", "کمپوس کپنهاگ: اجاره بالاتر ولی بازار کار بزرگ",
     "https://www.en.aau.dk/education/master/cyber-security/")
-add("دانمارک", "Aalborg University (AAU)", "Aalborg-or-Copenhagen", "MSc Medialogy", "HCI", "۲ سال", "€14,910", ("EUR", 14910, None),
+add("دانمارک", "Aalborg University (AAU)", "Aalborg-or-Copenhagen", "MSc Medialogy", "HCI", "۲ سال", "≈ €14,910–15,340", ("EUR", 14910, 15340),
     "کارشناسی مرتبط (Medialogy، CS، Media Tech)", "6.5", "=329", "Target", "تعامل، AR/VR، بازی؛ بین HCI و Game",
     "https://www.en.aau.dk/education/master/medialogy-aal")
 add("دانمارک", "University of Southern Denmark (SDU)", "Odense", "MSc Computer Science", "SE", "۲ سال", "€17,300 (از ورودی سپتامبر ۲۰۲۶؛ قبلاً €13,900)", ("EUR", 17300, None),
@@ -463,15 +463,15 @@ add("دانمارک", "University of Southern Denmark (SDU)", "Odense", "MSc Eng
 add("دانمارک", "University of Southern Denmark (SDU)", "Kolding", "MSc Data Science", "DS", "۲ سال", "€17,300", ("EUR", 17300, None),
     "کارشناسی با محتوای کمی/برنامه‌نویسی", "6.5", "=283", "Target", "",
     "https://www.sdu.dk/en/uddannelse/kandidat/alle-kandidatuddannelser")
-add("دانمارک", "IT University of Copenhagen (ITU)", "Copenhagen", "MSc Games — track Game Technology", "GD", "۲ سال", "€13,400 (€6,700 در ترم)", ("EUR", 13400, None),
+add("دانمارک", "IT University of Copenhagen (ITU)", "Copenhagen", "MSc Games — track Game Technology", "GD", "۲ سال", "€16,500 (€8,250 در ترم؛ ورودی ۲۰۲۶ — رسمی)", ("EUR", 16500, None),
     "برای track فنی: کارشناسی CS", "6.5", "— (تخصصی)", "Target", "شناخته‌شده‌ترین ارشد بازی اسکاندیناوی؛ Copenhagen (IO Interactive، Unity Copenhagen)",
-    "https://studyindenmark.dk/portal/it-university-of-copenhagen-itu/kobenhavn/games")
-add("دانمارک", "IT University of Copenhagen (ITU)", "Copenhagen", "MSc Computer Science", "SE", "۲ سال", "€13,400", ("EUR", 13400, None),
-    "کارشناسی CS/SE با برنامه‌نویسی قابل توجه", "6.5", "— (تخصصی)", "Target", "ارزان‌ترین شهریهٔ کپنهاگ",
-    "https://studyindenmark.dk/portal/it-university-of-copenhagen-itu/kobenhavn/computer-science")
-add("دانمارک", "IT University of Copenhagen (ITU)", "Copenhagen", "MSc Data Science", "DS", "۲ سال", "€13,400", ("EUR", 13400, None),
+    "https://en.itu.dk/Programmes/MSc-Programmes/Applying-to-a-MSc-programme/Non-EU-EOES")
+add("دانمارک", "IT University of Copenhagen (ITU)", "Copenhagen", "MSc Computer Science", "SE", "۲ سال", "€16,500 (€8,250 در ترم)", ("EUR", 16500, None),
+    "کارشناسی CS/SE با برنامه‌نویسی قابل توجه", "6.5", "— (تخصصی)", "Target", "ارزان‌تر از DTU/KU در کپنهاگ؛ رقم قدیمی €13,400 (پورتال studyindenmark) منسوخ است",
+    "https://en.itu.dk/Programmes/MSc-Programmes/Applying-to-a-MSc-programme/Non-EU-EOES")
+add("دانمارک", "IT University of Copenhagen (ITU)", "Copenhagen", "MSc Data Science", "DS", "۲ سال", "€16,500 (€8,250 در ترم)", ("EUR", 16500, None),
     "کارشناسی مرتبط با داده/CS", "6.5", "— (تخصصی)", "Target", "",
-    "https://studyindenmark.dk/portal/it-university-of-copenhagen-itu/kobenhavn/data-science")
+    "https://en.itu.dk/Programmes/MSc-Programmes/Applying-to-a-MSc-programme/Non-EU-EOES")
 add("دانمارک", "Technical University of Denmark (DTU)", "Lyngby", "MSc Eng Human-Centered Artificial Intelligence", "AI", "۲ سال", "€15,000", ("EUR", 15000, None),
     "ظرفیت محدود؛ امتیازدهی: معدل ۶۰٪ + سابقهٔ کار ۱۰٪", "6.5", "105", "Reach", "معدل ۱۵.۷۷ در رقابت DTU ضعیف است",
     "https://www.dtu.dk/english/education/graduate/msc-programmes/human-centered-artificial-intelligence")

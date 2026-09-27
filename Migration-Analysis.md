@@ -137,7 +137,7 @@ Newcastle ۱۴۹ · York ۱۵۸ · TU Dresden ۱۸۵ · FAU ۲۱۸ · Twente ۲�
 
 **رشته فقط CS نیست:** فهرست ≈۱۰۰ برنامهٔ انگلیسی‌زبان در ۸ حوزهٔ کامپیوتری برای هر ۶ کشور در شیت «برنامه‌ها» و مقایسهٔ بازار کار حوزه‌ها در شیت «حوزه‌ها و بازار کار» آمده است (خلاصه در بخش ۸).
 
-**اگر وزن «انگلیسی» برایتان بیشتر از بقیه است → ایرلند با فاصله. اگر وزن «هزینه» بیشتر است و B1 آلمانی را می‌پذیرید → آلمان.** ترکیب عملی: اقدام هم‌زمان به ۲–۳ دانشگاه ایرلند (UL، Maynooth، TU Dublin) + ۲ دانشگاه آلمان (Stuttgart، FAU یا یکی از گزینه‌های امن‌تر) و تصمیم نهایی بر اساس پذیرش/بورس و وضعیت سفارت‌ها در ۲۰۲۸.
+**اگر وزن «انگلیسی» برایتان بیشتر از بقیه است → ایرلند با فاصله. اگر وزن «هزینه» بیشتر است و B1 آلمانی را می‌پذیرید → آلمان.** ترکیب عملی: اقدام هم‌زمان به ۲–۳ دانشگاه ایرلند (UL، Maynooth، TU Dublin) + ۲ دانشگاه آلمان (Stuttgart + یکی از گزینه‌های امن‌تر مثل Passau/Saarland؛ FAU فقط با پذیرش شهریهٔ جدید €۸,۰۰۰/سال از ۲۰۲۷) و تصمیم نهایی بر اساس پذیرش/بورس و وضعیت سفارت‌ها در ۲۰۲۸.
 
 ---
 
@@ -166,7 +166,7 @@ Newcastle ۱۴۹ · York ۱۵۸ · TU Dresden ۱۸۵ · FAU ۲۱۸ · Twente ۲�
 ---
 
 ## ۶. منابع اصلی
-فهرست کامل ۱۱۱ منبع با لینک در شیت «منابع» فایل `Table_final.xlsx` آمده است. مهم‌ترین‌ها:
+فهرست کامل ۱۱۹ منبع با لینک در شیت «منابع» فایل `Table_final.xlsx` آمده است. مهم‌ترین‌ها:
 - gov.uk / Home Office Statements of Changes (HC 1333، HC 1691، HC 584)؛ Home Affairs Committee report on Earned Settlement
 - make-it-in-germany.com (بلوکارت ۲۰۲۶)؛ visas-de.tlscontact.com (تهران)
 - ind.nl (مبالغ ۲۰۲۶)؛ netherlandsworldwide.nl (MVV در ایران)
@@ -223,16 +223,41 @@ Newcastle ۱۴۹ · York ۱۵۸ · TU Dresden ۱۸۵ · FAU ۲۱۸ · Twente ۲�
 شواهد بازار (لینک‌ها در شیت «منابع»): AI Engineer دو سال پیاپی سریع‌ترین‌رشد شغل جوانان در LinkedIn و ۱.۳ میلیون شغل جدید AI (WEF/LinkedIn، ژانویه ۲۰۲۶)؛ Bitkom 2025: ۱۰۹ هزار جای خالی IT در آلمان با ۷.۷ ماه زمان پرکردن، امنیت و داده و توسعهٔ نرم‌افزار سه کمبود اصلی؛ ISC2 عدد «۴.۸ میلیون کمبود امنیت» را در گزارش ۲۰۲۵ حذف کرد و ۳۱٪ تیم‌های امنیت هیچ نیروی جونیور ندارند؛ صنعت بازی ≈۴۵ هزار اخراج ۲۰۲۲–۲۰۲۵ و افت ≈۵۰٪ حقوق برنامه‌نویس Unity؛ آگهی‌های UX/UXR ≈۷۰٪ کمتر از ۲۰۲۲ و از ۲۰۲۳ ثابت؛ سطح جونیور علم داده و مهندسی داده اشباع (آگهی جونیور DE ↓۶۷٪).
 
 ### ۸.۲ بهترین گزینه‌ها در هر حوزه (برای معدل ۱۵.۷۷، IELTS ≈ 7، بودجهٔ $۳۲k)
-- **AI/ML:** Passau AI Engineering (رایگان، B2، معدل ≤ 2.7 ✓، ولی A1 آلمانی تا پایان سال اول) · FAU AI (رایگان، B2) · Saarland Data Science & AI (رایگان ولی IELTS 7) · UL AI & ML €۲۰,۸۰۰ (۱ ساله، 2:2) · Northumbria AI £۲۱,۵۰۰ / Teesside AI £۱۷,۰۰۰ (Safe) · Umeå AI SEK ۱۵۲k · SDU AI €۱۷,۳۰۰. Reach: Tübingen ML، UvA AI، KTH ML، Sheffield AI، DTU Human-Centered AI.
+- **AI/ML:** Passau AI Engineering (رایگان، B2، معدل ≤ 2.7 ✓، ولی A1 آلمانی تا پایان سال اول) · FAU AI (⚠️ از تابستان ۲۰۲۷ برای غیر-EU €۴,۰۰۰/ترم = €۸,۰۰۰/سال، B2) · Saarland Data Science & AI (رایگان ولی IELTS 7) · UL AI & ML €۲۰,۸۰۰ (۱ ساله، 2:2) · Northumbria AI £۲۱,۵۰۰ / Teesside AI £۱۷,۰۰۰ (Safe) · Umeå AI SEK ۱۵۲k · SDU AI €۱۷,۳۰۰. Reach: Tübingen ML، UvA AI، KTH ML، Sheffield AI، DTU Human-Centered AI.
 - **مهندسی نرم‌افزار / CS:** همان گزینه‌های جدول اصلی + UvA Software Engineering (**تنها ارشد ۱ سالهٔ هلند**، ≈ €۲۳,۵۴۰) · RWTH Software Systems Engineering (رایگان، IELTS 5.5، معدل ≥ ۶۵٪ ✓ — ولی Reach) · Chalmers SET SEK ۱۶۰k · MDU Software Engineering ≈ SEK ۱۳۵k (Safe) · ITU Computer Science €۱۳,۴۰۰ (ارزان‌ترین کپنهاگ).
 - **امنیت سایبری:** TU Dublin Applied Cyber Security €۱۴,۵۰۰ (2:2، Safe) · Teesside £۱۷,۰۰۰ / NTU ≈ £۱۹,۹۰۰ / MMU £۲۱,۰۰۰ (Safe) · Kent (NCSC، ≈ £۲۳,۵۰۰) و Royal Holloway £۲۵,۵۰۰ (Target، معتبرترین برچسب امنیت بریتانیا) · Saarland Cybersecurity (رایگان، CISPA؛ IELTS 7 + ۲ توصیه‌نامه) · AAU Copenhagen Cyber Security €۱۴,۹۱۰ · MTU Cork ≈ €۱۲–۱۵k (IELTS 6.0). Reach: KTH، Lancaster.
 - **ابری / توزیع‌شده:** Leicester Cloud Computing £۲۴,۲۵۰ (2:1) · TU Darmstadt Distributed Software Systems (رایگان) · KTH SEDS SEK ۱۸۰–۱۹۰k · DCU Cloud major (€۲۵k − €۵k بورس، 2:1).
-- **علم داده:** Maynooth DS&A ≈ €۱۷,۰۰۰ (۱۲ ماهه، ورود آسان) · TU Dublin CS (Data Science) €۲۱,۷۵۰ (2:2 + ۲ سال سابقه ✓) · Brunel DS&A £۲۴,۷۹۵ · Skövde SEK ۱۳۵k · ITU Data Science €۱۳,۴۰۰ · OVGU DKE (رایگان؛ معدل ≤ 2.3 — دقیقاً مرزی).
-- **نهفته / رباتیک:** Twente Embedded Systems €۲۱,۷۰۰ · Stuttgart INFOTECH (€۱,۵۰۰/ترم، IELTS 7) · H-BRS Autonomous Systems (رایگان، IELTS 6.5، ۲۵ جا) · FAU Autonomy Technologies (رایگان، B2) · TU Chemnitz Automotive SE (رایگان، IELTS 5.5، Safe) · Halmstad ≈ SEK ۱۵۱k · MDU Intelligent Embedded Systems ≈ SEK ۱۳۵k · SDU Robot Systems €۱۷,۳۰۰. Reach: TU/e، Delft، DTU.
-- **HCI / UX:** Siegen HCI (رایگان، IELTS 6.5، معدل ≤ 2.5 ✓) · Twente Interaction Technology €۲۱,۷۰۰ · Chalmers IxD SEK ۱۶۰k · AAU Medialogy €۱۴,۹۱۰ · York HCIT £۳۲,۹۰۰.
-- **بازی‌سازی:** Goldsmiths Computer Games Programming £۲۲,۰۰۰ (لندن، 2:2) · Cologne Game Lab MA Game Dev & Research (€۲,۵۰۰/ترم؛ شرط ۱۲ ماه سابقه — ۷ ماه Unity + ۲ سال IT شما را بپرسید) · ITU Games €۱۳,۴۰۰ · Gothenburg Game Design & Technology SEK ۱۴۵k/سال · BUas Game Technology ≈ €۱۵,۲۰۰ (۱ ساله، UAS) · Utrecht GMT €۲۵,۳۰۶ و Newcastle Game Engineering £۳۲,۳۰۰ (Reach). Essex MSc Computer Games برای 2025/26 و 2026/27 تعلیق است.
+- **علم داده:** Maynooth DS&A ≈ €۱۷,۰۰۰ (۱۲ ماهه، ورود آسان) · TU Dublin CS (Data Science) €۲۱,۷۵۰ (2:2 + ۲ سال سابقه ✓) · Brunel DS&A £۲۴,۷۹۵ · Skövde SEK ۱۳۵k · ITU Data Science €۱۶,۵۰۰ · OVGU DKE (رایگان؛ معدل ≤ 2.3 — دقیقاً مرزی).
+- **نهفته / رباتیک:** Twente Embedded Systems €۲۱,۷۰۰ · Stuttgart INFOTECH (€۱,۵۰۰/ترم، IELTS 7) · H-BRS Autonomous Systems (رایگان، IELTS 6.5، ۲۵ جا) · FAU Autonomy Technologies (از ۲۰۲۷: €۲,۰۰۰/ترم، B2) · TU Chemnitz Automotive SE (رایگان، IELTS 5.5، Safe) · Halmstad ≈ SEK ۱۵۱k · MDU Intelligent Embedded Systems ≈ SEK ۱۳۵k · SDU Robot Systems €۱۷,۳۰۰. Reach: TU/e، Delft، DTU.
+- **HCI / UX:** Siegen HCI (رایگان، IELTS 6.5، معدل ≤ 2.5 ✓) · Twente Interaction Technology €۲۱,۷۰۰ · Chalmers IxD ≈ SEK ۱۷۵k · AAU Medialogy €۱۴,۹۱۰ · York HCIT £۳۲,۹۰۰.
+- **بازی‌سازی:** Goldsmiths Computer Games Programming £۲۲,۰۰۰ (لندن، 2:2) · Cologne Game Lab MA Game Dev & Research (€۲,۵۰۰/ترم؛ شرط ۱۲ ماه سابقه — ۷ ماه Unity + ۲ سال IT شما را بپرسید) · ITU Games €۱۶,۵۰۰ · Gothenburg Game Design & Technology SEK ۱۴۵k/سال · BUas Game Technology ≈ €۱۵,۲۰۰ (۱ ساله، UAS) · Utrecht GMT €۲۵,۳۰۶ و Newcastle Game Engineering £۳۲,۳۰۰ (Reach). Essex MSc Computer Games برای 2025/26 و 2026/27 تعلیق است.
 
 ### ۸.۳ سه نکتهٔ صادقانه
 1. **مدرک «AI» به‌تنهایی شغل AI نمی‌دهد.** بیشتر آگهی‌های AI عملاً مهندسی نرم‌افزار با Python/ML-ops هستند؛ برنامهٔ کاربردی + پروژهٔ قابل نمایش از برنامهٔ رتبه‌بالای غیرقابل‌پذیرش بهتر است.
 2. **سابقهٔ Unity/C# را دور نریزید، ولی رویش سرمایه‌گذاری اصلی نکنید.** بازار بازی ۲۰۲۲–۲۵ بدترین دورهٔ خود را داشت؛ اگر می‌خواهید، Goldsmiths یا Cologne Game Lab را با چشم باز و با پلن B (Software) انتخاب کنید.
 3. **دانمارک گران‌تر از آنچه جدول قبلی می‌گفت:** SDU از ورودی ۲۰۲۶ برای همهٔ برنامه‌های Science/Engineering €۱۷,۳۰۰ می‌گیرد (نه €۱۳,۹۰۰)؛ جدول اصلی، هزینهٔ سال اول ($۳۱.۵–۳۸k) و هزینهٔ کل ($۶۳–۷۶k) اصلاح شدند. امتیاز دانمارک (۱۶/۳۰) تغییر نکرد.
+
+## ۹. بازبینی صحت اعداد (۲۷ سپتامبر ۲۰۲۶)
+
+پرسش: «همهٔ اعداد دقیق، معتبر، به‌روز و واقعی‌اند؟» — پاسخ صادقانه، به تفکیک نوع عدد:
+
+| نوع عدد | وضعیت | توضیح |
+|---|---|---|
+| شهریهٔ ۲۰۲۶/۲۷ (≈۷۰٪ ردیف‌ها) | ✅ رسمی | مستقیماً از صفحهٔ دانشگاه: Twente، TU/e، Utrecht، Leiden، Groningen، Radboud، SDU، Aarhus، DTU، ITU، UL، TU Dublin، Teesside، Northumbria، Leicester، Essex، Brunel، York، Lancaster، Surrey (ورودی ۲۰۲۷)، Stuttgart، Passau و … |
+| شهریه‌های با علامت «≈» | ⚠️ ثانویه/سال قبل | KTH، Chalmers، Halmstad، Uppsala، AAU، Galway، UCC، Maynooth، Kent، Newcastle، Sheffield AI، Surrey AI، Delft، UvA، BUas — از IDP/QS/mastersportal/collegedunia یا نرخ 2025/26؛ خطای محتمل ±۵–۱۰٪ |
+| قوانین ویزا/کار/اقامت | ✅ رسمی (سپتامبر ۲۰۲۶) | gov.uk، IND، Migrationsverket، nyidanmark، BAMF/Make-it-in-Germany، irishimmigration؛ ولی این قوانین سالی یکی‌دو بار عوض می‌شوند |
+| رتبهٔ QS | ✅ QS 2027 (ژوئن ۲۰۲۶) | برای BTH/Halmstad/Teesside/ITU رتبه‌ای وجود ندارد |
+| هزینهٔ زندگی شهرها | ⚠️ برآورد | بازهٔ ماهانهٔ دانشجو با اتاق؛ از Numbeo/دانشگاه‌ها/حداقل‌های ویزا؛ نه آمار رسمی |
+| Safe/Target/Reach، امتیاز بازار (۱–۵)، امتیاز کشورها (/۳۰) | ⚠️ ارزیابی من | قضاوت کارشناسی بر پایهٔ منابع، نه داده |
+| نرخ ارز | ۲۷ سپتامبر ۲۰۲۶ | €۱ = $۱.۱۴، £۱ = $۱.۳۲۵، $۱ ≈ SEK ۹.۹ / DKK ۶.۵۵ — تا ۲۰۲۸ تغییر می‌کند |
+
+**اصلاح‌هایی که در این بازبینی انجام شد (همه در Table_final.xlsx اعمال شده):**
+1. **FAU Erlangen-Nürnberg دیگر رایگان نیست:** طبق صفحهٔ رسمی، از ترم تابستان ۲۰۲۷ برای ورودی‌های جدید غیر-EU شهریه می‌گیرد — M.Sc. Artificial Intelligence و Computer Science €۴,۰۰۰ در ترم (€۸,۰۰۰ در سال)، Autonomy Technologies €۲,۰۰۰ در ترم. ورودی ۲۰۲۸ شما مشمول است. Passau رسماً گفته «فعلاً» شهریه نمی‌گیرد؛ TUM از قبل €۶,۰۰۰/ترم می‌گرفت. جدول اصلی (ردیف‌های ۱، ۴، ۵، ۷، ۸) و جمع‌بندی به‌روز شد.
+2. **ITU Copenhagen:** رقم €۱۳,۴۰۰ (پورتال studyindenmark) منسوخ بود؛ نرخ رسمی ورودی ۲۰۲۶ **€۸,۲۵۰ در ترم = €۱۶,۵۰۰ در سال** است (سه ردیف).
+3. **Radboud:** نرخ رسمی 2026/27 غیر-EEA **€۱۹,۷۱۴** (نه برآورد €۲۰,۵۰۰).
+4. **Chalmers:** نرخ 2026/27 استاندارد **≈ SEK ۱۷۵,۰۰۰** (نه ۱۶۰,۰۰۰ که رقم 2025/26 بود) — منبع ثانویه به نقل از Chalmers؛ صفحهٔ رسمی جدول را در آکاردئون بسته نشان می‌دهد. **KTH** ≈ SEK ۱۸۰–۱۹۰k. ضمناً صفحهٔ شهریهٔ Chalmers می‌گوید دانشگاه‌های سوئد فعلاً نمی‌توانند از ایران پول دریافت کنند (پرداخت از کشور ثالث).
+5. **AAU Computer Science (IT):** شرط رسمی **حداقل ۱۵۰ ECTS دروس مرتبط با CS** است (نه ۱۰۰)؛ از ورودی ۲۰۲۷ سابقهٔ کار و انگیزه‌نامه هم در رتبه‌بندی حساب می‌شود (به نفع شما). نرخ شهریهٔ ۲۰۲۶ AAU هنوز رسمی منتشر نشده → «≈».
+6. **Aarhus** €۱۷,۳۰۰ (رسمی 2026/27) ✅ تأیید شد؛ **TU/e** €۲۱,۷۰۰ ✅ (2027/28: €۲۲,۴۰۰ — یعنی رشد سالانه ≈۳٪).
+7. **Surrey Cyber Security:** صفحهٔ رسمی اکنون ورودی ۲۰۲۷ را نشان می‌دهد: £۲۵,۹۰۰ (فوریه) / £۲۶,۹۰۰ (سپتامبر). **Newcastle Computer Game Engineering:** شرط ورود 2:2 (نه 2:1) → Target/Reach. **Sheffield MSc AI:** ≈ £۳۲,۹۰۰–۳۴,۳۴۰.
+
+**نتیجهٔ عملی:** هیچ‌کدام از این اصلاح‌ها ترتیب کشورها را عوض نمی‌کند (ایرلند › آلمان › سوئد = انگلستان › هلند › دانمارک)، ولی در آلمان گزینهٔ FAU از «رایگان» به «€۸,۰۰۰/سال» رفت؛ Stuttgart (€۳,۰۰۰/سال) و گزینه‌های Safe رایگان (Passau، Saarland، RPTU، Chemnitz، OVGU) اکنون منطقی‌ترند. چون شما برای ۲۰۲۸ اقدام می‌کنید، حدود ۶ ماه قبل از اپلای همهٔ شهریه‌ها را دوباره از صفحهٔ رسمی چک کنید (رشد سالانه ۳–۱۰٪).

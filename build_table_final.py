@@ -7,7 +7,7 @@ Incorporates the valid points of both audits (mine + Review.docx).
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
-from catalogue_data import PROGRAMS, FIELDS, FIELD_ROWS, fee_usd
+from catalogue_data import PROGRAMS, FIELDS, FIELD_ROWS, CITIES, fee_usd
 
 FX = "نرخ تبدیل ۲۷ سپتامبر ۲۰۲۶: €1 = $1.14 · £1 = $1.325 · $1 ≈ SEK 9.9 · $1 ≈ DKK 6.55"
 
@@ -15,12 +15,12 @@ HEAD = ["ردیف", "معیار", "آلمان 🇩🇪", "هلند 🇳🇱", "�
 
 ROWS = [
  ["۱", "برنامه‌های هدف واقع‌بینانه (Safe / Target / Reach) — با معدل ≈ ۱۵.۷ از ۲۰ و IELTS ≈ 7",
-  "Stuttgart – MSc Computer Science (انگلیسی، بدون NC، IELTS 7) → Target\nFAU – MSc Artificial Intelligence (انگلیسی، B2) → Target\nTU Darmstadt – MSc Computer Science (انگلیسی، IELTS 7) → Target/Reach\nTU Dresden – MSc Computer Science (انگلیسی، IELTS 7، ارزیابی استعداد) → Reach\nSafe: RPTU Kaiserslautern، Passau، Saarland، TU Chemnitz، OVGU Magdeburg",
-  "Twente – MSc Computer Science (حداقل رسمی برای مدرک ایرانی: ۱۵/۲۰) → Target\nRadboud – MSc Computing Science → Target\n(هر دو روی واحدهای ریاضی/الگوریتم/CS نظری در ریزنمرات حساس‌اند)",
-  "Linköping – MSc Computer Science (گزینش بر اساس گروه معدل) → Target\nBTH – MSc Software Engineering 120 واحدی، Karlskrona (≥ ۹۰ واحد CS/SE در کارشناسی) → Safe/Target\nHalmstad – MSc Information Technology 120 واحدی → Safe\n⚠️ برنامه ۶۰ واحدی BTH از راه دور/نیمه‌وقت است و برای ویزا کاربرد ندارد",
-  "AAU – MSc Computer Science (IT) (انگلیسی؛ نه برنامه Computer Science دانمارکی‌زبان) → Target\nSDU Odense – MSc Computer Science → Target\n(پذیرش بر اساس داشتن ≥ ۱۰۰ ECTS دروس کامپیوتر)",
-  "TU Dublin – MSc Computing (Advanced Software Development) → Safe\nMaynooth – MSc (CS) Software Engineering، ۱ ساله → Safe/Target\nUL – MSc Software Engineering → Target\n(شرط 2.2 honours ≈ معدل شما OK)",
-  "Teesside (Middlesbrough) – MSc Computer Science (2:2، IELTS 6.0) → Safe\nNorthumbria (Newcastle) – MSc Advanced Computer Science (2:2 در رشته کامپیوتری) → Safe\nEssex (Colchester) – MSc Advanced Computer Science (2:2؛ Computer Engineering پذیرفته می‌شود) → Safe/Target\nBrunel (London) – MSc AI / Data Science (2:2) → Safe/Target\nLeicester – MSc Advanced Computer Science (2:1؛ سابقه کار مرتبط جبران می‌کند) → Target\nYork – MSc Advanced Computer Science (2:2 با پیش‌زمینه قوی، IELTS 6.5) → Reach\nفقط انگلستان — Strathclyde (اسکاتلند) و Swansea (ولز) حذف شدند",
+  "Stuttgart (اشتوتگارت) – MSc Computer Science (انگلیسی، بدون NC، IELTS 7) → Target\nFAU (Erlangen/Nürnberg) – MSc Artificial Intelligence (انگلیسی، B2) → Target\nTU Darmstadt (دارمشتات) – MSc Computer Science (انگلیسی، IELTS 7) → Target/Reach\nTU Dresden (درسدن) – MSc Computer Science (انگلیسی، IELTS 7، ارزیابی استعداد) → Reach\nSafe: RPTU Kaiserslautern، Passau، Saarland (Saarbrücken)، TU Chemnitz، OVGU Magdeburg",
+  "Twente (Enschede) – MSc Computer Science (حداقل رسمی برای مدرک ایرانی: ۱۵/۲۰) → Target\nRadboud (Nijmegen) – MSc Computing Science → Target\n(هر دو روی واحدهای ریاضی/الگوریتم/CS نظری در ریزنمرات حساس‌اند)",
+  "Linköping (لینشوپینگ) – MSc Computer Science (گزینش بر اساس گروه معدل) → Target\nBTH – MSc Software Engineering 120 واحدی، Karlskrona (≥ ۹۰ واحد CS/SE در کارشناسی) → Safe/Target\nHalmstad (هالمستاد) – MSc Information Technology 120 واحدی → Safe\n⚠️ برنامه ۶۰ واحدی BTH از راه دور/نیمه‌وقت است و برای ویزا کاربرد ندارد",
+  "AAU (Aalborg) – MSc Computer Science (IT) (انگلیسی؛ نه برنامه Computer Science دانمارکی‌زبان) → Target\nSDU (Odense) – MSc Computer Science → Target\n(پذیرش بر اساس داشتن ≥ ۱۰۰ ECTS دروس کامپیوتر)",
+  "TU Dublin (Dublin) – MSc Computing (Advanced Software Development) → Safe\nMaynooth (۲۵ km از Dublin) – MSc (CS) Software Engineering، ۱ ساله → Safe/Target\nUL (Limerick) – MSc Software Engineering → Target\n(شرط 2.2 honours ≈ معدل شما OK)",
+  "Teesside (Middlesbrough) – MSc Computer Science (2:2، IELTS 6.0) → Safe\nNorthumbria (Newcastle) – MSc Advanced Computer Science (2:2 در رشته کامپیوتری) → Safe\nEssex (Colchester) – MSc Advanced Computer Science (2:2؛ Computer Engineering پذیرفته می‌شود) → Safe/Target\nBrunel (London) – MSc AI / Data Science (2:2) → Safe/Target\nLeicester (لستر) – MSc Advanced Computer Science (2:1؛ سابقه کار مرتبط جبران می‌کند) → Target\nYork (یورک) – MSc Advanced Computer Science (2:2 با پیش‌زمینه قوی، IELTS 6.5) → Reach\nفقط انگلستان — Strathclyde (اسکاتلند) و Swansea (ولز) حذف شدند",
   "سایت برنامه‌ها؛ utwente.nl (Iran 15/20)؛ bth.se؛ «۷۵٪ قبولی» جدول اول حذف شد — چنین آماری وجود ندارد.\n➜ فهرست کامل ≈۱۰۰ برنامه در ۸ حوزه (AI، امنیت، داده، نرم‌افزار، ابری، نهفته/رباتیک، HCI، بازی) با شهریه و شرط ورود: شیت «برنامه‌ها»؛ مقایسهٔ بازار کار حوزه‌ها: شیت «حوزه‌ها و بازار کار»"],
 
  ["۲", "رتبه QS World University Rankings 2027 (ژوئن ۲۰۲۶)",
@@ -430,40 +430,42 @@ ws.cell(row=n + 3, column=2, value="شیت «برنامه‌ها»: ≈۱۰۰ ب
 
 # ---- Sheet 1b: programme catalogue (all fields, all 6 countries)
 ws4 = wb.create_sheet("برنامه‌ها")
-HEAD4 = ["#", "کشور", "دانشگاه (شهر)", "برنامه", "حوزه", "مدت", "شهریهٔ سالانه 2026/27 (ارز محلی)",
-         "≈ شهریهٔ سالانه به دلار", "شرط ورود", "IELTS", "QS 2027", "Safe / Target / Reach (معدل ۱۵.۷۷)",
-         "بازار کار حوزه (۱–۵) و نکته", "نکتهٔ برنامه", "منبع (صفحهٔ رسمی)"]
+HEAD4 = ["#", "کشور", "دانشگاه", "شهر", "هزینهٔ زندگی شهر (تقریبی، ماهانه با اجاره)", "برنامه", "حوزه", "مدت",
+         "شهریهٔ سالانه 2026/27 (ارز محلی)", "≈ شهریهٔ سالانه به دلار", "شرط ورود", "IELTS", "QS 2027",
+         "Safe / Target / Reach (معدل ۱۵.۷۷)", "بازار کار حوزه (۱–۵) و نکته", "نکتهٔ برنامه", "منبع (صفحهٔ رسمی)"]
 ws4.append(HEAD4)
 tier_fill = {"Safe": PatternFill("solid", fgColor="E2F0D9"), "Safe/Target": PatternFill("solid", fgColor="EAF5E1"),
              "Target": PatternFill("solid", fgColor="FFF2CC"), "Target/Reach": PatternFill("solid", fgColor="FCE4D6"),
              "Reach": PatternFill("solid", fgColor="F8CBAD")}
-for i, (country, uni, prog, fkey, dur, fee_txt, fee_num, entry, ielts, qs, tier, note, url) in enumerate(PROGRAMS, start=1):
+for i, (country, uni, city_key, prog, fkey, dur, fee_txt, fee_num, entry, ielts, qs, tier, note, url) in enumerate(PROGRAMS, start=1):
     flabel, fscore, fnote = FIELDS[fkey]
-    ws4.append([i, country, uni, prog, flabel, dur, fee_txt, fee_usd(*fee_num), entry, ielts, qs, tier,
+    city_name, city_cost = CITIES[city_key]
+    ws4.append([i, country, uni, city_name, city_cost, prog, flabel, dur, fee_txt, fee_usd(*fee_num), entry, ielts, qs, tier,
                 f"{fscore}/5 — {fnote}", note, url])
-style_sheet(ws4, [5, 10, 26, 40, 22, 9, 30, 14, 34, 12, 12, 16, 44, 40, 40], freeze_col=4)
+style_sheet(ws4, [5, 10, 28, 30, 22, 40, 22, 9, 30, 14, 34, 12, 12, 16, 44, 40, 40], freeze_col=5)
 ws4.row_dimensions[1].height = 48
-ws4.auto_filter.ref = f"A1:O{ws4.max_row}"
+ws4.auto_filter.ref = f"A1:Q{ws4.max_row}"
 for row in ws4.iter_rows(min_row=2, max_row=ws4.max_row):
     row[0].alignment = wrap_ctr
     row[1].alignment = wrap_ctr
-    row[11].alignment = wrap_ctr
-    row[11].fill = tier_fill.get(row[11].value, PatternFill())
-    row[11].font = Font(bold=True)
-    row[14].hyperlink = row[14].value
-    row[14].font = Font(size=9, color="0563C1", underline="single")
-    row[14].alignment = Alignment(wrap_text=True, vertical="top", horizontal="left")
+    row[13].alignment = wrap_ctr
+    row[13].fill = tier_fill.get(row[13].value, PatternFill())
+    row[13].font = Font(bold=True)
+    row[16].hyperlink = row[16].value
+    row[16].font = Font(size=9, color="0563C1", underline="single")
+    row[16].alignment = Alignment(wrap_text=True, vertical="top", horizontal="left")
 n4 = ws4.max_row + 2
 notes4 = [
     "راهنما: هر ردیف یک برنامهٔ انگلیسی‌زبان است. Safe/Target/Reach نسبت به معدل ۱۵.۷۷/۲۰ (≈ 2:2 بریتانیا / ≈ 2.3 آلمانی / ≈ ۷۹٪) و IELTS ≈ 7 سنجیده شده و پیش‌بینی پذیرش نیست. «≈» یعنی رقم از منبع ثانویه یا سال قبل است — قبل از اقدام صفحهٔ رسمی را چک کنید.",
     "شهریهٔ دلاری با نرخ " + FX + " و گرد شده به $100. برای ورودی ۲۰۲۸ شهریه‌ها را ۵–۱۰٪ در سال بالاتر فرض کنید. آلمان: عدد فقط سهم ترم (Semesterbeitrag) است که بلیت حمل‌ونقل را هم شامل می‌شود.",
     "امتیاز بازار کار (۱–۵) ارزیابی من بر پایهٔ منابع شیت «حوزه‌ها و بازار کار» است، نه آمار رسمی؛ برای هر برنامه فقط حوزه را نشان می‌دهد، نه کیفیت آن دانشگاه.",
+    "ستون «هزینهٔ زندگی شهر» برآورد تقریبی هزینهٔ ماهانهٔ دانشجو با اجارهٔ اتاق در همان شهر است (سازگار با ردیف ۶ جدول اصلی)؛ برچسب‌ها: ارزان / متوسط / گران / خیلی گران. برای مقایسهٔ کشورها همچنان ردیف‌های ۶–۸ جدول اصلی معیار است.",
     "حذف‌شده‌ها: Essex MSc Computer Games (برای 2025/26 و 2026/27 تعلیق شده)، Hull AI & Data Science (سه رقم متناقض شهریه)، UCD/TCD (2:1 و ≈ €30k → Reach، بررسی نشد)، KU Copenhagen (شهریه تأیید نشد)، NCI/DBS ایرلند (کالج خصوصی، اعتبار کمتر).",
 ]
 for k, t in enumerate(notes4):
     c = ws4.cell(row=n4 + k, column=2, value=t)
     c.alignment = wrap_rtl
-    ws4.merge_cells(start_row=n4 + k, start_column=2, end_row=n4 + k, end_column=15)
+    ws4.merge_cells(start_row=n4 + k, start_column=2, end_row=n4 + k, end_column=17)
     ws4.row_dimensions[n4 + k].height = 34
 
 # ---- Sheet 1c: fields & job market

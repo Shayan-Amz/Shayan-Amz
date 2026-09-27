@@ -111,6 +111,7 @@ CITIES = {
     "Bern": ("Bern (برن) — پایتخت؛ آلمانی‌زبان", "گران — CHF 1,600–2,000"),
     "Basel": ("Basel (بازل) — Roche، Novartis؛ مرز آلمان/فرانسه", "گران — CHF 1,600–2,100"),
     "Fribourg": ("Fribourg (فریبورگ) — دوزبانه (آلمانی/فرانسه)", "گران — CHF 1,450–1,800"),
+    "Neuchatel": ("Neuchâtel (نوشاتل) — فرانسه‌زبان؛ کنار دریاچه؛ ۳۵ دقیقه تا برن", "متوسط تا گران — CHF 1,350–1,750"),
     "Lugano": ("Lugano (لوگانو) — تیچینو، ایتالیایی‌زبان؛ IDSIA؛ ارزان‌ترین شهر دانشگاهی سوئیس", "گران — CHF 1,400–1,800"),
     "Luzern": ("Lucerne / Luzern (لوسرن) — مرکز سوئیس، ۴۵ دقیقه تا زوریخ", "گران — CHF 1,550–1,950"),
     # آلمان
@@ -255,18 +256,21 @@ add("سوئیس", "USI – Università della Svizzera italiana", "Lugano", "MSc 
 add("سوئیس", "USI – Università della Svizzera italiana", "Lugano", "MSc Software and Data Engineering", "DS", "۲ سال (120 ECTS)", "CHF 4,000 در ترم برای غیرمقیم (CHF 8,000/سال)", ("CHF", 8000, None),
     "کارشناسی CS/مرتبط", "B2 → C1", "=456", "Target", "ترکیب مهندسی نرم‌افزار + مهندسی داده (Data Engineering — همان توصیهٔ شیت حوزه‌ها)؛ کم‌رقابت‌تر از AI",
     "https://www.usi.ch/en/education/master/software-and-data-engineering")
-add("سوئیس", "Hochschule Luzern (HSLU)", "Luzern", "MSc Applied Information and Data Science", "DS", "۲ سال (120 ECTS)", "CHF 1,300 در ترم (خارجی) + ≈ CHF 275 هزینهٔ جانبی ≈ CHF 3,150/سال", ("CHF", 3150, None),
-    "هر کارشناسی ۱۸۰ ECTS؛ خوداظهاری + آزمون انگلیسی HSLU + مصاحبه در صورت نیاز", "C1 (B2 مشروط)", "—", "Safe/Target", "«باز برای تغییر رشته‌ای‌ها»، کاربردی و مدیریتی؛ آلمانی لازم نیست؛ شروع سپتامبر/فوریه؛ مهلت ≈ ۳۰ آوریل (چک شود)",
-    "https://www.hslu.ch/en/lucerne-school-of-business/degree-programmes/master/applied-information-and-data-science/")
-add("سوئیس", "University of Bern", "Bern", "Swiss Joint MSc Computer Science (Bern / Neuchâtel / Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 750 + 200 (خارجی) = CHF 950 در ترم (CHF 1,900/سال)", ("CHF", 1900, None),
-    "کارشناسی Computer Science (یا معادل با حداکثر ۶۰ ECTS تکمیلی)؛ تأیید ادارهٔ پذیرش برای مدرک خارجی", "معمولاً 6.5 (C1 توصیه)", "=191", "Target", "ارزان‌ترین مسیر سوئیس با رتبهٔ زیر ۲۰۰؛ مهلت ۳۰ آوریل — ویزایی‌ها مهلت دیرهنگام ندارند؛ شهریه از mastersportal (≈)",
+add("سوئیس", "Hochschule Luzern (HSLU)", "Luzern", "MSc Applied Data Science and AI (نام جدید از اوت ۲۰۲۶؛ قبلاً Applied Information and Data Science)", "DS", "۲ سال (120 ECTS؛ معمولاً ۴ ترم، قابل تمدید تا ۸)", "CHF 1,300 در ترم (خارجی) + ≈ CHF 275 هزینهٔ جانبی ≈ CHF 3,150/سال؛ هزینهٔ درخواست CHF 250", ("CHF", 3150, None),
+    "هر کارشناسی (دانشگاه یا UAS)؛ آزمون انگلیسی + آزمون استعداد HSLU", "C1 (B2 مشروط)", "—", "Safe/Target", "«باز برای تغییر رشته‌ای‌ها»، کاربردی و مدیریتی؛ ترکیبی (حضوری/آنلاین)؛ آلمانی لازم نیست؛ شروع سپتامبر/فوریه؛ ⚠️ مهلت ویزایی‌ها ۱ آوریل ۲۰۲۷ (رسمی؛ Swiss/EU تا ۱ ژوئن)",
+    "https://www.hslu.ch/en/lucerne-school-of-business/degree-programmes/master/applied-data-science-and-ai/")
+add("سوئیس", "University of Bern", "Bern", "Swiss Joint MSc Computer Science (Bern / Neuchâtel / Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 850 + 1,700 اضافهٔ غیرسوئیسی‌ها (از پاییز ۲۰۲۶) + 34 + 25 = CHF 2,609 در ترم (≈ CHF 5,200/سال)", ("CHF", 5218, None),
+    "کارشناسی Computer Science یا معادل (بررسی موردی؛ حداکثر ۶۰ ECTS تکمیلی — دروس تکمیلی ممکن است آلمانی/فرانسه باشند)", "بدون آزمون (B2 توصیه — FAQ رسمی)", "=191", "Target", "⚠️ شهریهٔ خارجی‌ها از پاییز ۲۰۲۶ سه‌برابر شد (رسمی unibe.ch) → همان مدرک مشترک را از Neuchâtel (CHF 790/ترم) یا Fribourg (CHF 985/ترم) بگیرید؛ مهلت ۳۰ آوریل — ویزایی‌ها مهلت دیرهنگام ندارند",
     "https://www.philnat.unibe.ch/studies/study_programs/master_s_in_computer_science/index_eng.html")
-add("سوئیس", "University of Fribourg", "Fribourg", "Swiss Joint MSc Computer Science (ثبت‌نام در Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 870 در ترم (خارجی) + CHF 115 = ≈ CHF 1,970/سال", ("CHF", 1970, None),
-    "کارشناسی CS/مرتبط", "معمولاً 6.5", "=670", "Target", "همان برنامهٔ مشترک Bern؛ شهر دوزبانه و ارزان‌تر؛ ⚠️ مهلت ویزایی‌ها ۲۸ فوریه ۲۰۲۷",
+add("سوئیس", "University of Neuchâtel", "Neuchatel", "Swiss Joint MSc Computer Science (ثبت‌نام در Neuchâtel)", "SE", "۱.۵ سال (90 ECTS)", "CHF 790 در ترم (خارجی؛ شامل همهٔ هزینه‌ها) = CHF 1,580/سال", ("CHF", 1580, None),
+    "کارشناسی CS یا معادل (بررسی موردی؛ حداکثر ۶۰ ECTS تکمیلی)", "بدون آزمون (B2 توصیه — FAQ رسمی)", "—", "Target", "ارزان‌ترین شهریهٔ سوئیس؛ همان مدرک مشترک Bern/Fribourg (دروس در سه شهر، بلیت قطار جبران می‌شود)؛ مهلت ۳۰ آوریل (خارجی‌ها: تا ۳۱ مارس بفرستید)؛ هزینهٔ پرونده CHF 100 از شهریه کم می‌شود؛ شهر فرانسه‌زبان",
+    "https://mcs.unibnf.ch/")
+add("سوئیس", "University of Fribourg", "Fribourg", "Swiss Joint MSc Computer Science (ثبت‌نام در Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 870 + 115 = CHF 985 در ترم (خارجی؛ رسمی) = CHF 1,970/سال", ("CHF", 1970, None),
+    "کارشناسی CS یا معادل (بررسی موردی؛ حداکثر ۶۰ ECTS تکمیلی)", "بدون آزمون (B2 توصیه — FAQ رسمی)", "=670", "Target", "همان برنامهٔ مشترک Bern/Neuchâtel؛ شهر دوزبانه و ارزان‌تر؛ ⚠️ مهلت ویزایی‌ها ۱–۲۸ فوریه ۲۰۲۷ (رسمی unifr.ch)",
     "https://www.unifr.ch/inf/en/")
-add("سوئیس", "University of Basel", "Basel", "MSc Computer Science", "SE", "۱.۵ سال (90 ECTS)", "≈ CHF 850 در ترم (+ هزینهٔ احتمالی خارجی‌ها؛ صفحهٔ رسمی چک شود) ≈ CHF 1,700–2,100/سال", ("CHF", 1700, 2100),
-    "کارشناسی CS با نمرات خوب؛ بررسی فردی", "B2–C1 (چک شود)", "=150", "Target/Reach", "رتبهٔ ۱۵۰؛ ⚠️ کانتون Basel تمکن CHF 24,000/سال می‌خواهد؛ مهلت ۳۰ آوریل",
-    "https://www.unibas.ch/en/Studies/Degree-Programs.html")
+add("سوئیس", "University of Basel", "Basel", "MSc Computer Science", "SE", "۱.۵ سال (90 ECTS)", "CHF 850 در ترم (برای همه؛ بدون اضافهٔ خارجی‌ها — رسمی 2026/27) = CHF 1,700/سال", ("CHF", 1700, None),
+    "کارشناسی CS یا معادل با نمرات خوب؛ بررسی فردی", "B2–C1 (چک شود)", "=150", "Target/Reach", "رتبهٔ ۱۵۰؛ 90 ECTS انگلیسی؛ هزینهٔ درخواست CHF 100؛ ⚠️ کانتون Basel تمکن CHF 24,000/سال می‌خواهد؛ مهلت ۳۰ آوریل (رسمی)",
+    "https://dmi.unibas.ch/en/studies/computer-science/masters/")
 add("سوئیس", "University of Zurich (UZH)", "Zuerich", "MSc Informatics (گرایش‌ها: Software Systems، Data Science، People-Oriented Computing…)", "SE", "۱.۵–۲ سال (90/120 ECTS)", "CHF 720 + 100 (خارجی) + 59 = CHF 879 در ترم (≈ CHF 1,760/سال)", ("CHF", 1760, None),
     "کارشناسی Informatics/CS با نمرات بسیار خوب؛ فقط یک درخواست در هر ترم؛ هزینهٔ درخواست CHF 150", "C1 / IELTS 7.0", "=98", "Reach", "⚠️ مهلت ویزایی‌ها ۲۸ فوریه ۲۰۲۷ (بدون ویزا ۳۰ آوریل)؛ کانتون زوریخ: تمکن CHF 21,000 فقط در بانک سوئیسی به نام خودتان",
     "https://www.ifi.uzh.ch/en/studies/master.html")

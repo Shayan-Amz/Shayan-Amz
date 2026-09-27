@@ -10,7 +10,7 @@ from openpyxl.utils import get_column_letter
 
 FX = "نرخ تبدیل ۲۷ سپتامبر ۲۰۲۶: €1 = $1.14 · £1 = $1.325 · $1 ≈ SEK 9.9 · $1 ≈ DKK 6.55"
 
-HEAD = ["ردیف", "معیار", "آلمان 🇩🇪", "هلند 🇳🇱", "سوئد 🇸🇪", "دانمارک 🇩🇰", "ایرلند 🇮🇪", "بریتانیا (UK) 🇬🇧", "منبع اصلی"]
+HEAD = ["ردیف", "معیار", "آلمان 🇩🇪", "هلند 🇳🇱", "سوئد 🇸🇪", "دانمارک 🇩🇰", "ایرلند 🇮🇪", "انگلستان (England) 🇬🇧", "منبع اصلی"]
 
 ROWS = [
  ["۱", "برنامه‌های هدف واقع‌بینانه (Safe / Target / Reach) — با معدل ≈ ۱۵.۷ از ۲۰ و IELTS ≈ 7",
@@ -19,7 +19,7 @@ ROWS = [
   "Linköping – MSc Computer Science (گزینش بر اساس گروه معدل) → Target\nBTH – MSc Software Engineering 120 واحدی، Karlskrona (≥ ۹۰ واحد CS/SE در کارشناسی) → Safe/Target\nHalmstad – MSc Information Technology 120 واحدی → Safe\n⚠️ برنامه ۶۰ واحدی BTH از راه دور/نیمه‌وقت است و برای ویزا کاربرد ندارد",
   "AAU – MSc Computer Science (IT) (انگلیسی؛ نه برنامه Computer Science دانمارکی‌زبان) → Target\nSDU Odense – MSc Computer Science → Target\n(پذیرش بر اساس داشتن ≥ ۱۰۰ ECTS دروس کامپیوتر)",
   "TU Dublin – MSc Computing (Advanced Software Development) → Safe\nMaynooth – MSc (CS) Software Engineering، ۱ ساله → Safe/Target\nUL – MSc Software Engineering → Target\n(شرط 2.2 honours ≈ معدل شما OK)",
-  "Swansea – MSc Advanced Computer Science (2:2) → Safe\nBrunel – MSc AI / Data Science (2:2) → Safe\nStrathclyde – MSc Advanced Computer Science (2:2) → Target",
+  "Teesside (Middlesbrough) – MSc Computer Science (2:2، IELTS 6.0) → Safe\nNorthumbria (Newcastle) – MSc Advanced Computer Science (2:2 در رشته کامپیوتری) → Safe\nEssex (Colchester) – MSc Advanced Computer Science (2:2؛ Computer Engineering پذیرفته می‌شود) → Safe/Target\nBrunel (London) – MSc AI / Data Science (2:2) → Safe/Target\nLeicester – MSc Advanced Computer Science (2:1؛ سابقه کار مرتبط جبران می‌کند) → Target\nYork – MSc Advanced Computer Science (2:2 با پیش‌زمینه قوی، IELTS 6.5) → Reach\nفقط انگلستان — Strathclyde (اسکاتلند) و Swansea (ولز) حذف شدند",
   "سایت برنامه‌ها؛ utwente.nl (Iran 15/20)؛ bth.se؛ «۷۵٪ قبولی» جدول اول حذف شد — چنین آماری وجود ندارد"],
 
  ["۲", "رتبه QS World University Rankings 2027 (ژوئن ۲۰۲۶)",
@@ -28,7 +28,7 @@ ROWS = [
   "Linköping 308 · BTH و Halmstad در QS رتبه ندارند",
   "Aalborg 329 · SDU ≈ 329",
   "UL 388 · Maynooth 721–730 · TU Dublin 791–800",
-  "Strathclyde =230 · Swansea ≈ 300 · Brunel 353",
+  "Newcastle 149 · York =158 · Leicester =314 · Brunel 353 · Essex =438 · Northumbria =528 · Teesside در فهرست اصلی QS نیست (THE 601–800)",
   "topuniversities.com (QS WUR 2027)؛ utwente.nl/rankings"],
 
  ["۳", "طول دوره ارشد",
@@ -43,12 +43,12 @@ ROWS = [
   "Linköping: SEK 166,000\nHalmstad: ≈ SEK 151,000\nBTH: SEK 140,000 (70,000 در ترم)",
   "SDU: €13,900 (DKK 104,000)\nAAU: €14,910 (7,455 در ترم)",
   "TU Dublin: ≈ €15,000–15,500\nMaynooth: €18,000 (2025/26) → ≈ €18,500\nUL: €20,800",
-  "Swansea: £24,200\nBrunel: £24,795\nStrathclyde: £31,900\nبورس‌ها (Strathclyde ۱۵٪، Brunel £6,000) جدا حساب شوند، تضمینی نیستند",
-  "utwente.nl؛ liu.se؛ bth.se؛ sdu.dk؛ studyindenmark.dk؛ ul.ie؛ maynoothuniversity.ie؛ brunel.ac.uk؛ strath.ac.uk؛ swansea.ac.uk"],
+  "Teesside: £17,000\nNorthumbria: £21,500\nLeicester: £24,250\nEssex: £24,675\nBrunel: £24,795\nYork: £32,900 (Newcastle ≈ £31,700)\nکف قیمت انگلستان: Chester £15,500 (بدون رتبه). بورس‌ها (مثلاً Brunel تا £6,000) جدا حساب شوند، تضمینی نیستند",
+  "utwente.nl؛ liu.se؛ bth.se؛ sdu.dk؛ studyindenmark.dk؛ ul.ie؛ maynoothuniversity.ie؛ brunel.ac.uk؛ tees.ac.uk؛ northumbria.ac.uk؛ le.ac.uk؛ essex.ac.uk؛ york.ac.uk"],
 
  ["۵", "شهریه سالانه به دلار",
   "$350–900 (Stuttgart ≈ $3,400)", "$22,500–24,700", "$14,100–16,800",
-  "$15,800–17,000", "$17,100–23,700", "$32,100–42,300",
+  "$15,800–17,000", "$17,100–23,700", "$22,500–43,600 (Teesside $22,500 · Northumbria $28,500 · Leicester/Essex/Brunel ≈ $32,100–32,900 · York $43,600)",
   FX],
 
  ["۶", "هزینه زندگی ماهانه واقعی دانشجو (و حداقل قانونی ویزا ۲۰۲۶)",
@@ -57,7 +57,7 @@ ROWS = [
   "SEK 10,700–13,000 (≈ €950–1,150)\nحداقل Migrationsverket: SEK 10,656/ماه",
   "DKK 8,000–10,000 (≈ €1,070–1,340) در Aalborg/Odense\nحداقل SIRI: DKK 7,426/ماه",
   "Dublin: €1,400–1,800 (اتاق €800–1,200)\nLimerick/Maynooth: €1,100–1,400\nحداقل رسمی ISD: €10,000 برای یک سال",
-  "Glasgow/Swansea: £1,000–1,300\nLondon (Brunel): £1,400–1,800\nحداقل ویزا: £1,171 / £1,529 در ماه (× ۹)؛ از ۳۰ نوامبر ۲۰۲۶: £1,203 / £1,570",
+  "شمال انگلستان (Middlesbrough/Newcastle): £950–1,250\nLeicester/Colchester/York: £1,000–1,350\nLondon (Brunel): £1,400–1,800\nحداقل ویزا: £1,171 / £1,529 در ماه (× ۹)؛ از ۳۰ نوامبر ۲۰۲۶: £1,203 / £1,570",
   "make-it-in-germany.com؛ ind.nl؛ migrationsverket.se؛ nyidanmark.dk؛ irishimmigration.ie؛ gov.uk (HC 584)"],
 
  ["۷", "هزینه سال اول = شهریه + ۱۲ ماه زندگی (دلار)",
@@ -66,7 +66,7 @@ ROWS = [
   "$27,000–32,500",
   "$30,500–35,500",
   "$32,000–48,000 (خارج از Dublin: $32,000–40,000)",
-  "$48,000–71,000 (Swansea: $48,000–53,000)",
+  "$38,000–65,000 (Teesside $38–42k · Northumbria $44–48k · Leicester/Essex $48–54k · Brunel/London $55–61k · York $60–65k)",
   "محاسبه از ردیف‌های ۴ و ۶؛ بدون بلیت، ویزا، بیمه، ودیعه (۱۰–۱۵٪ اضافه کنید)"],
 
  ["۸", "هزینه کل تا فارغ‌التحصیلی (شهریه × سال‌ها + زندگی) — مهم‌ترین عدد مالی",
@@ -75,7 +75,7 @@ ROWS = [
   "$54,000–65,000 (۲ سال)",
   "$61,000–71,000 (۲ سال)",
   "$32,000–48,000 (۱ سال)",
-  "$48,000–71,000 (۱ سال)",
+  "$38,000–65,000 (۱ سال)",
   "محاسبه؛ جدول اول فقط سال اول را مقایسه کرده بود"],
 
  ["۹", "سازگاری با بودجه $32,000 در سال",
@@ -84,7 +84,7 @@ ROWS = [
   "✅ (Linköping دقیقاً مرزی)",
   "⚠️ مرزی؛ کسری تا ≈ $3,500 در سال",
   "⚠️ خارج از Dublin یا با شهریه TU Dublin ✓؛ Dublin کسری",
-  "❌ کسری $16,000–39,000",
+  "❌ کسری $6,000–33,000 (کمترین: Teesside ≈ $6–10k؛ Northumbria ≈ $12–16k)",
   "محاسبه از ردیف ۷"],
 
  ["۱۰", "مسکن در بدو ورود",
@@ -155,7 +155,7 @@ ROWS = [
   "SEK 420,000–540,000 (35–45 هزار در ماه)",
   "DKK 500,000–540,000 (IDA 2026: تازه‌فارغ‌التحصیل ≈ DKK 43,800/ماه با بازنشستگی)",
   "€35,000–45,000 (میانه Dublin ≈ €38k؛ Big Tech €50k+)",
-  "£28,000–35,000 خارج لندن؛ London £32,000–45,000 — اغلب زیر کف اسپانسری £38,290",
+  "£28,000–35,000 خارج لندن (Manchester/Leeds/Newcastle)؛ London £32,000–45,000 — اغلب زیر کف اسپانسری £38,290",
   "StepStone؛ Glassdoor؛ IDA؛ Reed — برآورد بازار، نه آمار رسمی"],
 
  ["۱۸", "خالص ماهانه تقریبی (بعد از مالیات)",
@@ -237,7 +237,7 @@ ROWS = [
   "بالا: شهروندی ۸ سال، کف حقوق ۹۰٪ میانه، سقف کار ۱۵ ساعت، تبدیل اقامت تحصیلی به کاری فقط بعد از ≥ ۲ ترم",
   "متوسط–بالا: سخت‌گیرانه ولی پایدار",
   "پایین–متوسط: افزایش پلکانی کف حقوق تا ۲۰۳۰",
-  "بسیار بالا: Graduate visa ۱۸ ماه، B2، طرح PR ۱۰ ساله، عوارض £925/دانشجو/سال از 2028-29 (فقط دانشگاه‌های انگلستان: Brunel بله، Strathclyde/Swansea خیر)",
+  "بسیار بالا: Graduate visa ۱۸ ماه، B2، طرح PR ۱۰ ساله، عوارض £925/دانشجو/سال از اوت ۲۰۲۸ فقط برای دانشگاه‌های انگلستان — یعنی همهٔ گزینه‌های شما (ورودی ۲۰۲۸)؛ احتمالاً به شهریه اضافه می‌شود",
   "قوانین و لوایح ۲۰۲۵–۲۶"],
 
  ["۲۸", "امتیاز برای ۳ معیار شما (هر کدام از ۱۰): هزینه کل / زندگی و کار فقط با انگلیسی / بازار کار و حقوق",
@@ -246,18 +246,19 @@ ROWS = [
   "6 / 8 / 5 = ۱۹",
   "4 / 6 / 6 = ۱۶",
   "7 / 10 / 8 = ۲۵",
-  "3 / 10 / 4 = ۱۷",
-  "وزن برابر. اگر «انگلیسی» وزن بیشتری دارد → ایرلند با فاصله؛ اگر «هزینه» وزن بیشتری دارد و B1 آلمانی را می‌پذیرید → آلمان."],
+  "5 / 10 / 4 = ۱۹",
+  "وزن برابر. اگر «انگلیسی» وزن بیشتری دارد → ایرلند با فاصله؛ اگر «هزینه» وزن بیشتری دارد و B1 آلمانی را می‌پذیرید → آلمان. انگلستان با گزینه‌های ارزان شمال (Teesside/Northumbria) از ۱۷ به ۱۹ رسید (هم‌امتیاز سوئد) ولی هنوز از بودجهٔ سالانه $32k بیرون است."],
 ]
 
 SUMMARY = [
- ["رتبه‌بندی هزینه کل تا فارغ‌التحصیلی", "آلمان $27–36k  <  ایرلند $32–48k  <  بریتانیا $48–71k  <  سوئد $54–65k  <  دانمارک $61–71k  <  هلند $75–90k"],
- ["فقط با انگلیسی (تحصیل + کار + اداری + اقامت)", "ایرلند و بریتانیا کامل؛ هلند و سوئد برای زندگی/کار خوب ولی برای اقامت دائم/تابعیت زبان می‌خواهند (هلند B1 در راه، سوئد آزمون تابعیت)؛ دانمارک و آلمان بدون زبان محلی هم بازار کار و هم PR محدود."],
- ["بازار کار و حقوق جونیور", "حقوق ناخالص: دانمارک > آلمان > هلند ≈ سوئد > ایرلند > بریتانیا. دسترسی برای جونیورِ فقط‌انگلیسی: ایرلند ≈ هلند > آلمان > سوئد ≈ دانمارک ≈ بریتانیا."],
- ["نتیجه با وزن برابر برای ۳ معیار", "ایرلند ۲۵ › آلمان ۲۲ › سوئد ۱۹ › هلند ۱۸ › بریتانیا ۱۷ › دانمارک ۱۶.  پیشنهاد: اپلای هم‌زمان به ۲–۳ برنامه ایرلند (UL، Maynooth، TU Dublin) + ۲ برنامه آلمان (Stuttgart، FAU یا یک گزینه Safe)؛ تصمیم نهایی با پذیرش/بورس و وضعیت سفارت‌ها در ۲۰۲۸."],
+ ["رتبه‌بندی هزینه کل تا فارغ‌التحصیلی", "آلمان $27–36k  <  ایرلند $32–48k  <  انگلستان $38–65k  <  سوئد $54–65k  <  دانمارک $61–71k  <  هلند $75–90k"],
+ ["فقط با انگلیسی (تحصیل + کار + اداری + اقامت)", "ایرلند و انگلستان کامل؛ هلند و سوئد برای زندگی/کار خوب ولی برای اقامت دائم/تابعیت زبان می‌خواهند (هلند B1 در راه، سوئد آزمون تابعیت)؛ دانمارک و آلمان بدون زبان محلی هم بازار کار و هم PR محدود."],
+ ["بازار کار و حقوق جونیور", "حقوق ناخالص: دانمارک > آلمان > هلند ≈ سوئد > ایرلند > انگلستان. دسترسی برای جونیورِ فقط‌انگلیسی: ایرلند ≈ هلند > آلمان > سوئد ≈ دانمارک ≈ انگلستان."],
+ ["نتیجه با وزن برابر برای ۳ معیار", "ایرلند ۲۵ › آلمان ۲۲ › سوئد ۱۹ = انگلستان ۱۹ › هلند ۱۸ › دانمارک ۱۶.  پیشنهاد: اپلای هم‌زمان به ۲–۳ برنامه ایرلند (UL، Maynooth، TU Dublin) + ۲ برنامه آلمان (Stuttgart، FAU یا یک گزینه Safe)؛ تصمیم نهایی با پذیرش/بورس و وضعیت سفارت‌ها در ۲۰۲۸."],
  ["ریسک شماره یک", "دسترسی به سفارت‌ها از داخل ایران (ردیف ۲۳): در سپتامبر ۲۰۲۶ هیچ‌کدام از ۶ کشور خدمات عادی ویزای دانشجویی در تهران ندارند. از الان هزینه «برنامه B» (اقدام از ترکیه/ارمنستان/امارات) را در بودجه ببینید."],
- ["برنامه زمانی ورودی سپتامبر ۲۰۲۸", "تا بهار ۲۰۲۷: IELTS 7.0 (هر بخش ≥ 6.5) · تابستان ۲۰۲۷: ریزنمرات رسمی + تأییدیه‌ها + VPD uni-assist · پاییز ۲۰۲۷ تا زمستان ۲۰۲۸: اپلای (ایرلند rolling از اکتبر؛ سوئد ۱۵ ژانویه؛ هلند تا ۱ می؛ آلمان ۱۵ ژانویه–۱۵ ژوئیه؛ بریتانیا rolling) · بهار ۲۰۲۸: شهریه/تمکن → خوابگاه → ویزا یا برنامه B."],
- ["تغییرات اصلی نسبت به جدول اول", "• هزینه کل دوره اضافه شد (هلند از «نیاز به تأمین سال دوم» به گران‌ترین گزینه تبدیل شد)\n• بریتانیا: Graduate visa ۱۸ ماه؛ کف اسپانسری £54,700 / £38,290؛ طرح PR ۱۰ ساله؛ شهریه Strathclyde £31,900\n• کف حقوق ۲۰۲۶ همه کشورها به‌روز شد (آلمان €50,700/€45,934؛ هلند €3,122/ماه؛ سوئد SEK 34,470؛ ایرلند €40,904)\n• ایرلند: ۲ سال CSEP = Stamp 4 نه PR؛ تمکن €10,000\n• سوئد: کار دانشجویی ۱۵ ساعت/هفته (ژوئن ۲۰۲۶)؛ شهروندی ۸ سال؛ «BTH یک‌ساله» حذف شد؛ خوابگاه فقط LiU\n• QS 2027؛ شهریه‌های واقعی 2026/27؛ «۷۵٪ قبولی» حذف شد\n• «۱۰۰٪ انگلیسی» برای هلند/سوئد/دانمارک تعدیل شد؛ دانمارک PD2/PD3 تفکیک شد\n• ردیف ویزا برای وضعیت ۲۰۲۶ بازنویسی شد؛ ردیف‌های IELTS، تمکن مالی، پس‌انداز، شهروندی و امتیاز اضافه شد"],
+ ["برنامه زمانی ورودی سپتامبر ۲۰۲۸", "تا بهار ۲۰۲۷: IELTS 7.0 (هر بخش ≥ 6.5) · تابستان ۲۰۲۷: ریزنمرات رسمی + تأییدیه‌ها + VPD uni-assist · پاییز ۲۰۲۷ تا زمستان ۲۰۲۸: اپلای (ایرلند rolling از اکتبر؛ سوئد ۱۵ ژانویه؛ هلند تا ۱ می؛ آلمان ۱۵ ژانویه–۱۵ ژوئیه؛ انگلستان rolling) · بهار ۲۰۲۸: شهریه/تمکن → خوابگاه → ویزا یا برنامه B."],
+ ["تغییرات اصلی نسبت به جدول اول", "• هزینه کل دوره اضافه شد (هلند از «نیاز به تأمین سال دوم» به گران‌ترین گزینه تبدیل شد)\n• فقط انگلستان (به خواست شما): Strathclyde و Swansea حذف شدند؛ گزینه‌ها Teesside £17,000 · Northumbria £21,500 · Leicester £24,250 · Essex £24,675 · Brunel £24,795 · York £32,900؛ Graduate visa ۱۸ ماه؛ کف اسپانسری £54,700 / £38,290؛ طرح PR ۱۰ ساله؛ عوارض £925 از ۲۰۲۸ شامل همهٔ گزینه‌ها\n• کف حقوق ۲۰۲۶ همه کشورها به‌روز شد (آلمان €50,700/€45,934؛ هلند €3,122/ماه؛ سوئد SEK 34,470؛ ایرلند €40,904)\n• ایرلند: ۲ سال CSEP = Stamp 4 نه PR؛ تمکن €10,000\n• سوئد: کار دانشجویی ۱۵ ساعت/هفته (ژوئن ۲۰۲۶)؛ شهروندی ۸ سال؛ «BTH یک‌ساله» حذف شد؛ خوابگاه فقط LiU\n• QS 2027؛ شهریه‌های واقعی 2026/27؛ «۷۵٪ قبولی» حذف شد\n• «۱۰۰٪ انگلیسی» برای هلند/سوئد/دانمارک تعدیل شد؛ دانمارک PD2/PD3 تفکیک شد\n• ردیف ویزا برای وضعیت ۲۰۲۶ بازنویسی شد؛ ردیف‌های IELTS، تمکن مالی، پس‌انداز، شهروندی و امتیاز اضافه شد"],
+ ["چرا «انگلستان» و نه «بریتانیا»", "به خواست شما فقط دانشگاه‌های انگلستان مقایسه شده‌اند. قوانین ویزا، کار و اقامت در کل بریتانیا یکسان است؛ سه تفاوت عملی: (۱) ارزان‌ترین گزینه‌های انگلستان (Teesside £17,000، Northumbria £21,500) از Swansea/Strathclyde ارزان‌ترند → کل دوره از $48–71k به $38–65k رسید؛ (۲) عوارض £925 به ازای هر دانشجو از اوت ۲۰۲۸ فقط دانشگاه‌های انگلستان را می‌گیرد — یعنی همهٔ گزینه‌های شما؛ (۳) بازار کار فناوری بریتانیا عملاً در انگلستان است (London، Manchester، Cambridge، Bristol، Leeds) — حذف اسکاتلند/ولز به فرصت شغلی لطمه نمی‌زند. برای شهریهٔ کمتر باید رتبهٔ پایین‌تر را بپذیرید: Teesside/Chester بدون رتبه QS، Northumbria ≈ ۵۲۸، Essex ≈ ۴۳۸؛ York (۱۵۸) و Newcastle (۱۴۹) تقریباً دوبرابر گران‌ترند."],
  ["نکته پروفایل", "معدل (۱۵.۷۷ طبق جدول اول؛ ۱۵.۷۰ طبق نقد دوم — تفاوتی در نتیجه ندارد) برای همه برنامه‌های بالا بالاتر از حداقل است. مهم‌تر از معدل، تطابق ریزنمرات با پیش‌نیازها (ریاضی، الگوریتم، CS نظری) و SOP با تکیه بر ۲ سال سابقه کار + بازی‌سازی + پروژه‌های گیت‌هاب است."],
  ["اعداد را چگونه بخوانم", "همه مبالغ سطح 2026/27 هستند؛ برای ۲۰۲۸ سالانه ۳–۵٪ (شهریه ۵–۱۰٪) اضافه کنید. " + FX],
 ]
@@ -312,13 +313,22 @@ SOURCES = [
  ("بریتانیا – HC 584 (۳ سپتامبر ۲۰۲۶): تمکن £1,570 / £1,203 از ۳۰ نوامبر ۲۰۲۶", "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-584-3-september-2026"),
  ("بریتانیا – Skilled Worker نرخ شغل SOC 2134 £54,700", "https://withrowan.co.uk/guides/skilled-worker-software-engineers"),
  ("بریتانیا – Earned Settlement (وضعیت سپتامبر ۲۰۲۶)", "https://www.ukimmigration.law/earned-settlement-ilr-uk-plans/"),
- ("بریتانیا – Strathclyde شهریه PG 2026-27", "https://www.strath.ac.uk/media/1newwebsite/documents/tuitionfees/PG_Fees_2026-2027_Entry_v0.7.pdf"),
- ("بریتانیا – Swansea MSc Advanced Computer Science", "https://www.swansea.ac.uk/postgraduate/taught/maths-comp-sci/computer-science/msc-advanced-computer-science/"),
+ ("انگلستان – Teesside MSc Computer Science 2026-27: £17,000، 2:2، IELTS 6.0", "https://www.tees.ac.uk/postgraduate_courses/computing_&_cyber_security/msc_computer_science.cfm"),
+ ("انگلستان – Northumbria MSc Advanced Computer Science 2026/27: £21,500، 2:2", "https://www.northumbria.ac.uk/study-at-northumbria/courses/msc-advanced-computer-science-dtfava6/"),
+ ("انگلستان – Leicester MSc Advanced Computer Science سپتامبر ۲۰۲۶: £24,250، 2:1", "https://le.ac.uk/courses/advanced-computer-science-msc/2026"),
+ ("انگلستان – Essex MSc Advanced Computer Science 2026: £24,675، 2:2 (شامل Computer Engineering)", "https://www.essex.ac.uk/courses/pg00435/1/msc-advanced-computer-science"),
+ ("انگلستان – York MSc Advanced Computer Science 2026/27: £32,900، 2:2، IELTS 6.5", "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-advanced-computer-science/"),
+ ("انگلستان – Chester MSc Advanced Computer Science 2026/27: £15,500 (کف قیمت انگلستان)", "https://www.chester.ac.uk/study/course-search/advanced-computer-science-msc/"),
  ("بریتانیا – Brunel MSc AI 2026/27 £24,795", "https://www.brunel.ac.uk/study/courses/artificial-intelligence-msc"),
  ("بریتانیا – عوارض £925 به ازای هر دانشجوی بین‌المللی (انگلستان، از 2028-29)", "https://www.researchprofessionalnews.com/rr-news-uk-politics-2025-11-international-levy-to-be-flat-fee-of-925-per-student/"),
  ("بریتانیا – وضعیت VAC تهران", "https://livingintehran.com/2026/02/03/tehran-diplomatic-update-recent-embassy-reopenings-current-status-feb-2026/"),
  ("QS WUR 2027 – TU Dresden", "https://tu-dresden.de/tu-dresden/newsportal/news/qs-ranking-2027-tud-gehoert-erneut-zu-den-zehn-besten-universitaeten-deutschlands-und-baut-internationalen-erfolg-weiter-aus"),
  ("QS WUR 2027 – Stuttgart", "https://www.uni-stuttgart.de/en/university/news/all/QS-World-University-Rankings-2027-The-University-of-Stuttgart-is-recognized-for-its-strong-research-performance-and-commitment-to-sustainability/"),
+ ("QS WUR 2027 – Newcastle 149", "https://www.ncl.ac.uk/press/articles/latest/2026/06/qs2027/"),
+ ("QS WUR 2027 – York =158", "https://www.york.ac.uk/about/rankings/"),
+ ("QS WUR 2027 – Leicester =314", "https://www.topuniversities.com/universities/university-leicester"),
+ ("QS WUR 2027 – Essex =438", "https://www.topuniversities.com/universities/essex-university"),
+ ("QS WUR 2027 – Northumbria =528", "https://www.topuniversities.com/universities/northumbria-university-newcastle"),
  ("QS WUR 2027 – Brunel", "https://students.brunel.ac.uk/campus-news/brunel-climbs-global-qs-rankings-after-strong-year-for-research-and-graduate-outcomes"),
  ("QS WUR 2027 – سایر", "https://www.topuniversities.com/world-university-rankings"),
  ("حداقل دستمزد ۲۰۲۶ هلند (€14.71)", "https://arlettipartners.com/new-increase-in-the-dutch-minimum-hourly-wage-from-january-1st-2026/"),

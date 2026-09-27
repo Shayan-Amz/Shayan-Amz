@@ -313,6 +313,24 @@ SOURCES = [
  ("دانمارک – SDU MSc Computer Science (ظرفیت محدود، €17,300)", "https://www.sdu.dk/en/uddannelse/kandidat/datalogi/adgangskrav"),
  ("دانمارک – سفارت تهران (درخواست از ایران ممکن نیست)", "https://iran.um.dk/en"),
  ("دانمارک – IDA حقوق شروع ۲۰۲۶", "https://studerende.ida.dk/snart-nyuddannet/loen/softwareingenioer-loen-saa-meget-kommer-du-til-at-tjene/"),
+ ("مسکن – DSW: میانگین اجارهٔ خوابگاه Studierendenwerk ≈ €306 با قبوض؛ ۱,۷۰۰ خوابگاه / ۱۹۶ هزار جا", "https://www.studierendenwerke.de/en/topics/accomodation/accommodation-and-studies"),
+ ("مسکن – Studierendenwerk Stuttgart: €229–399 با قبوض، لیست انتظار معمول ۶–۸ ماه (اطلاعیهٔ رسمی)", "https://www.studierendenwerk-stuttgart.de/ueber-uns/presse/pressemitteilungen/mitteilung/wohnraum-fuer-studierende-in-der-hochschulregion-stuttgart"),
+ ("مسکن – Radboud: کمک مسکن (فرم PAS تا ۱ ژوئن)، بدون تضمین، گاهی ۳ ماه پیش‌پرداخت", "https://www.ru.nl/en/students/international-students/housing/housing-options/apply-for-help-with-housing"),
+ ("مسکن – Radboud بروشور 2026–27: اتاق مبلهٔ €370–650؛ زندگی €1,100–1,200", "https://www.timeshighereducation.com/cms-academic/sites/default/files/institution_downloads/2025-08/OM_BAMA_intbrochure_2026-2027_interactieve_3.pdf"),
+ ("مسکن – Utrecht: استودیوهای رزروشدهٔ ارشد €868 با قبوض، ودیعه €1,306؛ ۲۸ می ۲۰۲۶ تمام شد", "https://www.uu.nl/en/education/welcome-to-utrecht/prepare-your-stay/arrange-housing/ways-to-find-housing/uu-reserved-accommodation-progamme/reserved-accommodation-for-masters-sep-26/reserved-housing-plaza"),
+ ("مسکن – Twente: اجاره €300–800؛ Roomspot؛ پیشنهاد برای دانشجویان ویزایی اول‌آمده‌اول‌گرفته", "https://issuu.com/utwente/docs/master_programmes_university_of_twente/s/16597294"),
+ ("مسکن – Uppsala: تضمین رسمی خوابگاه برای شهریه‌پردازها", "https://www.uu.se/en/study/masters-studies/living-in-sweden/housing"),
+ ("مسکن – Stockholm University: بدون تضمین؛ ≈ ۶۰۰ واحد برای بین‌المللی‌ها", "https://medarbetare.su.se/en/education/first-and-second-level/internationalisation-for-students/housing-for-international-students"),
+ ("مسکن – AAU Copenhagen: صریحاً بدون تضمین؛ KKIK/CIU DKK 3,500–6,000؛ خوابگاه 5,000–9,000", "https://www.en.aau.dk/living-in-denmark/accommodation/international-students-in-copenhagen"),
+ ("مسکن – AAU Aalborg: دفتر مسکن بین‌الملل، ۲۲۰+ واحد مبله، «تقریباً ۱۰۰٪ تضمین»، DKK 3,200–4,700 (ثانویه + بروشور AAU)", "https://www.findunirooms.com/denmark/aalborg-university/"),
+ ("مسکن – York: تضمین PG تا ۳۱ ژوئیه؛ اجارهٔ 2026/27 £186–224/هفته (۵۱ هفته)", "https://www.york.ac.uk/study/accommodation/postgraduate/"),
+ ("مسکن – Essex: تضمین خوابگاه PG برای کل دوره با اقدام تا مهلت", "https://www.essex.ac.uk/life/accommodation/apply/new-students/postgraduate"),
+ ("مسکن – Brunel: تضمین برای همهٔ دانشجویان جدید؛ مهلت ۱۵ مارس ۲۰۲۶؛ پیش‌پرداخت £350/£450", "https://www.brunel.ac.uk/life/accommodation/how-to-apply"),
+ ("مسکن – Newcastle: فهرست خوابگاه‌های PG 2026/27 (£117.60–239.75/هفته)", "https://www.ncl.ac.uk/accommodation/university/"),
+ ("مسکن – Northumbria: خوابگاه £94.19–158.31/هفته با قبوض؛ catered و self-catered؛ حداقل زندگی £1,015/ماه", "https://www.northumbria.ac.uk/study-at-northumbria/postgraduate-study/pg-info-new/postgraduate-study-living-costs/"),
+ ("مسکن – Durham: catered فقط برای کارشناسی (University College)؛ PG self-catered؛ راهنمای کالج PG", "https://www.durham.ac.uk/colleges-and-student-experience/colleges/university/accommodation/"),
+ ("مسکن – Durham قیمت 25/26: catered £10,233/سال، self-catered £7,146–7,801 (۳۹ هفته)، سهم غذا £3,087", "https://www.palatinate.org.uk/college-accommodation-prices-increase-by-5/"),
+ ("مسکن – Imperial: PG بدون تضمین؛ خوابگاه £210–410/هفته (۲۰۲۶)؛ طرح ضامن اجاره فقط UG/PhD؛ UCL طرح ضامن £50", "https://www.harveywjames.com/news-imperial-college-rent-guarantee-scheme-london"),
  ("Russell Group – فهرست رسمی ۲۴ عضو (۲۰ در انگلستان)", "https://russellgroup.ac.uk/about/our-universities/"),
  ("انگلستان – Warwick: جدول رسمی تطبیق مدرک ایرانی (1st ۱۷/۲۰، 2:1 ۱۵/۲۰، 2:2 ۱۳/۲۰)", "https://warwick.ac.uk/study/international/countryinformation/middleeast/iran/"),
  ("انگلستان – Durham MSc Advanced Computer Science: £34,500 (2026)؛ جدول ایران (2:1 = ۱۴–۱۶/۲۰؛ Ecctis)", "https://www.durham.ac.uk/study/courses/advanced-computer-science-g5t609/"),
@@ -667,6 +685,134 @@ c.alignment = wrap_rtl
 c.font = Font(bold=True)
 ws6.merge_cells(start_row=n6, start_column=1, end_row=n6, end_column=5)
 ws6.row_dimensions[n6].height = 60
+
+
+# ---- Sheet: housing
+HEAD7A = ["کشور", "چه کسی خوابگاه می‌دهد؟", "تضمین برای دانشجوی ارشد بین‌المللی؟", "هزینه‌اش داخل شهریه است؟", "اجارهٔ خوابگاه (ماهانه، معمولاً با قبوض)", "غذا (catered)؟", "اگر خوابگاه نشد: اتاق/خانهٔ خصوصی (ماهانه)", "زمان اقدام، ودیعه، ضامن — نکات ایرانی‌ها", "منبع"]
+HOUSING_COUNTRY = [
+ ["آلمان 🇩🇪",
+  "Studierendenwerk (نهاد عمومی هر شهر)؛ خودِ دانشگاه خوابگاه ندارد. ۱,۷۰۰ خوابگاه / ≈ ۱۹۶ هزار جا در کل کشور",
+  "❌ هیچ تضمینی؛ لیست انتظار. Stuttgart: معمولاً ۶–۸ ماه برای ترم زمستان · Darmstadt/Aachen سخت · Dresden، Chemnitz، Magdeburg، Passau، Saarbrücken راحت‌تر. بلافاصله بعد از پذیرش (قبل از ویزا) در لیست بنویسید",
+  "❌ جدا (شهریه‌ای هم نیست)",
+  "میانگین ملی ≈ €306–330 با همهٔ قبوض (DSW) · Stuttgart میانگین €345 (بازهٔ €229–500) · شرق آلمان €220–330",
+  "❌ بدون غذا؛ Mensa ناهار €3–5",
+  "اتاق در WG: Stuttgart/Darmstadt/Aachen/Erlangen €450–700 · Dresden/Chemnitz/Magdeburg/Passau/Saarbrücken €280–450 · آپارتمان یک‌خوابه €600–1,000",
+  "ودیعهٔ ۲–۳ اجاره · بدون آدرس رسمی (Anmeldung) کارت اقامت نمی‌گیرید → قبل از پرواز حداقل اقامت موقت رزرو کنید · WGهای خصوصی معمولاً SCHUFA نمی‌خواهند ولی مصاحبهٔ ویدئویی و گواهی حساب مسدود کمک می‌کند",
+  "studierendenwerke.de؛ studierendenwerk-stuttgart.de؛ hdm-stuttgart.de"],
+ ["هلند 🇳🇱",
+  "دانشگاه‌ها خوابگاه ندارند؛ با شرکت‌های مسکن دانشجویی (SSH، Roomspot/De Veste، Vestide، Plaza) تعدادی اتاق «رزرو» می‌کنند",
+  "❌ نه. Twente: پیشنهاد اتاق برای دانشجویان ویزایی از طریق Roomspot، اول‌آمده‌اول‌گرفته · Radboud: «کمک مسکن» با فرم PAS تا ۱ ژوئن، اتاق مبلهٔ €370–650، بدون تضمین · Utrecht: استودیوهای رزروشدهٔ ارشد در ۲۸ می ۲۰۲۶ همه تمام شد · UvA/Delft/Leiden: قرعه‌کشی",
+  "❌ جدا",
+  "Enschede/Nijmegen €370–650 · Eindhoven/Utrecht €500–870 (Utrecht Plaza: €868 با قبوض) · Amsterdam/Delft/Leiden €700–1,100",
+  "❌",
+  "اتاق €500–900 · استودیو €900–1,400 · بحران ملی مسکن؛ بدون اتاق ثبت‌نام BSN و بانک هم گیر می‌کند",
+  "بعضی ارائه‌دهنده‌ها ۳ ماه اجاره پیش می‌گیرند · ودیعه ۱–۲ ماه (Utrecht: €1,306) · قرارداد ۱۲ ماههٔ غیرقابل فسخ · کلاهبرداری آنلاین زیاد: فقط از کانال دانشگاه/SSH",
+  "ru.nl؛ sshn.nl؛ uu.nl؛ utwente.nl (issuu)"],
+ ["سوئد 🇸🇪",
+  "شرکت‌های مسکن دانشجویی/شهرداری (SGS گوتنبرگ، SSSB استکهلم، Studentbostäder لینشوپینگ…)؛ بعضی دانشگاه‌ها برای «شهریه‌پردازها» سهمیه دارند",
+  "✅ Uppsala: تضمین رسمی برای شهریه‌پردازها · LiU: یک پیشنهاد اتاق برای سال اول · KTH/Stockholm University: ❌ · Halmstad: «تضمین نمی‌کند» · Chalmers/MDU/BTH/Skövde: سهمیه یا صف — بلافاصله بعد از پرداخت شهریه اقدام کنید",
+  "❌ جدا",
+  "اتاق کریدوری SEK 3,500–6,500 (Stockholm 4,500–8,000؛ Linköping/Halmstad/Västerås/Karlskrona/Skövde ارزان‌تر)",
+  "❌",
+  "اتاق SEK 5,000–8,000 · آپارتمان کوچک SEK 8,000–13,000 · در استکهلم/گوتنبرگ بدون صف چندساله تقریباً غیرممکن",
+  "بدون شمارهٔ ملی (personnummer) اجارهٔ خصوصی سخت است؛ اجارهٔ دست‌دوم (andrahand) رایج و پرکلاهبرداری · ودیعه معمولاً ۱ ماه",
+  "uu.se؛ liu.se؛ hh.se؛ su.se"],
+ ["دانمارک 🇩🇰",
+  "دفتر مسکن بین‌الملل دانشگاه (AAU، SDU، AU) + خوابگاه‌های kollegium و شرکت‌های عمومی (KKIK/CIU در کپنهاگ)",
+  "AAU Aalborg: «تقریباً ۱۰۰٪» (دفتر مسکن بین‌الملل، ۲۲۰+ واحد مبله) · AAU Copenhagen: ❌ صریحاً «بدون تضمین» · SDU Odense: کمک، بدون تضمین · ITU/DTU/KU کپنهاگ: ❌",
+  "❌ جدا",
+  "Aalborg DKK 3,200–4,700 (میانگین 3,950؛ اینترنت/آب/گرمایش/برق داخل) · Odense DKK 3,500–5,500 · Copenhagen DKK 3,500–6,000 (KKIK/CIU) تا 5,000–9,000 (خوابگاه خصوصی/co-living)",
+  "❌",
+  "Aalborg/Odense اتاق DKK 3,500–5,000 · Copenhagen آپارتمان از DKK 7,000+",
+  "AAU اجاره را سه‌ماهه می‌گیرد · ودیعه تا ۳ ماه · کمک‌هزینهٔ مسکن دولتی برای دانشجوی بین‌المللی ممنوع (گرفتنش = لغو اقامت)",
+  "en.aau.dk؛ sdu.dk"],
+ ["سوئیس 🇨🇭",
+  "تعاونی‌های خوابگاه (WOKO/Juwo زوریخ، FMEL لوزان، خوابگاه‌های USI لوگانو، WoVe بازل، StuWo برن…)؛ دانشگاه فقط معرفی می‌کند",
+  "❌ هیچ‌جا. زوریخ لیست انتظار ۳–۱۲ ماه — روز پذیرش ثبت‌نام کنید · لوزان FMEL زود پر می‌شود · لوگانو/فریبورگ/نوشاتل/برن/لوسرن آسان‌تر",
+  "❌ جدا",
+  "WOKO زوریخ CHF 480–900 · FMEL ≈ CHF 500–900 · USI/Bern/Fribourg/Neuchâtel/Luzern ≈ CHF 450–800",
+  "❌ (Mensa ناهار CHF 7–12)",
+  "اتاق در WG: زوریخ CHF 700–1,200، بقیه CHF 600–900 · استودیو CHF 1,200–1,800",
+  "ودیعهٔ ۲–۳ ماه · اجارهٔ خصوصی زوریخ اغلب گواهی عدم بدهی (Betreibungsauszug) + ضامن یا بیمهٔ ودیعه می‌خواهد · اجازهٔ اقامت به آدرس ثبت‌شده وابسته است",
+  "woko.ch؛ fmel.ch؛ برآوردهای ردیف ۱۰ جدول اصلی"],
+ ["انگلستان 🇬🇧",
+  "خودِ دانشگاه (halls) + خوابگاه‌های خصوصی PBSA (Unite، iQ، Student Roost…)",
+  "✅ در بسیاری از دانشگاه‌ها برای ارشد، اگر تا مهلت اقدام کنید: York (تا ۳۱ ژوئیه)، Essex (برای کل دوره)، Brunel (همهٔ دانشجویان جدید؛ مهلت ۱۵ مارس!)، Teesside/Northumbria/Newcastle/Sheffield/Lancaster معمولاً بله (تأیید کنید) · ❌ Imperial، UCL، KCL، Durham (کالج‌ها برای PG بدون تضمین)، Warwick محدود",
+  "❌ همیشه جدا؛ قرارداد ۴۰–۵۱ هفته؛ قبوض و اینترنت داخل",
+  "شمال: Northumbria £94–158/هفته (رسمی) · Teesside ≈ £95–140 · Newcastle £118–240 (رسمی) · York £186–224 (رسمی؛ ۵۱ هفته = £9.5–11.4k/سال) · Durham PG ≈ £183–200 self-catered · جنوب/لندن: Essex ≈ £115–200 · Brunel ≈ £150–240 · UCL/KCL ≈ £190–350 · Imperial £210–410. یعنی ماهانه ≈ £400–700 شمال، £650–1,000 جنوب، £900–1,800 لندن",
+  "✅ «catered halls» وجود دارد ولی عمدتاً برای سال اول کارشناسی. برای ارشد: Durham (کالج‌های catered: صبحانه+ناهار+شام فقط در هفته‌های ترم ≈ ۳۰ هفته؛ ≈ £262/هفته = £10.2k/سال؛ سهم غذا ≈ £3,087) · Northumbria گزینهٔ catered دارد · York، Essex، Brunel، Newcastle، Teesside برای PG فقط self-catered",
+  "اتاق در خانهٔ مشترک: شمال £450–650/ماه · Colchester/Coventry/York £550–750 · لندن £900–1,400 · PBSA خصوصی £140–290/هفته شمال، £270–450 لندن",
+  "مزیت بزرگ برای ایرانی: خوابگاه دانشگاه ضامن بریتانیایی نمی‌خواهد (اجارهٔ خصوصی معمولاً ضامن UK یا ۶–۱۲ ماه پیش‌پرداخت؛ خدمات ضامن ≈ £138/ماه) · پیش‌پرداخت £250–500 (Brunel £350/£450) · UCL طرح ضامن دانشگاهی £50 دارد؛ Imperial فقط برای UG/PhD",
+  "york.ac.uk؛ essex.ac.uk؛ brunel.ac.uk؛ ncl.ac.uk؛ northumbria.ac.uk؛ durham.ac.uk؛ palatinate.org.uk"],
+]
+HEAD7B = ["دانشگاه", "کشور / شهر", "خوابگاه یا کمک دانشگاه", "تضمین برای ارشد؟", "اجاره (ماهانه ≈)", "غذا؟", "مهلت / نکته", "منبع"]
+HOUSING_UNI = [
+ ["Universität Stuttgart", "آلمان / Stuttgart", "Studierendenwerk Stuttgart (۳۵ مجموعه، ۷,۲۰۰ جا)", "❌ لیست انتظار ۶–۸ ماه", "€229–500 (میانگین €345) با قبوض", "❌", "همان روز پذیرش ثبت‌نام؛ Esslingen/Göppingen زودتر خالی می‌شود", "studierendenwerk-stuttgart.de"],
+ ["Uni Passau / Saarland / TU Dresden / Chemnitz / OVGU", "آلمان / شهرهای ارزان", "Studierendenwerk محلی", "❌ ولی معمولاً ظرفیت هست", "€220–380 با قبوض (≈)", "❌", "شهرهای کوچک/شرقی: بدون بحران؛ WG خصوصی €280–450", "studierendenwerke.de (≈)"],
+ ["TU Darmstadt / RWTH Aachen / FAU Erlangen", "آلمان / شهرهای گران", "Studierendenwerk محلی", "❌ صف طولانی", "€300–450 با قبوض (≈)", "❌", "WG خصوصی €450–700؛ زودتر از همه اقدام کنید", "studierendenwerke.de (≈)"],
+ ["University of Twente", "هلند / Enschede", "اتاق‌های کمپوس و شهر از طریق Roomspot (اول‌آمده‌اول‌گرفته)", "پیشنهاد برای دانشجویان ویزایی اگر زود اقدام کنند", "€300–800", "❌", "بلافاصله بعد از پذیرش در Roomspot ثبت‌نام کنید", "utwente.nl (issuu)"],
+ ["Radboud University", "هلند / Nijmegen", "میانجی‌گری دانشگاه + SSH& (اتاق‌های مبله برای کل دوره)", "❌ «کمک، نه تضمین»", "€370–650", "❌", "فرم PAS تا ۱ ژوئن؛ پیشنهادها می–ژوئیه؛ گاهی ۳ ماه پیش‌پرداخت", "ru.nl؛ sshn.nl"],
+ ["Utrecht / TU Eindhoven / UvA / Delft / Leiden", "هلند / شهرهای بزرگ", "اتاق‌های رزروشده با SSH/Plaza/Vestide؛ قرعه‌کشی یا اول‌آمده", "❌ (Utrecht ۲۰۲۶: ۲۸ می تمام شد)", "€650–1,100 (Utrecht استودیو €868 با قبوض)", "❌", "ودیعه ≈ ۲ ماه (Utrecht €1,306)؛ قرارداد ۱۲ ماههٔ ثابت", "uu.nl"],
+ ["Uppsala University", "سوئد / Uppsala", "Housing Office دانشگاه", "✅ تضمین رسمی برای شهریه‌پردازها", "SEK 3,500–6,100", "❌", "شهریه را تا مهلت بپردازید و به‌موقع درخواست دهید", "uu.se"],
+ ["Linköping University", "سوئد / Linköping", "یک پیشنهاد اتاق برای سال اول (Studentbostäder)", "✅ یک پیشنهاد (نه انتخاب)", "SEK 3,500–5,500 (≈)", "❌", "بعد از پرداخت شهریه؛ رد کنید = از دست می‌رود", "liu.se"],
+ ["KTH / Chalmers", "سوئد / Stockholm / Göteborg", "KTH Accommodation (محدود)؛ Chalmers از طریق SGS برای شهریه‌پردازها", "❌ KTH بدون تضمین؛ Chalmers سهمیه (چک شود)", "SEK 4,500–8,000", "❌", "SSSB استکهلم صف ۶–۱۸ ماه؛ Plan B لازم", "su.se؛ leapscholar (≈)"],
+ ["Halmstad / MDU / BTH / Skövde", "سوئد / شهرهای کوچک", "معرفی به شرکت‌های مسکن شهرداری", "❌ Halmstad صریحاً «تضمین نمی‌کند»؛ بقیه صف", "SEK 3,500–5,500 (≈)", "❌", "شهرهای کوچک: معمولاً ظرف چند هفته پیدا می‌شود", "hh.se (≈)"],
+ ["Aalborg University (Aalborg)", "دانمارک / Aalborg", "International Accommodation Office؛ ۲۲۰+ واحد مبله", "✅ «تقریباً ۱۰۰٪»", "DKK 3,200–4,700 (میانگین 3,950) با اینترنت/آب/گرمایش/برق", "❌", "اجاره سه‌ماهه؛ ثبت‌نام studieboligaalborg.dk ۱ ژوئیه – ۳۱ اوت", "en.aau.dk؛ findunirooms"],
+ ["AAU Copenhagen / ITU / DTU / KU", "دانمارک / Copenhagen", "راهنمایی؛ KKIK/CIU؛ خوابگاه‌های خصوصی", "❌ صریحاً بدون تضمین", "DKK 3,500–6,000 (KKIK/CIU) · 5,000–9,000 خوابگاه/co-living · آپارتمان 7,000+", "❌", "«سخت‌ترین بازار اروپا» (خود AAU)؛ ۶ ماه قبل شروع کنید", "en.aau.dk"],
+ ["SDU Odense", "دانمارک / Odense", "SDU Housing (کمک با kollegium)", "❌ کمک، بدون تضمین", "DKK 3,500–5,500 (≈)", "❌", "Odense خیلی ارزان‌تر از کپنهاگ", "sdu.dk (≈)"],
+ ["ETH Zürich / UZH / ZHAW", "سوئیس / Zürich", "WOKO، Juwo (تعاونی‌ها)؛ دانشگاه فقط معرفی می‌کند", "❌ لیست انتظار ۳–۱۲ ماه", "CHF 480–900؛ WG خصوصی 700–1,200", "❌", "روز پذیرش در WOKO ثبت‌نام کنید؛ اجارهٔ خصوصی: ضامن/بیمهٔ ودیعه", "woko.ch"],
+ ["EPFL", "سوئیس / Lausanne", "FMEL (بنیاد خوابگاه‌های لوزان)", "❌ زود پر می‌شود", "≈ CHF 500–900", "❌", "بلافاصله بعد از پذیرش دور اول (مارس)", "fmel.ch (≈)"],
+ ["USI / Bern / Fribourg / Neuchâtel / Basel / HSLU", "سوئیس / شهرهای کوچک‌تر", "خوابگاه‌های دانشجویی محلی + معرفی دانشگاه", "❌ ولی بازار آسان‌تر از زوریخ", "≈ CHF 450–800؛ WG 600–900", "❌", "لوگانو/فریبورگ/نوشاتل ارزان‌ترین سوئیس", "برآورد"],
+ ["Teesside University", "انگلستان / Middlesbrough", "خوابگاه دانشگاه + PBSA خصوصی", "معمولاً بله برای دانشجویان جدید (تأیید کنید)", "≈ £95–140/هفته (≈ £410–610/ماه) با قبوض؛ PBSA از £138/هفته", "❌ (PG)", "ارزان‌ترین شهر جدول انگلستان", "tees.ac.uk (≈)"],
+ ["Northumbria University", "انگلستان / Newcastle", "خوابگاه دانشگاه", "معمولاً بله (تأیید کنید)", "£94.19–158.31/هفته با قبوض (رسمی) = £410–690/ماه", "✅ گزینهٔ catered دارد", "حداقل زندگی ≈ £1,015/ماه (خود دانشگاه)", "northumbria.ac.uk"],
+ ["Newcastle University", "انگلستان / Newcastle", "خوابگاه‌های دانشگاه (Bowsden Court، Grand Hotel، Bernicia…)", "برای PG جدید معمولاً بله (تأیید کنید)", "£117.60–239.75/هفته (رسمی 2026/27)", "❌ (PG)", "Bowsden Court برای PG/خانواده", "ncl.ac.uk"],
+ ["University of York", "انگلستان / York", "خوابگاه کمپوس (Wentworth Graduate College، Halifax)", "✅ تضمین PG اگر تا ۳۱ ژوئیه اقدام کنید", "£186–224/هفته × ۵۱ هفته = £9,486–11,424/سال (رسمی 2026/27)", "❌ (PG self-catered)", "پیشنهاد بدون قید ویزا تا ۷ اوت", "york.ac.uk"],
+ ["University of Essex", "انگلستان / Colchester", "خوابگاه کمپوس", "✅ تضمین برای PG برای کل دوره (اکتبر: مهلت ≈ ۱۲ سپتامبر؛ ژانویه: ۳۰ نوامبر)", "≈ £115–200/هفته (چک شود)", "❌", "ورود زودهنگام رایگان برای ورودی ژانویه", "essex.ac.uk"],
+ ["Brunel University London", "انگلستان / Uxbridge", "خوابگاه کمپوس", "✅ تضمین برای همهٔ دانشجویان جدید — مهلت ۱۵ مارس ۲۰۲۶ برای 2026/27", "≈ £150–240/هفته (چک شود)", "❌", "پیش‌پرداخت £350 (اتاق) / £450 (استودیو)", "brunel.ac.uk"],
+ ["Warwick / Sheffield / Lancaster / Leicester", "انگلستان / شهرهای متوسط", "خوابگاه دانشگاه", "Sheffield/Lancaster معمولاً بله برای PG؛ Warwick محدود (تأیید کنید)", "≈ £125–210/هفته", "❌ (PG)", "اتاق خصوصی £550–750/ماه", "برآورد"],
+ ["Durham University", "انگلستان / Durham", "کالج‌ها (۱۷ کالج؛ Ustinov فقط PG)", "❌ PG بدون تضمین؛ کالج‌ها بعد از پذیرش تماس می‌گیرند", "PG self-catered ≈ £183–200/هفته (۳۹ هفته £7,146–7,801، 25/26) · catered £262/هفته (£10,233/سال)", "✅ کالج‌های catered (۳ وعده در ترم) — عمدتاً کارشناسی؛ بعضی کالج‌ها برای PG هم", "سهم غذا ≈ £3,087/سال؛ اجارهٔ خصوصی از £190/هفته", "durham.ac.uk؛ palatinate.org.uk"],
+ ["University of Bristol", "انگلستان / Bristol", "خوابگاه دانشگاه (catered و self-catered)", "PG: محدود (تأیید کنید)", "≈ £150–260/هفته", "✅ catered halls (عمدتاً UG)", "بریستول یکی از گران‌ترین شهرهای خارج لندن", "برآورد"],
+ ["UCL / King's College London", "انگلستان / London", "خوابگاه‌های دانشگاه و بین‌دانشگاهی", "❌ PG بدون تضمین", "≈ £190–350/هفته (£820–1,500/ماه)", "❌ (PG)", "UCL طرح ضامن اجاره £50 (سقف £1,517/ماه)", "harveywjames (≈)"],
+ ["Imperial College London", "انگلستان / London", "خوابگاه (Beit، Holbein…) + GradPad", "❌ PG بدون تضمین", "£210–410/هفته (۲۰۲۶) = £900–1,800/ماه؛ خانهٔ مشترک £180–450/هفته", "❌ (PG)", "طرح ضامن اجاره فقط UG/PhD؛ برآورد خود Imperial برای زندگی: £16.4–17k / ۹ ماه", "harveywjames؛ ukfreshersguide (≈)"],
+]
+ws7 = wb.create_sheet("خوابگاه و مسکن")
+ws7.append(HEAD7A)
+for r in HOUSING_COUNTRY:
+    ws7.append(r)
+style_sheet(ws7, [14, 34, 46, 18, 46, 34, 40, 50, 30], freeze_col=2)
+ws7.row_dimensions[1].height = 40
+for row in ws7.iter_rows(min_row=2, max_row=ws7.max_row):
+    row[0].fill = crit_fill
+    row[0].font = Font(bold=True)
+    row[8].font = src_font
+n7 = ws7.max_row + 2
+ws7.append([])
+ws7.append(HEAD7B)
+hdr7 = ws7.max_row
+for cell in ws7[hdr7]:
+    cell.fill = hdr_fill; cell.font = hdr_font; cell.alignment = wrap_ctr; cell.border = border
+for r in HOUSING_UNI:
+    ws7.append(r)
+for row in ws7.iter_rows(min_row=hdr7 + 1, max_row=ws7.max_row):
+    for cell in row:
+        cell.alignment = wrap_rtl; cell.border = border
+    row[0].fill = crit_fill
+    row[0].font = Font(bold=True)
+    row[7].font = src_font
+n7 = ws7.max_row + 2
+notes7 = [
+ "پاسخ کوتاه به «انگلیس خوابگاه با ناهار و شام می‌دهد»: بله، «catered halls» وجود دارد (معمولاً صبحانه + شام، در Durham سه وعده)، ولی (۱) تقریباً همه‌جا فقط برای سال اول کارشناسی است و برای ارشد فقط چند جا (Durham، Northumbria، بعضی کالج‌های Bristol)، (۲) فقط در هفته‌های ترم (≈ ۳۰ هفته) غذا می‌دهند، (۳) هیچ‌جا داخل شهریه نیست — Durham ≈ £3,087 در سال برای غذا جدا می‌گیرد و اجارهٔ catered ≈ £262/هفته است.",
+ "در هیچ‌یک از ۶ کشور خوابگاه داخل شهریه نیست. ارزان‌ترین خوابگاه‌ها: آلمان (€230–450 با قبوض) و شهرهای کوچک سوئد/دانمارک؛ گران‌ترین: لندن (£900–1,800/ماه) و زوریخ (CHF 700–1,200 اتاق).",
+ "تضمین واقعی برای دانشجوی ارشد بین‌المللی فقط در: Uppsala، LiU (یک پیشنهاد)، AAU Aalborg، و دانشگاه‌های انگلستان با مهلت (York ۳۱ ژوئیه، Essex، Brunel ۱۵ مارس، احتمالاً Teesside/Northumbria/Newcastle/Sheffield/Lancaster). آلمان، هلند، سوئیس و لندن: هیچ تضمینی.",
+ "برای ایرانی‌ها: خوابگاه دانشگاه در انگلستان ضامن بریتانیایی نمی‌خواهد — اجارهٔ خصوصی می‌خواهد (یا ۶–۱۲ ماه پیش‌پرداخت). در هلند/سوئیس/آلمان ودیعهٔ ۲–۳ ماه + گاهی پیش‌پرداخت ۳ ماه را در «نقد روز صفر» حساب کنید. آدرس ثبت‌شده در آلمان (Anmeldung)، هلند (BSN) و سوئیس شرط گرفتن کارت اقامت/بانک است.",
+ "اعداد «رسمی» از صفحهٔ دانشگاه (۲۰۲۶/۲۷) و اعداد با «≈» برآورد از منابع ثانویه‌اند؛ اجاره‌ها هر سال ۳–۸٪ بالا می‌رود.",
+]
+for i, t in enumerate(notes7):
+    c = ws7.cell(row=n7 + i, column=1, value=("• " if i else "") + t)
+    c.alignment = wrap_rtl
+    c.font = Font(bold=(i == 0))
+    ws7.merge_cells(start_row=n7 + i, start_column=1, end_row=n7 + i, end_column=9)
+    ws7.row_dimensions[n7 + i].height = 48
 
 # ---- Sheet 2: summary
 ws2 = wb.create_sheet("جمع‌بندی")

@@ -7,6 +7,7 @@ Incorporates the valid points of both audits (mine + Review.docx).
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
+from catalogue_data import PROGRAMS, FIELDS, FIELD_ROWS, fee_usd
 
 FX = "نرخ تبدیل ۲۷ سپتامبر ۲۰۲۶: €1 = $1.14 · £1 = $1.325 · $1 ≈ SEK 9.9 · $1 ≈ DKK 6.55"
 
@@ -20,13 +21,13 @@ ROWS = [
   "AAU – MSc Computer Science (IT) (انگلیسی؛ نه برنامه Computer Science دانمارکی‌زبان) → Target\nSDU Odense – MSc Computer Science → Target\n(پذیرش بر اساس داشتن ≥ ۱۰۰ ECTS دروس کامپیوتر)",
   "TU Dublin – MSc Computing (Advanced Software Development) → Safe\nMaynooth – MSc (CS) Software Engineering، ۱ ساله → Safe/Target\nUL – MSc Software Engineering → Target\n(شرط 2.2 honours ≈ معدل شما OK)",
   "Teesside (Middlesbrough) – MSc Computer Science (2:2، IELTS 6.0) → Safe\nNorthumbria (Newcastle) – MSc Advanced Computer Science (2:2 در رشته کامپیوتری) → Safe\nEssex (Colchester) – MSc Advanced Computer Science (2:2؛ Computer Engineering پذیرفته می‌شود) → Safe/Target\nBrunel (London) – MSc AI / Data Science (2:2) → Safe/Target\nLeicester – MSc Advanced Computer Science (2:1؛ سابقه کار مرتبط جبران می‌کند) → Target\nYork – MSc Advanced Computer Science (2:2 با پیش‌زمینه قوی، IELTS 6.5) → Reach\nفقط انگلستان — Strathclyde (اسکاتلند) و Swansea (ولز) حذف شدند",
-  "سایت برنامه‌ها؛ utwente.nl (Iran 15/20)؛ bth.se؛ «۷۵٪ قبولی» جدول اول حذف شد — چنین آماری وجود ندارد"],
+  "سایت برنامه‌ها؛ utwente.nl (Iran 15/20)؛ bth.se؛ «۷۵٪ قبولی» جدول اول حذف شد — چنین آماری وجود ندارد.\n➜ فهرست کامل ≈۱۰۰ برنامه در ۸ حوزه (AI، امنیت، داده، نرم‌افزار، ابری، نهفته/رباتیک، HCI، بازی) با شهریه و شرط ورود: شیت «برنامه‌ها»؛ مقایسهٔ بازار کار حوزه‌ها: شیت «حوزه‌ها و بازار کار»"],
 
  ["۲", "رتبه QS World University Rankings 2027 (ژوئن ۲۰۲۶)",
   "TU Dresden 185 · FAU 218 · TU Darmstadt 250 · Stuttgart 318",
   "Twente =223 · Radboud =283",
   "Linköping 308 · BTH و Halmstad در QS رتبه ندارند",
-  "Aalborg 329 · SDU ≈ 329",
+  "SDU =283 · Aalborg =329",
   "UL 388 · Maynooth 721–730 · TU Dublin 791–800",
   "Newcastle 149 · York =158 · Leicester =314 · Brunel 353 · Essex =438 · Northumbria =528 · Teesside در فهرست اصلی QS نیست (THE 601–800)",
   "topuniversities.com (QS WUR 2027)؛ utwente.nl/rankings"],
@@ -41,14 +42,14 @@ ROWS = [
   "€0 + سهم ترمی €150–400 (≈ €300–800 در سال)\nStuttgart: €1,500 در ترم = €3,000 در سال (بادن-وورتمبرگ)",
   "Twente: €21,700\nRadboud: ≈ €19,700 (2025/26) → 2026/27 ≈ €20,500",
   "Linköping: SEK 166,000\nHalmstad: ≈ SEK 151,000\nBTH: SEK 140,000 (70,000 در ترم)",
-  "SDU: €13,900 (DKK 104,000)\nAAU: €14,910 (7,455 در ترم)",
+  "AAU: €14,910 (7,455 در ترم)\nSDU: €17,300 (نرخ رسمی برای ورودی سپتامبر ۲۰۲۶ به بعد — رقم قدیمی €13,900 دیگر معتبر نیست)",
   "TU Dublin: ≈ €15,000–15,500\nMaynooth: €18,000 (2025/26) → ≈ €18,500\nUL: €20,800",
   "Teesside: £17,000\nNorthumbria: £21,500\nLeicester: £24,250\nEssex: £24,675\nBrunel: £24,795\nYork: £32,900 (Newcastle ≈ £31,700)\nکف قیمت انگلستان: Chester £15,500 (بدون رتبه). بورس‌ها (مثلاً Brunel تا £6,000) جدا حساب شوند، تضمینی نیستند",
   "utwente.nl؛ liu.se؛ bth.se؛ sdu.dk؛ studyindenmark.dk؛ ul.ie؛ maynoothuniversity.ie؛ brunel.ac.uk؛ tees.ac.uk؛ northumbria.ac.uk؛ le.ac.uk؛ essex.ac.uk؛ york.ac.uk"],
 
  ["۵", "شهریه سالانه به دلار",
   "$350–900 (Stuttgart ≈ $3,400)", "$22,500–24,700", "$14,100–16,800",
-  "$15,800–17,000", "$17,100–23,700", "$22,500–43,600 (Teesside $22,500 · Northumbria $28,500 · Leicester/Essex/Brunel ≈ $32,100–32,900 · York $43,600)",
+  "$17,000–19,700", "$17,100–23,700", "$22,500–43,600 (Teesside $22,500 · Northumbria $28,500 · Leicester/Essex/Brunel ≈ $32,100–32,900 · York $43,600)",
   FX],
 
  ["۶", "هزینه زندگی ماهانه واقعی دانشجو (و حداقل قانونی ویزا ۲۰۲۶)",
@@ -64,7 +65,7 @@ ROWS = [
   "$13,000–18,000 (Stuttgart تا $20,500)",
   "$37,500–45,000",
   "$27,000–32,500",
-  "$30,500–35,500",
+  "$31,500–38,000",
   "$32,000–48,000 (خارج از Dublin: $32,000–40,000)",
   "$38,000–65,000 (Teesside $38–42k · Northumbria $44–48k · Leicester/Essex $48–54k · Brunel/London $55–61k · York $60–65k)",
   "محاسبه از ردیف‌های ۴ و ۶؛ بدون بلیت، ویزا، بیمه، ودیعه (۱۰–۱۵٪ اضافه کنید)"],
@@ -73,7 +74,7 @@ ROWS = [
   "$27,000–36,000 (۲ سال؛ Stuttgart تا $41,000) — ارزان‌ترین",
   "$75,000–90,000 (۲ سال) — گران‌ترین",
   "$54,000–65,000 (۲ سال)",
-  "$61,000–71,000 (۲ سال)",
+  "$63,000–76,000 (۲ سال)",
   "$32,000–48,000 (۱ سال)",
   "$38,000–65,000 (۱ سال)",
   "محاسبه؛ جدول اول فقط سال اول را مقایسه کرده بود"],
@@ -82,7 +83,7 @@ ROWS = [
   "✅ کاملاً (حتی Stuttgart)",
   "❌ کسری $5,500–13,000 در هر سال",
   "✅ (Linköping دقیقاً مرزی)",
-  "⚠️ مرزی؛ کسری تا ≈ $3,500 در سال",
+  "⚠️ مرزی؛ AAU تقریباً در بودجه، SDU کسری تا ≈ $6,000 در سال",
   "⚠️ خارج از Dublin یا با شهریه TU Dublin ✓؛ Dublin کسری",
   "❌ کسری $6,000–33,000 (کمترین: Teesside ≈ $6–10k؛ Northumbria ≈ $12–16k)",
   "محاسبه از ردیف ۷"],
@@ -251,7 +252,7 @@ ROWS = [
 ]
 
 SUMMARY = [
- ["رتبه‌بندی هزینه کل تا فارغ‌التحصیلی", "آلمان $27–36k  <  ایرلند $32–48k  <  انگلستان $38–65k  <  سوئد $54–65k  <  دانمارک $61–71k  <  هلند $75–90k"],
+ ["رتبه‌بندی هزینه کل تا فارغ‌التحصیلی", "آلمان $27–36k  <  ایرلند $32–48k  <  انگلستان $38–65k  <  سوئد $54–65k  <  دانمارک $63–76k  <  هلند $75–90k"],
  ["فقط با انگلیسی (تحصیل + کار + اداری + اقامت)", "ایرلند و انگلستان کامل؛ هلند و سوئد برای زندگی/کار خوب ولی برای اقامت دائم/تابعیت زبان می‌خواهند (هلند B1 در راه، سوئد آزمون تابعیت)؛ دانمارک و آلمان بدون زبان محلی هم بازار کار و هم PR محدود."],
  ["بازار کار و حقوق جونیور", "حقوق ناخالص: دانمارک > آلمان > هلند ≈ سوئد > ایرلند > انگلستان. دسترسی برای جونیورِ فقط‌انگلیسی: ایرلند ≈ هلند > آلمان > سوئد ≈ دانمارک ≈ انگلستان."],
  ["نتیجه با وزن برابر برای ۳ معیار", "ایرلند ۲۵ › آلمان ۲۲ › سوئد ۱۹ = انگلستان ۱۹ › هلند ۱۸ › دانمارک ۱۶.  پیشنهاد: اپلای هم‌زمان به ۲–۳ برنامه ایرلند (UL، Maynooth، TU Dublin) + ۲ برنامه آلمان (Stuttgart، FAU یا یک گزینه Safe)؛ تصمیم نهایی با پذیرش/بورس و وضعیت سفارت‌ها در ۲۰۲۸."],
@@ -299,7 +300,8 @@ SOURCES = [
  ("دانمارک – اقامت دائم", "https://www.nyidanmark.dk/de-DE/You-want-to-apply/Permanent-residence-permit/Permanent-residence"),
  ("دانمارک – تمکن DKK 7,426 (2026)", "https://nyidanmark.dk/en-GB/Words-and-concepts/SIRI/Self-support---SIRI"),
  ("دانمارک – AAU Computer Science (IT) شهریه €7,455/ترم", "https://studyindenmark.dk/portal/aalborg-university-aau/aalborg/computer-science-it-msc"),
- ("دانمارک – SDU Computer Science شهریه", "https://www.sdu.dk/en/uddannelse/kandidat/datalogi/adgangskrav"),
+ ("دانمارک – SDU شهریهٔ رسمی از ورودی ۲۰۲۶: Science/Engineering €17,300 در سال", "https://www.sdu.dk/en/uddannelse/fees_and_funding/tuition"),
+ ("دانمارک – SDU MSc Computer Science (ظرفیت محدود، €17,300)", "https://www.sdu.dk/en/uddannelse/kandidat/datalogi/adgangskrav"),
  ("دانمارک – سفارت تهران (درخواست از ایران ممکن نیست)", "https://iran.um.dk/en"),
  ("دانمارک – IDA حقوق شروع ۲۰۲۶", "https://studerende.ida.dk/snart-nyuddannet/loen/softwareingenioer-loen-saa-meget-kommer-du-til-at-tjene/"),
  ("ایرلند – کف حقوق مجوز کار از ۱ مارس ۲۰۲۶ (€40,904 / €36,848 / €36,605)", "https://kodlyons.ie/critical-skills-employment-permit-changes/"),
@@ -333,6 +335,49 @@ SOURCES = [
  ("QS WUR 2027 – سایر", "https://www.topuniversities.com/world-university-rankings"),
  ("حداقل دستمزد ۲۰۲۶ هلند (€14.71)", "https://arlettipartners.com/new-increase-in-the-dutch-minimum-hourly-wage-from-january-1st-2026/"),
  ("نرخ ارز (xe.com، ۲۷ سپتامبر ۲۰۲۶)", "https://www.xe.com/"),
+ # ---- شیت «حوزه‌ها و بازار کار»
+ ("بازار کار – LinkedIn/WEF ژانویه ۲۰۲۶: ۱.۳ میلیون شغل جدید AI؛ AI Engineer سریع‌ترین‌رشد", "https://www.weforum.org/stories/jobs-and-the-future-of-work/ai-has-already-added-1-3-million-new-jobs-according-to-linkedin-data/"),
+ ("بازار کار – Bitkom 2025: ۱۰۹ هزار جای خالی IT در آلمان، ۷.۷ ماه زمان پرکردن", "https://www.bitkom.org/Bitkom/Publikationen/Der-Arbeitsmarkt-fuer-IT-Fachkraefte"),
+ ("بازار کار – ISC2 Cybersecurity Workforce Study 2024/2025 (حذف عدد کمبود؛ کمبود بودجه دلیل اول؛ ۳۱٪ تیم‌ها بدون جونیور)", "https://www.isc2.org/research"),
+ ("بازار کار – اخراج‌های صنعت بازی ۲۰۲۲–۲۰۲۶ (≈۴۵ هزار؛ افت حقوق Unity)", "https://en.wikipedia.org/wiki/2022%E2%80%932026_video_game_industry_layoffs"),
+ ("بازار کار – آگهی‌های UX/UXR (Indeed تا Q4 2025)", "https://www.thevoiceofuser.com/everyone-knows-the-uxr-hiring-market-is-bad-how-bad-is-it-though/"),
+ ("بازار کار – اشباع جونیور علم داده ۲۰۲۶", "https://research.com/advice/are-too-many-students-choosing-data-science-oversaturation-competition-hiring-reality"),
+ # ---- شیت «برنامه‌ها» (منابع تکمیلی؛ لینک هر برنامه در خود شیت است)
+ ("ایرلند – UL MSc AI & ML: €20,800", "https://www.ul.ie/study/postgraduate/artificial-intelligence-and-machine-learning-msc"),
+ ("ایرلند – TU Dublin MSc Applied Cyber Security: €14,500، 2:2", "https://www.tudublin.ie/study/postgraduate/courses/applied-cyber-security/"),
+ ("ایرلند – TU Dublin MSc CS (Data Science): €21,750، 2:2 + ۲ سال سابقه", "https://www.tudublin.ie/study/postgraduate/courses/computing-data-science/"),
+ ("ایرلند – DCU MSc Computing majors: €25,000، 2:1، بورس €5,000", "https://www.dcu.ie/courses/postgraduate/school-computing/msc-computing-major-options"),
+ ("ایرلند – Galway MSc CS (AI) €28,000 / SDD €18,440، 2026/27", "http://cs.universityofgalway.ie/science-engineering/postgraduateprogrammes/taught-postgraduate-courses/software-design-development.html"),
+ ("آلمان – Saarland MSc Cybersecurity (C1، بدون شهریه)", "https://www.uni-saarland.de/en/study/programmes/master/cybersecurity.html"),
+ ("آلمان – Passau MSc AI Engineering (B2، معدل ≤ 2.7، A1 آلمانی سال اول)", "https://www.uni-passau.de/en/msc-ai-eng"),
+ ("آلمان – Cologne Game Lab MA Game Development & Research (€2,500/ترم غیر-EU)", "https://colognegamelab.de/study-programs/post-graduate-programs/game-development-research-ma/faqs/"),
+ ("آلمان – Siegen MSc HCI (DAAD)", "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4686/"),
+ ("آلمان – H-BRS MSc Autonomous Systems (B2+)", "https://www.h-brs.de/en/inf/admission-application-master-autonomous-systems"),
+ ("آلمان – RWTH MSc Software Systems Engineering", "https://sc.informatik.rwth-aachen.de/en/studium/master/sse/"),
+ ("آلمان – Tübingen MSc Machine Learning (IELTS 7، €1,500/ترم)", "https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/studium/studierende/lehre-studienorganisation/studiengaenge/machine-learning/admission-and-application/"),
+ ("آلمان – TUM Informatics: €6,000 در ترم برای غیر-EU", "https://www.tum.de/en/studies/degree-programs/detail/informatics-master-of-science-msc"),
+ ("آلمان – FAU Autonomy Technologies (B2، IELTS 6.0)", "https://www.fau.eu/degree-program/autonomy-technologies-m-sc/"),
+ ("هلند – Twente Embedded Systems 2026/27: €21,700", "https://www.utwente.nl/en/education/master/programmes/embedded-systems/finance/"),
+ ("هلند – Leiden CS 2026/27: €22,500", "https://www.universiteitleiden.nl/en/education/study-programmes/master/computer-science/artificial-intelligence/admission-and-application/tuition-fees"),
+ ("هلند – Groningen AI 2026/27: €24,900", "https://www.rug.nl/masters/artificial-intelligence/?lang=en"),
+ ("هلند – Utrecht Game & Media Technology 2026/27: €25,306", "https://www.uu.nl/en/masters/game-and-media-technology"),
+ ("هلند – QS 2027 فهرست دانشگاه‌های هلند", "https://dub.uu.nl/en/news/dutch-universities-fall-global-qs-rankings"),
+ ("سوئد – Gothenburg Game Design & Technology: SEK 290,000 کل", "https://www.gu.se/en/study-gothenburg/game-design-technology-masters-programme-n2gdt"),
+ ("سوئد – KTH Machine Learning: SEK 190,000", "https://www.kth.se/en/studies/master/machine-learning"),
+ ("سوئد – Umeå AI: SEK 152,300", "https://www.umu.se/en/education/master/masters-programme-in-artificial-intelligence/"),
+ ("سوئد – QS 2027 فهرست دانشگاه‌های سوئد", "https://www.study.eu/best-universities/sweden"),
+ ("دانمارک – ITU شهریه €6,700 در ترم (Games / CS / Data Science)", "https://studyindenmark.dk/portal/it-university-of-copenhagen-itu/kobenhavn/games"),
+ ("دانمارک – AAU Cyber Security / Medialogy €7,455 در ترم", "https://studyindenmark.dk/portal/aalborg-university-aau/copenhagen/cyber-security-msc-in-engineering"),
+ ("دانمارک – DTU €15,000 (Human-Centered AI / Autonomous Systems)", "https://www.dtu.dk/english/education/graduate/msc-programmes/autonomous-systems/prerequisites"),
+ ("دانمارک – Aarhus CS €17,300", "https://masters.au.dk/computerscience"),
+ ("دانمارک – QS 2027 فهرست دانشگاه‌های دانمارک", "https://leapscholar.com/blog/top-universities-in-denmark/"),
+ ("انگلستان – Goldsmiths MSc Computer Games Programming £22,000", "https://www.gold.ac.uk/pg/msc-computer-games-programming/"),
+ ("انگلستان – Royal Holloway MSc Information & Cyber Security £25,500", "https://www.royalholloway.ac.uk/studying-here/postgraduate/information-security/information-and-cyber-security/"),
+ ("انگلستان – Kent MSc Cyber Security (NCSC)", "https://www.kent.ac.uk/courses/postgraduate/1225/cyber-security"),
+ ("انگلستان – MMU MSc Cyber Security £21,000", "https://www.mmu.ac.uk/study/postgraduate/course/msc-cyber-security"),
+ ("انگلستان – York MSc Human-Centred Interactive Technologies £32,900", "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-human-centred-interactive-technologies/"),
+ ("انگلستان – Lancaster MSc Cyber Security £30,000", "https://www.lancaster.ac.uk/study/postgraduate/postgraduate-courses/cyber-security-msc/2026/"),
+ ("انگلستان – NTU QS 2027 =639", "https://collegedunia.com/uk/university/862-nottingham-trent-university-nottingham/ranking"),
 ]
 
 # ---------------------------------------------------------------- styling
@@ -381,6 +426,65 @@ n = ws.max_row + 2
 ws.cell(row=n, column=2, value="تاریخ راستی‌آزمایی: ۲۷ سپتامبر ۲۰۲۶ (۵ مهر ۱۴۰۵). " + FX).font = Font(bold=True)
 ws.cell(row=n + 1, column=2, value="همه ارقام سطح 2026/27 و از منابع رسمی (شیت «منابع»)؛ برای ورودی ۲۰۲۸ سالانه ۳–۵٪ (شهریه ۵–۱۰٪) اضافه کنید. ردیف‌های ۱۳، ۱۴، ۱۷–۱۹، ۲۶ برآورد/ارزیابی هستند و در ستون منبع مشخص شده‌اند.")
 ws.cell(row=n + 2, column=2, value="جدول اولیه (Table.xlsx) برای مقایسه دست‌نخورده مانده است.")
+ws.cell(row=n + 3, column=2, value="شیت «برنامه‌ها»: ≈۱۰۰ برنامهٔ انگلیسی‌زبان در ۸ حوزهٔ کامپیوتری (نه فقط CS) برای هر ۶ کشور؛ شیت «حوزه‌ها و بازار کار»: کدام حوزه برای شما بازار و پذیرش بهتری دارد.").font = Font(bold=True)
+
+# ---- Sheet 1b: programme catalogue (all fields, all 6 countries)
+ws4 = wb.create_sheet("برنامه‌ها")
+HEAD4 = ["#", "کشور", "دانشگاه (شهر)", "برنامه", "حوزه", "مدت", "شهریهٔ سالانه 2026/27 (ارز محلی)",
+         "≈ شهریهٔ سالانه به دلار", "شرط ورود", "IELTS", "QS 2027", "Safe / Target / Reach (معدل ۱۵.۷۷)",
+         "بازار کار حوزه (۱–۵) و نکته", "نکتهٔ برنامه", "منبع (صفحهٔ رسمی)"]
+ws4.append(HEAD4)
+tier_fill = {"Safe": PatternFill("solid", fgColor="E2F0D9"), "Safe/Target": PatternFill("solid", fgColor="EAF5E1"),
+             "Target": PatternFill("solid", fgColor="FFF2CC"), "Target/Reach": PatternFill("solid", fgColor="FCE4D6"),
+             "Reach": PatternFill("solid", fgColor="F8CBAD")}
+for i, (country, uni, prog, fkey, dur, fee_txt, fee_num, entry, ielts, qs, tier, note, url) in enumerate(PROGRAMS, start=1):
+    flabel, fscore, fnote = FIELDS[fkey]
+    ws4.append([i, country, uni, prog, flabel, dur, fee_txt, fee_usd(*fee_num), entry, ielts, qs, tier,
+                f"{fscore}/5 — {fnote}", note, url])
+style_sheet(ws4, [5, 10, 26, 40, 22, 9, 30, 14, 34, 12, 12, 16, 44, 40, 40], freeze_col=4)
+ws4.row_dimensions[1].height = 48
+ws4.auto_filter.ref = f"A1:O{ws4.max_row}"
+for row in ws4.iter_rows(min_row=2, max_row=ws4.max_row):
+    row[0].alignment = wrap_ctr
+    row[1].alignment = wrap_ctr
+    row[11].alignment = wrap_ctr
+    row[11].fill = tier_fill.get(row[11].value, PatternFill())
+    row[11].font = Font(bold=True)
+    row[14].hyperlink = row[14].value
+    row[14].font = Font(size=9, color="0563C1", underline="single")
+    row[14].alignment = Alignment(wrap_text=True, vertical="top", horizontal="left")
+n4 = ws4.max_row + 2
+notes4 = [
+    "راهنما: هر ردیف یک برنامهٔ انگلیسی‌زبان است. Safe/Target/Reach نسبت به معدل ۱۵.۷۷/۲۰ (≈ 2:2 بریتانیا / ≈ 2.3 آلمانی / ≈ ۷۹٪) و IELTS ≈ 7 سنجیده شده و پیش‌بینی پذیرش نیست. «≈» یعنی رقم از منبع ثانویه یا سال قبل است — قبل از اقدام صفحهٔ رسمی را چک کنید.",
+    "شهریهٔ دلاری با نرخ " + FX + " و گرد شده به $100. برای ورودی ۲۰۲۸ شهریه‌ها را ۵–۱۰٪ در سال بالاتر فرض کنید. آلمان: عدد فقط سهم ترم (Semesterbeitrag) است که بلیت حمل‌ونقل را هم شامل می‌شود.",
+    "امتیاز بازار کار (۱–۵) ارزیابی من بر پایهٔ منابع شیت «حوزه‌ها و بازار کار» است، نه آمار رسمی؛ برای هر برنامه فقط حوزه را نشان می‌دهد، نه کیفیت آن دانشگاه.",
+    "حذف‌شده‌ها: Essex MSc Computer Games (برای 2025/26 و 2026/27 تعلیق شده)، Hull AI & Data Science (سه رقم متناقض شهریه)، UCD/TCD (2:1 و ≈ €30k → Reach، بررسی نشد)، KU Copenhagen (شهریه تأیید نشد)، NCI/DBS ایرلند (کالج خصوصی، اعتبار کمتر).",
+]
+for k, t in enumerate(notes4):
+    c = ws4.cell(row=n4 + k, column=2, value=t)
+    c.alignment = wrap_rtl
+    ws4.merge_cells(start_row=n4 + k, start_column=2, end_row=n4 + k, end_column=15)
+    ws4.row_dimensions[n4 + k].height = 34
+
+# ---- Sheet 1c: fields & job market
+ws5 = wb.create_sheet("حوزه‌ها و بازار کار")
+ws5.append(["حوزه", "تقاضای بازار ۲۰۲۶ (۱–۵)", "حقوق شروع نسبت به CS عمومی", "سازگاری با «فقط انگلیسی»",
+            "تناسب با پروفایل شایان (Computer Eng، معدل ۱۵.۷۷، ۲ سال IT + ۷ ماه Unity/C#)", "ریسک‌ها / واقعیت بازار", "منابع"])
+for r in FIELD_ROWS:
+    ws5.append(r)
+style_sheet(ws5, [26, 18, 40, 34, 56, 56, 40], freeze_col=2)
+ws5.row_dimensions[1].height = 40
+for row in ws5.iter_rows(min_row=2, max_row=ws5.max_row):
+    row[0].fill = crit_fill
+    row[0].font = Font(bold=True)
+    row[1].alignment = wrap_ctr
+    row[6].font = src_font
+n5 = ws5.max_row + 2
+c = ws5.cell(row=n5, column=1, value="جمع‌بندی برای شما: (۱) هوش مصنوعی/ML و (۲) مهندسی نرم‌افزار بهترین ترکیب «بازار + پذیرش‌پذیری + انگلیسی» را دارند؛ (۳) امنیت سایبری اگر حاضر به گرفتن گواهی و کارآموزی باشید؛ ابری/DevOps به‌عنوان گرایش داخل CS/SE. علم داده فقط با تمرکز Data Engineering. نهفته/رباتیک قوی است ولی با شرط «فقط انگلیسی» شما نمی‌خواند (کارفرمایان صنعتی آلمان/سوئد). HCI/UX و بازی‌سازی با معیار «حقوق شروع بالا» شما در تضادند — سابقهٔ Unity را به‌عنوان پورتفولیو کنار یک ارشد Software/AI نگه دارید.")
+c.alignment = wrap_rtl
+c.font = Font(bold=True)
+ws5.merge_cells(start_row=n5, start_column=1, end_row=n5, end_column=7)
+ws5.row_dimensions[n5].height = 70
 
 # ---- Sheet 2: summary
 ws2 = wb.create_sheet("جمع‌بندی")

@@ -225,8 +225,8 @@ add("انگلستان", "Goldsmiths, University of London", "London-NewCross", "
 add("انگلستان", "University of Surrey", "Guildford", "MSc Artificial Intelligence", "AI", "۱ سال", "≈ £26,900–27,500", ("GBP", 26900, 27500),
     "2:2", "6.5", "=246", "Target", "Guildford قطب بازی‌سازی و امنیت بریتانیا (نزدیک لندن)؛ رقم AI برآورد است (Cyber همین دانشگاه: £26,900 برای سپتامبر ۲۰۲۷ رسمی)",
     "https://www.surrey.ac.uk/postgraduate/artificial-intelligence-msc")
-add("انگلستان", "University of Surrey", "Guildford", "MSc Cyber Security (NCSC)", "CY", "۱ سال", "£25,900 (ورودی فوریه ۲۰۲۷) / £26,900 (سپتامبر ۲۰۲۷)", ("GBP", 25900, 26900),
-    "2:2", "6.5 (W 6.0)", "=246", "Target", "صفحهٔ رسمی الان ورودی ۲۰۲۷ را نشان می‌دهد (رقم رسمی)؛ برای ۲۰۲۸ ≈ £27,900 انتظار داشته باشید",
+add("انگلستان", "University of Surrey", "Guildford", "MSc Cyber Security (NCSC)", "CY", "۱ سال", "£26,900 (ورودی سپتامبر ۲۰۲۷ — رسمی؛ فوریه ۲۰۲۷: £25,900)", ("GBP", 26900, None),
+    "2:2", "6.5 (W 6.0)", "=246", "Target", "رقم رسمی دقیقاً برای سال ورود شما (سپتامبر ۲۰۲۷)",
     "https://www.surrey.ac.uk/postgraduate/cyber-security-msc")
 add("انگلستان", "University of York", "York", "MSc Advanced Computer Science", "SE", "۱ سال", "£32,900", ("GBP", 32900, None),
     "2:2 با پیش‌زمینهٔ قوی", "6.5", "=158", "Target/Reach", "Russell Group؛ گران",
@@ -290,7 +290,7 @@ add("آلمان", "Universität Stuttgart", "Stuttgart", "M.Sc. Information Tech
     "کارشناسی EE/CS/Computer Engineering؛ گزینش", "7.0 (C1)", "318", "Target", "گرایش‌های Embedded/Communication؛ Bosch و Daimler همان شهر",
     "https://www.mygermanuniversity.com/master/information-technology-infotech/678")
 add("آلمان", "FAU Erlangen-Nürnberg", "Erlangen", "M.Sc. Artificial Intelligence", "AI", "۲ سال", "€4,000 در ترم برای غیر-EU از ترم تابستان ۲۰۲۷ (€8,000/سال) + €82 سهم ترم", ("EUR", 8164, None),
-    "کارشناسی CS/مرتبط؛ بررسی ریزنمرات", "B2 (IELTS 6.0)", "218", "Target", "⚠️ FAU طبق BayHIG §13 از تابستان ۲۰۲۷ برای ورودی‌های جدید غیر-EU شهریه می‌گیرد (AI و CS: €4,000/ترم) — ورودی ۲۰۲۸ مشمول است؛ دیگر «رایگان» نیست. Siemens/adidas/Schaeffler در منطقه",
+    "کارشناسی CS/مرتبط؛ بررسی ریزنمرات", "B2 (IELTS 6.0)", "218", "Target", "⚠️ FAU طبق BayHIG §13 از تابستان ۲۰۲۷ برای ورودی‌های جدید غیر-EU شهریه می‌گیرد (AI و CS: €4,000/ترم) — ورودی اکتبر ۲۰۲۷ شما مشمول است؛ دیگر «رایگان» نیست. Siemens/adidas/Schaeffler در منطقه",
     "https://www.fau.eu/degree-program/artificial-intelligence-m-sc/")
 add("آلمان", "FAU Erlangen-Nürnberg", "Erlangen", "M.Sc. Autonomy Technologies", "EMB", "۲ سال", "€2,000 در ترم از تابستان ۲۰۲۷ (€4,000/سال) + €82 سهم ترم", ("EUR", 4164, None),
     "کارشناسی مرتبط؛ آلمانی لازم نیست", "B2 (IELTS 6.0)", "218", "Target", "رباتیک/خودران؛ ⚠️ مشمول شهریهٔ جدید FAU از ۲۰۲۷ (صفحهٔ رسمی شهریه، ۲۰۲۶)",
@@ -372,10 +372,10 @@ add("هلند", "University of Amsterdam (UvA)", "Amsterdam", "MSc Software Engi
 add("هلند", "University of Amsterdam (UvA)", "Amsterdam", "MSc Artificial Intelligence", "AI", "۲ سال", "≈ €26,000", ("EUR", 26000, None),
     "کارشناسی AI/CS با ریاضی قوی؛ بسیار رقابتی", "6.5", "60", "Reach", "",
     "https://www.uva.nl/en/programmes/masters/artificial-intelligence/artificial-intelligence.html")
-add("هلند", "TU Eindhoven (TU/e)", "Eindhoven", "MSc Data Science and Artificial Intelligence", "DS", "۲ سال", "€21,700", ("EUR", 21700, None),
+add("هلند", "TU Eindhoven (TU/e)", "Eindhoven", "MSc Data Science and Artificial Intelligence", "DS", "۲ سال", "€22,400 (2027/28 رسمی؛ 2026/27: €21,700)", ("EUR", 22400, None),
     "کارشناسی CS/ریاضی؛ گزینش بر اساس معدل", "6.5", "152", "Reach", "Brainport (ASML، Philips، NXP)",
     "https://www.tue.nl/en/education/graduate-school/master-data-science-and-artificial-intelligence")
-add("هلند", "TU Eindhoven (TU/e)", "Eindhoven", "MSc Embedded Systems", "EMB", "۲ سال", "€21,700", ("EUR", 21700, None),
+add("هلند", "TU Eindhoven (TU/e)", "Eindhoven", "MSc Embedded Systems", "EMB", "۲ سال", "€22,400 (2027/28 رسمی؛ 2026/27: €21,700)", ("EUR", 22400, None),
     "کارشناسی CS/EE؛ گزینش", "6.5", "152", "Reach", "ASML/NXP بزرگ‌ترین کارفرمایان Embedded اروپا",
     "https://www.tue.nl/en/education/graduate-school/master-embedded-systems")
 add("هلند", "TU Delft", "Delft", "MSc Computer Science / MSc Computer & Embedded Systems Engineering", "SE", "۲ سال", "€22,290 (2025/26) → ≈ €23,000", ("EUR", 23000, None),
@@ -416,7 +416,7 @@ add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Software
 add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Interaction Design and Technologies", "HCI", "۲ سال", "≈ SEK 175,000 (2026/27)", ("SEK", 175000, None),
     "کارشناسی CS/Design", "6.5", "174", "Target", "",
     "https://www.chalmers.se/en/education/find-masters-programme/interaction-design-and-technologies-msc/")
-add("سوئد", "University of Gothenburg (مشترک با Chalmers)", "Gothenburg", "MSc Game Design & Technology", "GD", "۲ سال", "SEK 145,000 (کل ۲۹۰k؛ ورودی ۲۰۲۷: ۲۹۴k)", ("SEK", 145000, 147000),
+add("سوئد", "University of Gothenburg (مشترک با Chalmers)", "Gothenburg", "MSc Game Design & Technology", "GD", "۲ سال", "SEK 147,000 (ورودی ۲۰۲۷: کل دوره SEK 294,000 رسمی)", ("SEK", 147000, None),
     "کارشناسی CS/Design/Media", "6.5", "225", "Target", "Gothenburg: استودیوهای EA DICE/Ghost؛ بازار بازی ضعیف",
     "https://www.gu.se/en/study-gothenburg/game-design-technology-masters-programme-n2gdt")
 add("سوئد", "Uppsala University", "Uppsala", "MSc Computer Science", "SE", "۲ سال", "≈ SEK 145,000–150,000", ("SEK", 145000, 150000),

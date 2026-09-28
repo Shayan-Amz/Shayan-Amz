@@ -272,7 +272,7 @@ SUMMARY = [
  ["رتبه‌بندی هزینه کل تا فارغ‌التحصیلی", "به ترتیب هزینهٔ کل تا مدرک (میانهٔ بازه): آلمان $27–36k (۲ سال) ‹ سوئیس–Neuchâtel/Fribourg $35–47k (۱.۵ سال) ‹ انگلستان $38–65k (۱ سال) ‹ سوئیس–UZH $45–58k ‹ سوئیس–HSLU $53–64k ≈ سوئد $54–65k ‹ سوئیس–USI/EPFL $60–75k ‹ دانمارک $63–76k ‹ سوئیس–ETH $66–84k ‹ هلند $75–90k. سوئیس بسته به دانشگاه از رتبهٔ ۲ تا ۹ را می‌گیرد: شهریه‌اش بعد از آلمان کمترین است ($1,900–9,700/سال) ولی زندگی‌اش گران‌ترین جدول (CHF 1,350–2,500/ماه) — و چون ۶ ماه اول کار دانشجویی ممنوع است، سال اول تماماً از جیب می‌رود."],
  ["فقط با انگلیسی (تحصیل + کار + اداری + اقامت)", "انگلستان کامل؛ هلند و سوئد برای زندگی/کار خوب ولی برای اقامت دائم/تابعیت زبان می‌خواهند (هلند B1 در راه، سوئد آزمون تابعیت)؛ سوئیس (امتیاز انگلیسی ۶/۱۰): تحصیل ۱۰۰٪ انگلیسی؛ Big Tech، بانک‌ها و استارتاپ‌های زوریخ انگلیسی، ولی حدود نیمی از آگهی‌های SMEها آلمانی/فرانسه می‌خواهند؛ همهٔ امور اداری به زبان کانتون (DE/FR/IT)؛ اجازهٔ C بعد از ۱۰ سال با A2 شفاهی/A1 کتبی و تابعیت با B1/A2 — یعنی برای «کار» بهتر از آلمان/دانمارک، برای «اقامت دائم» بدتر از هلند/سوئد؛ دانمارک و آلمان بدون زبان محلی هم بازار کار و هم PR محدود."],
  ["بازار کار و حقوق جونیور", "حقوق ناخالص جونیور: سوئیس CHF 85–105k (میانهٔ زوریخ CHF 92k) ≫ دانمارک DKK 500–540k > آلمان €48–55k > هلند €40–50k ≈ سوئد SEK 420–540k > انگلستان £28–35k. خالص ماهانه: سوئیس CHF 5,700–6,700 (بیمهٔ درمانی CHF 350–450 جدا) > دانمارک €3,300–3,700 > هلند/آلمان €2,700–3,100 > سوئد €2,500–2,900 > انگلستان £2,000–2,500. دسترسی برای جونیورِ فقط‌انگلیسی: هلند > آلمان ≈ سوئیس (فقط شرکت‌های بزرگ زوریخ؛ فقط ۶ ماه مجوز L برای کاریابی؛ سهمیهٔ غیر-EU ۸,۵۰۰ در ۲۰۲۶؛ بیکاری ICT ۳.۲٪ و استخدام ۲۰۲۶ گزینشی) > سوئد ≈ دانمارک ≈ انگلستان. کار حین تحصیل: سوئیس ۶ ماه اول صفر، بعد ۱۵ ساعت/هفته — ضعیف‌ترین جدول در سال اول."],
- ["نتیجه با وزن‌های شما (کار ۲۷.۵ = حقوق ۲۷.۵ / انگلیسی ۳۰ / هزینه ۱۵) و بودجهٔ $40,000 در دو گام: شهریه + تمکن یک‌سال، بعد زندگی واقعی + کار با حداکثر ساعت مجاز — ۲۸ سپتامبر", "گام ۱ (آنچه سفارت می‌بیند: شهریهٔ کل + تمکن رسمی سال اول ≤ $40k): آلمان همه ✅ ($14–21k) · سوئیس Neuchâtel $28.3k، Fribourg $29k، Basel $32.1k، HSLU $33k ✅، USI $44.8k ❌ · انگلستان فقط Teesside $36.9k ✅؛ Essex $41.1k، MMU $42.2k، Northumbria $42.8k ⚠️ (با حساب والدین ۲۸ روز)، Leicester/لندن/Russell Group ❌ · سوئد BTH $39k، MDU $38k ✅، LiU $44.3k ❌ · هلند ❌ ($55–65k) · دانمارک روی کاغذ ✅ (معاف با پرداخت شهریه). گام ۲ (زندگی واقعی: n = (۴۰,۰۰۰ − شهریه) ÷ زندگی؛ بعد کار با حداکثر ساعت قانونی × کف دستمزد): آلمان شهریه + تمام ۲۴ ماه (Stuttgart ۲۳.۱) و ۲۰ ساعت × €14.60 ≈ $1,305 ≥ زندگی ✅ · انگلستان ۲۰ ساعت × £12.71 ≈ $1,440 ≈ زندگی → کسری ماهانه $20–150 ✅ · سوئیس کار از ماه ۷، ۱۵ ساعت × کف کانتونی ≈ $1,530–1,590 در برابر $1,875–2,240 → Neuchâtel/Fribourg بدون کار ✅، Basel کسری ≈ $200 ✅، HSLU ≈ $4.3k ⚠️ (کار ۱۰۰٪ تعطیلات ترم) · سوئد روی کاغذ صفر کسری ولی کار انگلیسی‌زبان نایاب ⚠️ · دانمارک AAU ۳.۸ ماه ❌ + ویزا. امتیاز برنامه‌های شدنی: Basel ۷۱.۳ › HSLU ۶۸.۳ › Neuchâtel ۶۷ › Fribourg ۶۵.۵ › Stuttgart ۶۴ = Manchester Met ۶۴ › Teesside ۶۱.۵ › Northumbria = Essex ۶۱.۳ › Darmstadt ۶۰ › Saarland ۵۷.۳ › BTH = MDU ۵۵ › Passau ۵۱.۵. توصیه: ۸ درخواست — ۳ سوئیس (HSLU، Basel، Neuchâtel) + ۳ آلمان (Stuttgart، Darmstadt، Saarland) + ۲ انگلستان (Essex + Northumbria یا Manchester Met؛ Teesside اگر کمک ۲۸ روزهٔ خانواده ممکن نیست)."],
+ ["نتیجه با وزن‌های شما (کار ۲۷.۵ = حقوق ۲۷.۵ / انگلیسی ۳۰ / هزینه ۱۵) و بودجهٔ $40,000 در دو گام: شهریه + تمکن یک‌سال، بعد زندگی واقعی + کار با حداکثر ساعت مجاز — ۲۸ سپتامبر", "گام ۱ (آنچه سفارت می‌بیند: شهریهٔ کل + تمکن رسمی سال اول ≤ $40k): آلمان همه ✅ ($14–21k) · سوئیس Neuchâtel $28.3k، Fribourg $29k، Basel $32.1k، HSLU $33k ✅، USI $44.8k ❌ · انگلستان فقط Teesside $36.9k ✅؛ Essex $41.1k، MMU $42.2k، Northumbria $42.8k ⚠️ (با حساب والدین ۲۸ روز)، Leicester/لندن/Russell Group ❌ · سوئد BTH $39k، MDU $38k ✅، LiU $44.3k ❌ · هلند ❌ ($55–65k) · دانمارک روی کاغذ ✅ (معاف با پرداخت شهریه). گام ۲ (زندگی واقعی: n = (۴۰,۰۰۰ − شهریه) ÷ زندگی؛ بعد کار با حداکثر ساعت قانونی × کف دستمزد): آلمان شهریه + تمام ۲۴ ماه (Stuttgart ۲۳.۱) و ۲۰ ساعت × €14.60 ≈ $1,305 ≥ زندگی ✅ · انگلستان ۲۰ ساعت × £12.71 ≈ $1,440 ≈ زندگی → کسری ماهانه $20–150 ✅ · سوئیس کار از ماه ۷، ۱۵ ساعت × کف کانتونی ≈ $1,530–1,590 در برابر $1,875–2,240 → Neuchâtel/Fribourg بدون کار ✅، Basel کسری ≈ $200 ✅، HSLU ≈ $4.3k ⚠️ (کار ۱۰۰٪ تعطیلات ترم) · سوئد روی کاغذ صفر کسری ولی کار انگلیسی‌زبان نایاب ⚠️ · دانمارک AAU ۳.۸ ماه ❌ + ویزا. امتیاز برنامه‌های شدنی: Basel ۷۱.۳ › HSLU ۶۸.۳ › Neuchâtel ۶۷ › Fribourg ۶۵.۵ › Stuttgart ۶۴ = Manchester Met ۶۴ › Teesside ۶۱.۵ › Northumbria = Essex ۶۱.۳ › Darmstadt ۶۰ › Saarland ۵۷.۳ › BTH = MDU ۵۵ › Passau ۵۱.۵. استقلال مالی (فقط زندگی، شیت «تصمیم» پ-۳): با کف دستمزد و داخل سقف قانونی فقط در Saarbrücken/Passau (۱۷.۵ ساعت)، Middlesbrough (۱۹.۳) و سوئد روی کاغذ؛ Stuttgart/Darmstadt/Newcastle/Colchester با نرخ IT (۱۸–۲۰ ساعت)؛ سوئیس در ترم با ۱۵ ساعت نمی‌شود مگر ≥ CHF 28–32 در ساعت یا میانگین سالانه با کار تمام‌وقت در تعطیلات — و هرگز قبل از ماه ۷. توصیه: ۸ درخواست — ۳ سوئیس (HSLU، Basel، Neuchâtel) + ۳ آلمان (Stuttgart، Darmstadt، Saarland) + ۲ انگلستان (Essex + Northumbria یا Manchester Met؛ Teesside اگر کمک ۲۸ روزهٔ خانواده ممکن نیست)."],
  ["نتیجه با وزن برابر برای ۳ معیار", "آلمان ۲۲ › سوئد ۱۹ = انگلستان ۱۹ › هلند ۱۸ = سوئیس ۱۸ (هزینه ۵ / انگلیسی ۶ / بازار ۷) › دانمارک ۱۶.  با حذف ایرلند، هیچ کشوری هر سه معیار را با هم نمی‌دهد: آلمان ارزان‌ترین (ولی آلمانی)، انگلستان تنها گزینهٔ کاملاً انگلیسی (ولی گران و بازار جونیور ضعیف)، سوئیس بالاترین حقوق (ولی گران‌ترین زندگی، ۶ ماه فرصت کار، زبان محلی برای PR). پیشنهاد: ۲ برنامه آلمان (Stuttgart + Passau/Saarland) + ۲ برنامه سوئیس با شانس واقعی (USI Lugano + HSLU یا Joint MSc CS در Neuchâtel/Fribourg) + ۱–۲ گزینهٔ ارزان انگلستان (Teesside/Northumbria) به‌عنوان مسیر تماماً انگلیسی؛ ETH/EPFL فقط اگر حاضرید CHF 150 را برای یک شانس کم خرج کنید. تصمیم نهایی با پذیرش/بورس و وضعیت سفارت‌ها در بهار ۲۰۲۷."],
  ["سوئیس در یک نگاه (جایگزین ایرلند — همهٔ ۲۸ ردیف در یک پاراگراف)", "دانشگاه‌های واقع‌بینانه با معدل ۱۵.۷۷: USI Lugano (Informatics / AI / Software & Data Eng؛ ورود با B2؛ CHF 4,000/ترم) · HSLU Applied Data Science & AI (Safe/Target؛ CHF 1,300/ترم؛ مهلت ویزایی‌ها ۱ آوریل) · Swiss Joint MSc CS در Neuchâtel (CHF 790/ترم) یا Fribourg (CHF 985/ترم؛ ویزایی‌ها ۲۸ فوریه) — بدون آزمون زبان؛ Bern همان مدرک با CHF 2,609/ترم از پاییز ۲۰۲۶ · Basel MSc CS (CHF 850؛ Target/Reach) · ZHAW MSE (CHF 1,280؛ نمرهٔ A/B) · UZH / EPFL / ETH Reach (ETH فقط ۱–۳۰ نوامبر ۲۰۲۶؛ EPFL دور اول ۱۵ دسامبر). QS 2027: ETH 8 · EPFL 22 · UZH 98 · Basel 150 · Bern 191 · USI 456 · Fribourg 670 · ZHAW 851–900. طول دوره ۱.۵ سال (90 ECTS) یا ۲ سال (120 ECTS). زندگی: زوریخ CHF 1,900–2,500/ماه · لوزان CHF 1,700–2,200 · برن/بازل/لوسرن CHF 1,550–2,100 · لوگانو/فریبورگ/نوشاتل CHF 1,350–1,800؛ تمکن رسمی CHF 21,000/سال (Basel CHF 24,000). سال اول $23–42k؛ کل دوره $35–84k — گام ۱ (شهریه + CHF 21,000): همه ✅ جز USI ($44.8k ❌)؛ گام ۲: Neuchâtel/Fribourg/Basel ✅، HSLU ⚠️ (کسری ≈ $4.3k → کار تعطیلات)، UZH Reach، ETH ❌. کار: ۶ ماه اول صفر، بعد ۱۵ ساعت/هفته (≈ CHF 1,300–1,800/ماه)؛ بعد از مدرک فقط ۶ ماه مجوز L؛ اجازهٔ کار بدون کف حقوق ولی داخل سهمیهٔ غیر-EU (۲۰۲۶: ۴,۵۰۰ B + ۴,۰۰۰ L). حقوق جونیور CHF 85–105k (میانهٔ زوریخ CHF 92k)، خالص CHF 5,700–6,700/ماه، پس‌انداز CHF 1,500–3,000/ماه. اقامت: اجازهٔ C بعد از ۱۰ سال + A2 شفاهی/A1 کتبی؛ تابعیت ۱۰ سال + B1/A2 — طولانی‌ترین جدول. ویزا: سفارت تهران باز، ویزای D با وقت قبلی، تصمیم کانتون ۸–۱۲ هفته؛ زوریخ تمکن را فقط در بانک سوئیسی به نام خودتان یا با ضامن مقیم می‌پذیرد. IELTS: USI B2→C1 · HSLU C1 (B2 مشروط) · Joint MSc بدون آزمون · ZHAW B2–C1 · UZH/ETH 7.0 · EPFL بدون آزمون. بورس: عملاً هیچ (ETH/EPFL Excellence برای ۱۰٪ بالا؛ USI CHF 4,000 با ≥ ۸۰/۱۰۰ — مرزی). خوابگاه: هیچ‌جا تضمین ندارد؛ زوریخ ۳–۱۲ ماه صف (WOKO CHF 295–1,180)، لوزان زود پر می‌شود، لوگانو/فریبورگ/نوشاتل آسان (≈ CHF 450–800). ریسک سیاستی متوسط (ابتکار ۱۰ میلیونی رد شد؛ EP27؛ Bilaterals III). امتیاز ۱۸/۳۰ = هلند. یک جمله: اگر شغل بگیرید بالاترین درآمد جدول، اگر در ۶ ماه نگیرید باید بروید — گزینهٔ پربازده/پرریسک، نه گزینهٔ امن."],
  ["ریسک شماره یک", "دسترسی به سفارت‌ها از داخل ایران (ردیف ۲۳): در سپتامبر ۲۰۲۶ فقط سوئیس (ویزای D با وقت قبلی) و تا حدی سوئد (آنلاین) از تهران قابل اقدام‌اند؛ آلمان، هلند، دانمارک و انگلستان خدمات عادی ندارند. برای سوئیس گلوگاه به‌جای سفارت، اثبات تمکن CHF 21,000 در بانک سوئیسی (کانتون زوریخ) است؛ کانتون‌های تیچینو/فریبورگ/نوشاتل/برن/لوسرن انعطاف‌پذیرترند — قبل از اقدام کتباً بپرسید. ریسک سیاستی سوئیس متوسط: ابتکار «سوئیس ۱۰ میلیونی» در ۱۴ ژوئن ۲۰۲۶ رد شد (۵۴.۸٪ نه)، ولی بستهٔ صرفه‌جویی EP27 می‌تواند شهریهٔ ETH/EPFL را دوباره بالا ببرد و طرح معافیت فارغ‌التحصیلان از سهمیه (22.067) متوقف است. از الان هزینه «برنامه B» (اقدام از ترکیه/ارمنستان/امارات) را در بودجه ببینید."],
@@ -1108,6 +1108,45 @@ WORK = {
 WAGE_BY_CITY = {"Basel": (22.20, "کف قانونی Basel-Stadt ۲۰۲۶"), "Neuchatel": (21.35, "کف قانونی کانتون Neuchâtel ۲۰۲۶"), "Lugano": (20.25, "کف قانونی Ticino ۲۰۲۶"),
                 "Luzern": (22.00, "کف قانونی شهر لوسرن از ژانویه ۲۰۲۶"), "Fribourg": (22.00, "بدون کف قانونی؛ CHF 22 فرض"), "Zuerich": (23.90, "کف شهر زوریخ — تأیید دیوان فدرال ژوئن ۲۰۲۶")}
 _CUR_SYM = {"EUR": "€", "GBP": "£", "CHF": "CHF ", "SEK": "SEK ", "DKK": "DKK "}
+# independence model (living only): it_wage = usual rate for IT/tech student jobs · search = realistic months to land a job · avg_hours = legal weekly hours averaged over the year if breaks are worked full-time
+INDEP = {
+ "آلمان":    dict(it_wage=17.0,  search=2, avg_hours=20.0, it_note="Werkstudent IT €17–20", how="Werkstudent در شرکت‌ها یا HiWi دانشگاه؛ از ایران درخواست بدهید"),
+ "انگلستان": dict(it_wage=14.0,  search=1, avg_hours=22.3, it_note="کمپوس/تک £13–15", how="خرده‌فروشی، رستوران، کمپوس؛ سریع‌ترین بازار کار دانشجویی"),
+ "سوئیس":   dict(it_wage=28.0,  search=1, avg_hours=21.75, it_note="IT Werkstudent CHF 25–35", how="کارفرما باید مجوز بگیرد؛ از ماه ۴–۵ برای ماه ۷ درخواست بدهید"),
+ "سوئد":    dict(it_wage=170.0, search=4, avg_hours=20.0, it_note="IT SEK 160–190", how="بدون سوئدی کم؛ بیشتر از طریق دانشگاه/شرکت‌های بین‌المللی"),
+ "هلند":    dict(it_wage=16.0,  search=3, avg_hours=16.0, it_note="IT €15–18", how="کارفرما باید TWV بگیرد؛ اکثر کارفرماها نمی‌گیرند"),
+ "دانمارک": dict(it_wage=160.0, search=3, avg_hours=24.3, it_note="IT DKK 150–180", how="معمولاً دانمارکی؛ studiejob از طریق دانشگاه"),
+}
+
+
+def independence(p):
+    """Living only (no tuition): hours/week needed to pay the city's living cost from student work, vs the legal cap."""
+    lo, hi = first_amount(CITIES[p[2]][1])
+    L = (lo + hi) / 2
+    w = WORK[p[0]]; d = INDEP[p[0]]
+    wage, wnote = WAGE_BY_CITY.get(p[2], (w["wage"], w["wage_note"]))
+    r = rate(w["cur"]) * w["net"]
+    h_floor = wage * r                      # net USD per hour at the legal/usual floor
+    h_it = d["it_wage"] * r                 # net USD per hour at the usual IT student rate
+    need_floor = L / (h_floor * 4.33)       # hours per week needed
+    need_it = L / (h_it * 4.33)
+    cap = w["hours"]
+    inc_cap = cap * 4.33 * h_floor          # net per month at the cap, floor wage
+    inc_avg = d["avg_hours"] * 4.33 * h_floor   # yearly average per month if breaks are worked full-time (floor wage)
+    wage_needed = L / (cap * 4.33 * r)      # local-currency net... expressed gross: hourly wage needed at the cap
+    if need_floor <= cap:
+        em_num = "✅"
+    elif need_it <= cap or inc_avg >= L:
+        em_num = "⚠️"
+    else:
+        em_num = "❌"
+    em = "⚠️" if (p[0] == "سوئد" and em_num == "✅") else em_num   # Sweden: the law allows it, the job market rarely does
+    legal = w["start"]; real = legal + d["search"]
+    sym = _CUR_SYM[w["cur"]]
+    def ws_(x): return f"{sym}{x:.2f}".rstrip("0").rstrip(".") if x < 100 else f"{sym}{x:,.0f}"
+    return dict(L=L, cap=cap, legal=legal, real=real, h_floor=h_floor, h_it=h_it, need_floor=need_floor, need_it=need_it,
+                inc_cap=inc_cap, inc_avg=inc_avg, wage_needed=wage_needed, em=em, em_num=em_num, wage_s=ws_(wage), it_s=ws_(d["it_wage"]), wneed_s=ws_(wage_needed),
+                wnote=wnote, it_note=d["it_note"], how=d["how"], avg_hours=d["avg_hours"], extra=w["extra"])
 
 # ---- step 1 (your proposal, 28 Sep): what the embassy/canton must see = tuition of the whole degree + ONE year of official proof of funds ----
 PROOF = {  # year-1 amount in local currency · third_party = can a short gap be shown temporarily from the family's account?
@@ -1449,6 +1488,52 @@ for row in wsD.iter_rows(min_row=first_ob, max_row=wsD.max_row, max_col=NC):
         v = str(cell.value)
         cell.font = Font(color="9C5700" if v.startswith("⚠️") else ("7F7F7F" if v.startswith("✅") else "9C0006"))
     row[8].alignment = wrap_ctr
+
+section("پ-۳) استقلال مالی — فقط هزینهٔ زندگی (بدون شهریه): از چه ماهی، با چند ساعت کار در هفته و چه دستمزدی، هزینهٔ خودتان را می‌دهید و دست به تمکن/خانواده نمی‌زنید؟")
+header(["حکم", "دانشگاه – شهر", "زندگی واقعی/ماه", "سقف قانونی کار / از چه ماهی مجاز", "دستمزد خالص هر ساعت: کف قانونی/معمول → IT معمول", "ساعت لازم در هفته با کف", "ساعت لازم در هفته با نرخ IT", "درآمد در سقف قانونی با کف (درصد زندگی)", "میانگین سالانه اگر تعطیلات ترم را تمام‌وقت کار کنید", "مستقل از ماه؟ (قانونی → واقع‌بینانه)", "چطور / نکته"])
+first_ind = wsD.max_row + 1
+seen = set()
+for (usub, psub), jb, sal, eng, cst, deadline, why, sch, force, caveat in PROG_SCORES:
+    p = find_prog(usub, psub)
+    if p[2] in seen:
+        continue
+    seen.add(p[2])
+    d = independence(p)
+    city = CITIES[p[2]][0].split(" (")[0].split(" —")[0]
+    cov = d["inc_cap"] / d["L"] * 100
+    if d["em_num"] == "✅":
+        when = f"{d['em']} از ماه {fa(d['legal'])} قانوناً؛ واقع‌بینانه ماه {fa(d['real'])} — با {fa(d['need_floor'], 1)} ساعت در هفته حتی با کف"
+    elif d["need_it"] <= d["cap"]:
+        when = f"⚠️ فقط با کار IT (≥ {d['wneed_s']} در ساعت): از ماه {fa(d['legal'])} قانوناً، واقع‌بینانه ماه {fa(d['real'])}؛ با کف در سقف {fa(d['cap'])} ساعت فقط {fa(cov)}٪ زندگی"
+    elif d["inc_avg"] >= d["L"]:
+        when = f"⚠️ در ترم نه (سقف {fa(d['cap'])} ساعت = {fa(cov)}٪ زندگی)؛ فقط به‌طور میانگین سالانه اگر تعطیلات ترم را تمام‌وقت کار کنید و پس‌انداز کنید؛ از ماه {fa(d['real'])}"
+    else:
+        when = f"❌ با سقف قانونی نمی‌شود ({fa(cov)}٪ زندگی)؛ دستمزد لازم {d['wneed_s']} در ساعت"
+    if p[0] == "سوئد":
+        when += "؛ ⚠️ مشکل پیدا کردن کار به انگلیسی، نه قانون"
+    wsD.append([d["em"], f"{p[1]} – {city}", money(d["L"]), f"{fa(d['cap'])} ساعت/هفته — از ماه {fa(d['legal'])}",
+                f"{d['wage_s']} → ≈ {money(d['h_floor'])}/ساعت ({d['wnote']})؛ IT: {d['it_s']} → ≈ {money(d['h_it'])}/ساعت ({d['it_note']})",
+                f"{fa(d['need_floor'], 1)} ساعت" + (" ✓" if d["need_floor"] <= d["cap"] else f" ✗ (سقف {fa(d['cap'])})"),
+                f"{fa(d['need_it'], 1)} ساعت" + (" ✓" if d["need_it"] <= d["cap"] else f" ✗ (سقف {fa(d['cap'])})"),
+                f"{money(d['inc_cap'])} = {fa(cov)}٪",
+                f"{fa(d['avg_hours'], 1)} ساعت/هفته میانگین → {money(d['inc_avg'])} = {fa(d['inc_avg'] / d['L'] * 100)}٪" + ("" if d["avg_hours"] > d["cap"] else " (اضافه‌ای ندارد)"),
+                when, d["how"]])
+for row in wsD.iter_rows(min_row=first_ind, max_row=wsD.max_row, max_col=NC):
+    for cell in row:
+        cell.alignment = wrap_rtl
+        cell.border = border
+    row[0].alignment = wrap_ctr
+    row[0].font = Font(bold=True, size=12)
+    row[2].alignment = wrap_ctr
+    row[2].font = Font(bold=True)
+    row[5].alignment = wrap_ctr
+    row[6].alignment = wrap_ctr
+    row[9].fill = star_fill
+    row[9].font = Font(bold=True, color="9C5700" if str(row[9].value).startswith("⚠️") else ("9C0006" if str(row[9].value).startswith("❌") else "000000"))
+para("محاسبه: ساعت لازم در هفته = هزینهٔ زندگی ماهانهٔ شهر ÷ (دستمزد خالص هر ساعت × ۴.۳۳ هفته). «کف» = حداقل قانونی/کانتونی یا کف معمول (آلمان €14.60 از ۲۰۲۷ · انگلستان £12.71 · سوئیس کف کانتونی · سوئد SEK 150 · دانمارک DKK 140)؛ «IT» = نرخ معمول کار دانشجویی فنی (آلمان €17 · انگلستان £14 · سوئیس CHF 28 · سوئد SEK 170). خالص بعد از کسورات دانشجویی. "
+     "✅ = با کف و داخل سقف قانونی مستقل می‌شوید · ⚠️ = فقط با کار IT یا با تمام‌وقت کار کردن در تعطیلات ترم و پس‌انداز (میانگین سالانه) · ❌ = با سقف قانونی نمی‌شود. «واقع‌بینانه» = ماه قانونی + زمان معمول پیدا کردن کار (آلمان ۲ ماه، انگلستان ۱، سوئیس آماده از قبل، سوئد ۴). "
+     "یادتان باشد: هر ماهی که خودتان می‌دهید، همان مبلغ از تمکن/بودجهٔ $40k دست‌نخورده می‌ماند — در آلمان حساب مسدود فقط €992 در ماه آزاد می‌کند، بقیه‌اش می‌ماند؛ در سوئیس ۶ ماه اول به‌هیچ‌وجه نمی‌شود کار کرد، پس ۶ ماه زندگی ($11–13k) حتماً از تمکن می‌رود.", height=84)
+wsD.cell(row=wsD.max_row, column=1).font = Font(size=9, color="555555")
 
 section("ت) نتیجه در ۵ خط")
 for t in VERDICT:

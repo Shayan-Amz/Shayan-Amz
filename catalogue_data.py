@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Data for the two extra sheets of Table_final.xlsx:
-  «برنامه‌ها»           — one row per English-taught master's programme (all 6 countries incl. Switzerland, 8 fields)
+  «برنامه‌ها»           — one row per English-taught master's programme (all 7 countries incl. Switzerland and Finland, 8 fields)
   «حوزه‌ها و بازار کار» — the 8 computing fields, their 2026 job market and fit with Shayan's profile
 Figures checked on 2026-09-27 against the programme/fee pages listed in the source column.
 """
@@ -120,7 +120,7 @@ FIELDS = {
     "AI":    ("هوش مصنوعی / یادگیری ماشین", 5,
               "داغ‌ترین بازار؛ «AI Engineer» سریع‌ترین‌رشد (LinkedIn 2026)؛ ولی برنامه‌های ریاضی‌محور (Tübingen، UvA، KTH) بسیار رقابتی‌اند"),
     "SE":    ("مهندسی نرم‌افزار / علوم کامپیوتر", 4,
-              "بیشترین حجم آگهی در هر ۶ کشور؛ ورود جونیور از ۲۰۲۳ سخت‌تر شده — سابقهٔ کار شما مزیت است"),
+              "بیشترین حجم آگهی در هر ۷ کشور؛ ورود جونیور از ۲۰۲۳ سخت‌تر شده — سابقهٔ کار شما مزیت است"),
     "CY":    ("امنیت سایبری", 4,
               "کمبود ساختاری (Bitkom: جزو ۳ کمبود اصلی آلمان)؛ اما ۳۱٪ تیم‌ها هیچ نیروی جونیور ندارند → کارآموزی/گواهی لازم است"),
     "CLOUD": ("ابری / سیستم‌های توزیع‌شده / DevOps", 4,
@@ -142,12 +142,12 @@ FIELDS = {
 FIELD_ROWS = [
     ["هوش مصنوعی / یادگیری ماشین", "۵ — قوی‌ترین رشد",
      "بالاتر (+۱۰ تا +۲۵٪؛ آلمان €52–60k، انگلستان £35–45k خارج لندن، سوئیس ≈ CHF 95–120k در زوریخ)",
-     "بسیار خوب — تیم‌های AI/ML در همهٔ ۶ کشور انگلیسی‌زبان‌اند؛ زوریخ (Google، ETH AI Center، آزمایشگاه‌های AI) یکی از قطب‌های اروپاست و کاملاً انگلیسی",
+     "بسیار خوب — تیم‌های AI/ML در همهٔ ۷ کشور انگلیسی‌زبان‌اند؛ زوریخ (Google، ETH AI Center، آزمایشگاه‌های AI) یکی از قطب‌های اروپاست و کاملاً انگلیسی؛ فنلاند: FCAI (Aalto/Helsinki) و Silo AI/AMD در هلسینکی، انگلیسی‌محور ولی کوچک",
      "خوب: پیش‌زمینهٔ Computer Engineering + Python؛ ولی برای برنامه‌های Reach (Tübingen، UvA، KTH، Sheffield) معدل ۱۵.۷۷ کافی نیست — برنامه‌های کاربردی (Passau AI Eng، FAU، Northumbria/Teesside AI، USI AI (Lugano)، Umeå) هدف بگیرید",
      "رقابت ورودی شدید؛ بخشی از آگهی‌ها «AI» در عنوان دارند ولی کار مهندسی نرم‌افزار معمولی است؛ مدرک به‌تنهایی بدون پورتفولیو/پروژه کافی نیست",
      "LinkedIn/WEF ژانویه ۲۰۲۶ (۱.۳ میلیون شغل جدید AI؛ AI Engineer سریع‌ترین‌رشد)؛ Bitkom 2025"],
     ["مهندسی نرم‌افزار / علوم کامپیوتر", "۴ — بیشترین حجم",
-     "مرجع (آلمان €48–55k · هلند €40–50k · سوئد SEK 420–540k · دانمارک DKK 500–540k · سوئیس CHF 85–105k (بالاترین) · انگلستان £28–35k)",
+     "مرجع (آلمان €48–55k · هلند €40–50k · سوئد SEK 420–540k · دانمارک DKK 500–540k · سوئیس CHF 85–105k (بالاترین) · انگلستان £28–35k · فنلاند €31–43k)",
      "بسیار خوب",
      "بهترین تناسب با سابقهٔ شما (۲ سال IT + Unity/C#)؛ پذیرش ساده‌تر (2:2)؛ در همهٔ کشورها گزینهٔ Safe دارد",
      "آگهی‌های جونیور از ۲۰۲۳ کم شده (اثر GenAI)؛ در بریتانیا ۶–۷٪ بیکاری فارغ‌التحصیلان CS — سابقهٔ کار واقعی شما را از این گروه جدا می‌کند",
@@ -171,7 +171,7 @@ FIELD_ROWS = [
      "تعداد فارغ‌التحصیل خیلی بیشتر از جای خالی جونیور؛ آگهی جونیور Data Engineering هم ↓۶۷٪؛ مسیر رایج: تحلیلگر/بک‌اند → مهندس داده",
      "research.com 2026؛ careery.pro 2026؛ datadriven.io 2026"],
     ["سیستم‌های نهفته / رباتیک / خودران", "۴ در آلمان/سوئد؛ ۳ در بقیه",
-     "مساوی تا کمی بالاتر در صنعت (Bosch، Continental، ABB، Volvo)؛ پایین‌تر در بریتانیا؛ در سوئیس (ABB، رباتیک ETH) بالا ولی آلمانی‌محور",
+     "مساوی تا کمی بالاتر در صنعت (Bosch، Continental، ABB، Volvo)؛ پایین‌تر در بریتانیا؛ در سوئیس (ABB، رباتیک ETH) بالا ولی آلمانی‌محور؛ فنلاند: Nokia (Oulu/Espoo، 5G/6G) و Wärtsilä/KONE — R&D انگلیسی",
      "متوسط ⚠️ — تیم‌های R&D انگلیسی‌اند ولی شرکت‌های صنعتی متوسط آلمان/سوئد در عمل زبان محلی می‌خواهند",
      "خوب از نظر پیش‌زمینه (Computer Engineering)؛ گزینه‌ها: Twente ES، Stuttgart INFOTECH، H-BRS Autonomous Systems، FAU Autonomy Tech، Halmstad، MDU، SDU Robot Systems، DTU Autonomous Systems؛ سوئیس: ETH Robotics فقط Reach، ZHAW MSE گرایش مهندسی (آلمانی‌محور)",
      "با معیار «فقط انگلیسی» شما ضعیف‌تر از AI/SE/Cyber؛ وابسته به صنعت خودرو که در ۲۰۲۴–۲۵ آگهی‌هایش کم شد",
@@ -184,8 +184,8 @@ FIELD_ROWS = [
      "Indeed Hiring Lab تا Q4 2025 (thevoiceofuser, 2026)؛ uxdesigninstitute 2024؛ academyux Q1 2025"],
     ["توسعه بازی", "۲ — کوچک و پرنوسان",
      "پایین‌تر از نرم‌افزار عمومی (−۲۰ تا −۴۰٪)؛ استودیوهای بزرگ استثنا",
-     "خوب (استودیوهای بزرگ انگلیسی‌زبان: لندن، Guildford، Stockholm، Malmö، Copenhagen، Cologne؛ سوئیس صنعت بازی کوچکی دارد — Zürich: Giants Software — و ارشد انگلیسی بازی ندارد)",
-     "تنها حوزه‌ای که سابقهٔ Unity/C# شما در آن مستقیماً مزیت است؛ اما بازار ۲۰۲۲–۲۵ بدترین دورهٔ خود را داشت — پیشنهاد: ارشد Software/AI بگیرید و بازی را به‌عنوان تخصص/پورتفولیو نگه دارید، مگر Goldsmiths (£22k) یا Cologne Game Lab را با چشم باز انتخاب کنید",
+     "خوب (استودیوهای بزرگ انگلیسی‌زبان: لندن، Guildford، Stockholm، Malmö، Copenhagen، Cologne، هلسینکی (Supercell، Rovio، Remedy، Housemarque؛ Unity دفتر بزرگ در تامپره/هلسینکی)؛ سوئیس صنعت بازی کوچکی دارد — Zürich: Giants Software — و ارشد انگلیسی بازی ندارد)",
+     "تنها حوزه‌ای که سابقهٔ Unity/C# شما در آن مستقیماً مزیت است؛ اما بازار ۲۰۲۲–۲۵ بدترین دورهٔ خود را داشت — پیشنهاد: ارشد Software/AI بگیرید و بازی را به‌عنوان تخصص/پورتفولیو نگه دارید، مگر Goldsmiths (£22k)، Cologne Game Lab یا Aalto Game Design & Development (€17k، ۸ نفر، Reach) را با چشم باز انتخاب کنید",
      "≈۴۵ هزار اخراج ۲۰۲۲–ژوئیهٔ ۲۰۲۵؛ بیش از ۳۰ استودیو کاملاً بسته شد؛ حقوق برنامه‌نویس Unity ≈۵۰٪ افت؛ Unity Technologies شش دور اخراج",
      "Wikipedia «2022–2026 video game industry layoffs» (GDC State of the Industry 2026؛ 80.lv)"],
 ]
@@ -264,6 +264,13 @@ CITIES = {
     "Copenhagen-AAU": ("Copenhagen – Sydhavn (کپنهاگ؛ کمپوس AAU)", "خیلی گران — DKK 10,000–12,500"),
     "Aalborg-or-Copenhagen": ("Aalborg یا Copenhagen (هر دو کمپوس)", "متوسط (Aalborg) تا خیلی گران (Copenhagen)"),
     "Odense": ("Odense (اودنسه) — سومین شهر؛ خوشهٔ رباتیک", "متوسط — DKK 8,000–10,000"),
+    # فنلاند — اجاره‌های بنیادهای خوابگاهی (TOAS/PSOAS/TYS/LOAS/HOAS) ارزان است؛ بازهٔ زیر با اتاق مشترک یا استودیوی ارزان + خوراک/حمل‌ونقل/بیمه
+    "Tampere": ("Tampere (تامپره) — Nokia، Unity، Intel؛ دومین قطب فناوری فنلاند", "ارزان — €800–1,000"),
+    "Oulu": ("Oulu (اولو) — Nokia، خوشهٔ 5G/6G؛ شمال", "ارزان — €750–950"),
+    "Turku": ("Turku (تورکو) — سومین شهر؛ Bayer، Meyer، Wärtsilä", "ارزان — €800–1,000"),
+    "Lappeenranta": ("Lappeenranta (لاپین‌رانتا) — شهر کوچک دانشگاهی، شرق", "ارزان — €700–900"),
+    "Espoo": ("Espoo (اسپو) — پردیس Otaniemi؛ Nokia، Rovio، Supercell در منطقهٔ هلسینکی", "متوسط — €950–1,200"),
+    "Helsinki": ("Helsinki (هلسینکی) — پایتخت؛ Wolt، Supercell، Remedy، Unity", "متوسط — €1,000–1,300"),
     "Kolding": ("Kolding (کولدینگ) — جنوب یوتلند", "ارزان تا متوسط — DKK 7,500–9,000"),
     "Copenhagen": ("Copenhagen (کپنهاگ)", "خیلی گران — DKK 10,000–12,500"),
     "Lyngby": ("Kgs. Lyngby (لینگبی) — ۱۵ کیلومتری کپنهاگ", "خیلی گران — DKK 9,500–12,000"),
@@ -619,6 +626,50 @@ add("دانمارک", "Technical University of Denmark (DTU)", "Lyngby", "MSc En
 add("دانمارک", "Aarhus University (AU)", "Aarhus", "MSc Computer Science", "SE", "۲ سال", "€17,300", ("EUR", 17300, None),
     "کارشناسی CS با واحدهای مشخص", "6.5", "128", "Target/Reach", "Aarhus: دومین شهر، ارزان‌تر از کپنهاگ",
     "https://masters.au.dk/computerscience")
+
+# ---- فنلاند (۷ کشور از نسخهٔ ۳.۱۰) — شهریه‌ها از صفحه‌های رسمی ۲۰۲۶/۲۷؛ درخواست مشترک ۷–۲۱ ژانویه ۲۰۲۷ (Tampere/Oulu/Turku/LUT)، Aalto ۷ دسامبر ۲۰۲۶ – ۵ ژانویه ۲۰۲۷، Helsinki ۵–۱۹ ژانویه ۲۰۲۷ ----
+add("فنلاند", "Tampere University", "Tampere", "MSc Computing Sciences and Electrical Engineering — AI-native Software (Software, Web & Cloud)", "SE", "۲ سال", "€12,000 (رسمی 2026/27؛ Early-bird −€2,000 سال اول)", ("EUR", 12000, None),
+    "کارشناسی مرتبط (CS/SE/IT) با برنامه‌نویسی و ریاضی", "6.5 (W 5.5)", "436", "Target", "بورس ۵۰٪ برای کل دوره هنگام پذیرش (گزینشی)؛ Nokia/Unity/Intel در شهر؛ خوابگاه TOAS €212–410؛ مهلت ۲۱ ژانویه ۲۰۲۷",
+    "https://www.tuni.fi/en/tau/masters-programmes/ai-native-software-computing-sciences-and-electrical-engineering")
+add("فنلاند", "Tampere University", "Tampere", "MSc Computing Sciences and Electrical Engineering — Data Science", "DS", "۲ سال", "€12,000", ("EUR", 12000, None),
+    "کارشناسی مرتبط + ریاضی/آمار", "6.5 (W 5.5)", "436", "Target", "همان برنامهٔ CSEE، تخصص Data Science",
+    "https://www.tuni.fi/en/tau/masters-programmes/data-science-computing-sciences-and-electrical-engineering")
+add("فنلاند", "Tampere University", "Tampere", "MSc Computing Sciences and Electrical Engineering — Information Security", "CY", "۲ سال", "€12,000", ("EUR", 12000, None),
+    "کارشناسی CS/IT/EE", "6.5 (W 5.5)", "436", "Target", "تخصص امنیت اطلاعات؛ Nokia/Insta/Nixu در تامپره",
+    "https://www.tuni.fi/en/tau/masters-programmes/information-security-computing-sciences-and-electrical-engineering")
+add("فنلاند", "Tampere University", "Tampere", "MSc Computing Sciences and Electrical Engineering — Human-Technology Interaction", "HCI", "۲ سال", "€12,000", ("EUR", 12000, None),
+    "کارشناسی CS/IT یا مرتبط", "6.5 (W 5.5)", "436", "Target", "گروه HTI و Gamification تامپره؛ برای علاقه به UX/بازی",
+    "https://www.tuni.fi/en/tau/masters-programmes/human-technology-interaction-computing-sciences-and-electrical-engineering")
+add("فنلاند", "University of Oulu", "Oulu", "MSc (Tech) Computer Science and Engineering — Artificial Intelligence / Applied Computing", "AI", "۲ سال", "€10,000 (رسمی؛ ۳۰٪ معافیت سال دوم)", ("EUR", 10000, None),
+    "کارشناسی CS/CE/EE؛ ۷۰ جای تحصیل", "6.5", "360", "Target", "ارزان‌ترین شهریهٔ فنلاند در فهرست؛ Nokia و خوشهٔ 6G در Oulu؛ خوابگاه PSOAS €250–380؛ مهلت ۲۱ ژانویه ۲۰۲۷",
+    "https://www.oulu.fi/en/apply/masters-computer-science-and-engineering")
+add("فنلاند", "University of Turku", "Turku", "MSc (Tech) Information and Communication Technology — Software Engineering", "SE", "۲ سال", "€12,000 (رسمی؛ Early-bird −€2,000؛ ۵۰٪ سال دوم با ۵۵ واحد)", ("EUR", 12000, None),
+    "کارشناسی مرتبط (CS/SE/IT)؛ سهمیهٔ ۵۵ نفر برای کل ICT", "6.5", "398", "Target", "بورس سال دوم برای همهٔ واجدان شرایط (۵۵ واحد در سال اول) → کل شهریه می‌تواند €16,000 شود؛ خوابگاه TYS €250–400",
+    "https://www.utu.fi/en/study-at-utu/masters-degree-programme-in-information-and-communication-technology-software-engineering")
+add("فنلاند", "University of Turku", "Turku", "MSc (Tech) Information and Communication Technology — Cyber Security (EIT Digital)", "CY", "۲ سال", "€12,000", ("EUR", 12000, None),
+    "کارشناسی CS/IT/EE", "6.5", "398", "Target", "عضو EIT Digital Master School (امکان مدرک دوگانه)",
+    "https://www.utu.fi/en/study-at-utu/masters-degree-programme-in-information-and-communication-technology-cyber-security")
+add("فنلاند", "LUT University", "Lappeenranta", "MSc (Tech) Software Engineering", "SE", "۲ سال", "€15,000 (رسمی 2026/27؛ بورس Early-bird/ادامهٔ تحصیل تا €5,000)", ("EUR", 15000, None),
+    "کارشناسی مهندسی/CS با برنامه‌نویسی", "6.5", "390", "Target", "شهر کوچک و ارزان کنار مرز روسیه؛ گام ۱ فقط با بورس €5,000 رد می‌شود؛ خوابگاه LOAS €250–450",
+    "https://www.lut.fi/en/studies/masters-programmes")
+add("فنلاند", "Aalto University", "Espoo", "MSc (Tech) Computer Science", "SE", "۲ سال", "€17,000 (رسمی؛ گروه فناوری)", ("EUR", 17000, None),
+    "کارشناسی CS/SE قوی؛ GRE اختیاری", "6.5 (W 5.5)", "126", "Reach", "بهترین برند فنی فنلاند؛ اکوسیستم استارتاپی Otaniemi؛ خوابگاه AYY/HOAS €300–700؛ مهلت ۵ ژانویه ۲۰۲۷",
+    "https://www.aalto.fi/en/study-options/computer-science-master-of-science-technology")
+add("فنلاند", "Aalto University", "Espoo", "MSc (Tech) Machine Learning, Data Science and Artificial Intelligence (Macadamia)", "AI", "۲ سال", "€17,000", ("EUR", 17000, None),
+    "کارشناسی CS/ریاضی/EE با ریاضیات قوی؛ GRE (گروه ۲)", "6.5 (W 5.5)", "126", "Reach", "شناخته‌شده‌ترین ارشد ML فنلاند؛ رقابت بالا",
+    "https://www.aalto.fi/en/study-options/machine-learning-data-science-and-artificial-intelligence-master-of-science-technology")
+add("فنلاند", "Aalto University", "Espoo", "MSc (Tech) Security and Cloud Computing (SECCLO، Erasmus Mundus)", "CLOUD", "۲ سال", "€17,000 (مسیر Aalto؛ کنسرسیوم بورس Erasmus Mundus جدا دارد)", ("EUR", 17000, None),
+    "کارشناسی CS/IT؛ ریاضی/شبکه", "6.5 (W 5.5)", "126", "Reach", "سال دوم در یکی از ۶ دانشگاه شریک (KTH، DTU، NTNU، …)",
+    "https://www.aalto.fi/en/study-options/security-and-cloud-computing-secclo-master-of-science-technology")
+add("فنلاند", "Aalto University", "Espoo", "MSc (Tech) Computer, Communication and Information Sciences — Game Design and Development", "GD", "۲ سال", "€17,000 (Studyinfo 2027)", ("EUR", 17000, None),
+    "کارشناسی مرتبط + پورتفولیو؛ فقط ۸ جای تحصیل", "6.5 (W 5.5)", "126", "Reach", "هلسینکی = قطب بازی اروپا (Supercell، Rovio، Remedy، Housemarque، Unity)؛ سابقهٔ Unity شما مزیت است؛ ۸ نفر ⇒ Reach",
+    "https://opintopolku.fi/konfo/en/toteutus/1.2.246.562.17.00000000000000008124")
+add("فنلاند", "University of Helsinki", "Helsinki", "MSc Computer Science (Algorithms / Networks / Software)", "SE", "۲ سال", "€15,000 (رسمی؛ مهلت ۵–۱۹ ژانویه ۲۰۲۷)", ("EUR", 15000, None),
+    "کارشناسی CS با ≥ ۶۰ ECTS CS", "6.5 (W 6.0)", "123", "Target/Reach", "بالاترین رتبهٔ فنلاند؛ درخواست جدا از سامانهٔ مشترک؛ خوابگاه HOAS €300–450",
+    "https://www.helsinki.fi/en/degree-programmes/computer-science-masters-programme")
+add("فنلاند", "University of Helsinki", "Helsinki", "MSc Data Science", "DS", "۲ سال", "€15,000", ("EUR", 15000, None),
+    "کارشناسی CS/ریاضی/آمار؛ رقابتی", "6.5 (W 6.0)", "123", "Reach", "دانشکدهٔ علوم؛ ظرفیت محدود",
+    "https://www.helsinki.fi/en/degree-programmes/data-science-masters-programme")
 
 PROGRAMS = P
 

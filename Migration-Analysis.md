@@ -9,7 +9,7 @@
 **نسخه ۲.۴ (۲۸ سپتامبر ۲۰۲۶):** بازبینی دوم اعداد سوئیس با صفحات رسمی دانشگاه‌ها — ۴ اصلاح: شهریهٔ Bern از پاییز ۲۰۲۶ سه‌برابر شده (CHF ۲,۶۰۹/ترم؛ به‌جای آن Neuchâtel CHF ۷۹۰ اضافه شد)، Basel CHF ۸۵۰ برای همه (تأیید)، HSLU نام جدید «Applied Data Science and AI» و مهلت ویزایی‌ها **۱ آوریل**، Joint MSc CS بدون آزمون زبان. فهرست کامل در بخش ۱۲.
 **نسخه ۲.۵ (۲۸ سپتامبر ۲۰۲۶):** ردیف **۵ب — بورس/تخفیف شهریهٔ واقعاً در دسترس شما** به جدول اصلی اضافه شد (بخش ۱۴)؛ تبدیل معدل ۱۵.۷۷ به سیستم هر کشور در بخش ۱۳.
 **نسخه ۲.۶ (۲۸ سپتامبر ۲۰۲۶):** تحلیل «حتماً Russell Group» و شش دانشگاه Imperial، UCL، KCL، Warwick، Bristol، Durham (بخش ۱۵)؛ این شش به شیت «برنامه‌ها» اضافه شدند (۱۱۰ برنامه؛ انگلستان ۳۱).
-**نسخه ۲.۷ (۲۸ سپتامبر ۲۰۲۶):** شیت جدید **«خوابگاه و مسکن»** (۶ کشور + ۲۷ دانشگاه: چه کسی می‌دهد، تضمین، اجاره، غذا، اتاق خصوصی، ودیعه/ضامن) و بخش ۱۶.
+**نسخه ۲.۷ (۲۸ سپتامبر ۲۰۲۶):** شیت جدید **«خوابگاه و مسکن»** (۶ کشور + ۶۵ شهر + ۲۷ دانشگاه: چه کسی می‌دهد، تضمین، اجاره، غذا، اتاق خصوصی، ودیعه/ضامن) و بخش ۱۶.
 
 > پروفایل: ۲۳ ساله، کارشناسی مهندسی کامپیوتر دانشگاه سمنان، معدل ۱۵.۷۷، IELTS تقریبی ۷، ۲ سال سابقه کارشناس کامپیوتر + ۷ ماه بازی‌سازی، اقدام از همین پاییز ۲۰۲۶ برای ورودی سپتامبر ۲۰۲۷.
 > معیارها: (۱) هزینه زندگی و شهریه، (۲) امکان تحصیل/کار/زندگی فقط با انگلیسی، (۳) بازار کار و حقوق پایه بالا.
@@ -186,7 +186,7 @@ Newcastle ۱۴۹ · York ۱۵۸ · TU Dresden ۱۸۵ · FAU ۲۱۸ · Twente ۲�
 ---
 
 ## ۶. منابع اصلی
-فهرست کامل ۲۰۱ منبع با لینک در شیت «منابع» فایل `Table_final.xlsx` آمده است. مهم‌ترین‌ها:
+فهرست کامل ۲۰۷ منبع با لینک در شیت «منابع» فایل `Table_final.xlsx` آمده است. مهم‌ترین‌ها:
 - gov.uk / Home Office Statements of Changes (HC 1333، HC 1691، HC 584)؛ Home Affairs Committee report on Earned Settlement
 - make-it-in-germany.com (بلوکارت ۲۰۲۶)؛ visas-de.tlscontact.com (تهران)
 - ind.nl (مبالغ ۲۰۲۶)؛ netherlandsworldwide.nl (MVV در ایران)
@@ -432,6 +432,21 @@ Russell Group یک انجمن ۲۴ دانشگاه پژوهش‌محور است (
 3. در آلمان (Anmeldung)، هلند (BSN) و سوئیس، آدرس ثبت‌شده شرط گرفتن کارت اقامت و حساب بانکی است → بدون اتاق، بقیهٔ کارها هم قفل می‌شود؛ حداقل اقامت موقت ۴–۸ هفته را قبل از پرواز رزرو کنید.
 
 **اثر روی هزینه‌های جدول:** هیچ؛ برآوردهای ردیف ۶ و ۷ از قبل با اجارهٔ اتاق (نه استودیو) حساب شده‌اند.
+
+### ۱۶.۰ شهر به شهر: شانس گرفتن خوابگاه و قیمت (جدول دوم شیت خوابگاه — ۶۵ شهر)
+
+مقیاس شانس: ⭐⭐⭐⭐⭐ تضمین/تقریباً قطعی · ⭐⭐⭐⭐ چند هفته · ⭐⭐⭐ یک ترم یا لیست انتظار ۳–۶ ماه · ⭐⭐ ۶–۱۲ ماه · ⭐ عملاً نه. منابع: SFS Bostadsrapport 2024/2025 (سوئد، رسمی)، MLP Studentenwohnreport 2025 (اجارهٔ WG آلمان، رسمی)، Kences 2026 و Kamernet (هلند)، صفحات رسمی دانشگاه‌ها؛ بقیه برآورد.
+
+| کشور | ⭐⭐⭐⭐–⭐⭐⭐⭐⭐ (راحت) | ⭐⭐⭐ (متوسط) | ⭐–⭐⭐ (سخت) | اجارهٔ خوابگاه / اتاق خصوصی |
+|---|---|---|---|---|
+| آلمان | Chemnitz، Magdeburg (همیشه جا)، Dresden، Saarbrücken، Passau، Siegen | Erlangen، Aachen، Tübingen، Sankt Augustin | Stuttgart (۶–۸ ماه)، Darmstadt، Köln، München (۲–۴ ترم) | خوابگاه €220–500 با قبوض · WG: Chemnitz €274، Magdeburg €339، Dresden €435، Tübingen €464، Saarbrücken €480، Aachen/Darmstadt €483، Stuttgart €593، Köln €641، München €790 |
+| هلند | Enschede (پیشنهاد UT برای ویزایی‌ها؛ ارزان‌ترین: €397) | Nijmegen (Radboud تا ۱ ژوئن)، Groningen (€515)، Breda | Leiden، Eindhoven، Delft، Utrecht (بدترین)، Amsterdam | اتاق رزروشده €300–870 · بازار €500–1,000 |
+| سوئد | Linköping (سبز + پیشنهاد LiU)، Västerås (سبز + تضمین شهری)، Uppsala (تضمین دانشگاه برای شهریه‌پردازها)، Karlskrona، Skövde (سبز ۲۰۲۴) | Umeå | Halmstad (قرمز)، Gothenburg (قرمز)، Stockholm/Kista (قرمز؛ صف ۶–۱۸ ماه) | کریدوری SEK 3,300–6,100 (استکهلم تا 8,000) · خصوصی SEK 4,500–11,000 |
+| دانمارک | Aalborg («تقریباً ۱۰۰٪»)، Odense، Kolding | Aarhus | Copenhagen (همهٔ دانشگاه‌ها)، Lyngby | Aalborg DKK 3,200–4,700 · کپنهاگ DKK 3,500–9,000 |
+| سوئیس | Fribourg، Neuchâtel، Lugano | Bern، Basel، Luzern | Zürich (۳–۱۲ ماه)، Winterthur، Lausanne | CHF 450–900 · WG CHF 550–1,200 |
+| انگلستان | York (تضمین تا ۳۱ ژوئیه)، Colchester/Essex (تضمین کل دوره)، Uxbridge/Brunel (تضمین، مهلت ۱۵ مارس)، Manchester (University of Manchester: تضمین PG بین‌المللی)، Middlesbrough، Newcastle، Nottingham، Leicester، Canterbury، Guildford، Egham، Lancaster، Sheffield (تأیید کنید) | Coventry، Bristol، Durham، New Cross | لندن مرکز (UCL/KCL/Imperial: PG بدون تضمین) | خوابگاه شمال £400–700/ماه · جنوب £650–1,000 · لندن £900–1,800 · خصوصی £450–1,400 |
+
+نتیجهٔ عملی: اگر «حتماً خوابگاه» شرط شماست، شهرهای واقع‌بینانهٔ شما در هر کشور این‌هاست — آلمان: Dresden/Chemnitz/Magdeburg/Passau/Saarbrücken (نه Stuttgart)؛ هلند: Enschede؛ سوئد: Linköping/Västerås/Uppsala؛ دانمارک: Aalborg/Odense؛ سوئیس: Lugano/Fribourg/Neuchâtel؛ انگلستان: York/Essex/Brunel/Manchester و شهرهای شمالی.
 
 ### ۱۶.۱ «خوابگاه en-suite بهتر از اتاق خصوصی است» — چقدر صرفه‌جویی می‌شود؟ (جدول سوم شیت خوابگاه)
 

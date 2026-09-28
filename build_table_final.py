@@ -331,6 +331,12 @@ SOURCES = [
  ("مسکن – Durham: catered فقط برای کارشناسی (University College)؛ PG self-catered؛ راهنمای کالج PG", "https://www.durham.ac.uk/colleges-and-student-experience/colleges/university/accommodation/"),
  ("مسکن – Durham قیمت 25/26: catered £10,233/سال، self-catered £7,146–7,801 (۳۹ هفته)، سهم غذا £3,087", "https://www.palatinate.org.uk/college-accommodation-prices-increase-by-5/"),
  ("مسکن – Imperial: PG بدون تضمین؛ خوابگاه £210–410/هفته (۲۰۲۶)؛ طرح ضامن اجاره فقط UG/PhD؛ UCL طرح ضامن £50", "https://www.harveywjames.com/news-imperial-college-rent-guarantee-scheme-london"),
+ ("مسکن – SFS Bostadsrapport 2024: شهرهای سبز/زرد/قرمز سوئد (Linköping، Västerås، Karlskrona، Skövde سبز؛ Halmstad، Umeå، Uppsala، Stockholm، Göteborg قرمز)", "https://www.svt.se/nyheter/inrikes/rapport-flera-kommuner-med-bostadsgaranti-kan-inte-erbjuda-studenter-bostad"),
+ ("مسکن – SFS Bostadsrapport 2025: ۱۴ شهر سبز (از جمله Linköping، Västerås)، ۱۰ قرمز (Lund، Göteborg، Stockholm، Uppsala)", "https://www.kau.se/nyheter/karlstad-fortsatt-gront-i-studentbostadsrapport"),
+ ("مسکن – MLP Studentenwohnreport 2025: اجارهٔ اتاق WG به تفکیک شهر (München 790، Köln 641، Stuttgart 593، Darmstadt/Aachen 483، Saarbrücken 480، Tübingen 464، Dresden 435، Magdeburg 339، Chemnitz 274)", "https://de.marketscreener.com/boerse-nachrichten/mlp-studentenwohnreport-2025-wohnen-bleibt-fuer-studierende-zu-teuer-a-und-wird-zunehmend-zum-stan-ce7d5bd9d88ef62c"),
+ ("مسکن – Kences Landelijke Monitor 2026: کمبود ۲۰,۲۰۰؛ بیشترین فشار Amsterdam، Delft، Eindhoven، Leiden، Nijmegen، Utrecht؛ اتاق میانگین €540", "https://delta.tudelft.nl/en/article/kences-housing-shortage-remains-severe-delft-believes-it-has-found-a-solution"),
+ ("مسکن – Kamernet Q1 2025: Enschede ارزان‌ترین (€397)، Amsterdam گران‌ترین (€979)", "https://kamernet.nl/tips/verhuurders/huurprijs/kamernet-verhuurrapportage-q1-2025"),
+ ("مسکن – University of Manchester: تضمین خوابگاه برای هر PG بین‌المللی برای کل دوره (اقدام تا ۳۱ اوت)", "https://www.manchester.ac.uk/study/international/accommodation/guarantee/"),
  ("Russell Group – فهرست رسمی ۲۴ عضو (۲۰ در انگلستان)", "https://russellgroup.ac.uk/about/our-universities/"),
  ("انگلستان – Warwick: جدول رسمی تطبیق مدرک ایرانی (1st ۱۷/۲۰، 2:1 ۱۵/۲۰، 2:2 ۱۳/۲۰)", "https://warwick.ac.uk/study/international/countryinformation/middleeast/iran/"),
  ("انگلستان – Durham MSc Advanced Computer Science: £34,500 (2026)؛ جدول ایران (2:1 = ۱۴–۱۶/۲۰؛ Ecctis)", "https://www.durham.ac.uk/study/courses/advanced-computer-science-g5t609/"),
@@ -745,6 +751,81 @@ HOUSING_COUNTRY = [
   "مزیت بزرگ برای ایرانی: خوابگاه دانشگاه ضامن بریتانیایی نمی‌خواهد (اجارهٔ خصوصی معمولاً ضامن UK یا ۶–۱۲ ماه پیش‌پرداخت؛ خدمات ضامن ≈ £138/ماه) · پیش‌پرداخت £250–500 (Brunel £350/£450) · UCL طرح ضامن دانشگاهی £50 دارد؛ Imperial فقط برای UG/PhD",
   "york.ac.uk؛ essex.ac.uk؛ brunel.ac.uk؛ ncl.ac.uk؛ northumbria.ac.uk؛ durham.ac.uk؛ palatinate.org.uk"],
 ]
+
+HEAD7D = ["شهر", "کشور", "دانشگاه(های) شیت برنامه‌ها", "چه کسی خوابگاه می‌دهد", "شانس گرفتن خوابگاه برای ارشد بین‌المللی (⭐ تا ⭐⭐⭐⭐⭐) و زمان", "اجارهٔ خوابگاه / ماه", "اتاق خصوصی / ماه", "اعتبار عدد و منبع"]
+HOUSING_CITY = [
+ # آلمان — Studierendenwerk؛ هیچ‌جا تضمین نیست؛ شانس = عرضه/تقاضا
+ ["Stuttgart", "آلمان", "Universität Stuttgart", "Studierendenwerk Stuttgart", "⭐⭐ کم — لیست انتظار معمول ۶–۸ ماه برای ترم زمستان؛ Esslingen/Göppingen/Ludwigsburg زودتر", "€229–500 با قبوض (میانگین €345)", "WG €593 (MLP 2025)", "رسمی (Studierendenwerk، MLP)"],
+ ["Erlangen", "آلمان", "FAU", "Studierendenwerk Erlangen-Nürnberg", "⭐⭐⭐ متوسط — ۱–۲ ترم انتظار ممکن؛ Nürnberg هم گزینه", "≈ €280–420", "≈ €450–520", "برآورد"],
+ ["Darmstadt", "آلمان", "TU Darmstadt", "Studierendenwerk Darmstadt", "⭐⭐ کم — تقاضای بالا (فرانکفورت نزدیک)", "≈ €280–450", "WG €483 (MLP 2025)", "MLP رسمی؛ خوابگاه برآورد"],
+ ["Dresden", "آلمان", "TU Dresden", "Studentenwerk Dresden (ذخیرهٔ بزرگ)", "⭐⭐⭐⭐ بالا — معمولاً ظرف چند هفته تا یک ترم", "≈ €250–380", "WG €435 (MLP 2025)", "MLP رسمی؛ خوابگاه برآورد"],
+ ["Saarbrücken", "آلمان", "Saarland University", "Studentenwerk Saarland", "⭐⭐⭐⭐ بالا", "≈ €250–380", "WG €480 (MLP 2025)", "MLP رسمی؛ خوابگاه برآورد"],
+ ["Chemnitz", "آلمان", "TU Chemnitz", "Studentenwerk Chemnitz-Zwickau", "⭐⭐⭐⭐⭐ تقریباً همیشه جا هست", "≈ €200–300", "WG €274 (MLP 2025) — ارزان‌ترین آلمان", "MLP رسمی؛ خوابگاه برآورد"],
+ ["Passau", "آلمان", "Universität Passau", "Studierendenwerk Niederbayern/Oberpfalz", "⭐⭐⭐⭐ بالا — شهر کوچک، ظرفیت نسبتاً خوب", "≈ €260–380", "≈ €380–450", "برآورد"],
+ ["Magdeburg", "آلمان", "OVGU", "Studentenwerk Magdeburg", "⭐⭐⭐⭐⭐ تقریباً همیشه جا هست", "≈ €220–320", "WG €339 (MLP 2025)", "MLP رسمی؛ خوابگاه برآورد"],
+ ["Köln", "آلمان", "TH Köln", "Kölner Studierendenwerk", "⭐⭐ کم — شهر بزرگ، صف طولانی", "≈ €300–450", "WG €641 (MLP 2025)", "MLP رسمی؛ خوابگاه برآورد"],
+ ["Siegen", "آلمان", "Universität Siegen", "Studierendenwerk Siegen", "⭐⭐⭐⭐ بالا", "≈ €250–350", "≈ €330–400", "برآورد"],
+ ["Sankt Augustin", "آلمان", "H-BRS", "Studierendenwerk Bonn", "⭐⭐⭐ متوسط (منطقهٔ بن)", "≈ €300–400", "≈ €450–520", "برآورد"],
+ ["Aachen", "آلمان", "RWTH", "Studierendenwerk Aachen", "⭐⭐⭐ متوسط — ۱–۲ ترم انتظار رایج", "≈ €280–420", "WG €483 (MLP 2025)", "MLP رسمی؛ خوابگاه برآورد"],
+ ["Tübingen", "آلمان", "Universität Tübingen", "Studierendenwerk Tübingen-Hohenheim", "⭐⭐⭐ متوسط — شهر کوچک و پرتقاضا", "≈ €300–450", "WG €464 (MLP 2025)", "MLP رسمی؛ خوابگاه برآورد"],
+ ["München", "آلمان", "TUM / LMU", "Studierendenwerk München", "⭐ خیلی کم — انتظار ۲–۴ ترم", "≈ €350–500", "WG €790 (MLP 2025) — گران‌ترین آلمان", "MLP رسمی؛ خوابگاه برآورد"],
+ # هلند — Kences سپتامبر ۲۰۲۶: کمبود ۲۰,۲۰۰؛ بیشترین فشار: Amsterdam، Delft، Eindhoven، Leiden، Nijmegen، Utrecht
+ ["Enschede", "هلند", "University of Twente", "Roomspot / کمپوس UT", "⭐⭐⭐⭐ بالا — پیشنهاد برای دانشجویان ویزایی (اول‌آمده)؛ خارج از فهرست شهرهای پرفشار Kences", "€300–800 (UT)", "≈ €397 میانگین (Kamernet Q1 2025) — ارزان‌ترین هلند", "رسمی/ثانویه"],
+ ["Nijmegen", "هلند", "Radboud", "میانجی‌گری Radboud + SSH&", "⭐⭐⭐ متوسط — فرم PAS تا ۱ ژوئن، پیشنهاد می–ژوئیه، بدون تضمین؛ Kences: فشار بالا", "€370–650 مبله", "≈ €500–650", "رسمی (ru.nl)"],
+ ["Leiden", "هلند", "Leiden University", "DUWO (اتاق‌های رزروشده، قرعه)", "⭐⭐ کم — فشار بالا (Kences)؛ اجاره ۱۸٪ در یک سال بالا رفت", "≈ €500–800", "≈ €600–900", "برآورد + Kences/Kamernet"],
+ ["Groningen", "هلند", "University of Groningen", "SSH Short Stay (رزرو)", "⭐⭐⭐ متوسط — «میانهٔ جدول» Kences", "≈ €450–700", "€515 میانگین (Kences)", "Kences رسمی"],
+ ["Utrecht", "هلند", "Utrecht University", "استودیوهای رزروشده (Plaza/SSH)", "⭐ خیلی کم — بیشترین فشار هلند (Kences نوامبر ۲۰۲۵)؛ رزروها ۲۸ می ۲۰۲۶ تمام شد", "€868 با قبوض (رزروشده)", "≈ €600–900", "رسمی (uu.nl)"],
+ ["Amsterdam", "هلند", "UvA / VU", "اتاق‌های رزروشده (قرعه؛ فقط سال اول)", "⭐ خیلی کم — بدترین بازار هلند", "≈ €650–1,000", "≈ €650 (Kences) تا €979 (Kamernet)", "Kences/Kamernet"],
+ ["Eindhoven", "هلند", "TU/e", "Vestide / Holland2Stay (محدود)", "⭐⭐ کم — فشار بالا (Kences)", "≈ €500–800", "≈ €550–800", "برآورد + Kences"],
+ ["Delft", "هلند", "TU Delft", "DUWO (رزرو، قرعه)", "⭐⭐ کم — فشار بالا؛ برنامهٔ ۳,۵۰۰ اتاق شهر شکست خورد (۲۷۹ ساخته شد)", "≈ €500–800", "≈ €600–900", "Kences/Delta"],
+ ["Breda", "هلند", "BUas", "معرفی BUas + بازار", "⭐⭐⭐ متوسط", "≈ €450–650", "≈ €500–650", "برآورد"],
+ # سوئد — SFS Bostadsrapport 2024/2025: سبز = خانه ظرف یک ماه؛ زرد = ظرف یک ترم؛ قرمز = نه در ترم اول
+ ["Linköping", "سوئد", "LiU", "Studentbostäder + یک پیشنهاد LiU برای شهریه‌پردازها", "⭐⭐⭐⭐⭐ — SFS «سبز» ۲۰۲۴ و ۲۰۲۵ + پیشنهاد دانشگاه", "SEK 3,500–5,500", "SEK 5,000–7,000", "SFS رسمی؛ liu.se"],
+ ["Halmstad", "سوئد", "Halmstad University", "شرکت‌های شهری؛ دانشگاه «تضمین نمی‌کند»", "⭐⭐ کم — SFS «قرمز» ۲۰۲۳ و ۲۰۲۴", "SEK 3,500–5,500", "SEK 5,000–7,000", "SFS رسمی؛ hh.se"],
+ ["Karlskrona", "سوئد", "BTH", "Karlskronahem + معرفی BTH", "⭐⭐⭐⭐ بالا — SFS «سبز» ۲۰۲۴ (زرد ۲۰۲۳)", "SEK 3,500–5,000", "SEK 4,500–6,500", "SFS رسمی"],
+ ["Stockholm / Kista", "سوئد", "KTH", "SSSB (صف) + KTH Accommodation (محدود، بدون تضمین)", "⭐ خیلی کم — SFS «قرمز» هر سال؛ صف SSSB ۶–۱۸ ماه", "SEK 4,500–8,000", "SEK 7,000–11,000", "SFS رسمی؛ su.se"],
+ ["Gothenburg", "سوئد", "Chalmers / GU", "SGS (اولویت شهریه‌پردازهای Chalmers — چک شود)", "⭐⭐ کم — SFS «قرمز» هر سال", "SEK 4,000–6,500", "SEK 6,000–9,000", "SFS رسمی"],
+ ["Uppsala", "سوئد", "Uppsala University", "Housing Office دانشگاه", "⭐⭐⭐⭐⭐ برای شهریه‌پردازها (تضمین رسمی) — با اینکه SFS شهر را «قرمز» می‌داند", "SEK 3,500–6,100", "SEK 6,000–8,500", "uu.se رسمی؛ SFS"],
+ ["Umeå", "سوئد", "Umeå University", "Bostaden (صف) + پیشنهاد دانشگاه به شهریه‌پردازها (چک شود)", "⭐⭐⭐ متوسط — SFS «قرمز» ۲۰۲۴، «زرد» ۲۰۲۳", "SEK 3,500–5,500", "SEK 5,000–7,000", "SFS رسمی"],
+ ["Skövde", "سوئد", "University of Skövde", "Skövdebostäder", "⭐⭐⭐⭐ بالا — SFS «سبز» ۲۰۲۴ (قرمز ۲۰۲۳؛ ولی اتاق موقت همیشه آسان)", "SEK 3,300–4,800", "SEK 4,500–6,000", "SFS رسمی"],
+ ["Västerås", "سوئد", "MDU", "Bostad Västerås + تضمین شهرداری برای دانشجویان جدید", "⭐⭐⭐⭐⭐ — SFS «سبز» هر سال؛ تضمین شهری", "SEK 3,500–5,500", "SEK 5,000–7,000", "SFS رسمی"],
+ # دانمارک
+ ["Aalborg", "دانمارک", "AAU", "International Accommodation Office (۲۲۰+ واحد مبله)", "⭐⭐⭐⭐⭐ «تقریباً ۱۰۰٪»", "DKK 3,200–4,700 با اینترنت/آب/گرمایش/برق", "DKK 3,500–5,000", "AAU رسمی/ثانویه"],
+ ["Copenhagen (AAU CPH، ITU، KU)", "دانمارک", "AAU Copenhagen / ITU", "راهنمایی؛ KKIK/CIU؛ خوابگاه خصوصی", "⭐ خیلی کم — خود AAU: «سخت‌ترین بازار اروپا»، بدون تضمین", "DKK 3,500–6,000 (KKIK/CIU) · 5,000–9,000 خوابگاه خصوصی", "DKK 6,000–9,000 (آپارتمان از 7,000)", "en.aau.dk رسمی"],
+ ["Lyngby", "دانمارک", "DTU", "DTU Housing (Campus Village محدود)", "⭐⭐ کم", "≈ DKK 4,000–6,500", "≈ DKK 6,000–8,500", "برآورد"],
+ ["Odense", "دانمارک", "SDU", "SDU Housing + kollegium", "⭐⭐⭐⭐ بالا — کمک فعال، ظرفیت خوب", "≈ DKK 3,500–5,500", "≈ DKK 4,000–6,000", "برآورد"],
+ ["Kolding", "دانمارک", "SDU Kolding", "SDU Housing", "⭐⭐⭐⭐ بالا", "≈ DKK 3,000–4,500", "≈ DKK 3,500–5,500", "برآورد"],
+ ["Aarhus", "دانمارک", "Aarhus University", "AU Housing (پیشنهاد به بین‌المللی‌ها)", "⭐⭐⭐ متوسط — بازار تنگ ولی دانشگاه پیشنهاد می‌دهد", "≈ DKK 3,500–6,000", "≈ DKK 5,000–7,500", "برآورد"],
+ # سوئیس
+ ["Zürich", "سوئیس", "ETH، UZH", "WOKO، Juwo (تعاونی)", "⭐ خیلی کم — لیست انتظار ۳–۱۲ ماه؛ روز پذیرش ثبت‌نام کنید", "CHF 480–900", "CHF 700–1,200", "woko.ch؛ برآورد"],
+ ["Winterthur", "سوئیس", "ZHAW", "WOKO Winterthur / بازار", "⭐⭐ کم — کمی بهتر از زوریخ", "≈ CHF 500–800", "CHF 650–1,000", "برآورد"],
+ ["Lausanne", "سوئیس", "EPFL", "FMEL", "⭐⭐ کم — زود پر می‌شود؛ بلافاصله بعد از پذیرش دور اول", "≈ CHF 500–900", "CHF 700–1,000", "برآورد"],
+ ["Bern", "سوئیس", "University of Bern", "StuWo Bern / بازار", "⭐⭐⭐ متوسط", "≈ CHF 500–750", "CHF 650–900", "برآورد"],
+ ["Basel", "سوئیس", "University of Basel", "WoVe Basel / بازار", "⭐⭐⭐ متوسط", "≈ CHF 500–800", "CHF 650–950", "برآورد"],
+ ["Fribourg", "سوئیس", "University of Fribourg", "Apartis / معرفی دانشگاه", "⭐⭐⭐⭐ بالا", "≈ CHF 450–700", "CHF 600–800", "برآورد"],
+ ["Neuchâtel", "سوئیس", "University of Neuchâtel", "Alfen / معرفی دانشگاه", "⭐⭐⭐⭐ بالا", "≈ CHF 450–700", "CHF 550–800", "برآورد"],
+ ["Lugano", "سوئیس", "USI", "خوابگاه‌های USI + سرویس مسکن دانشگاه", "⭐⭐⭐⭐ بالا", "≈ CHF 500–800", "CHF 600–900", "برآورد"],
+ ["Luzern", "سوئیس", "HSLU", "معرفی HSLU / بازار", "⭐⭐⭐ متوسط", "≈ CHF 500–800", "CHF 650–900", "برآورد"],
+ # انگلستان — خوابگاه دانشگاه؛ «تضمین» = اگر تا مهلت اقدام کنید
+ ["Middlesbrough", "انگلستان", "Teesside", "خوابگاه دانشگاه + PBSA فراوان", "⭐⭐⭐⭐ بالا — معمولاً برای همهٔ ورودی‌ها جا هست (تأیید کنید)", "≈ £95–140/هفته = £410–610/ماه", "£450–550", "برآورد؛ PBSA از £138/هفته"],
+ ["Newcastle", "انگلستان", "Northumbria، Newcastle University", "خوابگاه‌های هر دو دانشگاه", "⭐⭐⭐⭐ بالا — ذخیرهٔ بزرگ (تأیید تضمین PG)", "Northumbria £94–158/هفته · Newcastle £118–240/هفته (رسمی) = £410–1,040/ماه", "£500–650", "رسمی"],
+ ["Nottingham", "انگلستان", "NTU", "خوابگاه NTU", "⭐⭐⭐⭐ بالا (تأیید کنید)", "≈ £130–200/هفته", "£500–650", "برآورد"],
+ ["Manchester", "انگلستان", "MMU (و University of Manchester)", "خوابگاه دانشگاه", "⭐⭐⭐⭐ بالا — University of Manchester رسماً به هر PG بین‌المللی برای کل دوره تضمین می‌دهد (اقدام تا ۳۱ اوت)؛ MMU تأیید کنید", "≈ £140–220/هفته", "£550–750", "manchester.ac.uk رسمی؛ MMU برآورد"],
+ ["Colchester", "انگلستان", "Essex", "خوابگاه کمپوس", "⭐⭐⭐⭐⭐ تضمین برای PG برای کل دوره (اقدام تا مهلت)", "≈ £115–200/هفته", "£550–700", "essex.ac.uk رسمی (تضمین)؛ قیمت برآورد"],
+ ["Leicester", "انگلستان", "University of Leicester", "خوابگاه دانشگاه", "⭐⭐⭐⭐ بالا (تأیید کنید)", "≈ £130–200/هفته", "£500–650", "برآورد"],
+ ["London – Uxbridge", "انگلستان", "Brunel", "خوابگاه کمپوس", "⭐⭐⭐⭐⭐ تضمین برای همهٔ دانشجویان جدید — مهلت ۱۵ مارس", "≈ £150–240/هفته", "£900–1,200", "brunel.ac.uk رسمی (تضمین)؛ قیمت برآورد"],
+ ["Egham", "انگلستان", "Royal Holloway", "خوابگاه کمپوس", "⭐⭐⭐⭐ بالا (تأیید کنید)", "≈ £150–230/هفته", "£750–950", "برآورد"],
+ ["London – New Cross", "انگلستان", "Goldsmiths", "خوابگاه محدود", "⭐⭐⭐ متوسط", "≈ £190–300/هفته", "£900–1,300", "برآورد"],
+ ["Canterbury", "انگلستان", "Kent", "خوابگاه کمپوس", "⭐⭐⭐⭐ بالا (تأیید کنید)", "≈ £130–210/هفته", "£550–700", "برآورد"],
+ ["Guildford", "انگلستان", "Surrey", "خوابگاه کمپوس", "⭐⭐⭐⭐ بالا (تأیید کنید)", "≈ £150–230/هفته", "£750–950", "برآورد"],
+ ["York", "انگلستان", "University of York", "خوابگاه کمپوس (Wentworth، Halifax)", "⭐⭐⭐⭐⭐ تضمین PG — اقدام تا ۳۱ ژوئیه", "£186–224/هفته × ۵۱ هفته (رسمی 2026/27)", "£550–750", "york.ac.uk رسمی"],
+ ["Lancaster", "انگلستان", "Lancaster University", "کالج‌های کمپوس", "⭐⭐⭐⭐ بالا (تأیید کنید)", "≈ £125–190/هفته", "£500–650", "برآورد"],
+ ["Sheffield", "انگلستان", "University of Sheffield", "خوابگاه دانشگاه (ذخیرهٔ بزرگ)", "⭐⭐⭐⭐ بالا (تأیید کنید)", "≈ £130–210/هفته", "£500–650", "برآورد"],
+ ["London – مرکز", "انگلستان", "UCL، KCL، Imperial", "خوابگاه‌های دانشگاه و بین‌دانشگاهی + GradPad", "⭐⭐ کم — PG بدون تضمین؛ روز پذیرش اقدام کنید و هم‌زمان بازار خصوصی", "£210–410/هفته (Imperial 2026) = £900–1,800/ماه", "£1,000–1,400 (+ ضامن)", "ثانویه"],
+ ["Coventry", "انگلستان", "Warwick", "خوابگاه کمپوس (PG محدود)", "⭐⭐⭐ متوسط (تأیید کنید)", "≈ £130–210/هفته", "£550–700", "برآورد"],
+ ["Bristol", "انگلستان", "University of Bristol", "خوابگاه دانشگاه", "⭐⭐⭐ متوسط (تأیید کنید)", "≈ £150–260/هفته", "£650–850", "برآورد"],
+ ["Durham", "انگلستان", "Durham University", "کالج‌ها", "⭐⭐⭐ متوسط — PG بدون تضمین؛ کالج بعد از پذیرش تماس می‌گیرد", "£183–200/هفته self-catered (۳۹ هفته) · catered £262", "£550–700", "durham.ac.uk / Palatinate رسمی"],
+]
 HEAD7B = ["دانشگاه", "کشور / شهر", "خوابگاه یا کمک دانشگاه", "تضمین برای ارشد؟", "اجاره (ماهانه ≈)", "غذا؟", "مهلت / نکته", "منبع"]
 HOUSING_UNI = [
  ["Universität Stuttgart", "آلمان / Stuttgart", "Studierendenwerk Stuttgart (۳۵ مجموعه، ۷,۲۰۰ جا)", "❌ لیست انتظار ۶–۸ ماه", "€229–500 (میانگین €345) با قبوض", "❌", "همان روز پذیرش ثبت‌نام؛ Esslingen/Göppingen زودتر خالی می‌شود", "studierendenwerk-stuttgart.de"],
@@ -785,6 +866,25 @@ for row in ws7.iter_rows(min_row=2, max_row=ws7.max_row):
     row[0].fill = crit_fill
     row[0].font = Font(bold=True)
     row[8].font = src_font
+ws7.append([])
+ws7.append(HEAD7D)
+hdr7d = ws7.max_row
+for cell in ws7[hdr7d]:
+    cell.fill = hdr_fill; cell.font = hdr_font; cell.alignment = wrap_ctr; cell.border = border
+for r in HOUSING_CITY:
+    ws7.append(r)
+for row in ws7.iter_rows(min_row=hdr7d + 1, max_row=ws7.max_row):
+    for cell in row:
+        cell.alignment = wrap_rtl; cell.border = border
+    row[0].fill = crit_fill
+    row[0].font = Font(bold=True)
+    v = str(row[4].value or "")
+    if v.startswith("⭐⭐⭐⭐⭐") or v.startswith("⭐⭐⭐⭐ "):
+        row[4].fill = PatternFill("solid", fgColor="E2F0D9")
+    elif v.startswith("⭐⭐⭐ "):
+        row[4].fill = PatternFill("solid", fgColor="FFF2CC")
+    elif v.startswith("⭐⭐ ") or v.startswith("⭐ "):
+        row[4].fill = PatternFill("solid", fgColor="F8CBAD")
 n7 = ws7.max_row + 2
 ws7.append([])
 ws7.append(HEAD7B)

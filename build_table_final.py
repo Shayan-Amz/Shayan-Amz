@@ -1572,8 +1572,12 @@ VERDICT_FILL = {"✅": "E2F0D9", "⚠️": "FFF2CC", "❌": "F8D7DA"}
 CHANCE_FILL = {"Safe": "E2F0D9", "Target": "FFF2CC", "Reach": "F8D7DA"}
 ZEBRA = "F3F6FA"
 HDR_RGB, SEC_RGB, CRIT_RGB = "001F4E78", "002E75B6", "00EAF1FB"
-FONT_NAME = "Tahoma"
-SIZE_MAP = {14: 13, 12: 11, 11: 10, 10: 10, 9: 9, None: 10}
+FONT_NAME = "B Nazanin"                      # user's choice (v3.8); Excel falls back to the default font if it is not installed
+SIZE_MAP = {14: 18, 12: 15, 11: 13, 10: 13, 9: 11, None: 13}   # build sizes → B Nazanin sizes
+BODY_PT, LINE_PT = 13, 19                    # body size and the row height one line of it needs
+FLAG_RE = re.compile(r"[\U0001F1E6-\U0001F1FF]{2}\s?")      # flag emoji render as boxes in Windows Excel → dropped (the country name stays)
+STRONG_RTL = re.compile(r"[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]")
+STRONG_LTR = re.compile(r"[A-Za-z\u00C0-\u024F]")
 UNI_COUNTRY = sorted({(p[1], p[0]) for p in PROGRAMS}, key=lambda t: -len(t[0]))
 VERD_RE = re.compile(r"^\s*(?:\d+\s*)?(✅|⚠\ufe0f?|❌)")
 _wide_merged = {}
@@ -1612,9 +1616,64 @@ def _verdict(text):
     return "⚠️" if m.group(1).startswith("⚠") else m.group(1)
 
 
+def _split_points(text, list_sep=True):
+    """Positions of ' · ' (list separator) and '؛ ' (clause separator) that are outside ( ) « » [ ]."""
+    pts, depth, i = [], 0, 0
+    while i < len(text):
+        ch = text[i]
+        if ch in "(«[":
+            depth += 1
+        elif ch in ")»]":
+            depth = max(0, depth - 1)
+        elif depth == 0:
+            if list_sep and text.startswith(" · ", i):
+                pts.append((i, 3, ""))
+                i += 3
+                continue
+            if text.startswith("؛ ", i):
+                pts.append((i, 2, "؛"))
+                i += 2
+                continue
+            if text.startswith(". ", i) and i > 0 and i + 2 < len(text) and \
+               (STRONG_RTL.match(text[i - 1]) or text[i - 1] in ")»") and STRONG_RTL.match(text[i + 2]):
+                pts.append((i, 2, "."))
+                i += 2
+                continue
+        i += 1
+    return pts
+
+
+def _tidy(text, paragraph=False):
+    """Same words, same numbers — only line breaks: one clause / list item per line. Paragraphs split at '؛' only."""
+    if not isinstance(text, str) or text.startswith("=") or text.startswith("http"):
+        return text
+    text = FLAG_RE.sub("", text).strip()
+    if len(text) < 45:
+        return text
+    pts = _split_points(text, list_sep=not paragraph)
+    if not pts:
+        return text
+    parts, last = [], 0
+    for i, n, keep in pts:
+        parts.append(text[last:i] + keep)
+        last = i + n
+    parts.append(text[last:])
+    return "\n".join(pt.strip() for pt in parts if pt.strip())
+
+
+def _direction(text):
+    """'ltr' when the first strong letter is Latin (programme lists, university names), else 'rtl'."""
+    a, b = STRONG_RTL.search(text), STRONG_LTR.search(text)
+    if b and (not a or b.start() < a.start()):
+        return "ltr"
+    return "rtl"
+
+
 def _refont(c, size=None, bold=None, color=None):
     f = c.font
-    c.font = Font(name=FONT_NAME, size=size if size is not None else SIZE_MAP.get(int(f.sz) if f.sz else None, 10),
+    if size is None:
+        size = f.sz if f.name == FONT_NAME and f.sz else SIZE_MAP.get(int(f.sz) if f.sz else None, BODY_PT)
+    c.font = Font(name=FONT_NAME, size=size,
                   bold=f.b if bold is None else bold, italic=f.i, underline=f.u, color=color if color is not None else f.color)
 
 
@@ -1625,7 +1684,7 @@ def _in_wide_merge(ws, c):
     return any(m.min_row <= c.row <= m.max_row and m.min_col <= c.column <= m.max_col for m in _wide_merged[key])
 
 
-def _para_heights(ws, cpl_per_unit=0.75, line_pt=14):
+def _para_heights(ws, cpl_per_unit=0.8, line_pt=LINE_PT):
     """Merged paragraphs are never auto-fitted by Excel: estimate a height that shows the whole text (never shrink)."""
     for m in ws.merged_cells.ranges:
         if m.max_col - m.min_col < 3:
@@ -1634,10 +1693,10 @@ def _para_heights(ws, cpl_per_unit=0.75, line_pt=14):
         if not isinstance(c.value, str) or _rgb(c) in (HDR_RGB, SEC_RGB):
             continue
         width = sum((ws.column_dimensions[get_column_letter(i)].width or 10) for i in range(m.min_col, m.max_col + 1))
-        sz = c.font.sz or 10
-        cpl = max(20, width * cpl_per_unit * (10 / sz))
+        sz = c.font.sz or BODY_PT
+        cpl = max(20, width * cpl_per_unit * (BODY_PT / sz))
         lines = sum(max(1, -(-len(part) // int(cpl))) for part in c.value.split("\n"))
-        need = line_pt * (sz / 10) * lines + 8
+        need = line_pt * (sz / BODY_PT) * lines + 8
         cur = ws.row_dimensions[m.min_row].height or 0
         ws.row_dimensions[m.min_row].height = max(cur, need)
 
@@ -1719,7 +1778,21 @@ def polish(wb):
                 if c.value is None:
                     continue
                 _refont(c)
-                if not _in_wide_merge(ws, c) and c.border.left.style is None:
+                is_hdr = _rgb(c) in (HDR_RGB, SEC_RGB)
+                in_para = _in_wide_merge(ws, c)
+                if isinstance(c.value, str) and not is_hdr:
+                    c.value = _tidy(c.value, paragraph=in_para)          # one clause / list item per line
+                    al = c.alignment
+                    horiz = al.horizontal
+                    if horiz == "center" and len(c.value) > 40:
+                        horiz = None
+                    if horiz != "center":
+                        horiz = "left" if _direction(c.value) == "ltr" else "right"
+                    c.alignment = Alignment(wrap_text=True, vertical="top", horizontal=horiz,
+                                            readingOrder=1 if _direction(c.value) == "ltr" else 2)
+                elif isinstance(c.value, str):
+                    c.value = FLAG_RE.sub("", c.value).strip()
+                if not in_para and c.border.left.style is None:
                     c.border = border
                 # 2) verdict colours: a cell that starts with ✅ / ⚠️ / ❌ (or "3 ⚠️") gets green / amber / red
                 v = _verdict(c.value)
@@ -1729,8 +1802,15 @@ def polish(wb):
                     for k, hx in CHANCE_FILL.items():
                         if c.value.startswith(k) and len(c.value) <= 14 and _rgb(c) is None:
                             c.fill = _fill(hx)
+    for ws in wb.worksheets:                       # header rows: room for two lines of the bigger font
+        for r in range(1, ws.max_row + 1):
+            if _rgb(ws.cell(row=r, column=1)) == HDR_RGB and any(ws.cell(row=r, column=c).value is not None for c in range(1, ws.max_column + 1)):
+                cur = ws.row_dimensions[r].height
+                if cur is None or cur < 44:
+                    ws.row_dimensions[r].height = 44
     # ---- «تصمیم»
     ws = wb["تصمیم"]
+    ws.row_dimensions[1].height = 34
     for i, w in enumerate([32, 30, 30, 36, 34, 42, 28, 22, 13, 20, 42], start=1):
         ws.column_dimensions[get_column_letter(i)].width = w
     sec_rows = [r for r in range(1, ws.max_row + 1) if _rgb(ws.cell(row=r, column=1)) == SEC_RGB]
@@ -1754,16 +1834,16 @@ def polish(wb):
     ws.sheet_format.outlineLevelRow = 1
     # colour legend in the empty row 3
     legend = [("راهنمای رنگ‌ها", None), ("✅ سبز = شدنی / تأیید", VERDICT_FILL["✅"]), ("⚠️ زرد = مشروط یا سر مرز", VERDICT_FILL["⚠️"]),
-              ("❌ قرمز = نمی‌شود", VERDICT_FILL["❌"])] + [(f"{COUNTRY_FLAG[k]} {k}", COUNTRY_FILL[k]) for k in ("سوئیس", "آلمان", "انگلستان", "سوئد", "هلند", "دانمارک")] + \
+              ("❌ قرمز = نمی‌شود", VERDICT_FILL["❌"])] + [(k, COUNTRY_FILL[k]) for k in ("سوئیس", "آلمان", "انگلستان", "سوئد", "هلند", "دانمارک")] + \
              [("رنگ هر کشور در همهٔ شیت‌ها یکی است. دکمه‌های − / + کنار شمارهٔ سطرها هر بخش را می‌بندند و باز می‌کنند؛ در شیت «برنامه‌ها» با فلش ستون «کشور» می‌توانید فقط یک کشور را ببینید — چیزی حذف نشده است.", None)]
     for col, (txt, hx) in enumerate(legend, start=1):
         c = ws.cell(row=3, column=col, value=txt)
-        c.font = Font(name=FONT_NAME, size=9, bold=(col == 1))
+        c.font = Font(name=FONT_NAME, size=12, bold=(col == 1))
         c.alignment = Alignment(wrap_text=True, vertical="center", horizontal="center" if col < 11 else "right", readingOrder=2)
         c.border = border
         if hx:
             c.fill = _fill(hx)
-    ws.row_dimensions[3].height = 40
+    ws.row_dimensions[3].height = 46
     _para_heights(ws)
     _print_setup(ws)
     # ---- «جدول نهایی ۲۰۲۶»: tinted country columns
@@ -1789,7 +1869,7 @@ def polish(wb):
         c = ws.cell(row=r, column=18)
         if isinstance(c.value, str) and c.value.startswith("http"):
             c.hyperlink = c.value
-            c.font = Font(name=FONT_NAME, size=9, color="0563C1", underline="single")
+            c.font = Font(name=FONT_NAME, size=11, color="0563C1", underline="single")
     _para_heights(ws)
     _print_setup(ws, "1:1")
     # ---- «خوابگاه و مسکن»: country colours on the country / city cells, shading, block lines
@@ -1818,6 +1898,8 @@ def polish(wb):
     _para_heights(ws)
     _print_setup(ws, "1:1")
     # ---- «حوزه‌ها و بازار کار», «جمع‌بندی», «راستی‌آزمایی»
+    wb["جمع‌بندی"].column_dimensions["A"].width = 30
+    wb["جمع‌بندی"].column_dimensions["B"].width = 100
     for name in ("حوزه‌ها و بازار کار", "جمع‌بندی", "راستی‌آزمایی"):
         ws = wb[name]
         _zebra(ws, 1, ws.max_column)
@@ -1832,7 +1914,7 @@ def polish(wb):
             a.fill = _fill(COUNTRY_FILL[ctry])
         if isinstance(b.value, str) and b.value.startswith("http"):
             b.hyperlink = b.value
-            b.font = Font(name=FONT_NAME, size=9, color="0563C1", underline="single")
+            b.font = Font(name=FONT_NAME, size=11, color="0563C1", underline="single")
     _zebra(ws, 1, 2, skip_cols=(1,))
     _print_setup(ws, "1:1")
     # ---- tab colours: green = the decision sheet, blue = data, grey = audit trail

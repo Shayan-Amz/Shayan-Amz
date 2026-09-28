@@ -1559,6 +1559,289 @@ for wsx in wb.worksheets:
             if isinstance(c.value, str) and c.value and not c.value.startswith("="):
                 c.value = convert(c.value, keep=keep)
 
+
+# ---------------------------------------------------------------- readability pass (v3.7) — STYLES ONLY
+# Nothing is removed, reordered or reworded: same sheets, rows, columns and cell values. Only colours, fonts, borders,
+# widths, outline (+/−) groups, hyperlinks, tab colours and print setup change. The only new cells are the colour legend
+# (row 3 of «تصمیم»). Columns L–O of «تصمیم» stay hidden as before (formula inputs).
+from openpyxl.worksheet.properties import Outline, PageSetupProperties
+
+COUNTRY_FILL = {"سوئیس": "F9DEDE", "آلمان": "D9E8F8", "انگلستان": "E8DDF5", "سوئد": "FFF3C4", "هلند": "FBE2CC", "دانمارک": "DBF1E0"}
+COUNTRY_FLAG = {"سوئیس": "🇨🇭", "آلمان": "🇩🇪", "انگلستان": "🇬🇧", "سوئد": "🇸🇪", "هلند": "🇳🇱", "دانمارک": "🇩🇰"}
+VERDICT_FILL = {"✅": "E2F0D9", "⚠️": "FFF2CC", "❌": "F8D7DA"}
+CHANCE_FILL = {"Safe": "E2F0D9", "Target": "FFF2CC", "Reach": "F8D7DA"}
+ZEBRA = "F3F6FA"
+HDR_RGB, SEC_RGB, CRIT_RGB = "001F4E78", "002E75B6", "00EAF1FB"
+FONT_NAME = "Tahoma"
+SIZE_MAP = {14: 13, 12: 11, 11: 10, 10: 10, 9: 9, None: 10}
+UNI_COUNTRY = sorted({(p[1], p[0]) for p in PROGRAMS}, key=lambda t: -len(t[0]))
+VERD_RE = re.compile(r"^\s*(?:\d+\s*)?(✅|⚠\ufe0f?|❌)")
+_wide_merged = {}
+
+
+def _rgb(c):
+    return c.fill.fgColor.rgb if (c.fill is not None and c.fill.fill_type == "solid") else None
+
+
+def _lighten(hex6, f):
+    return "".join(f"{int(v + (255 - v) * f):02X}" for v in (int(hex6[0:2], 16), int(hex6[2:4], 16), int(hex6[4:6], 16)))
+
+
+def _fill(hex6):
+    return PatternFill("solid", fgColor=hex6)
+
+
+def _country_of(text, allow_uni=True):
+    if not isinstance(text, str):
+        return None
+    hits = [k for k in COUNTRY_FILL if re.search(re.escape(k) + r"(?![\u0600-\u06FF])", text)]
+    if not hits:
+        hits = [k for k, fl in COUNTRY_FLAG.items() if fl in text]
+    if not hits and allow_uni:
+        for uni, ctry in UNI_COUNTRY:
+            if uni in text:
+                hits = [ctry]
+                break
+    return hits[0] if len(hits) == 1 else None
+
+
+def _verdict(text):
+    m = VERD_RE.match(text) if isinstance(text, str) else None
+    if not m:
+        return None
+    return "⚠️" if m.group(1).startswith("⚠") else m.group(1)
+
+
+def _refont(c, size=None, bold=None, color=None):
+    f = c.font
+    c.font = Font(name=FONT_NAME, size=size if size is not None else SIZE_MAP.get(int(f.sz) if f.sz else None, 10),
+                  bold=f.b if bold is None else bold, italic=f.i, underline=f.u, color=color if color is not None else f.color)
+
+
+def _in_wide_merge(ws, c):
+    key = ws.title
+    if key not in _wide_merged:
+        _wide_merged[key] = [m for m in ws.merged_cells.ranges if m.max_col - m.min_col >= 3]
+    return any(m.min_row <= c.row <= m.max_row and m.min_col <= c.column <= m.max_col for m in _wide_merged[key])
+
+
+def _para_heights(ws, cpl_per_unit=0.75, line_pt=14):
+    """Merged paragraphs are never auto-fitted by Excel: estimate a height that shows the whole text (never shrink)."""
+    for m in ws.merged_cells.ranges:
+        if m.max_col - m.min_col < 3:
+            continue
+        c = ws.cell(row=m.min_row, column=m.min_col)
+        if not isinstance(c.value, str) or _rgb(c) in (HDR_RGB, SEC_RGB):
+            continue
+        width = sum((ws.column_dimensions[get_column_letter(i)].width or 10) for i in range(m.min_col, m.max_col + 1))
+        sz = c.font.sz or 10
+        cpl = max(20, width * cpl_per_unit * (10 / sz))
+        lines = sum(max(1, -(-len(part) // int(cpl))) for part in c.value.split("\n"))
+        need = line_pt * (sz / 10) * lines + 8
+        cur = ws.row_dimensions[m.min_row].height or 0
+        ws.row_dimensions[m.min_row].height = max(cur, need)
+
+
+def _country_columns(ws, hdr_row, first_col, last_col):
+    """Header cells that name a country get the country colour; the column below is tinted until the table ends."""
+    cols = {}
+    for col in range(first_col, last_col + 1):
+        h = ws.cell(row=hdr_row, column=col)
+        ctry = _country_of(h.value, allow_uni=False)
+        if ctry:
+            cols[col] = ctry
+            h.fill = _fill(COUNTRY_FILL[ctry])
+            _refont(h, bold=True, color="1F4E78")
+    r = hdr_row + 1
+    while r <= ws.max_row and any(ws.cell(row=r, column=c).value is not None for c in range(1, last_col + 1)) and _rgb(ws.cell(row=r, column=1)) != SEC_RGB:
+        for col, ctry in cols.items():
+            c = ws.cell(row=r, column=col)
+            if _rgb(c) is None and not _in_wide_merge(ws, c):
+                c.fill = _fill(_lighten(COUNTRY_FILL[ctry], 0.55))
+        r += 1
+    return r - 1
+
+
+def _zebra(ws, first_col, last_col, skip_cols=()):
+    """Alternate row shading inside every table of the sheet (restarts under each dark header row)."""
+    i = 0
+    _in_wide_merge(ws, ws.cell(row=1, column=1))
+    para_rows = {r for m in _wide_merged[ws.title] for r in range(m.min_row, m.max_row + 1)}
+    for r in range(1, ws.max_row + 1):
+        a = ws.cell(row=r, column=1)
+        if _rgb(a) in (HDR_RGB, SEC_RGB) or all(ws.cell(row=r, column=c).value is None for c in range(1, last_col + 1)):
+            i = 0
+            continue
+        if r in para_rows:
+            continue
+        i += 1
+        if i % 2 == 0:
+            for col in range(first_col, last_col + 1):
+                c = ws.cell(row=r, column=col)
+                if col not in skip_cols and _rgb(c) is None:
+                    c.fill = _fill(ZEBRA)
+
+
+def _separators(ws, key_col, first_col, last_col, first_row):
+    """A stronger top border where the country changes → visible country blocks without touching the rows."""
+    top = Side(style="medium", color="1F4E78")
+    prev = None
+    for r in range(first_row, ws.max_row + 1):
+        v = ws.cell(row=r, column=key_col).value
+        if v is None:
+            prev = None
+            continue
+        ctry = _country_of(v)
+        if prev is not None and ctry != prev:
+            for col in range(first_col, last_col + 1):
+                c = ws.cell(row=r, column=col)
+                b = c.border
+                c.border = Border(left=b.left, right=b.right, bottom=b.bottom, top=top)
+        prev = ctry
+
+
+def _print_setup(ws, title_rows=None):
+    ws.page_setup.orientation = "landscape"
+    ws.page_setup.fitToWidth = 1
+    ws.page_setup.fitToHeight = 0
+    ws.sheet_properties.pageSetUpPr = PageSetupProperties(fitToPage=True)
+    if title_rows:
+        ws.print_title_rows = title_rows
+
+
+def polish(wb):
+    for ws in wb.worksheets:
+        ws.sheet_view.showGridLines = False
+        ws.sheet_view.rightToLeft = True
+        # 1) one clear Persian-friendly font everywhere (sizes kept in step: 14→13, 12→11, 11→10, 9→9); borders on every table cell
+        for row in ws.iter_rows():
+            for c in row:
+                if c.value is None:
+                    continue
+                _refont(c)
+                if not _in_wide_merge(ws, c) and c.border.left.style is None:
+                    c.border = border
+                # 2) verdict colours: a cell that starts with ✅ / ⚠️ / ❌ (or "3 ⚠️") gets green / amber / red
+                v = _verdict(c.value)
+                if v and _rgb(c) not in (HDR_RGB, SEC_RGB):
+                    c.fill = _fill(VERDICT_FILL[v])
+                if isinstance(c.value, str) and ws.title != "منابع":
+                    for k, hx in CHANCE_FILL.items():
+                        if c.value.startswith(k) and len(c.value) <= 14 and _rgb(c) is None:
+                            c.fill = _fill(hx)
+    # ---- «تصمیم»
+    ws = wb["تصمیم"]
+    for i, w in enumerate([32, 30, 30, 36, 34, 42, 28, 22, 13, 20, 42], start=1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+    sec_rows = [r for r in range(1, ws.max_row + 1) if _rgb(ws.cell(row=r, column=1)) == SEC_RGB]
+    for r in range(1, ws.max_row + 1):                       # country columns of the comparison tables الف / ب
+        if _rgb(ws.cell(row=r, column=1)) == HDR_RGB and _country_of(ws.cell(row=r, column=2).value, False) or \
+           _rgb(ws.cell(row=r, column=1)) == HDR_RGB and _country_of(ws.cell(row=r, column=3).value, False):
+            _country_columns(ws, r, 2, 11)
+    for r in range(1, ws.max_row + 1):                       # programme tables پ / پ-۲ / پ-۳: colour the university cell by country
+        b = ws.cell(row=r, column=2)
+        if _rgb(ws.cell(row=r, column=1)) != HDR_RGB and isinstance(b.value, str) and _rgb(b) is None and not _in_wide_merge(ws, b):
+            ctry = _country_of(b.value)
+            if ctry and any(u in b.value for u, _ in UNI_COUNTRY):
+                b.fill = _fill(COUNTRY_FILL[ctry])
+                _refont(b, bold=True)
+    # outline groups: every section can be folded with the − / + button next to its title row
+    ws.sheet_properties.outlinePr = Outline(summaryBelow=False, summaryRight=False)
+    for i, sr in enumerate(sec_rows):
+        end = (sec_rows[i + 1] - 2) if i + 1 < len(sec_rows) else ws.max_row
+        for r in range(sr + 1, end + 1):
+            ws.row_dimensions[r].outline_level = 1
+    ws.sheet_format.outlineLevelRow = 1
+    # colour legend in the empty row 3
+    legend = [("راهنمای رنگ‌ها", None), ("✅ سبز = شدنی / تأیید", VERDICT_FILL["✅"]), ("⚠️ زرد = مشروط یا سر مرز", VERDICT_FILL["⚠️"]),
+              ("❌ قرمز = نمی‌شود", VERDICT_FILL["❌"])] + [(f"{COUNTRY_FLAG[k]} {k}", COUNTRY_FILL[k]) for k in ("سوئیس", "آلمان", "انگلستان", "سوئد", "هلند", "دانمارک")] + \
+             [("رنگ هر کشور در همهٔ شیت‌ها یکی است. دکمه‌های − / + کنار شمارهٔ سطرها هر بخش را می‌بندند و باز می‌کنند؛ در شیت «برنامه‌ها» با فلش ستون «کشور» می‌توانید فقط یک کشور را ببینید — چیزی حذف نشده است.", None)]
+    for col, (txt, hx) in enumerate(legend, start=1):
+        c = ws.cell(row=3, column=col, value=txt)
+        c.font = Font(name=FONT_NAME, size=9, bold=(col == 1))
+        c.alignment = Alignment(wrap_text=True, vertical="center", horizontal="center" if col < 11 else "right", readingOrder=2)
+        c.border = border
+        if hx:
+            c.fill = _fill(hx)
+    ws.row_dimensions[3].height = 40
+    _para_heights(ws)
+    _print_setup(ws)
+    # ---- «جدول نهایی ۲۰۲۶»: tinted country columns
+    ws = wb["جدول نهایی ۲۰۲۶"]
+    _country_columns(ws, 1, 3, ws.max_column)
+    _para_heights(ws)
+    _print_setup(ws, "1:1")
+    # ---- «برنامه‌ها»: country colour on the country cell, alternate shading, a line between countries, foldable note columns
+    ws = wb["برنامه‌ها"]
+    for r in range(2, ws.max_row + 1):
+        c = ws.cell(row=r, column=2)
+        ctry = _country_of(c.value, allow_uni=False)
+        if ctry and _rgb(c) is None and not _in_wide_merge(ws, c):
+            c.fill = _fill(COUNTRY_FILL[ctry])
+            _refont(c, bold=True)
+    _zebra(ws, 1, ws.max_column, skip_cols=(2,))
+    _separators(ws, 2, 1, ws.max_column, 3)
+    for col in ("P", "Q", "R"):
+        ws.column_dimensions[col].outline_level = 1
+    ws.column_dimensions.max_outline = 1     # openpyxl writes sheetFormatPr/outlineLevelCol from this
+    ws.sheet_properties.outlinePr = Outline(summaryBelow=False, summaryRight=False)
+    for r in range(2, ws.max_row + 1):
+        c = ws.cell(row=r, column=18)
+        if isinstance(c.value, str) and c.value.startswith("http"):
+            c.hyperlink = c.value
+            c.font = Font(name=FONT_NAME, size=9, color="0563C1", underline="single")
+    _para_heights(ws)
+    _print_setup(ws, "1:1")
+    # ---- «خوابگاه و مسکن»: country colours on the country / city cells, shading, block lines
+    ws = wb["خوابگاه و مسکن"]
+    for r in range(2, ws.max_row + 1):
+        for col in (1, 2):
+            c = ws.cell(row=r, column=col)
+            if isinstance(c.value, str) and len(c.value) <= 40 and _rgb(c) in (None, CRIT_RGB) and not _in_wide_merge(ws, c):
+                ctry = _country_of(c.value, allow_uni=False)
+                if ctry:
+                    c.fill = _fill(COUNTRY_FILL[ctry])
+                    _refont(c, bold=True)
+                    break
+    _zebra(ws, 1, ws.max_column, skip_cols=(1, 2))
+    _separators(ws, 2, 1, ws.max_column, 10)
+    _para_heights(ws)
+    _print_setup(ws, "1:1")
+    # ---- «برنامهٔ زمانی ۲۰۲۷»
+    ws = wb["برنامهٔ زمانی ۲۰۲۷"]
+    for r in range(2, ws.max_row + 1):
+        c = ws.cell(row=r, column=3)
+        ctry = _country_of(c.value, allow_uni=False)
+        if ctry and _rgb(c) is None and not _in_wide_merge(ws, c):
+            c.fill = _fill(COUNTRY_FILL[ctry])
+    _zebra(ws, 1, ws.max_column, skip_cols=(3,))
+    _para_heights(ws)
+    _print_setup(ws, "1:1")
+    # ---- «حوزه‌ها و بازار کار», «جمع‌بندی», «راستی‌آزمایی»
+    for name in ("حوزه‌ها و بازار کار", "جمع‌بندی", "راستی‌آزمایی"):
+        ws = wb[name]
+        _zebra(ws, 1, ws.max_column)
+        _para_heights(ws)
+        _print_setup(ws, "1:1")
+    # ---- «منابع»: clickable links, country colour on the topic cell
+    ws = wb["منابع"]
+    for r in range(2, ws.max_row + 1):
+        a, b = ws.cell(row=r, column=1), ws.cell(row=r, column=2)
+        ctry = _country_of(str(a.value).split(" – ")[0], allow_uni=False) if a.value else None
+        if ctry and _rgb(a) is None:
+            a.fill = _fill(COUNTRY_FILL[ctry])
+        if isinstance(b.value, str) and b.value.startswith("http"):
+            b.hyperlink = b.value
+            b.font = Font(name=FONT_NAME, size=9, color="0563C1", underline="single")
+    _zebra(ws, 1, 2, skip_cols=(1,))
+    _print_setup(ws, "1:1")
+    # ---- tab colours: green = the decision sheet, blue = data, grey = audit trail
+    for ws in wb.worksheets:
+        ws.sheet_properties.tabColor = {"تصمیم": "00B050", "راستی‌آزمایی": "7F7F7F", "منابع": "7F7F7F"}.get(ws.title, "2E75B6")
+
+
+polish(wb)
+
 wb.move_sheet(wsD, offset=-wb.index(wsD))
 for wsx in wb.worksheets:
     wsx.sheet_view.tabSelected = False

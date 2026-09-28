@@ -62,7 +62,7 @@ FIELD_ROWS = [
     ["علم داده / تحلیل داده", "۳ — جونیور اشباع",
      "مساوی CS در سطح جونیور؛ بالاتر بعد از ۲–۳ سال",
      "بسیار خوب",
-     "متوسط: مدرک‌های ارزان و Safe زیاد است (HSLU Lucerne ≈ CHF 3,150/سال، USI Software & Data Eng CHF 8,000/سال، Skövde، Brunel، ITU €16.5k؛ EPFL Data Science فقط Reach) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
+     "متوسط: مدرک‌های ارزان و Safe زیاد است (سوئیس: HSLU Lucerne ≈ CHF 3,150/سال و USI Software & Data Eng CHF 8,000/سال، EPFL Data Science فقط Reach؛ سوئد: Skövde؛ انگلستان: Brunel؛ دانمارک: ITU €16.5k) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
      "تعداد فارغ‌التحصیل خیلی بیشتر از جای خالی جونیور؛ آگهی جونیور Data Engineering هم ↓۶۷٪؛ مسیر رایج: تحلیلگر/بک‌اند → مهندس داده",
      "research.com 2026؛ careery.pro 2026؛ datadriven.io 2026"],
     ["سیستم‌های نهفته / رباتیک / خودران", "۴ در آلمان/سوئد؛ ۳ در بقیه",

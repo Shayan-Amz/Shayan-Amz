@@ -501,10 +501,10 @@ add("هلند", "Utrecht University", "Utrecht", "MSc Game and Media Technology"
 add("هلند", "Utrecht University", "Utrecht", "MSc Artificial Intelligence", "AI", "۲ سال", "€25,306", ("EUR", 25306, None),
     "کارشناسی CS/AI؛ گزینشی", "6.5", "113", "Reach", "همان باند شهریهٔ Utrecht 2026/27",
     "https://www.uu.nl/en/masters/artificial-intelligence")
-add("هلند", "University of Amsterdam (UvA)", "Amsterdam", "MSc Software Engineering (۱ ساله!)", "SE", "۱ سال", "≈ €23,540", ("EUR", 23540, None),
-    "کارشناسی CS", "6.5", "60", "Target/Reach", "تنها ارشد ۱ سالهٔ معتبر هلند → کل هزینه نصف؛ اما اجارهٔ Amsterdam €900–1,300",
+add("هلند", "University of Amsterdam (UvA)", "Amsterdam", "MSc Software Engineering (۱ ساله!)", "SE", "۱ سال", "€34,300 (2026/27 رسمی — ارشد یک‌سالهٔ دانشکدهٔ علوم برای غیر-EEA)", ("EUR", 34300, None),
+    "کارشناسی CS با پیش‌زمینهٔ برنامه‌نویسی/نرم‌افزار؛ بررسی موردی", "6.5", "60", "Target/Reach", "تنها ارشد ۱ سالهٔ معتبر هلند؛ با وجود شهریهٔ بالاتر، کل هزینه‌اش (۱ سال زندگی) از دوساله‌ها کمتر است؛ Amsterdam = بهترین بازار انگلیسی‌زبان ولی بدترین مسکن (اتاق €900–1,300)؛ ⚠️ رقم قبلی ≈ €23,540 غلط بود",
     "https://www.uva.nl/en/programmes/masters/software-engineering/software-engineering.html")
-add("هلند", "University of Amsterdam (UvA)", "Amsterdam", "MSc Artificial Intelligence", "AI", "۲ سال", "≈ €26,000", ("EUR", 26000, None),
+add("هلند", "University of Amsterdam (UvA)", "Amsterdam", "MSc Artificial Intelligence", "AI", "۲ سال", "€26,000 (2026/27 رسمی — ارشد دوسالهٔ دانشکدهٔ علوم)", ("EUR", 26000, None),
     "کارشناسی AI/CS با ریاضی قوی؛ بسیار رقابتی", "6.5", "60", "Reach", "",
     "https://www.uva.nl/en/programmes/masters/artificial-intelligence/artificial-intelligence.html")
 add("هلند", "TU Eindhoven (TU/e)", "Eindhoven", "MSc Data Science and Artificial Intelligence", "DS", "۲ سال", "€22,400 (2027/28 رسمی؛ 2026/27: €21,700)", ("EUR", 22400, None),

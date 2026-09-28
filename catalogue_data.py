@@ -6,8 +6,113 @@ Data for the two extra sheets of Table_final.xlsx:
 Figures checked on 2026-09-27 against the programme/fee pages listed in the source column.
 """
 
+import re
+
 # ---- FX (same as main table) ------------------------------------------------
-RATES = {"EUR": 1.14, "GBP": 1.325, "SEK": 1 / 9.9, "DKK": 1 / 6.55, "CHF": 1.21}
+RATES = {"EUR": 1.14, "GBP": 1.325, "SEK": 1 / 9.9, "DKK": 1 / 6.55, "CHF": 1.21, "USD": 1.0}
+
+# ---- display currency ----------------------------------------------------------
+# Every sheet is rendered in ONE currency. Source strings keep the official local
+# figures; `convert()` rewrites them at build time. Change TARGET to "EUR" to get euros.
+TARGET = "USD"
+_SYM = {"USD": "$", "EUR": "€"}
+_CUR = {"€": "EUR", "£": "GBP", "CHF": "CHF", "SEK": "SEK", "DKK": "DKK", "$": "USD"}
+_AMT = re.compile(r"(€|£|CHF ?|SEK ?|DKK ?|\$)(\d[\d,]*(?:\.\d+)?)(k?)(?:([–-])(\d[\d,]*(?:\.\d+)?)(k?))?")
+
+
+def _num(t):
+    return float(t.replace(",", ""))
+
+
+def _round(v, dec):
+    if v < 100:
+        return round(v, 1) if dec else float(round(v))
+    if v < 1000:
+        return float(int(v / 5 + 0.5) * 5)
+    if v < 10000:
+        return float(int(v / 10 + 0.5) * 10)
+    if v < 100000:
+        return float(int(v / 100 + 0.5) * 100)
+    return float(int(v / 500 + 0.5) * 500)
+
+
+def _fmt(v, dec=False):
+    r = _round(v, dec)
+    if r < 100 and dec and r != int(r):
+        return f"{r:.1f}"
+    return f"{int(r):,}"
+
+
+def _fmtk(v, dec):
+    kv = v / 1000.0
+    return (f"{kv:.1f}".rstrip("0").rstrip(".")) if dec else f"{int(kv + 0.5)}"
+
+
+def rate(cur, target=None):
+    return RATES[cur] / RATES[target or TARGET]
+
+
+def convert(text, keep=False, target=None):
+    """Rewrite every currency amount inside `text` in the target currency.
+    keep=True appends the original amount in parentheses (used in the audit sheet)."""
+    target = target or TARGET
+    if not isinstance(text, str) or not text:
+        return text
+    sym = _SYM[target]
+
+    def repl(m):
+        cur_s, lo, klo, dash, hi, khi = m.groups()
+        cur = _CUR[cur_s.strip()]
+        if cur == target:
+            return m.group(0)
+        r = rate(cur, target)
+        anyk = bool(klo or khi)
+        dec = ("." in lo) or (hi is not None and "." in hi)
+        vlo = _num(lo) * (1000 if anyk else 1) * r
+        if hi is None:
+            out = sym + ((_fmtk(vlo, dec or vlo < 10000) + "k") if anyk else _fmt(vlo, dec))
+        else:
+            vhi = _num(hi) * (1000 if anyk else 1) * r
+            if anyk:
+                d = dec or vlo < 10000
+                out = f"{sym}{_fmtk(vlo, d)}–{_fmtk(vhi, d)}k"
+            else:
+                out = f"{sym}{_fmt(vlo, dec)}–{_fmt(vhi, dec)}"
+        if keep:
+            out += f" ({m.group(0).strip()})"
+        return out
+    return _AMT.sub(repl, text)
+
+
+def first_amount(text, target=None):
+    """(lo, hi) of the first currency amount in `text`, in the target currency (floats)."""
+    m = _AMT.search(text or "")
+    if not m:
+        return None
+    cur_s, lo, klo, dash, hi, khi = m.groups()
+    r = rate(_CUR[cur_s.strip()], target)
+    k = 1000 if (klo or khi) else 1
+    vlo = _num(lo) * k * r
+    vhi = _num(hi) * k * r if hi else vlo
+    return vlo, vhi
+
+
+def money(lo, hi=None, target=None):
+    """'$12,600' or '$12,600–14,100' with sensible rounding."""
+    sym = _SYM[target or TARGET]
+    if hi is None or abs(hi - lo) < 1:
+        return sym + _fmt(lo)
+    return f"{sym}{_fmt(lo)}–{_fmt(hi)}"
+
+
+def money_k(lo, hi=None, target=None):
+    """'$38–42k' style for totals (nearest $1k; one decimal under $10k)."""
+    sym = _SYM[target or TARGET]
+    def k(v):
+        return f"{v/1000:.1f}".rstrip("0").rstrip(".") if v < 10000 else f"{int(v/1000 + 0.5)}"
+    if hi is None or abs(hi - lo) < 500:
+        return f"{sym}{k(lo)}k"
+    return f"{sym}{k(lo)}–{k(hi)}k"
 
 # ---- fields -----------------------------------------------------------------
 # key: (label, market score 1-5, one-line market note used in the programme sheet)
@@ -281,19 +386,19 @@ add("سوئیس", "USI – Università della Svizzera italiana", "Lugano", "MSc 
 add("سوئیس", "Hochschule Luzern (HSLU)", "Luzern", "MSc Applied Data Science and AI (نام جدید از اوت ۲۰۲۶؛ قبلاً Applied Information and Data Science)", "DS", "۲ سال (120 ECTS؛ معمولاً ۴ ترم، قابل تمدید تا ۸)", "CHF 1,300 در ترم (خارجی) + ≈ CHF 275 هزینهٔ جانبی ≈ CHF 3,150/سال؛ هزینهٔ درخواست CHF 250", ("CHF", 3150, None),
     "هر کارشناسی (دانشگاه یا UAS)؛ آزمون انگلیسی + آزمون استعداد HSLU", "C1 (B2 مشروط)", "—", "Safe/Target", "«باز برای تغییر رشته‌ای‌ها»، کاربردی و مدیریتی؛ ترکیبی (حضوری/آنلاین)؛ آلمانی لازم نیست؛ شروع سپتامبر/فوریه؛ ⚠️ مهلت ویزایی‌ها ۱ آوریل ۲۰۲۷ (رسمی؛ Swiss/EU تا ۱ ژوئن)",
     "https://www.hslu.ch/en/lucerne-school-of-business/degree-programmes/master/applied-data-science-and-ai/")
-add("سوئیس", "University of Bern", "Bern", "Swiss Joint MSc Computer Science (Bern / Neuchâtel / Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 850 + 1,700 اضافهٔ غیرسوئیسی‌ها (از پاییز ۲۰۲۶) + 34 + 25 = CHF 2,609 در ترم (≈ CHF 5,200/سال)", ("CHF", 5218, None),
+add("سوئیس", "University of Bern", "Bern", "Swiss Joint MSc Computer Science (Bern / Neuchâtel / Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 2,609 در ترم برای خارجی‌ها از پاییز ۲۰۲۶ (پایه CHF 850 + اضافهٔ غیرسوئیسی‌ها CHF 1,700 + جانبی CHF 59) ≈ CHF 5,200/سال", ("CHF", 5218, None),
     "کارشناسی Computer Science یا معادل (بررسی موردی؛ حداکثر ۶۰ ECTS تکمیلی — دروس تکمیلی ممکن است آلمانی/فرانسه باشند)", "بدون آزمون (B2 توصیه — FAQ رسمی)", "=191", "Target", "⚠️ شهریهٔ خارجی‌ها از پاییز ۲۰۲۶ سه‌برابر شد (رسمی unibe.ch) → همان مدرک مشترک را از Neuchâtel (CHF 790/ترم) یا Fribourg (CHF 985/ترم) بگیرید؛ مهلت ۳۰ آوریل — ویزایی‌ها مهلت دیرهنگام ندارند",
     "https://www.philnat.unibe.ch/studies/study_programs/master_s_in_computer_science/index_eng.html")
 add("سوئیس", "University of Neuchâtel", "Neuchatel", "Swiss Joint MSc Computer Science (ثبت‌نام در Neuchâtel)", "SE", "۱.۵ سال (90 ECTS)", "CHF 790 در ترم (خارجی؛ شامل همهٔ هزینه‌ها) = CHF 1,580/سال", ("CHF", 1580, None),
     "کارشناسی CS یا معادل (بررسی موردی؛ حداکثر ۶۰ ECTS تکمیلی)", "بدون آزمون (B2 توصیه — FAQ رسمی)", "—", "Target", "ارزان‌ترین شهریهٔ سوئیس؛ همان مدرک مشترک Bern/Fribourg (دروس در سه شهر، بلیت قطار جبران می‌شود)؛ مهلت ۳۰ آوریل (خارجی‌ها: تا ۳۱ مارس بفرستید)؛ هزینهٔ پرونده CHF 100 از شهریه کم می‌شود؛ شهر فرانسه‌زبان",
     "https://mcs.unibnf.ch/")
-add("سوئیس", "University of Fribourg", "Fribourg", "Swiss Joint MSc Computer Science (ثبت‌نام در Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 870 + 115 = CHF 985 در ترم (خارجی؛ رسمی) = CHF 1,970/سال", ("CHF", 1970, None),
+add("سوئیس", "University of Fribourg", "Fribourg", "Swiss Joint MSc Computer Science (ثبت‌نام در Fribourg)", "SE", "۱.۵ سال (90 ECTS)", "CHF 985 در ترم (خارجی؛ رسمی؛ شامل CHF 115 اضافهٔ خارجی‌ها) = CHF 1,970/سال", ("CHF", 1970, None),
     "کارشناسی CS یا معادل (بررسی موردی؛ حداکثر ۶۰ ECTS تکمیلی)", "بدون آزمون (B2 توصیه — FAQ رسمی)", "=670", "Target", "همان برنامهٔ مشترک Bern/Neuchâtel؛ شهر دوزبانه و ارزان‌تر؛ ⚠️ مهلت ویزایی‌ها ۱–۲۸ فوریه ۲۰۲۷ (رسمی unifr.ch)",
     "https://www.unifr.ch/inf/en/")
 add("سوئیس", "University of Basel", "Basel", "MSc Computer Science", "SE", "۱.۵ سال (90 ECTS)", "CHF 850 در ترم (برای همه؛ بدون اضافهٔ خارجی‌ها — رسمی 2026/27) = CHF 1,700/سال", ("CHF", 1700, None),
     "کارشناسی CS یا معادل با نمرات خوب؛ بررسی فردی", "B2–C1 (چک شود)", "=150", "Target/Reach", "رتبهٔ ۱۵۰؛ 90 ECTS انگلیسی؛ هزینهٔ درخواست CHF 100؛ ⚠️ کانتون Basel تمکن CHF 24,000/سال می‌خواهد؛ مهلت ۳۰ آوریل (رسمی)",
     "https://dmi.unibas.ch/en/studies/computer-science/masters/")
-add("سوئیس", "University of Zurich (UZH)", "Zuerich", "MSc Informatics (گرایش‌ها: Software Systems، Data Science، People-Oriented Computing…)", "SE", "۱.۵–۲ سال (90/120 ECTS)", "CHF 720 + 100 (خارجی) + 59 = CHF 879 در ترم (≈ CHF 1,760/سال)", ("CHF", 1760, None),
+add("سوئیس", "University of Zurich (UZH)", "Zuerich", "MSc Informatics (گرایش‌ها: Software Systems، Data Science، People-Oriented Computing…)", "SE", "۱.۵–۲ سال (90/120 ECTS)", "CHF 879 در ترم (خارجی؛ شامل CHF 100 اضافهٔ خارجی‌ها و CHF 59 جانبی) ≈ CHF 1,760/سال", ("CHF", 1760, None),
     "کارشناسی Informatics/CS با نمرات بسیار خوب؛ فقط یک درخواست در هر ترم؛ هزینهٔ درخواست CHF 150", "C1 / IELTS 7.0", "=98", "Reach", "⚠️ مهلت ویزایی‌ها ۲۸ فوریه ۲۰۲۷ (بدون ویزا ۳۰ آوریل)؛ کانتون زوریخ: تمکن CHF 21,000 فقط در بانک سوئیسی به نام خودتان",
     "https://www.ifi.uzh.ch/en/studies/master.html")
 add("سوئیس", "ZHAW School of Engineering", "Zuerich-Winterthur", "MSc in Engineering (MSE) — پروفایل Computer Science / Data Science / Information & Cyber Security", "MULTI", "۱.۵ سال (90 ECTS؛ پاره‌وقت تا ۳ سال)", "CHF 1,220 در ترم (خارجی) + CHF 60 ≈ CHF 2,560/سال", ("CHF", 2560, None),
@@ -428,7 +533,7 @@ add("سوئد", "Halmstad University", "Halmstad", "MSc Embedded and Intelligent
 add("سوئد", "Blekinge Institute of Technology (BTH)", "Karlskrona", "MSc Software Engineering (120 cr)", "SE", "۲ سال", "SEK 140,000", ("SEK", 140000, None),
     "≥ ۹۰ واحد CS/SE", "6.5", "—", "Safe/Target", "Ericsson و Telenor در Karlskrona؛ ⚠️ نسخهٔ ۶۰ واحدی از راه دور است",
     "https://www.bth.se/eng/programmes/")
-add("سوئد", "KTH Royal Institute of Technology", "Stockholm", "MSc Machine Learning", "AI", "۲ سال", "≈ SEK 180,000–190,000 (کل دوره ≈ 360k–380k)", ("SEK", 180000, 190000),
+add("سوئد", "KTH Royal Institute of Technology", "Stockholm", "MSc Machine Learning", "AI", "۲ سال", "≈ SEK 180,000–190,000 (کل دوره ≈ SEK 360–380k)", ("SEK", 180000, 190000),
     "کارشناسی CS/ریاضی قوی؛ بسیار رقابتی", "6.5", "82", "Reach", "Stockholm گران (اتاق SEK 7–10k)؛ رقم دقیق روی kth.se فقط در سامانهٔ اپلای نمایش داده می‌شود",
     "https://www.kth.se/en/studies/master/machine-learning")
 add("سوئد", "KTH Royal Institute of Technology", "Stockholm", "MSc Cybersecurity", "CY", "۲ سال", "≈ SEK 180,000–190,000", ("SEK", 180000, 190000),
@@ -437,7 +542,7 @@ add("سوئد", "KTH Royal Institute of Technology", "Stockholm", "MSc Cybersecu
 add("سوئد", "KTH Royal Institute of Technology", "Stockholm-Kista", "MSc Software Engineering of Distributed Systems", "CLOUD", "۲ سال", "SEK 180,000–190,000", ("SEK", 180000, 190000),
     "کارشناسی CS", "6.5", "82", "Target/Reach", "Kista = قطب ICT سوئد (Ericsson)",
     "https://www.kth.se/en/studies/master/software-engineering-of-distributed-systems")
-add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Data Science and AI", "DS", "۲ سال", "≈ SEK 175,000 (2026/27؛ 2025/26: 160,000)", ("SEK", 175000, None),
+add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Data Science and AI", "DS", "۲ سال", "≈ SEK 175,000 (2026/27؛ 2025/26: SEK 160,000)", ("SEK", 175000, None),
     "کارشناسی CS/ریاضی", "6.5", "174", "Target/Reach", "Volvo، Ericsson، Zenseact؛ مهلت ۱۵ ژانویه؛ ⚠️ طبق صفحهٔ شهریهٔ Chalmers دانشگاه‌های سوئد فعلاً نمی‌توانند از ایران پول دریافت کنند (تحریم بانکی) — پرداخت از کشور ثالث",
     "https://www.chalmers.se/en/education/find-masters-programme/data-science-and-ai-msc/")
 add("سوئد", "Chalmers University of Technology", "Gothenburg", "MSc Software Engineering and Technology", "SE", "۲ سال", "≈ SEK 175,000 (2026/27)", ("SEK", 175000, None),

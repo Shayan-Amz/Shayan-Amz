@@ -143,7 +143,7 @@ FIELD_ROWS = [
     ["هوش مصنوعی / یادگیری ماشین", "۵ — قوی‌ترین رشد",
      "بالاتر (+۱۰ تا +۲۵٪؛ آلمان €52–60k، انگلستان £35–45k خارج لندن، سوئیس ≈ CHF 95–120k در زوریخ)",
      "بسیار خوب — تیم‌های AI/ML در همهٔ ۷ کشور انگلیسی‌زبان‌اند؛ زوریخ (Google، ETH AI Center، آزمایشگاه‌های AI) یکی از قطب‌های اروپاست و کاملاً انگلیسی؛ فنلاند: FCAI (Aalto/Helsinki) و Silo AI/AMD در هلسینکی، انگلیسی‌محور ولی کوچک",
-     "خوب: پیش‌زمینهٔ Computer Engineering + Python؛ ولی برای برنامه‌های Reach (Tübingen، UvA، KTH، Sheffield) معدل ۱۵.۷۷ کافی نیست — برنامه‌های کاربردی (Passau AI Eng، FAU، Northumbria/Teesside AI، USI AI (Lugano)، Umeå) هدف بگیرید",
+     "خوب: پیش‌زمینهٔ Computer Engineering + Python؛ ولی برای برنامه‌های Reach (Tübingen، UvA، KTH، Sheffield) معدل ۱۵.۷۷ کافی نیست — برنامه‌های کاربردی (Passau AI Eng، FAU، USI AI (Lugano)، Umeå) هدف بگیرید؛ در انگلستان (فقط Russell Group) Nottingham ACS(AI) و Sheffield AI با 2:1 = ۱۴–۱۵/۲۰ Target‌اند، Southampton AI مرزی",
      "رقابت ورودی شدید؛ بخشی از آگهی‌ها «AI» در عنوان دارند ولی کار مهندسی نرم‌افزار معمولی است؛ مدرک به‌تنهایی بدون پورتفولیو/پروژه کافی نیست",
      "LinkedIn/WEF ژانویه ۲۰۲۶ (۱.۳ میلیون شغل جدید AI؛ AI Engineer سریع‌ترین‌رشد)؛ Bitkom 2025"],
     ["مهندسی نرم‌افزار / علوم کامپیوتر", "۴ — بیشترین حجم",
@@ -155,19 +155,19 @@ FIELD_ROWS = [
     ["امنیت سایبری", "۴ — کمبود ساختاری",
      "مساوی تا کمی بالاتر؛ در انگلستان (NCSC-certified) و سوئیس (بانک‌ها، بیمه‌ها، ETH/EPFL Cyber؛ حقوق بالا) خوب",
      "خوب — ولی مشاغل دولتی/دفاعی معمولاً به تابعیت یا اقامت بلندمدت نیاز دارند",
-     "خوب: MSc Cyber با 2:2 در Teesside/Northumbria/MMU/Kent/Royal Holloway؛ Saarland (رایگان ولی IELTS 7)؛ AAU کپنهاگ؛ ZHAW MSE Information & Cyber Security (سوئیس، نیاز به معدل A/B)",
+     "خوب: MSc Cyber در Russell Group انگلستان (Newcastle، York، Birmingham، Southampton با تأیید NCSC + Sheffield Cybersecurity & AI؛ 2:1 — York 2:2)؛ Saarland (رایگان ولی IELTS 7)؛ AAU کپنهاگ؛ ZHAW MSE Information & Cyber Security (سوئیس، نیاز به معدل A/B)",
      "عدد «۴.۸ میلیون کمبود» ISC2 در گزارش ۲۰۲۵ حذف شد (نیاز اعلام‌شده بود نه آگهی واقعی)؛ کمبود بودجه دلیل اول جای خالی؛ ۳۱٪ تیم‌ها صفر جونیور دارند → برای اولین شغل، کارآموزی + گواهی (Security+، AZ-500) لازم است",
-     "ISC2 Workforce Study 2024/2025؛ Kent/Surrey NCSC certification"],
+     "ISC2 Workforce Study 2024/2025؛ فهرست مدارک تأییدشدهٔ NCSC (ncsc.gov.uk)"],
     ["ابری / سیستم‌های توزیع‌شده / DevOps", "۴ — پایدار",
      "بالاتر از توسعه‌دهندهٔ عمومی (+۵ تا +۱۵٪)؛ DevOps/SRE در دانمارک و سوئد پرتقاضا؛ سوئیس: بانک‌ها/بیمه‌ها و Google زوریخ (≈ CHF 90–110k)",
      "بسیار خوب",
-     "خوب: Leicester Cloud Computing، TU Darmstadt DSS، KTH SEDS، USI Software & Data Engineering؛ گواهی AWS/Azure کنار مدرک",
+     "خوب: Newcastle Cloud Computing (Russell Group)، TU Darmstadt DSS، KTH SEDS، USI Software & Data Engineering؛ گواهی AWS/Azure کنار مدرک",
      "کمتر «مدرک‌محور» است؛ برنامه‌های خالص Cloud کم‌اند — معمولاً گرایشِ CS/SE است",
      "tribexyz 2026 (Data/Cloud Engineer پرجست‌وجوترین در UK/DE)؛ آگهی‌های شرکت‌ها"],
     ["علم داده / تحلیل داده", "۳ — جونیور اشباع",
      "مساوی CS در سطح جونیور؛ بالاتر بعد از ۲–۳ سال",
      "بسیار خوب",
-     "متوسط: مدرک‌های ارزان و Safe زیاد است (سوئیس: HSLU Lucerne ≈ CHF 3,150/سال و USI Software & Data Eng CHF 8,000/سال، EPFL Data Science فقط Reach؛ سوئد: Skövde؛ انگلستان: Brunel؛ دانمارک: ITU €16.5k) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
+     "متوسط: مدرک‌های ارزان و Safe زیاد است (سوئیس: HSLU Lucerne ≈ CHF 3,150/سال و USI Software & Data Eng CHF 8,000/سال، EPFL Data Science فقط Reach؛ سوئد: Skövde؛ انگلستان (Russell Group): Liverpool DS&AI ≈ £34k، Bristol DS £37.9k؛ دانمارک: ITU €16.5k) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
      "تعداد فارغ‌التحصیل خیلی بیشتر از جای خالی جونیور؛ آگهی جونیور Data Engineering هم ↓۶۷٪؛ مسیر رایج: تحلیلگر/بک‌اند → مهندس داده",
      "research.com 2026؛ careery.pro 2026؛ datadriven.io 2026"],
     ["سیستم‌های نهفته / رباتیک / خودران", "۴ در آلمان/سوئد؛ ۳ در بقیه",
@@ -185,7 +185,7 @@ FIELD_ROWS = [
     ["توسعه بازی", "۲ — کوچک و پرنوسان",
      "پایین‌تر از نرم‌افزار عمومی (−۲۰ تا −۴۰٪)؛ استودیوهای بزرگ استثنا",
      "خوب (استودیوهای بزرگ انگلیسی‌زبان: لندن، Guildford، Stockholm، Malmö، Copenhagen، Cologne، هلسینکی (Supercell، Rovio، Remedy، Housemarque؛ Unity دفتر بزرگ در تامپره/هلسینکی)؛ سوئیس صنعت بازی کوچکی دارد — Zürich: Giants Software — و ارشد انگلیسی بازی ندارد)",
-     "تنها حوزه‌ای که سابقهٔ Unity/C# شما در آن مستقیماً مزیت است؛ اما بازار ۲۰۲۲–۲۵ بدترین دورهٔ خود را داشت — پیشنهاد: ارشد Software/AI بگیرید و بازی را به‌عنوان تخصص/پورتفولیو نگه دارید، مگر Goldsmiths (£22k)، Cologne Game Lab یا Aalto Game Design & Development (€17k، ۸ نفر، Reach) را با چشم باز انتخاب کنید",
+     "تنها حوزه‌ای که سابقهٔ Unity/C# شما در آن مستقیماً مزیت است؛ اما بازار ۲۰۲۲–۲۵ بدترین دورهٔ خود را داشت — پیشنهاد: ارشد Software/AI بگیرید و بازی را به‌عنوان تخصص/پورتفولیو نگه دارید، مگر Newcastle Game Engineering (£32.3k)، QMUL Computer Games (£36.95k)، Leeds HPG & Games (£34.6k)، Cologne Game Lab یا Aalto Game Design & Development (€17k، ۸ نفر، Reach) را با چشم باز انتخاب کنید",
      "≈۴۵ هزار اخراج ۲۰۲۲–ژوئیهٔ ۲۰۲۵؛ بیش از ۳۰ استودیو کاملاً بسته شد؛ حقوق برنامه‌نویس Unity ≈۵۰٪ افت؛ Unity Technologies شش دور اخراج",
      "Wikipedia «2022–2026 video game industry layoffs» (GDC State of the Industry 2026؛ 80.lv)"],
 ]
@@ -195,19 +195,16 @@ FIELD_ROWS = [
 # key: (display name "English (فارسی)", approximate student cost-of-living tier incl. rent, per month)
 CITIES = {
     # انگلستان
-    "Middlesbrough": ("Middlesbrough (میدلزبرو) — شمال شرق انگلستان", "ارزان — £950–1,150"),
+    "Liverpool": ("Liverpool (لیورپول) — شمال غرب؛ ارزان‌ترین شهر بزرگ Russell Group", "ارزان تا متوسط — £950–1,250"),
+    "Leeds": ("Leeds (لیدز) — یورکشایر؛ قطب مالی/دیجیتال شمال", "متوسط — £1,000–1,300"),
+    "Exeter": ("Exeter (اکستر) — جنوب غرب؛ شهر کوچک دانشگاهی", "متوسط تا گران — £1,050–1,350"),
+    "Southampton": ("Southampton (ساوتهمپتون) — ساحل جنوب؛ ۷۵ دقیقه تا لندن", "متوسط — £1,050–1,350"),
+    "Birmingham": ("Birmingham (بیرمنگام) — دومین شهر انگلستان؛ میدلندز", "متوسط — £1,000–1,300"),
+    "London-MileEnd": ("London – Mile End (لندن شرقی؛ کمپوس QMUL)", "خیلی گران — £1,500–1,800 (تمکن ویزا: £1,570 × ۹)"),
     "Newcastle": ("Newcastle upon Tyne (نیوکاسل) — شمال شرق", "ارزان تا متوسط — £950–1,250"),
     "Nottingham": ("Nottingham (ناتینگهام) — میدلندز", "متوسط — £1,000–1,300"),
     "Manchester": ("Manchester (منچستر) — دومین قطب فناوری انگلستان", "متوسط — £1,050–1,350"),
-    "Colchester": ("Colchester (کولچستر) — Essex، ۵۰ دقیقه تا لندن", "متوسط — £1,000–1,350"),
-    "Leicester": ("Leicester (لستر) — میدلندز", "متوسط — £1,000–1,300"),
-    "London-Uxbridge": ("London – Uxbridge (لندن، غرب؛ کمپوس Brunel)", "خیلی گران — £1,400–1,800"),
-    "Egham": ("Egham، Surrey (اگام؛ ۴۰ دقیقه تا لندن)", "گران — £1,300–1,600"),
-    "London-NewCross": ("London – New Cross (لندن، جنوب شرق؛ Goldsmiths)", "خیلی گران — £1,400–1,800"),
-    "Canterbury": ("Canterbury (کنتربری) — Kent", "متوسط — £1,000–1,350"),
-    "Guildford": ("Guildford (گیلفورد) — Surrey، ۳۵ دقیقه تا لندن؛ قطب بازی‌سازی", "گران — £1,300–1,600"),
     "York": ("York (یورک) — شمال انگلستان", "متوسط — £1,000–1,350"),
-    "Lancaster": ("Lancaster (لنکستر) — شمال غرب", "ارزان تا متوسط — £950–1,250"),
     "Sheffield": ("Sheffield (شفیلد) — یورکشایر", "ارزان تا متوسط — £950–1,250"),
     "London-Central": ("London – مرکز (South Kensington / Bloomsbury / Strand؛ Imperial، UCL، KCL)", "خیلی گران — £1,600–1,900 (برآورد خود Imperial: £16.4–17k برای ۹ ماه)"),
     "Coventry": ("Coventry (کاونتری) — کمپوس Warwick؛ میدلندز", "متوسط — £1,000–1,250"),
@@ -285,84 +282,82 @@ P = []
 def add(*a):
     P.append(a)
 
-# ===== انگلستان (GBP) =====
-add("انگلستان", "Teesside University", "Middlesbrough", "MSc Computer Science", "SE", "۱ سال", "£17,000", ("GBP", 17000, None),
-    "2:2 در رشتهٔ مرتبط", "6.0", "— (THE 601–800)", "Safe", "ارزان‌ترین گزینهٔ معتبر انگلستان؛ Middlesbrough ارزان ولی بازار کار محلی کوچک",
-    "https://www.tees.ac.uk/postgraduate_courses/computing_&_cyber_security/msc_computer_science.cfm")
-add("انگلستان", "Teesside University", "Middlesbrough", "MSc Artificial Intelligence", "AI", "۱ سال", "£17,000", ("GBP", 17000, None),
-    "2:2 در رشتهٔ مرتبط", "6.0", "—", "Safe", "همان باند شهریهٔ Teesside",
-    "https://www.tees.ac.uk/postgraduate_courses/computing_&_cyber_security/msc_artificial_intelligence.cfm")
-add("انگلستان", "Teesside University", "Middlesbrough", "MSc Cyber Security (BCS accredited)", "CY", "۱ سال", "£17,000", ("GBP", 17000, None),
-    "2:2 در رشتهٔ مرتبط", "6.0", "—", "Safe", "اعتبار BCS؛ بدون NCSC",
-    "https://www.tees.ac.uk/postgraduate_courses/computing_&_cyber_security/msc_cyber_security.cfm")
-add("انگلستان", "Northumbria University", "Newcastle", "MSc Advanced Computer Science", "SE", "۱ سال", "£21,500", ("GBP", 21500, None),
-    "2:2 در رشتهٔ کامپیوتری", "6.5", "=528", "Safe", "Newcastle: شهر دانشجویی ارزان با بازار فناوری متوسط",
-    "https://www.northumbria.ac.uk/study-at-northumbria/courses/msc-advanced-computer-science-dtfava6/")
-add("انگلستان", "Northumbria University", "Newcastle", "MSc Artificial Intelligence", "AI", "۱ سال", "£21,500", ("GBP", 21500, None),
-    "2:2 در رشتهٔ کامپیوتری/ریاضی", "6.5", "=528", "Safe", "شهریهٔ رسمی 2026/27",
-    "https://www.northumbria.ac.uk/study-at-northumbria/courses/msc-artificial-intelligence-dtfari6/")
-add("انگلستان", "Nottingham Trent University (NTU)", "Nottingham", "MSc Artificial Intelligence", "AI", "۱ سال", "≈ £19,900", ("GBP", 19900, None),
-    "2:2 (≈ ۵۵٪)", "6.5", "=639", "Safe", "رقم از دو مرجع ثانویه؛ صفحهٔ رسمی 2026/27 را قبل از اقدام چک کنید",
-    "https://www.ntu.ac.uk/study-and-courses/courses")
-add("انگلستان", "Nottingham Trent University (NTU)", "Nottingham", "MSc Cyber Security", "CY", "۱ سال", "≈ £19,900", ("GBP", 19900, None),
-    "2:2", "6.5", "=639", "Safe", "همان باند NTU (≈)",
-    "https://www.ntu.ac.uk/study-and-courses/courses")
-add("انگلستان", "Manchester Metropolitan University (MMU)", "Manchester", "MSc Cyber Security", "CY", "۱ سال", "£21,000", ("GBP", 21000, None),
-    "2:2 در رشتهٔ کامپیوتری", "6.5", "≈ 600–650", "Safe", "Manchester دومین قطب فناوری انگلستان؛ شهریهٔ رسمی overseas 2026/27",
-    "https://www.mmu.ac.uk/study/postgraduate/course/msc-cyber-security")
-add("انگلستان", "University of Essex", "Colchester", "MSc Advanced Computer Science", "SE", "۱ سال", "£24,675", ("GBP", 24675, None),
-    "2:2؛ Computer Engineering پذیرفته می‌شود", "6.0", "=438", "Safe/Target", "۵۰ دقیقه تا لندن؛ دانشکدهٔ CSEE قوی در AI",
-    "https://www.essex.ac.uk/courses/pg00435/1/msc-advanced-computer-science")
-add("انگلستان", "University of Essex", "Colchester", "MSc Artificial Intelligence", "AI", "۱ سال", "£24,675", ("GBP", 24675, None),
-    "2:2 در رشتهٔ کامپیوتری/ریاضی", "6.0", "=438", "Safe/Target", "ورودی اکتبر ۲۰۲۶ تأیید شده",
-    "https://www.essex.ac.uk/courses/pg00457/1/msc-artificial-intelligence")
-add("انگلستان", "University of Leicester", "Leicester", "MSc Advanced Computer Science", "SE", "۱ سال", "£24,250", ("GBP", 24250, None),
-    "2:1 (سابقهٔ کار مرتبط جبران می‌کند)", "6.5", "=314", "Target", "رتبهٔ بهتر با شهریهٔ نزدیک Essex",
-    "https://le.ac.uk/courses/advanced-computer-science-msc/2026")
-add("انگلستان", "University of Leicester", "Leicester", "MSc Artificial Intelligence", "AI", "۱ سال", "£24,250", ("GBP", 24250, None),
-    "2:1", "6.5", "=314", "Target", "",
-    "https://le.ac.uk/courses/artificial-intelligence-msc/2026")
-add("انگلستان", "University of Leicester", "Leicester", "MSc Cloud Computing", "CLOUD", "۱ سال", "£24,250", ("GBP", 24250, None),
-    "2:1", "6.5", "=314", "Target", "یکی از معدود ارشدهای خالص Cloud در انگلستان",
-    "https://le.ac.uk/courses/cloud-computing-msc/2026")
-add("انگلستان", "Brunel University London", "London-Uxbridge", "MSc Artificial Intelligence", "AI", "۱ سال", "£24,795", ("GBP", 24795, None),
-    "2:2", "6.5", "353", "Safe/Target", "لندن = بازار کار بزرگ ولی زندگی £1,400–1,800/ماه؛ بورس تا £6,000 تضمینی نیست",
-    "https://www.brunel.ac.uk/study/courses/artificial-intelligence-msc")
-add("انگلستان", "Brunel University London", "London-Uxbridge", "MSc Data Science and Analytics", "DS", "۱ سال", "£24,795", ("GBP", 24795, None),
-    "2:2", "6.5", "353", "Safe/Target", "",
-    "https://www.brunel.ac.uk/study/courses/data-science-and-analytics-msc")
-add("انگلستان", "University of Kent", "Canterbury", "MSc Cyber Security (NCSC fully certified + BCS)", "CY", "۱ سال", "≈ £23,500", ("GBP", 23500, None),
-    "«good 2:2»", "6.5", "415", "Target", "گواهی کامل NCSC = معتبرترین برچسب امنیت در بریتانیا؛ رقم شهریه از مرجع ثانویه",
-    "https://www.kent.ac.uk/courses/postgraduate/1225/cyber-security")
-add("انگلستان", "Royal Holloway, University of London", "Egham", "MSc Information and Cyber Security", "CY", "۱ سال", "£25,500", ("GBP", 25500, None),
-    "2:2", "6.5", "=485", "Target", "قدیمی‌ترین گروه امنیت اطلاعات بریتانیا (ISG)؛ NCSC certified",
-    "https://www.royalholloway.ac.uk/studying-here/postgraduate/information-security/information-and-cyber-security/")
-add("انگلستان", "Goldsmiths, University of London", "London-NewCross", "MSc Computer Games Programming", "GD", "۱ سال", "£22,000", ("GBP", 22000, None),
-    "مدرک second-class در رشتهٔ برنامه‌نویسی", "6.5 (6.0)", "≈ 800–1000", "Safe/Target", "پورتفولیوی Unity/C# شما اینجا مستقیماً به کار می‌آید؛ بازار بازی ۲۰۲۲–۲۵ ضعیف",
-    "https://www.gold.ac.uk/pg/msc-computer-games-programming/")
-add("انگلستان", "University of Surrey", "Guildford", "MSc Artificial Intelligence", "AI", "۱ سال", "≈ £26,900–27,500", ("GBP", 26900, 27500),
-    "2:2", "6.5", "=246", "Target", "Guildford قطب بازی‌سازی و امنیت بریتانیا (نزدیک لندن)؛ رقم AI برآورد است (Cyber همین دانشگاه: £26,900 برای سپتامبر ۲۰۲۷ رسمی)",
-    "https://www.surrey.ac.uk/postgraduate/artificial-intelligence-msc")
-add("انگلستان", "University of Surrey", "Guildford", "MSc Cyber Security (NCSC)", "CY", "۱ سال", "£26,900 (ورودی سپتامبر ۲۰۲۷ — رسمی؛ فوریه ۲۰۲۷: £25,900)", ("GBP", 26900, None),
-    "2:2", "6.5 (W 6.0)", "=246", "Target", "رقم رسمی دقیقاً برای سال ورود شما (سپتامبر ۲۰۲۷)",
-    "https://www.surrey.ac.uk/postgraduate/cyber-security-msc")
-add("انگلستان", "University of York", "York", "MSc Advanced Computer Science", "SE", "۱ سال", "£32,900", ("GBP", 32900, None),
-    "2:2 با پیش‌زمینهٔ قوی", "6.5", "=158", "Target/Reach", "Russell Group؛ گران",
-    "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-advanced-computer-science/")
-add("انگلستان", "University of York", "York", "MSc Human-Centred Interactive Technologies", "HCI", "۱ سال", "£32,900", ("GBP", 32900, None),
-    "2:2", "6.5", "=158", "Target", "بهترین برنامهٔ HCI انگلستان برای معدل شما؛ ولی بازار UX ضعیف",
-    "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-human-centred-interactive-technologies/")
-add("انگلستان", "Newcastle University (Russell Group)", "Newcastle", "MSc Computer Game Engineering", "GD", "۱ سال", "£32,300 (2026)", ("GBP", 32300, None),
-    "2:2 در رشتهٔ کامپیوتری/ریاضی‌محور (طبق QS TopUniversities و IDP — صفحهٔ رسمی را چک کنید)", "6.5", "149", "Target/Reach", "معتبرترین ارشد مهندسی بازی انگلستان؛ گران",
+# ===== انگلستان (GBP) — فقط دانشگاه‌های Russell Group در انگلستان (به خواست شما، ۲۸ سپتامبر ۲۰۲۶؛ نسخهٔ ۳.۱۱) =====
+# ۲۰ عضو انگلیسی گروه راسل: Birmingham، Bristol، Cambridge، Durham، Exeter، Imperial، KCL، Leeds، Liverpool، LSE، Manchester، Newcastle، Nottingham، Oxford، QMUL، Sheffield، Southampton، UCL، Warwick، York.
+# Cardiff / Edinburgh / Glasgow / Queen's Belfast عضو گروه راسل‌اند ولی در انگلستان نیستند → حذف. Oxford/Cambridge/LSE: ارشد CS با معدل ۱۵.۷۷ عملاً بسته یا بدون برنامهٔ مناسب → نیامده‌اند.
+# نکتهٔ مشترک همهٔ ردیف‌های انگلستان: هیچ‌کدام گام ۱ بودجه (شهریه + تمکن £10,827 خارج لندن / £14,130 لندن ≤ $40,000) را بدون بورس رد نمی‌کنند — جزئیات در شیت «تصمیم» بخش پ-۲.
+add("انگلستان", "University of Exeter (Russell Group)", "Exeter", "MSc Advanced Computer Science", "SE", "۱ سال", "£30,100 (2027/28 رسمی)", ("GBP", 30100, None),
+    "2:1 در CS/رشتهٔ مرتبط (ممکن است مصاحبهٔ ویدئویی بخواهند)؛ معادل ایرانی را رسمی نیافتم — معمولاً ۱۴–۱۵/۲۰ (چک شود)", "Profile B1 ≈ 6.5 (چک شود)", "≈ 160 (QS 2026: 161)", "Target", "ارزان‌ترین Russell Group انگلستان برای ۲۰۲۷؛ بورس Exeter Excellence £3k/£5k/£10k برای دارندگان پیشنهاد (درخواست جدا)؛ شهر کوچک، بازار IT محلی کوچک",
+    "https://www.exeter.ac.uk/study/postgraduate/courses/computerscience/advancedcsmsc/")
+add("انگلستان", "University of Liverpool (Russell Group)", "Liverpool", "MSc Advanced Computer Science", "SE", "۱ سال", "£34,000 (2026/27 رسمی؛ رقم 2027/28 هنوز اعلام نشده)", ("GBP", 34000, None),
+    "2:2 در CS/رشتهٔ مرتبط — تنها Russell Group این فهرست که رسماً 2:2 می‌پذیرد → با ۱۵.۷۷ امن؛ متقاضیان ایران باید از «فرم درخواست جایگزین» (تحریم) استفاده کنند", "6.5 (هر بخش ≥ 5.5)", "≈ 165 (QS 2026)", "Safe/Target", "درخواست از ۵ اکتبر ۲۰۲۶ باز می‌شود؛ مهلت بین‌المللی ۲۳ اوت ۲۰۲۷؛ ودیعه؛ Liverpool شهر ارزانِ RG",
+    "https://www.liverpool.ac.uk/courses/advanced-computer-science-msc")
+add("انگلستان", "University of Liverpool (Russell Group)", "Liverpool", "MSc Data Science and Artificial Intelligence", "DS", "۱ سال", "≈ £34,000 (هم‌باند با Advanced CS همین دانشگاه 2026/27؛ چک شود)", ("GBP", 34000, None),
+    "2:1 یا 2:2 قوی در CS/ریاضی/مهندسی (چک شود)", "6.5 (هر بخش ≥ 5.5)", "≈ 165 (QS 2026)", "Target", "همان دانشگاه، همان مهلت و فرم جایگزین ایران",
+    "https://www.liverpool.ac.uk/courses/data-science-and-artificial-intelligence-msc")
+add("انگلستان", "Newcastle University (Russell Group)", "Newcastle", "MSc Advanced Computer Science", "SE", "۱ سال", "≈ £31,700 (ورودی ۲۰۲۶ — رقم رسمی ۲۰۲۷ هنوز منتشر نشده؛ صفحهٔ رسمی از ایران بارگذاری نشد)", ("GBP", 31700, None),
+    "2:1 در CS/رشتهٔ کامپیوتری، یا 2:2 با سابقهٔ کار مرتبط؛ معادل ایرانی را رسمی نیافتم (معمولاً ۱۴–۱۵/۲۰)", "6.5 (هر بخش ≥ 5.5)", "149", "Target", "ارزان‌ترین RG بعد از Exeter؛ ودیعهٔ £1,500؛ rolling؛ بورس VC International £8,000 خودکار (فهرست کشوری ۲۰۲۷ را چک کنید) و VC Excellence تا ۵۰٪ (درخواست تا ۸ ژوئن ۲۰۲۷)",
     "https://www.ncl.ac.uk/postgraduate/")
-add("انگلستان", "Lancaster University", "Lancaster", "MSc Cyber Security", "CY", "۱ سال", "£30,000 (بورس خودکار £4,500 با 2:1)", ("GBP", 30000, None),
-    "2:1", "6.5", "164", "Reach", "NCSC-certified؛ شرط 2:1 برای معدل شما سخت است",
-    "https://www.lancaster.ac.uk/study/postgraduate/postgraduate-courses/cyber-security-msc/2026/")
-add("انگلستان", "University of Sheffield (Russell Group)", "Sheffield", "MSc Artificial Intelligence", "AI", "۱ سال", "≈ £32,900–34,340 (2026؛ MSc AI for Engineering همین دانشگاه رسماً £32,905)", ("GBP", 32900, 34340),
-    "2:1", "6.5", "82", "Reach", "رتبهٔ بالا، شهریه و شرط ورود بالا؛ رقم دقیق MSc AI را از صفحهٔ رسمی بگیرید",
-    "https://www.sheffield.ac.uk/postgraduate/taught/courses")
-
-# ===== سوئیس (CHF) =====
+add("انگلستان", "Newcastle University (Russell Group)", "Newcastle", "MSc Cyber Security", "CY", "۱ سال", "≈ £31,700 (هم‌باند با Advanced CS، ورودی ۲۰۲۶؛ چک شود)", ("GBP", 31700, None),
+    "2:1 در CS/کامپیوتر (2:2 + سابقهٔ مرتبط بررسی می‌شود)", "6.5 (هر بخش ≥ 5.5)", "149", "Target", "مدرک تأییدشدهٔ NCSC؛ همان بورس‌های Newcastle",
+    "https://www.ncl.ac.uk/postgraduate/")
+add("انگلستان", "Newcastle University (Russell Group)", "Newcastle", "MSc Cloud Computing", "CLOUD", "۱ سال", "≈ £31,700 (هم‌باند با Advanced CS، ورودی ۲۰۲۶؛ چک شود)", ("GBP", 31700, None),
+    "2:1 در CS/کامپیوتر (2:2 + سابقهٔ مرتبط بررسی می‌شود)", "6.5 (هر بخش ≥ 5.5)", "149", "Target", "یکی از معدود ارشدهای خالص Cloud در Russell Group",
+    "https://www.ncl.ac.uk/postgraduate/")
+add("انگلستان", "Newcastle University (Russell Group)", "Newcastle", "MSc Computer Game Engineering", "GD", "۱ سال", "£32,300 (2026)", ("GBP", 32300, None),
+    "2:2 در رشتهٔ کامپیوتری/ریاضی‌محور (طبق QS TopUniversities و IDP — صفحهٔ رسمی را چک کنید)", "6.5", "149", "Target/Reach", "معتبرترین ارشد مهندسی بازی انگلستان؛ ۷ ماه Unity/C# شما اینجا امتیاز است",
+    "https://www.ncl.ac.uk/postgraduate/")
+add("انگلستان", "University of York (Russell Group)", "York", "MSc Advanced Computer Science", "SE", "۱ سال", "£32,900 (2027/28 رسمی)", ("GBP", 32900, None),
+    "2:2 با پیش‌زمینهٔ قوی — صفحهٔ رسمی ایرانِ York: 2:1 = ۱۵/۲۰، 2:2 = ۱۳/۲۰ → ۱۵.۷۷ هر دو را رد می‌کند", "6.5", "=158", "Target", "بورس بین‌المللی York برای ارشد CS عملاً فقط Chevening/تخفیف فارغ‌التحصیلان خودش",
+    "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-advanced-computer-science/")
+add("انگلستان", "University of York (Russell Group)", "York", "MSc Human-Centred Interactive Technologies", "HCI", "۱ سال", "£32,900 (2027/28)", ("GBP", 32900, None),
+    "2:2 (York برای ایران: ۱۳/۲۰)", "6.5", "=158", "Target", "بهترین برنامهٔ HCI انگلستان برای معدل شما؛ ولی بازار UX ضعیف",
+    "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-human-centred-interactive-technologies/")
+add("انگلستان", "University of York (Russell Group)", "York", "MSc Cyber Security", "CY", "۱ سال", "≈ £32,900 (هم‌باند با Advanced CS 2027/28؛ چک شود)", ("GBP", 32900, None),
+    "2:2 در CS/رشتهٔ مرتبط (چک شود)", "6.5", "=158", "Target", "مدرک تأییدشدهٔ NCSC",
+    "https://www.york.ac.uk/study/postgraduate-taught/courses/msc-cyber-security/")
+add("انگلستان", "University of Sheffield (Russell Group)", "Sheffield", "MSc Advanced Computer Science", "SE", "۱ سال", "£34,550 (2027/28 رسمی؛ شهریهٔ ثابت)", ("GBP", 34550, None),
+    "2:1 در CS/مهندسی نرم‌افزار — صفحهٔ رسمی ایرانِ Sheffield: 2:1 = ۱۴/۲۰ دانشگاه دولتی (First ۱۷، 2:2 ۱۳) → ۱۵.۷۷ ✓؛ بدون توصیه‌نامه", "6.5 (هر بخش ≥ 6.0)", "82", "Target", "بورس International PG £7,000 سال ۲۰۲۷ فقط ۱۰ کشور (ایران نیست)؛ شهر ارزانِ RG",
+    "https://www.sheffield.ac.uk/postgraduate/taught/courses/2027/advanced-computer-science-msc")
+add("انگلستان", "University of Sheffield (Russell Group)", "Sheffield", "MSc Artificial Intelligence", "AI", "۱ سال", "≈ £34,550 (هم‌باند با Advanced CS 2027/28؛ چک شود)", ("GBP", 34550, None),
+    "2:1 در CS/رشتهٔ مرتبط با برنامه‌نویسی (ایران: ۱۴/۲۰ دولتی) → ۱۵.۷۷ ✓", "6.5 (هر بخش ≥ 6.0)", "82", "Target/Reach", "رتبهٔ بالا؛ رقابتی‌تر از Advanced CS",
+    "https://www.sheffield.ac.uk/postgraduate/taught/courses/2027/artificial-intelligence-msc")
+add("انگلستان", "University of Sheffield (Russell Group)", "Sheffield", "MSc Cybersecurity and Artificial Intelligence", "CY", "۱ سال", "≈ £34,550 (هم‌باند با Advanced CS 2027/28؛ چک شود)", ("GBP", 34550, None),
+    "2:1 در CS/رشتهٔ مرتبط (ایران: ۱۴/۲۰ دولتی) → ۱۵.۷۷ ✓", "6.5 (هر بخش ≥ 6.0)", "82", "Target", "ترکیب دو حوزهٔ کم‌عرضه؛ همان شهر ارزان",
+    "https://www.sheffield.ac.uk/postgraduate/taught/courses/2027/cybersecurity-and-artificial-intelligence-msc")
+add("انگلستان", "University of Leeds (Russell Group)", "Leeds", "MSc Advanced Computer Science (گرایش‌های AI / Cloud / Data Analytics)", "SE", "۱ سال", "£34,600 (ورودی ۲۰۲۷ رسمی)", ("GBP", 34600, None),
+    "2:1 در CS/رشتهٔ مرتبط با برنامه‌نویسی؛ معادل ایرانی را رسمی نیافتم (معمولاً ۱۵/۲۰)", "6.5 (هر بخش ≥ 6.0)", "≈ 86 (QS 2026)", "Target/Reach", "مهلت بین‌المللی ۳۰ ژوئیه ۲۰۲۷؛ Leeds بازار IT متوسط‌به‌بالا (Sky، BJSS، NHS Digital)",
+    "https://courses.leeds.ac.uk/")
+add("انگلستان", "University of Leeds (Russell Group)", "Leeds", "MSc High-Performance Graphics and Games Engineering", "GD", "۱ سال", "≈ £34,600 (هم‌باند با Advanced CS ۲۰۲۷؛ چک شود)", ("GBP", 34600, None),
+    "2:1 در CS با C++ قوی؛ ۷ ماه Unity/C# شما کمک می‌کند (معادل ایرانی: معمولاً ۱۵/۲۰)", "6.5 (هر بخش ≥ 6.0)", "≈ 86 (QS 2026)", "Target/Reach", "تنها ارشد گرافیک/موتور بازی در Russell Group؛ همان مهلت ۳۰ ژوئیه ۲۰۲۷",
+    "https://courses.leeds.ac.uk/")
+add("انگلستان", "University of Nottingham (Russell Group)", "Nottingham", "MSc Advanced Computer Science / Advanced CS (Artificial Intelligence)", "AI", "۱ سال", "£34,800 (ورودی ۲۰۲۷ رسمی)", ("GBP", 34800, None),
+    "2:1 در CS یا STEM با محتوای محاسباتی؛ معادل ایرانی را رسمی نیافتم (معمولاً ۱۴–۱۵/۲۰)", "6.5 (هر بخش ≥ 6.0)", "≈ 97 (QS 2026)", "Target/Reach", "نسخهٔ دوسالهٔ MSc CS(AI) برای غیر-CS £23,200/سال — برای شما لازم نیست",
+    "https://www.nottingham.ac.uk/pgstudy/course/taught/computer-science-artificial-intelligence-msc")
+add("انگلستان", "University of Birmingham (Russell Group)", "Birmingham", "MSc Advanced Computer Science", "SE", "۱ سال", "≈ £34,740 (به نقل از QS TopUniversities — صفحهٔ رسمی از ایران باز نشد؛ چک شود)", ("GBP", 34740, None),
+    "2:1 در رشتهٔ کامپیوتری (معادل ایرانی: معمولاً ۱۴–۱۵/۲۰؛ چک شود)", "6.5 (هر بخش ≥ 6.0)", "≈ 76 (QS 2026)", "Target/Reach", "دومین شهر انگلستان؛ بازار IT بزرگ‌تر از Sheffield/Liverpool؛ زندگی متوسط",
+    "https://www.birmingham.ac.uk/postgraduate/courses/taught/computer-science")
+add("انگلستان", "University of Birmingham (Russell Group)", "Birmingham", "MSc Cyber Security", "CY", "۱ سال", "≈ £34,740 (هم‌باند با Advanced CS؛ چک شود)", ("GBP", 34740, None),
+    "2:1 در رشتهٔ کامپیوتری (چک شود)", "6.5 (هر بخش ≥ 6.0)", "≈ 76 (QS 2026)", "Target/Reach", "مدرک تأییدشدهٔ NCSC",
+    "https://www.birmingham.ac.uk/postgraduate/courses/taught/computer-science")
+add("انگلستان", "University of Southampton (Russell Group)", "Southampton", "MSc Artificial Intelligence", "AI", "۱ سال", "£36,800 (سپتامبر ۲۰۲۷ رسمی)", ("GBP", 36800, None),
+    "2:1 در CS/مهندسی/ریاضی — صفحهٔ ایرانِ Southampton: ۱۷ / ۱۵ / ۱۳ از ۲۰ بسته به ردهٔ دانشگاه (سمنان احتمالاً ردهٔ ۱۵/۲۰) → ۱۵.۷۷ مرزی‑✓", "6.5 (هر بخش ≥ 6.0)", "≈ 87 (QS 2026)", "Target/Reach", "ودیعهٔ £2,000؛ Spärck AI Scholarship: ۱۱ بورس کامل + کمک‌هزینه برای همین رشته (بسیار رقابتی، بین‌المللی مجاز)",
+    "https://www.southampton.ac.uk/courses/artificial-intelligence-masters-msc")
+add("انگلستان", "University of Southampton (Russell Group)", "Southampton", "MSc Cyber Security", "CY", "۱ سال", "≈ £36,800 (هم‌باند با MSc AI سپتامبر ۲۰۲۷؛ چک شود)", ("GBP", 36800, None),
+    "2:1 در CS/رشتهٔ مرتبط (ایران: ۱۷ / ۱۵ / ۱۳ بسته به ردهٔ دانشگاه)", "6.5 (هر بخش ≥ 6.0)", "≈ 87 (QS 2026)", "Target/Reach", "مدرک تأییدشدهٔ NCSC؛ مرکز آکادمیک امنیت سایبری",
+    "https://www.southampton.ac.uk/courses/cyber-security-masters-msc")
+add("انگلستان", "Queen Mary University of London (Russell Group)", "London-MileEnd", "MSc Advanced Computer Science", "SE", "۱ سال", "£36,950 (سپتامبر ۲۰۲۷ رسمی)", ("GBP", 36950, None),
+    "2:1 — صفحهٔ رسمی ایرانِ QMUL: 2:1 = ۱۵–۱۶/۲۰ (2:2 = ۱۳.۵–۱۴، First = ۱۷.۵–۱۸.۵) → ۱۵.۷۷ ✓", "6.5 (هر بخش ≥ 6.0)", "≈ 110 (QS 2026)", "Target", "ارزان‌ترین RG لندن؛ ودیعهٔ £2,000؛ تمکن لندنی (£1,570 × ۹) و زندگی گران",
+    "https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/advanced-computer-science-msc/")
+add("انگلستان", "Queen Mary University of London (Russell Group)", "London-MileEnd", "MSc Computer Games", "GD", "۱ سال", "≈ £36,950 (هم‌باند با Advanced CS سپتامبر ۲۰۲۷؛ چک شود)", ("GBP", 36950, None),
+    "2:1 در CS/رشتهٔ مرتبط (ایران: ۱۵–۱۶/۲۰) → ۱۵.۷۷ ✓", "6.5 (هر بخش ≥ 6.0)", "≈ 110 (QS 2026)", "Target", "لندن = بزرگ‌ترین خوشهٔ استودیوهای بازی اروپا؛ ولی گران‌ترین زندگی",
+    "https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/computer-games-msc/")
+add("انگلستان", "University of Manchester (Russell Group)", "Manchester", "MSc Advanced Computer Science", "SE", "۱ سال", "£39,400 (ورودی ۲۰۲۶ رسمی؛ رقم ۲۰۲۷ هنوز اعلام نشده)", ("GBP", 39400, None),
+    "2:1 در CS — صفحهٔ رسمی ایرانِ Manchester: ارشد معمولاً ≥ ۱۴/۲۰ دانشگاه دولتی (۱۵ خصوصی)، ولی دپارتمان CS بالاتر از حداقل دانشگاه می‌خواهد و رتبهٔ کلاسی را می‌بیند → ۱۵.۷۷ مرزی", "6.5–7.0 (چک شود)", "35", "Target/Reach", "مهلت‌های مرحله‌ای (≈ نوامبر / ژانویه / فوریه / می)؛ ودیعهٔ £2,500؛ بدون هزینهٔ درخواست؛ Global Futures Scholarship شامل ایران نیست؛ دومین قطب فناوری انگلستان",
+    "https://www.manchester.ac.uk/study/masters/courses/list/")
+add("انگلستان", "Durham University (Russell Group)", "Durham", "MSc Advanced Computer Science (و MSc Data Science)", "SE", "۱ سال", "£34,500 (2026 entry)", ("GBP", 34500, None),
+    "2:1 در CS — جدول رسمی Durham برای ایران: 1st ≥ ۱۷/۲۰، 2:1 = ۱۴–۱۶/۲۰، 2:2 = ۱۲–۱۳/۲۰ (دانشگاه باید در فهرست Ecctis باشد) → ۱۵.۷۷ ✓", "6.5 (هر بخش ≥ 6.0)", "=94", "Target", "QS 2027 ≈ 94 · High Fliers 2025: دهم · ارزان‌ترین شهرِ این فهرست؛ ۱۵ دقیقه تا نیوکاسل؛ خوابگاه ارشد تضمینی نیست",
+    "https://www.durham.ac.uk/study/courses/advanced-computer-science-g5t609/")
 add("انگلستان", "Imperial College London (Russell Group)", "London-Central", "MSc Computing (Artificial Intelligence and Machine Learning) / MSc Computing", "AI", "۱ سال", "£46,000 (2026/27 رسمی؛ 2027/28 هنوز اعلام نشده)", ("GBP", 46000, None),
     "First-class honours در رشته‌ای با محتوای قابل توجه Computing — برای مدرک ایرانی ≥ ۱۷–۱۸/۲۰ → با ۱۵.۷۷ رسماً واجد شرایط نیستید", "7.0 (higher requirement؛ هر بخش ≥ 6.5)", "=2", "Reach", "QS 2027 #2 · LEO: میانهٔ درآمد فارغ‌التحصیلان Computing پنج سال بعد £79,600 · دورهای ۲۰۲۷: ۶ ژانویه / ۱۰ مارس / ۲۸ آوریل · Imperial Inspires £15,000 (رقابتی) · ❌ عملاً بسته برای معدل شما",
     "https://www.imperial.ac.uk/study/courses/postgraduate-taught/computing-artificial-intelligence-msc/")
@@ -378,9 +373,8 @@ add("انگلستان", "University of Warwick (Russell Group)", "Coventry", "MS
 add("انگلستان", "University of Bristol (Russell Group)", "Bristol", "MSc Data Science (برای فارغ‌التحصیل CS/مهندسی؛ MSc Computer Science بریستول تبدیلی است)", "DS", "۱ سال", "£37,900 (2027/28 رسمی — ورودی سپتامبر ۲۰۲۷)", ("GBP", 37900, None),
     "«strong 2:1 (۶۵٪+)» در CS/مهندسی/علوم عددی؛ صفحهٔ ایرانِ بریستول: کارشناسی ۴ ساله از دانشگاه مورد تأیید با حداقل ۱۵/۲۰ → ۱۵.۷۷ حداقل را رد می‌کند ولی «strong» نیست", "6.5 (Profile E) — چک شود", "=54", "Reach", "QS 2027 ≈ 54 · LEO: میانهٔ Computing پنج سال بعد £70,300 · High Fliers: پنجم (۲۰۲۵) · Think Big Scholarship (رقابتی) · با ۱۵.۷۷ Reach",
     "https://www.bristol.ac.uk/study/postgraduate/taught/msc-data-science/")
-add("انگلستان", "Durham University (Russell Group)", "Durham", "MSc Advanced Computer Science (و MSc Data Science)", "SE", "۱ سال", "£34,500 (2026 entry)", ("GBP", 34500, None),
-    "2:1 در CS — جدول رسمی Durham برای ایران: 1st ≥ ۱۷/۲۰، 2:1 = ۱۴–۱۶/۲۰، 2:2 = ۱۲–۱۳/۲۰ (دانشگاه باید در فهرست Ecctis باشد) → ۱۵.۷۷ ✓", "6.5 (هر بخش ≥ 6.0)", "=94", "Target", "QS 2027 ≈ 94 · High Fliers 2025: دهم · ارزان‌ترین شهر بین این شش · ارزان‌ترین Russell Group این فهرست بعد از York/Newcastle · شروع سپتامبر ۲۰۲۶ اعلام شده؛ ۲۰۲۷ مشابه",
-    "https://www.durham.ac.uk/study/courses/advanced-computer-science-g5t609/")
+
+# ===== سوئیس (CHF) =====
 add("سوئیس", "USI – Università della Svizzera italiana", "Lugano", "MSc Informatics (گرایش‌ها: Artificial Intelligence، Software Development، Systems…)", "SE", "۲ سال (120 ECTS)", "CHF 4,000 در ترم برای غیرمقیم سوئیس (CHF 8,000/سال)", ("CHF", 8000, None),
     "کارشناسی CS/مرتبط؛ فارغ‌التحصیل UAS با ۳۰–۶۰ ECTS تکمیلی؛ بررسی موردی", "B2 در ورود (IELTS 5.5) → C1 (7.0) تا فارغ‌التحصیلی", "=456", "Target", "کم‌شرط‌ترین ورود سوئیس؛ Lugano ارزان‌ترین شهر دانشگاهی سوئیس؛ مهلت غیر-EU ۳۰ آوریل ۲۰۲۷؛ زبان شهر ایتالیایی",
     "https://www.usi.ch/en/education/master/informatics")

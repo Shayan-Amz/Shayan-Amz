@@ -143,19 +143,19 @@ FIELD_ROWS = [
     ["هوش مصنوعی / یادگیری ماشین", "۵ — قوی‌ترین رشد",
      "بالاتر (+۱۰ تا +۲۵٪؛ آلمان €52–60k، انگلستان £35–45k خارج لندن، سوئیس ≈ CHF 95–120k در زوریخ)",
      "بسیار خوب — تیم‌های AI/ML در همهٔ ۸ کشور انگلیسی‌زبان‌اند؛ زوریخ (Google، ETH AI Center، آزمایشگاه‌های AI) یکی از قطب‌های اروپاست و کاملاً انگلیسی؛ فنلاند: FCAI (Aalto/Helsinki) و Silo AI/AMD در هلسینکی، انگلیسی‌محور ولی کوچک",
-     "خوب: پیش‌زمینهٔ Computer Engineering + Python؛ ولی برای برنامه‌های Reach (Tübingen، UvA، KTH، Sheffield) معدل ۱۵.۷۷ کافی نیست — برنامه‌های کاربردی (Passau AI Eng، FAU، USI AI (Lugano)، Umeå) هدف بگیرید؛ در انگلستان (فقط Russell Group) Nottingham ACS(AI) و Sheffield AI با 2:1 = ۱۴–۱۵/۲۰ Target‌اند، Southampton AI مرزی؛ کانادا (بدون کبک): Memorial MAI (۱۶ ماه، داخل بودجه) Target، Toronto MScAC (CAD 90,050) Reach و خارج بودجه",
+     "خوب: پیش‌زمینهٔ Computer Engineering + Python؛ ولی برای برنامه‌های Reach (Tübingen، UvA، KTH، Sheffield) معدل ۱۵.۷۷ کافی نیست — برنامه‌های کاربردی (Passau AI Eng، FAU، USI AI (Lugano)، Umeå) هدف بگیرید؛ در انگلستان (فقط Russell Group) Nottingham ACS(AI) و Sheffield AI با 2:1 = ۱۴–۱۵/۲۰ Target‌اند، Southampton AI مرزی؛ کانادا (بدون کبک): Memorial MAI (۱۶ ماه، داخل بودجه) Target، Waterloo MDSAI (CAD 56,448) و Toronto MScAC (CAD 90,050) Reach و خارج بودجه",
      "رقابت ورودی شدید؛ بخشی از آگهی‌ها «AI» در عنوان دارند ولی کار مهندسی نرم‌افزار معمولی است؛ مدرک به‌تنهایی بدون پورتفولیو/پروژه کافی نیست",
      "LinkedIn/WEF ژانویه ۲۰۲۶ (۱.۳ میلیون شغل جدید AI؛ AI Engineer سریع‌ترین‌رشد)؛ Bitkom 2025"],
     ["مهندسی نرم‌افزار / علوم کامپیوتر", "۴ — بیشترین حجم",
      "مرجع (آلمان €48–55k · هلند €40–50k · سوئد SEK 420–540k · دانمارک DKK 500–540k · سوئیس CHF 85–105k (بالاترین) · انگلستان £28–35k · فنلاند €31–43k)",
      "بسیار خوب",
-     "بهترین تناسب با سابقهٔ شما (۲ سال IT + Unity/C#)؛ پذیرش ساده‌تر (2:2)؛ در همهٔ کشورها گزینهٔ Safe دارد؛ کانادا (بدون کبک): MSc پایان‌نامه‌ای Memorial / Manitoba / Saskatchewan / Alberta / Calgary / UVic با TA/RA (Target — استاد راهنما لازم) و Windsor MAC (Safe ولی خارج بودجه)",
+     "بهترین تناسب با سابقهٔ شما (۲ سال IT + Unity/C#)؛ پذیرش ساده‌تر (2:2)؛ در همهٔ کشورها گزینهٔ Safe دارد؛ کانادا (بدون کبک): MSc پایان‌نامه‌ای Memorial / Manitoba / Saskatchewan / Regina / Alberta / Calgary / UVic با TA/RA (Target — استاد راهنما لازم)، Dalhousie / Ontario Tech / Waterloo فقط با نامهٔ فاندینگ، و Windsor MAC / Dal MACS (Safe ولی خارج بودجه)",
      "آگهی‌های جونیور از ۲۰۲۳ کم شده (اثر GenAI)؛ در بریتانیا ۶–۷٪ بیکاری فارغ‌التحصیلان CS — سابقهٔ کار واقعی شما را از این گروه جدا می‌کند",
      "Bitkom 2025 (۱۰۹ هزار جای خالی IT در آلمان، ۷.۷ ماه زمان پرکردن)؛ IW 2024 (آگهی‌ها ۲۶٪ کمتر از ۲۰۲۳)"],
     ["امنیت سایبری", "۴ — کمبود ساختاری",
      "مساوی تا کمی بالاتر؛ در انگلستان (NCSC-certified) و سوئیس (بانک‌ها، بیمه‌ها، ETH/EPFL Cyber؛ حقوق بالا) خوب",
      "خوب — ولی مشاغل دولتی/دفاعی معمولاً به تابعیت یا اقامت بلندمدت نیاز دارند",
-     "خوب: MSc Cyber در Russell Group انگلستان (Newcastle، York، Birmingham، Southampton با تأیید NCSC + Sheffield Cybersecurity & AI؛ 2:1 — York 2:2)؛ Saarland (رایگان ولی IELTS 7)؛ AAU کپنهاگ؛ ZHAW MSE Information & Cyber Security (سوئیس، نیاز به معدل A/B)؛ کانادا (بدون کبک): ارشد تخصصی امنیت با شهریهٔ رسمی تأییدشده در فهرست نیست — امنیت را به‌عنوان موضوع پایان‌نامه داخل MSc CS (Calgary / Carleton / UVic، با استاد راهنمای امنیت) بردارید",
+     "خوب: MSc Cyber در Russell Group انگلستان (Newcastle، York، Birmingham، Southampton با تأیید NCSC + Sheffield Cybersecurity & AI؛ 2:1 — York 2:2)؛ Saarland (رایگان ولی IELTS 7)؛ AAU کپنهاگ؛ ZHAW MSE Information & Cyber Security (سوئیس، نیاز به معدل A/B)؛ کانادا (بدون کبک): Ontario Tech MITS تنها ارشد تخصصی امنیت با رقم رسمی (CAD 48,345 کل، خارج بودجه) — امنیت را به‌عنوان موضوع پایان‌نامه داخل MSc CS (Calgary / Carleton / UVic / Dalhousie، با استاد راهنمای امنیت) بردارید",
      "عدد «۴.۸ میلیون کمبود» ISC2 در گزارش ۲۰۲۵ حذف شد (نیاز اعلام‌شده بود نه آگهی واقعی)؛ کمبود بودجه دلیل اول جای خالی؛ ۳۱٪ تیم‌ها صفر جونیور دارند → برای اولین شغل، کارآموزی + گواهی (Security+، AZ-500) لازم است",
      "ISC2 Workforce Study 2024/2025؛ فهرست مدارک تأییدشدهٔ NCSC (ncsc.gov.uk)"],
     ["ابری / سیستم‌های توزیع‌شده / DevOps", "۴ — پایدار",
@@ -282,6 +282,11 @@ CITIES = {
     "Ottawa": ("Ottawa (اتاوا، انتاریو) — پایتخت؛ دولت + Shopify/تک", "متوسط تا گران — CAD 1,800–2,200"),
     "Windsor": ("Windsor (ویندزور، انتاریو) — مرز دیترویت؛ خودرو", "ارزان تا متوسط — CAD 1,450–1,800"),
     "Toronto": ("Toronto (تورنتو، انتاریو) — بزرگ‌ترین بازار کار کانادا؛ گران", "خیلی گران — CAD 2,100–2,600"),
+    # نسخهٔ ۳.۱۳ (۲۹ سپتامبر ۲۰۲۶): چهار شهر دانشگاه‌های اضافه‌شده به خواست شما
+    "Waterloo": ("Waterloo (واترلو، انتاریو) — قطب تک کانادا (Google، Shopify، OpenText، صدها استارتاپ)؛ ۱ ساعت تا تورنتو؛ شهر دانشجویی", "متوسط — CAD 1,650–2,000"),
+    "Halifax": ("Halifax (هلیفکس، نوا اسکوشیا) — بزرگ‌ترین شهر آتلانتیک؛ بندر، فناوری دریایی، IBM/RBC/Nasdaq Verafin", "متوسط — CAD 1,650–2,000"),
+    "Oshawa": ("Oshawa (اوشاوا، انتاریو) — ۶۰ کیلومتری شرق تورنتو (GO Train ۱ ساعت)؛ خودرو/GM", "متوسط — CAD 1,650–2,000"),
+    "Regina": ("Regina (رجاینا، ساسکاچوان) — پایتخت استان؛ ارزان، سرد، کوچک (SaskTel، ISC، دولت استانی)", "ارزان — CAD 1,350–1,650"),
 }
 
 # ---- programmes ---------------------------------------------------------------
@@ -677,7 +682,7 @@ add("فنلاند", "University of Helsinki", "Helsinki", "MSc Data Science", "D
 
 # ===== کانادا بدون کبک (CAD) — کشور هشتم (نسخهٔ ۳.۱۲، ۲۹ سپتامبر ۲۰۲۶) =====
 # به خواست شما کبک (McGill، Concordia، Montréal) حذف شد: PR کبک فرانسه می‌خواهد. UBC/SFU نیامده‌اند: کف رسمی ایران ۱۶/۲۰ روی کل دوره (معدل کل شما ۱۵.۷۷).
-# Waterloo (کف ۷۸٪ + شهریهٔ رسمی پیدا نشد)، Dalhousie/Ontario Tech/Regina (جدول شهریهٔ رسمی از ایران بارگذاری نشد) و Queen's/McMaster/Western (Reach، بدون رقم رسمی) عمداً نیامده‌اند.
+# نسخهٔ ۳.۱۳ (۲۹ سپتامبر ۲۰۲۶، به خواست شما «دانشگاه‌های خوب را حذف نکن»): Waterloo، Dalhousie، Ontario Tech و Regina اضافه شدند — برای هر چهار تا جدول شهریهٔ رسمی 2026/27 پیدا شد (هیچ خانه‌ای خالی نماند). Queen's/McMaster/Western (Reach، بدون رقم رسمی) همچنان نیامده‌اند.
 # شهریه‌ها: رسمی 2026/27 مگر جایی که «≈» آمده. «پایان‌نامه‌ای» = استاد راهنما + معمولاً TA/RA؛ «درسی» = بدون فاندینگ.
 add("کانادا", "Memorial University of Newfoundland (MUN)", "StJohns", "MSc Computer Science — thesis route", "SE", "۲ سال", "CAD 1,611 × ۶ ترم = CAD 9,666 برای کل دوره (Master's Payment Plan A، رسمی 2026/27) + ≈ CAD 1,300 هزینه‌های اجباری/سال", ("CAD", 4833, None),
     "کارشناسی ۴ ساله با «Second Class» (B ≈ ۷۵٪) — معادل ایرانی رسمی ندارد (معمولاً ۱۴–۱۵/۲۰)؛ برای مسیر پایان‌نامه‌ای استاد راهنما لازم است", "6.5 (هر بخش ≥ 6.0)", "≈ 800+ (QS 2026)", "Target", "ارزان‌ترین ارشد کل جدول (کل شهریه ≈ $6,800)؛ پرداخت در ۶ قسط؛ MCP (بیمهٔ استانی) رایگان با مجوز ≥ ۱۲ ماه؛ شهر کوچک و دور، بازار IT کوچک (Verafin/Nasdaq)؛ مهلت پاییز ≈ فوریه ۲۰۲۷ (چک شود)",
@@ -718,6 +723,29 @@ add("کانادا", "University of Toronto", "Toronto", "MScAC — Master of Sci
 add("کانادا", "Memorial University of Newfoundland (MUN)", "StJohns", "MASc Software Engineering (درسی، ۱۶ ماه)", "SE", "۱۶ ماه (۱.۳۳ سال)", "Payment Plan D: CAD 2,416.50 × ۴ + هزینهٔ ویژهٔ CAD 20,282 = CAD 29,948 برای کل دوره (رسمی 2026/27)", ("CAD", 22460, None),
     "کارشناسی مهندسی/CS با B؛ درسی", "6.5 (هر بخش ≥ 6.0)", "≈ 800+ (QS 2026)", "Target", "همان ساختار و قیمت MAI؛ برای کسی که مهندسی نرم‌افزار می‌خواهد نه AI؛ داخل بودجه ($37.6k)",
     "https://www.mun.ca/sgs/media/production/memorial/academic/school-of-graduate-studies/school-of-graduate-studies/media-library/MinimumExpense.pdf")
+
+# ---- نسخهٔ ۳.۱۳: Waterloo / Dalhousie / Ontario Tech / Regina — همه با جدول شهریهٔ رسمی 2026/27 ----
+add("کانادا", "University of Waterloo", "Waterloo", "MMath Computer Science — thesis (Cheriton School of CS)", "SE", "۲ سال", "CAD 7,696.00 × ۶ ترم = CAD 46,176 برای کل دوره (جدول رسمی پاییز ۲۰۲۶، Master's Research بین‌المللی) + هزینه‌های جانبی CAD 1,014.11/ترم؛ پذیرش فقط در گزینهٔ پایان‌نامه‌ای", ("CAD", 23088, None),
+    "کف رسمی ۷۸٪ (شما ۱۵.۷۷/۲۰ = ۷۸.۹٪ روی کاغذ؛ Cheriton عملاً ۸۵٪+ و رقابت شدید)؛ استاد راهنما لازم؛ توصیه‌نامه‌های قوی", "7.0 (W/S ≥ 6.5)", "≈ 115 (QS 2026)", "Reach", "بهترین CS کانادا (Maclean's #1) و قطب تک واترلو–تورنتو؛ پایان‌نامه‌ای‌ها معمولاً بستهٔ TA/RA دارند (مبلغ رسمی تأیید نشد → اینجا صفر) → بدون آن گام ۱ ❌ (شهریه $32.5k + تمکن $16.5k = $49.1k)؛ با نامهٔ فاندینگ ≈ CAD 20k+/سال ✅؛ مهلت ≈ ۱ فوریه ۲۰۲۷ برای پاییز (چک شود)",
+    "https://uwaterloo.ca/finance/masters-and-phd-program-tuition-fall-2026-international-0")
+add("کانادا", "University of Waterloo", "Waterloo", "MDSAI — Master of Data Science & Artificial Intelligence (درسی، co-op)", "AI", "۱۶ ماه (۱.۳۳ سال)", "CAD 6,272.00 × ۹ درس = CAD 56,448 برای کل دوره (جدول رسمی پاییز ۲۰۲۶؛ ۳ ترم درسی + ۱ ترم co-op با حقوق) + هزینهٔ co-op CAD 836/ترم + جانبی CAD 1,014/ترم", ("CAD", 42336, None),
+    "کف رسمی ۷۸٪ + درس‌های سطح بالای CS یا آمار؛ درسی (بدون استاد راهنما)؛ پذیرش رقابتی", "7.0 (W/S ≥ 6.5)", "≈ 115 (QS 2026)", "Target/Reach", "گران‌ترین ارشد AI داخل فهرست بعد از MScAC؛ گام ۱ ❌ با فاصله (شهریه $39.8k ≈ کل بودجه)؛ co-op ۴–۸ ماه با حقوق فقط بعد از پرداخت شهریه؛ فقط اگر خانواده ≥ $20k اضافه دارد",
+    "https://uwaterloo.ca/finance/masters-and-phd-program-tuition-fall-2026-international-0")
+add("کانادا", "Dalhousie University", "Halifax", "MCSc — Master of Computer Science (thesis)", "SE", "۲ سال", "برنامه‌محور CAD 11,303/سال + شهریهٔ بین‌المللی پایان‌نامه‌ای CAD 8,079/سال = CAD 19,382/سال (جدول رسمی 2026/27، به‌روز ۱۰ ژوئیه ۲۰۲۶) + هزینه‌های اجباری ≈ CAD 1,620 + بیمهٔ بین‌المللی CAD 1,329/سال", ("CAD", 19382, None),
+    "کارشناسی ۴ ساله با معدل B (≈ ۷۳–۷۶٪) در دو سال آخر — معادل ایرانی رسمی ندارد (دو سال آخر شما ۱۶.۹۲ ≈ B+ ✓)؛ استاد راهنما لازم", "7.0 (هر بخش ≥ 6.5) — چک شود", "≈ 280 (QS 2026)", "Target", "بزرگ‌ترین دانشگاه آتلانتیک؛ هلیفکس متوسط‌قیمت با بازار IT در حال رشد (Verafin، IBM، RBC)؛ Atlantic Immigration Program + NS PNP برای PR؛ بدون فاندینگ گام ۱ ❌ با کسری کوچک ($27.3k + $16.5k = $43.8k)؛ با TA/RA معمول (≈ CAD 15–20k/سال) ✅؛ مهلت ≈ ۳۱ ژانویه ۲۰۲۷ برای بین‌المللی‌ها (چک شود)",
+    "https://www.dal.ca/content/dam/www/admissions/cost-and-payment/tuition-and-fee-schedules/masters-tuition-fee-schedule.pdf")
+add("کانادا", "Dalhousie University", "Halifax", "MACS — Master of Applied Computer Science (درسی، ۱۶ ماه)", "SE", "۱۶ ماه (۱.۳۳ سال)", "برنامه‌محور CAD 3,767.67/ترم + شهریهٔ بین‌المللی غیرپایان‌نامه‌ای CAD 8,228.33/ترم = CAD 11,996/ترم × ۴ ترم = CAD 47,984 برای کل دوره (جدول رسمی 2026/27) + اجباری/بیمه ≈ CAD 3,000", ("CAD", 35988, None),
+    "کارشناسی CS/مرتبط با B؛ درسی، بدون استاد راهنما → پذیرش آسان‌تر", "7.0 (هر بخش ≥ 6.5) — چک شود", "≈ 280 (QS 2026)", "Safe/Target", "مسیر کلاسیک درسیِ ایرانی‌ها در هلیفکس، ولی شهریهٔ بین‌المللی غیرپایان‌نامه‌ای سه برابر پایان‌نامه‌ای است → گام ۱ ❌ ($33.8k + $16.5k = $50.3k)؛ co-op اختیاری",
+    "https://www.dal.ca/content/dam/www/admissions/cost-and-payment/tuition-and-fee-schedules/masters-tuition-fee-schedule.pdf")
+add("کانادا", "Ontario Tech University", "Oshawa", "MSc Computer Science (thesis)", "SE", "۲ سال", "نرخ ثابت بین‌المللی CAD 20,124.30/سال = CAD 6,708.10/ترم × ۳ ترم (جدول رسمی 2026/27؛ ثبت‌نام پیوسته در هر سه ترم) + هزینه‌های جانبی ≈ CAD 1,500/سال", ("CAD", 20124, None),
+    "کارشناسی ۴ ساله CS/مرتبط با حداقل B (۳.۰/۴.۳) در دو سال آخر؛ استاد راهنما لازم؛ معادل ایرانی رسمی ندارد", "6.5 (هر بخش ≥ 6.0)", "≈ 1000+ (QS 2026)", "Target", "دانشگاه جوان (۲۰۰۲) با گروه CS کوچک؛ اوشاوا ارزان‌تر از تورنتو و ۱ ساعت قطار تا آن؛ OINP Masters Graduate برای PR؛ بدون فاندینگ گام ۱ ❌ ($28.4k + $16.5k = $44.9k)؛ با TA/RA ≈ CAD 10–15k/سال ✅؛ مهلت ≈ مارس–آوریل ۲۰۲۷ (چک شود)",
+    "https://registrar.ontariotechu.ca/fees-and-payment/international-student-tuition/graduate-international-tuition-2026-2027.php")
+add("کانادا", "Ontario Tech University", "Oshawa", "MITS — Master of Information Technology Security (درسی)", "CY", "۱۶ ماه (۱.۳۳ سال)", "CAD 4,834.52 به ازای هر درس ۳ واحدی × ۱۰ درس (۳۰ واحد) = CAD 48,345 برای کل دوره (جدول رسمی 2026/27، fee-per-credit) + جانبی؛ طول معمول ۴ ترم (چک شود)", ("CAD", 36259, None),
+    "کارشناسی ۴ ساله CS/IT/مهندسی با B؛ درسی، بدون استاد راهنما", "6.5 (هر بخش ≥ 6.0)", "≈ 1000+ (QS 2026)", "Safe/Target", "تنها ارشد تخصصی امنیت کانادا در این فهرست با رقم رسمی — ولی گام ۱ ❌ با فاصله ($34.1k + $16.5k = $50.6k)؛ امنیت را به‌جایش موضوع پایان‌نامهٔ MSc CS بگیرید",
+    "https://registrar.ontariotechu.ca/fees-and-payment/international-student-tuition/graduate-international-tuition-2026-2027.php")
+add("کانادا", "University of Regina", "Regina", "MSc Computer Science — thesis route (۱۵ واحد درس + ۱۵ واحد پایان‌نامه)", "SE", "۲ سال", "CAD 365.50 × ۳۰ واحد = CAD 10,965 + سورشارژ بین‌المللی CAD 1,487.25 × ۶ ترم = CAD 8,924 → CAD 19,889 برای کل دوره ≈ CAD 9,944/سال (جدول رسمی پاییز ۲۰۲۶) + هزینه‌های اجباری ≈ CAD 540/ترم (بیمه/UPass)", ("CAD", 9944, None),
+    "کارشناسی ۴ ساله CS با ≥ ۷۰٪ در دو سال آخر (FGSR) — معادل ایرانی رسمی ندارد (≈ ۱۴–۱۵/۲۰)؛ استاد راهنما لازم", "6.5 (هر بخش ≥ 6.0)", "≈ 1000+ (QS 2026)", "Target", "ارزان‌ترین گزینهٔ جدید (کل شهریه ≈ $14k) و داخل هر دو گام حتی بدون کار؛ شهر کوچک و ارزان، بازار IT کوچک (SaskTel، ISC، دولت)؛ SINP برای PR؛ بیمهٔ استانی رایگان؛ حداقل دستمزد CAD 15.70؛ مهلت ≈ فوریه–مارس ۲۰۲۷ (چک شود)",
+    "https://www.uregina.ca/financial-services/assets/pdf/fee-schedules/202630-grad-studies-tuition-schedule-may-15.pdf")
 
 PROGRAMS = P
 

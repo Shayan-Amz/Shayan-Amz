@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Data for the two extra sheets of Table_final.xlsx:
-  «برنامه‌ها»           — one row per English-taught master's programme (all 7 countries incl. Switzerland and Finland, 8 fields)
+  «برنامه‌ها»           — one row per English-taught master's programme (all 8 countries incl. Switzerland, Finland and Canada without Quebec, 8 fields)
   «حوزه‌ها و بازار کار» — the 8 computing fields, their 2026 job market and fit with Shayan's profile
 Figures checked on 2026-09-27 against the programme/fee pages listed in the source column.
 """
@@ -9,15 +9,15 @@ Figures checked on 2026-09-27 against the programme/fee pages listed in the sour
 import re
 
 # ---- FX (same as main table) ------------------------------------------------
-RATES = {"EUR": 1.14, "GBP": 1.325, "SEK": 1 / 9.9, "DKK": 1 / 6.55, "CHF": 1.21, "USD": 1.0}
+RATES = {"EUR": 1.14, "GBP": 1.325, "SEK": 1 / 9.9, "DKK": 1 / 6.55, "CHF": 1.21, "CAD": 1 / 1.419, "USD": 1.0}
 
 # ---- display currency ----------------------------------------------------------
 # Every sheet is rendered in ONE currency. Source strings keep the official local
 # figures; `convert()` rewrites them at build time. Change TARGET to "EUR" to get euros.
 TARGET = "USD"
 _SYM = {"USD": "$", "EUR": "€"}
-_CUR = {"€": "EUR", "£": "GBP", "CHF": "CHF", "SEK": "SEK", "DKK": "DKK", "$": "USD"}
-_AMT = re.compile(r"(€|£|CHF ?|SEK ?|DKK ?|\$)(\d[\d,]*(?:\.\d+)?)(k?)(?:([–-])(\d[\d,]*(?:\.\d+)?)(k?))?")
+_CUR = {"€": "EUR", "£": "GBP", "CHF": "CHF", "SEK": "SEK", "DKK": "DKK", "CAD": "CAD", "C$": "CAD", "$": "USD"}
+_AMT = re.compile(r"(€|£|CHF ?|SEK ?|DKK ?|CAD ?|C\$|\$)(\d[\d,]*(?:\.\d+)?)(k?)(?:([–-])(\d[\d,]*(?:\.\d+)?)(k?))?")
 
 
 def _num(t):
@@ -120,7 +120,7 @@ FIELDS = {
     "AI":    ("هوش مصنوعی / یادگیری ماشین", 5,
               "داغ‌ترین بازار؛ «AI Engineer» سریع‌ترین‌رشد (LinkedIn 2026)؛ ولی برنامه‌های ریاضی‌محور (Tübingen، UvA، KTH) بسیار رقابتی‌اند"),
     "SE":    ("مهندسی نرم‌افزار / علوم کامپیوتر", 4,
-              "بیشترین حجم آگهی در هر ۷ کشور؛ ورود جونیور از ۲۰۲۳ سخت‌تر شده — سابقهٔ کار شما مزیت است"),
+              "بیشترین حجم آگهی در هر ۸ کشور؛ ورود جونیور از ۲۰۲۳ سخت‌تر شده — سابقهٔ کار شما مزیت است"),
     "CY":    ("امنیت سایبری", 4,
               "کمبود ساختاری (Bitkom: جزو ۳ کمبود اصلی آلمان)؛ اما ۳۱٪ تیم‌ها هیچ نیروی جونیور ندارند → کارآموزی/گواهی لازم است"),
     "CLOUD": ("ابری / سیستم‌های توزیع‌شده / DevOps", 4,
@@ -142,50 +142,50 @@ FIELDS = {
 FIELD_ROWS = [
     ["هوش مصنوعی / یادگیری ماشین", "۵ — قوی‌ترین رشد",
      "بالاتر (+۱۰ تا +۲۵٪؛ آلمان €52–60k، انگلستان £35–45k خارج لندن، سوئیس ≈ CHF 95–120k در زوریخ)",
-     "بسیار خوب — تیم‌های AI/ML در همهٔ ۷ کشور انگلیسی‌زبان‌اند؛ زوریخ (Google، ETH AI Center، آزمایشگاه‌های AI) یکی از قطب‌های اروپاست و کاملاً انگلیسی؛ فنلاند: FCAI (Aalto/Helsinki) و Silo AI/AMD در هلسینکی، انگلیسی‌محور ولی کوچک",
-     "خوب: پیش‌زمینهٔ Computer Engineering + Python؛ ولی برای برنامه‌های Reach (Tübingen، UvA، KTH، Sheffield) معدل ۱۵.۷۷ کافی نیست — برنامه‌های کاربردی (Passau AI Eng، FAU، USI AI (Lugano)، Umeå) هدف بگیرید؛ در انگلستان (فقط Russell Group) Nottingham ACS(AI) و Sheffield AI با 2:1 = ۱۴–۱۵/۲۰ Target‌اند، Southampton AI مرزی",
+     "بسیار خوب — تیم‌های AI/ML در همهٔ ۸ کشور انگلیسی‌زبان‌اند؛ زوریخ (Google، ETH AI Center، آزمایشگاه‌های AI) یکی از قطب‌های اروپاست و کاملاً انگلیسی؛ فنلاند: FCAI (Aalto/Helsinki) و Silo AI/AMD در هلسینکی، انگلیسی‌محور ولی کوچک",
+     "خوب: پیش‌زمینهٔ Computer Engineering + Python؛ ولی برای برنامه‌های Reach (Tübingen، UvA، KTH، Sheffield) معدل ۱۵.۷۷ کافی نیست — برنامه‌های کاربردی (Passau AI Eng، FAU، USI AI (Lugano)، Umeå) هدف بگیرید؛ در انگلستان (فقط Russell Group) Nottingham ACS(AI) و Sheffield AI با 2:1 = ۱۴–۱۵/۲۰ Target‌اند، Southampton AI مرزی؛ کانادا (بدون کبک): Memorial MAI (۱۶ ماه، داخل بودجه) Target، Toronto MScAC (CAD 90,050) Reach و خارج بودجه",
      "رقابت ورودی شدید؛ بخشی از آگهی‌ها «AI» در عنوان دارند ولی کار مهندسی نرم‌افزار معمولی است؛ مدرک به‌تنهایی بدون پورتفولیو/پروژه کافی نیست",
      "LinkedIn/WEF ژانویه ۲۰۲۶ (۱.۳ میلیون شغل جدید AI؛ AI Engineer سریع‌ترین‌رشد)؛ Bitkom 2025"],
     ["مهندسی نرم‌افزار / علوم کامپیوتر", "۴ — بیشترین حجم",
      "مرجع (آلمان €48–55k · هلند €40–50k · سوئد SEK 420–540k · دانمارک DKK 500–540k · سوئیس CHF 85–105k (بالاترین) · انگلستان £28–35k · فنلاند €31–43k)",
      "بسیار خوب",
-     "بهترین تناسب با سابقهٔ شما (۲ سال IT + Unity/C#)؛ پذیرش ساده‌تر (2:2)؛ در همهٔ کشورها گزینهٔ Safe دارد",
+     "بهترین تناسب با سابقهٔ شما (۲ سال IT + Unity/C#)؛ پذیرش ساده‌تر (2:2)؛ در همهٔ کشورها گزینهٔ Safe دارد؛ کانادا (بدون کبک): MSc پایان‌نامه‌ای Memorial / Manitoba / Saskatchewan / Alberta / Calgary / UVic با TA/RA (Target — استاد راهنما لازم) و Windsor MAC (Safe ولی خارج بودجه)",
      "آگهی‌های جونیور از ۲۰۲۳ کم شده (اثر GenAI)؛ در بریتانیا ۶–۷٪ بیکاری فارغ‌التحصیلان CS — سابقهٔ کار واقعی شما را از این گروه جدا می‌کند",
      "Bitkom 2025 (۱۰۹ هزار جای خالی IT در آلمان، ۷.۷ ماه زمان پرکردن)؛ IW 2024 (آگهی‌ها ۲۶٪ کمتر از ۲۰۲۳)"],
     ["امنیت سایبری", "۴ — کمبود ساختاری",
      "مساوی تا کمی بالاتر؛ در انگلستان (NCSC-certified) و سوئیس (بانک‌ها، بیمه‌ها، ETH/EPFL Cyber؛ حقوق بالا) خوب",
      "خوب — ولی مشاغل دولتی/دفاعی معمولاً به تابعیت یا اقامت بلندمدت نیاز دارند",
-     "خوب: MSc Cyber در Russell Group انگلستان (Newcastle، York، Birmingham، Southampton با تأیید NCSC + Sheffield Cybersecurity & AI؛ 2:1 — York 2:2)؛ Saarland (رایگان ولی IELTS 7)؛ AAU کپنهاگ؛ ZHAW MSE Information & Cyber Security (سوئیس، نیاز به معدل A/B)",
+     "خوب: MSc Cyber در Russell Group انگلستان (Newcastle، York، Birmingham، Southampton با تأیید NCSC + Sheffield Cybersecurity & AI؛ 2:1 — York 2:2)؛ Saarland (رایگان ولی IELTS 7)؛ AAU کپنهاگ؛ ZHAW MSE Information & Cyber Security (سوئیس، نیاز به معدل A/B)؛ کانادا (بدون کبک): ارشد تخصصی امنیت با شهریهٔ رسمی تأییدشده در فهرست نیست — امنیت را به‌عنوان موضوع پایان‌نامه داخل MSc CS (Calgary / Carleton / UVic، با استاد راهنمای امنیت) بردارید",
      "عدد «۴.۸ میلیون کمبود» ISC2 در گزارش ۲۰۲۵ حذف شد (نیاز اعلام‌شده بود نه آگهی واقعی)؛ کمبود بودجه دلیل اول جای خالی؛ ۳۱٪ تیم‌ها صفر جونیور دارند → برای اولین شغل، کارآموزی + گواهی (Security+، AZ-500) لازم است",
      "ISC2 Workforce Study 2024/2025؛ فهرست مدارک تأییدشدهٔ NCSC (ncsc.gov.uk)"],
     ["ابری / سیستم‌های توزیع‌شده / DevOps", "۴ — پایدار",
      "بالاتر از توسعه‌دهندهٔ عمومی (+۵ تا +۱۵٪)؛ DevOps/SRE در دانمارک و سوئد پرتقاضا؛ سوئیس: بانک‌ها/بیمه‌ها و Google زوریخ (≈ CHF 90–110k)",
      "بسیار خوب",
-     "خوب: Newcastle Cloud Computing (Russell Group)، TU Darmstadt DSS، KTH SEDS، USI Software & Data Engineering؛ گواهی AWS/Azure کنار مدرک",
+     "خوب: Newcastle Cloud Computing (Russell Group)، TU Darmstadt DSS، KTH SEDS، USI Software & Data Engineering؛ کانادا: ارشد خالص Cloud نیست — گرایش داخل MSc CS / Alberta course-based / Windsor MAC؛ گواهی AWS/Azure کنار مدرک",
      "کمتر «مدرک‌محور» است؛ برنامه‌های خالص Cloud کم‌اند — معمولاً گرایشِ CS/SE است",
      "tribexyz 2026 (Data/Cloud Engineer پرجست‌وجوترین در UK/DE)؛ آگهی‌های شرکت‌ها"],
     ["علم داده / تحلیل داده", "۳ — جونیور اشباع",
      "مساوی CS در سطح جونیور؛ بالاتر بعد از ۲–۳ سال",
      "بسیار خوب",
-     "متوسط: مدرک‌های ارزان و Safe زیاد است (سوئیس: HSLU Lucerne ≈ CHF 3,150/سال و USI Software & Data Eng CHF 8,000/سال، EPFL Data Science فقط Reach؛ سوئد: Skövde؛ انگلستان (Russell Group): Liverpool DS&AI ≈ £34k، Bristol DS £37.9k؛ دانمارک: ITU €16.5k) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
+     "متوسط: مدرک‌های ارزان و Safe زیاد است (سوئیس: HSLU Lucerne ≈ CHF 3,150/سال و USI Software & Data Eng CHF 8,000/سال، EPFL Data Science فقط Reach؛ سوئد: Skövde؛ انگلستان (Russell Group): Liverpool DS&AI ≈ £34k، Bristol DS £37.9k؛ دانمارک: ITU €16.5k؛ کانادا: Carleton MCS گرایش Data Science & AI (خارج بودجه بدون فاندینگ) و Memorial MAI داخل بودجه) ولی رقابت جونیور بالاست؛ اگر می‌روید، Data Engineering را انتخاب کنید",
      "تعداد فارغ‌التحصیل خیلی بیشتر از جای خالی جونیور؛ آگهی جونیور Data Engineering هم ↓۶۷٪؛ مسیر رایج: تحلیلگر/بک‌اند → مهندس داده",
      "research.com 2026؛ careery.pro 2026؛ datadriven.io 2026"],
     ["سیستم‌های نهفته / رباتیک / خودران", "۴ در آلمان/سوئد؛ ۳ در بقیه",
      "مساوی تا کمی بالاتر در صنعت (Bosch، Continental، ABB، Volvo)؛ پایین‌تر در بریتانیا؛ در سوئیس (ABB، رباتیک ETH) بالا ولی آلمانی‌محور؛ فنلاند: Nokia (Oulu/Espoo، 5G/6G) و Wärtsilä/KONE — R&D انگلیسی",
      "متوسط ⚠️ — تیم‌های R&D انگلیسی‌اند ولی شرکت‌های صنعتی متوسط آلمان/سوئد در عمل زبان محلی می‌خواهند",
-     "خوب از نظر پیش‌زمینه (Computer Engineering)؛ گزینه‌ها: Twente ES، Stuttgart INFOTECH، H-BRS Autonomous Systems، FAU Autonomy Tech، Halmstad، MDU، SDU Robot Systems، DTU Autonomous Systems؛ سوئیس: ETH Robotics فقط Reach، ZHAW MSE گرایش مهندسی (آلمانی‌محور)",
+     "خوب از نظر پیش‌زمینه (Computer Engineering)؛ گزینه‌ها: Twente ES، Stuttgart INFOTECH، H-BRS Autonomous Systems، FAU Autonomy Tech، Halmstad، MDU، SDU Robot Systems، DTU Autonomous Systems؛ سوئیس: ETH Robotics فقط Reach، ZHAW MSE گرایش مهندسی (آلمانی‌محور)؛ کانادا: برنامه‌های فهرست همه CS / AI / SE‌اند — رباتیک فقط به‌عنوان موضوع پایان‌نامه (Alberta / Calgary)",
      "با معیار «فقط انگلیسی» شما ضعیف‌تر از AI/SE/Cyber؛ وابسته به صنعت خودرو که در ۲۰۲۴–۲۵ آگهی‌هایش کم شد",
      "Bitkom/IW 2024–25؛ Twente/H-BRS/FAU program pages"],
     ["HCI / طراحی تعامل / UX", "۲ — رو به کاهش",
      "پایین‌تر از توسعه‌دهنده (−۱۰ تا −۲۵٪)",
      "خوب",
-     "ضعیف برای هدف «حقوق شروع بالا»؛ فقط اگر واقعاً به طراحی علاقه دارید (Siegen رایگان، Twente I-Tech، York HCIT، Chalmers IxD، AAU Medialogy؛ سوئیس برنامهٔ انگلیسی مناسب ندارد — ZHdK آلمانی)",
+     "ضعیف برای هدف «حقوق شروع بالا»؛ فقط اگر واقعاً به طراحی علاقه دارید (Siegen رایگان، Twente I-Tech، York HCIT، Chalmers IxD، AAU Medialogy؛ سوئیس برنامهٔ انگلیسی مناسب ندارد — ZHdK آلمانی؛ کانادا: در فهرست نیست)",
      "آگهی UX ↓۷۱٪ و UXR ↓۷۳٪ نسبت به ۲۰۲۲ و از ۲۰۲۳ ثابت؛ متقاضی به ازای هر آگهی دو برابر شده",
      "Indeed Hiring Lab تا Q4 2025 (thevoiceofuser, 2026)؛ uxdesigninstitute 2024؛ academyux Q1 2025"],
     ["توسعه بازی", "۲ — کوچک و پرنوسان",
      "پایین‌تر از نرم‌افزار عمومی (−۲۰ تا −۴۰٪)؛ استودیوهای بزرگ استثنا",
      "خوب (استودیوهای بزرگ انگلیسی‌زبان: لندن، Guildford، Stockholm، Malmö، Copenhagen، Cologne، هلسینکی (Supercell، Rovio، Remedy، Housemarque؛ Unity دفتر بزرگ در تامپره/هلسینکی)؛ سوئیس صنعت بازی کوچکی دارد — Zürich: Giants Software — و ارشد انگلیسی بازی ندارد)",
-     "تنها حوزه‌ای که سابقهٔ Unity/C# شما در آن مستقیماً مزیت است؛ اما بازار ۲۰۲۲–۲۵ بدترین دورهٔ خود را داشت — پیشنهاد: ارشد Software/AI بگیرید و بازی را به‌عنوان تخصص/پورتفولیو نگه دارید، مگر Newcastle Game Engineering (£32.3k)، QMUL Computer Games (£36.95k)، Leeds HPG & Games (£34.6k)، Cologne Game Lab یا Aalto Game Design & Development (€17k، ۸ نفر، Reach) را با چشم باز انتخاب کنید",
+     "تنها حوزه‌ای که سابقهٔ Unity/C# شما در آن مستقیماً مزیت است؛ اما بازار ۲۰۲۲–۲۵ بدترین دورهٔ خود را داشت — پیشنهاد: ارشد Software/AI بگیرید و بازی را به‌عنوان تخصص/پورتفولیو نگه دارید، مگر Newcastle Game Engineering (£32.3k)، QMUL Computer Games (£36.95k)، Leeds HPG & Games (£34.6k)، Cologne Game Lab یا Aalto Game Design & Development (€17k، ۸ نفر، Reach) را با چشم باز انتخاب کنید؛ کانادا: استودیوهای بزرگ (Ubisoft Toronto، EA Vancouver) هستند ولی مونترال = کبک (حذف)؛ Unity/C# شما اینجا پورتفولیوی co-op (Windsor MAC) یا کارآموزی MScAC است، نه رشتهٔ تحصیل",
      "≈۴۵ هزار اخراج ۲۰۲۲–ژوئیهٔ ۲۰۲۵؛ بیش از ۳۰ استودیو کاملاً بسته شد؛ حقوق برنامه‌نویس Unity ≈۵۰٪ افت؛ Unity Technologies شش دور اخراج",
      "Wikipedia «2022–2026 video game industry layoffs» (GDC State of the Industry 2026؛ 80.lv)"],
 ]
@@ -272,6 +272,16 @@ CITIES = {
     "Copenhagen": ("Copenhagen (کپنهاگ)", "خیلی گران — DKK 10,000–12,500"),
     "Lyngby": ("Kgs. Lyngby (لینگبی) — ۱۵ کیلومتری کپنهاگ", "خیلی گران — DKK 9,500–12,000"),
     "Aarhus": ("Aarhus (آرهوس) — دومین شهر دانمارک", "گران — DKK 9,000–11,000"),
+    # کانادا (بدون کبک) — اجاره‌ها CMHC اکتبر ۲۰۲۵ (یک‌خوابه) و برآورد رسمی دانشگاه‌ها؛ زندگی دانشجو = اتاق در خانهٔ مشترک + خوراک + رفت‌وآمد + تلفن/بیمه
+    "StJohns": ("St. John's (سنت جانز، نیوفاندلند) — پایتخت استان؛ کوچک، ارزان، دور", "ارزان — CAD 1,450–1,750"),
+    "Winnipeg": ("Winnipeg (وینیپگ، منیتوبا) — سرد؛ ارزان‌ترین شهر بزرگ غرب", "ارزان — CAD 1,400–1,700"),
+    "Saskatoon": ("Saskatoon (ساسکاتون، ساسکاچوان) — شهر دانشگاهی کوچک", "ارزان — CAD 1,400–1,700"),
+    "Edmonton": ("Edmonton (ادمونتون، آلبرتا) — پایتخت آلبرتا؛ بدون مالیات فروش استانی", "ارزان تا متوسط — CAD 1,500–1,800"),
+    "Calgary": ("Calgary (کلگری، آلبرتا) — قطب تک آلبرتا؛ بدون مالیات فروش استانی", "متوسط — CAD 1,650–2,000"),
+    "Victoria": ("Victoria (ویکتوریا، بریتیش کلمبیا) — معتدل، گران؛ ۹۰ دقیقه کشتی تا ونکوور", "گران — CAD 1,900–2,300"),
+    "Ottawa": ("Ottawa (اتاوا، انتاریو) — پایتخت؛ دولت + Shopify/تک", "متوسط تا گران — CAD 1,800–2,200"),
+    "Windsor": ("Windsor (ویندزور، انتاریو) — مرز دیترویت؛ خودرو", "ارزان تا متوسط — CAD 1,450–1,800"),
+    "Toronto": ("Toronto (تورنتو، انتاریو) — بزرگ‌ترین بازار کار کانادا؛ گران", "خیلی گران — CAD 2,100–2,600"),
 }
 
 # ---- programmes ---------------------------------------------------------------
@@ -664,6 +674,50 @@ add("فنلاند", "University of Helsinki", "Helsinki", "MSc Computer Science 
 add("فنلاند", "University of Helsinki", "Helsinki", "MSc Data Science", "DS", "۲ سال", "€15,000", ("EUR", 15000, None),
     "کارشناسی CS/ریاضی/آمار؛ رقابتی", "6.5 (W 6.0)", "123", "Reach", "دانشکدهٔ علوم؛ ظرفیت محدود",
     "https://www.helsinki.fi/en/degree-programmes/data-science-masters-programme")
+
+# ===== کانادا بدون کبک (CAD) — کشور هشتم (نسخهٔ ۳.۱۲، ۲۹ سپتامبر ۲۰۲۶) =====
+# به خواست شما کبک (McGill، Concordia، Montréal) حذف شد: PR کبک فرانسه می‌خواهد. UBC/SFU نیامده‌اند: کف رسمی ایران ۱۶/۲۰ روی کل دوره (معدل کل شما ۱۵.۷۷).
+# Waterloo (کف ۷۸٪ + شهریهٔ رسمی پیدا نشد)، Dalhousie/Ontario Tech/Regina (جدول شهریهٔ رسمی از ایران بارگذاری نشد) و Queen's/McMaster/Western (Reach، بدون رقم رسمی) عمداً نیامده‌اند.
+# شهریه‌ها: رسمی 2026/27 مگر جایی که «≈» آمده. «پایان‌نامه‌ای» = استاد راهنما + معمولاً TA/RA؛ «درسی» = بدون فاندینگ.
+add("کانادا", "Memorial University of Newfoundland (MUN)", "StJohns", "MSc Computer Science — thesis route", "SE", "۲ سال", "CAD 1,611 × ۶ ترم = CAD 9,666 برای کل دوره (Master's Payment Plan A، رسمی 2026/27) + ≈ CAD 1,300 هزینه‌های اجباری/سال", ("CAD", 4833, None),
+    "کارشناسی ۴ ساله با «Second Class» (B ≈ ۷۵٪) — معادل ایرانی رسمی ندارد (معمولاً ۱۴–۱۵/۲۰)؛ برای مسیر پایان‌نامه‌ای استاد راهنما لازم است", "6.5 (هر بخش ≥ 6.0)", "≈ 800+ (QS 2026)", "Target", "ارزان‌ترین ارشد کل جدول (کل شهریه ≈ $6,800)؛ پرداخت در ۶ قسط؛ MCP (بیمهٔ استانی) رایگان با مجوز ≥ ۱۲ ماه؛ شهر کوچک و دور، بازار IT کوچک (Verafin/Nasdaq)؛ مهلت پاییز ≈ فوریه ۲۰۲۷ (چک شود)",
+    "https://www.mun.ca/sgs/media/production/memorial/academic/school-of-graduate-studies/school-of-graduate-studies/media-library/MinimumExpense.pdf")
+add("کانادا", "Memorial University of Newfoundland (MUN)", "StJohns", "MSc Computer Science — non-thesis (course) route", "SE", "۲ سال", "CAD 2,600 × ۶ ترم = CAD 15,600 برای کل دوره (رسمی 2026/27، تمام‌وقت) + ≈ CAD 1,300 هزینه‌های اجباری/سال", ("CAD", 7800, None),
+    "همان کف B؛ بدون استاد راهنما → پذیرش آسان‌تر؛ بدون TA/RA تضمینی", "6.5 (هر بخش ≥ 6.0)", "≈ 800+ (QS 2026)", "Safe/Target", "ارزان‌ترین مسیر «درسی» ۸ کشور؛ همان مدرک MSc؛ PGWP ۳ ساله؛ خوابگاه Paton College CAD 5,255/ترم با غذا",
+    "https://www.mun.ca/sgs/media/production/memorial/academic/school-of-graduate-studies/school-of-graduate-studies/media-library/MinimumExpense.pdf")
+add("کانادا", "Memorial University of Newfoundland (MUN)", "StJohns", "Master of Artificial Intelligence (MAI، درسی)", "AI", "۱۶ ماه (۱.۳۳ سال)", "Payment Plan D: CAD 2,416.50 × ۴ + هزینهٔ ویژهٔ CAD 20,282 = CAD 29,948 برای کل دوره (رسمی 2026/27)", ("CAD", 22460, None),
+    "کارشناسی CS/مهندسی با B؛ درسی (بدون استاد راهنما)", "6.5 (هر بخش ≥ 6.0)", "≈ 800+ (QS 2026)", "Target", "تنها ارشد AI کانادا که در بودجهٔ $40k جا می‌شود (شهریه ≈ $21.1k + تمکن $16.5k = $37.6k ✅)؛ ۱۶ ماه پیوسته؛ MASc Software Engineering همین دانشگاه هم همین قیمت است",
+    "https://www.mun.ca/sgs/media/production/memorial/academic/school-of-graduate-studies/school-of-graduate-studies/media-library/MinimumExpense.pdf")
+add("کانادا", "University of Manitoba", "Winnipeg", "MSc Computer Science (thesis یا course-based)", "SE", "۲ سال", "CAD 6,909.96 × ۲ ترم سال اول = CAD 13,820 + هزینهٔ ادامه CAD 675 × ۴ ترم = ≈ CAD 16,500 برای کل دوره (رسمی 2025/26؛ 2026/27 ≈ +۳–۴٪)", ("CAD", 8260, None),
+    "کف رسمی ایران: ۱۵/۲۰ در دو سال آخر (شما ۱۶.۹۲ ✓) + کارشناسی ۴ ساله؛ پایان‌نامه‌ای: استاد راهنما", "6.5 (هر بخش ≥ 6.0)", "≈ 690 (QS 2026)", "Target", "تنها دانشگاه بزرگ کانادا با کف ایرانی رسمیِ «دو سال آخر» — با ۱۶.۹۲ واجد شرایطید؛ MPNP مسیر «Graduate Internship» (ارشد + کارآموزی Mitacs → PR بدون پیشنهاد کار)؛ بیمهٔ استانی برای دانشجوی بین‌المللی نیست (بیمهٔ دانشگاه ≈ CAD 700/سال)؛ مهلت ≈ ژانویه ۲۰۲۷ (چک شود)",
+    "https://umanitoba.ca/registrar/tuition-fees/2025-2026-graduate-tuition-and-fees-archive")
+add("کانادا", "University of Saskatchewan (USask)", "Saskatoon", "MSc Computer Science (thesis)", "SE", "۲ سال", "CAD 4,279 × ۳ ترم = CAD 12,837/سال (رسمی 2026/27، نرخ استاندارد پایان‌نامه‌ای) + ≈ CAD 1,100 هزینه‌های اجباری/سال", ("CAD", 12837, None),
+    "کارشناسی ۴ ساله با ≥ ۷۰٪ (B) در دو سال آخر — معادل ایرانی رسمی نیافتم (≈ ۱۵/۲۰)؛ استاد راهنما لازم", "6.5 (هر بخش ≥ 6.0)", "≈ 350 (QS 2026)", "Target", "بیمهٔ استانی رایگان؛ خوابگاه Graduate House CAD 1,212–1,504؛ Seager Wheeler CAD 673/ماه؛ حداقل دستمزد CAD 15.70 (اکتبر ۲۰۲۶)؛ مهلت ≈ ژانویه–فوریه ۲۰۲۷ (چک شود)",
+    "https://grad.usask.ca/funding/tuition.php")
+add("کانادا", "University of Alberta (UAlberta)", "Edmonton", "MSc Computing Science — thesis-based", "SE", "۲ سال", "برنامه‌محور: CAD 10,518.72/سال برای ورودی ۲۰۲۶ (رسمی، ثابت‌شده) و ۵.۵٪ کاهش برای ورودی پاییز ۲۰۲۷ ≈ CAD 9,940/سال + ≈ CAD 1,800 هزینه‌های اجباری/سال", ("CAD", 9940, None),
+    "GPA ≥ 3.0 روی ۶۰ واحد آخر (رسمی FGSR)؛ گروه CS عملاً ≈ 3.5 = ≈ ۱۷/۲۰ ایران (منبع ثانویه) → دو سال آخر شما ۱۶.۹۲ مرزی؛ استاد راهنما لازم", "6.5 (هر بخش ≥ 6.0؛ گروه CS ممکن است 7 بخواهد — چک شود)", "≈ 94 (QS 2026)", "Target/Reach", "بهترین برند بین گزینه‌های داخل بودجه (Amii، RL/ML)؛ «بیشتر دانشجویان پایان‌نامه‌ای با TA/RA تضمینی ۵ ترم» (FAQ رسمی)؛ AHCIP (بیمهٔ استانی) رایگان؛ بدون مالیات فروش استانی؛ مهلت ۱۵ دسامبر ۲۰۲۶ (فاندینگ) / ۱۵ ژانویه ۲۰۲۷",
+    "https://www.ualberta.ca/en/graduate-studies/fees-funding/tuition-fees/instructional-fees-international.html")
+add("کانادا", "University of Alberta (UAlberta)", "Edmonton", "MSc Computing Science — course-based", "SE", "۲ سال", "CAD 826.36 به ازای هر واحد (ورودی ۲۰۲۶) × ≈ ۳۰ واحد ≈ CAD 24,800؛ ورودی ۲۰۲۷ +۵.۵٪ ≈ CAD 26,150 برای کل دوره (≈ CAD 13,100/سال) + ≈ CAD 1,800 هزینه‌های اجباری/سال", ("CAD", 13077, None),
+    "همان کف 3.0 روی ۶۰ واحد آخر؛ بدون استاد راهنما → پذیرش آسان‌تر از پایان‌نامه‌ای؛ بدون TA/RA", "6.5 (هر بخش ≥ 6.0؛ چک شود)", "≈ 94 (QS 2026)", "Target", "مسیر «درسی» یک دانشگاه Top-100 داخل بودجه (شهریه ≈ $18.4k + تمکن $16.5k = $35k ✅)؛ تعداد واحد دقیق را با گروه چک کنید؛ مهلت ۱۵ ژانویه ۲۰۲۷",
+    "https://www.ualberta.ca/en/graduate-studies/fees-funding/tuition-fees/instructional-fees-international.html")
+add("کانادا", "University of Calgary (UCalgary)", "Calgary", "MSc Computer Science — thesis-based", "SE", "۲ سال", "CAD 2,858.55 × ۳ ترم = CAD 8,575.65/سال (رسمی 2026/27) + ≈ CAD 1,000 هزینه‌های عمومی/سال؛ فاندینگ تضمینی ارشد پایان‌نامه‌ای بین‌المللی CAD 25,455/سال × ۲ سال (رسمی، ورودی‌های از ژانویه ۲۰۲۶)", ("CAD", 8576, None),
+    "GPA ≥ 3.0 روی نیمهٔ دوم کارشناسی (رسمی G.A.1) — معادل ایرانی رسمی ندارد (۱۶.۹۲ دو سال آخر ≈ B+)؛ استاد راهنما لازم", "6.5 (هر بخش ≥ 6.0)", "≈ 180 (QS 2026)", "Target/Reach", "تنها گزینهٔ ۸ کشور با «حداقل فاندینگ تضمینی» بالاتر از شهریه + بخشی از زندگی (CAD 25,455 − شهریه ≈ CAD 16,900/سال ≈ CAD 1,400/ماه)؛ AAIP Accelerated Tech Pathway برای PR؛ AHCIP رایگان؛ مهلت ≈ اول تا اواسط ژانویه ۲۰۲۷ (چک شود)",
+    "https://calendar.ucalgary.ca/pages/bdf3d650a14247e4912def1671b7ba09")
+add("کانادا", "University of Victoria (UVic)", "Victoria", "MSc Computer Science (thesis)", "SE", "۲ سال", "≈ CAD 2,746 × ۳ قسط = ≈ CAD 8,240/سال (رقم 2025/26 در FAQ رسمی دانشکده؛ جدول 2026/27 چک شود) + ≈ CAD 1,200 هزینه‌های اجباری/سال + MSP CAD 75/ماه", ("CAD", 8238, None),
+    "B+ (≈ ۷۷٪) در دو سال آخر — معادل ایرانی رسمی نیافتم (احتمالاً ۱۶/۲۰ روی دو سال آخر)؛ استاد راهنما لازم", "6.5 (هر بخش ≥ 6.0)", "≈ 350 (QS 2026)", "Target/Reach", "BC PNP «International Post-Graduate» (ارشد STEM در BC → PR بدون پیشنهاد کار)؛ شهر گران و بازار کوچک (ونکوور ۹۰ دقیقه)؛ حداقل دستمزد BC CAD 18.25؛ مهلت ≈ ۱۵ دسامبر ۲۰۲۶ برای بین‌المللی‌ها (چک شود)",
+    "https://www.uvic.ca/graduate/programs/graduate-programs/assets/_common/tuition-fees-degree-intl-meng.php")
+add("کانادا", "Carleton University", "Ottawa", "Master of Computer Science (MCS، thesis؛ گرایش Data Science, Analytics & AI هم هست)", "SE", "۲ سال", "≈ CAD 26,641/سال (2025/26، پایان‌نامه‌ای — منبع ثانویه)؛ رسمی پاییز ۲۰۲۶ برای مسیر غیرپایان‌نامه‌ای: CAD 9,668.99/ترم × ۳ = CAD 29,007/سال + ≈ CAD 2,500 هزینه‌های اجباری (UHIP، U-Pass)", ("CAD", 26641, 29007),
+    "B+ (۷۷٪) در دو سال آخر؛ پایان‌نامه‌ای با استاد راهنما و معمولاً TA/RA ≈ CAD 18–24k/سال", "6.5 (هر بخش ≥ 6.0)", "≈ 560 (QS 2026)", "Target", "اتاوا: دولت فدرال + Shopify + دفاعی؛ OINP Masters Graduate برای PR؛ بدون فاندینگ خارج بودجه (شهریه ≈ $37.5k)؛ فقط با نامهٔ فاندینگ داخل بودجه؛ مهلت ≈ ۱ فوریه ۲۰۲۷ (چک شود)",
+    "https://carleton.ca/studentaccounts/tuition-fees/grad-per-cred_f26w27_intl/")
+add("کانادا", "University of Windsor", "Windsor", "Master of Applied Computing (MAC، درسی، با co-op اختیاری)", "SE", "۱۶ ماه (۱.۳۳ سال)", "≈ CAD 30,300–30,900/سال ≈ CAD 40–41k برای ۱۶ ماه (منابع ثانویه ۲۰۲۵–۲۶؛ صفحهٔ رسمی شهریه از دسترس خارج شده — با دانشگاه چک شود) + بیمه/کارگاه ≈ CAD 3,000", ("CAD", 30600, None),
+    "کارشناسی ۴ ساله CS/مرتبط با ≥ ۷۰٪ (B) — مسیر کلاسیک ایرانی‌ها؛ درسی، بدون استاد راهنما", "7.0 (هر بخش ≥ 6.5) — چک شود", "≈ 650 (QS 2026)", "Safe", "امن‌ترین پذیرش کانادا برای معدل ۱۵.۷۷، ولی گام ۱ ❌ (≈ $28.7k شهریه + $16.5k تمکن = $45k)؛ co-op ۴–۸ ماه با حقوق؛ ۴۵ دقیقه تا دیترویت؛ OINP Masters Graduate",
+    "https://www.uwindsor.ca/finance/fee-estimator")
+add("کانادا", "University of Toronto", "Toronto", "MScAC — Master of Science in Applied Computing (۱۶ ماه، ۸ ماه کارآموزی با حقوق)", "AI", "۱۶ ماه (۱.۳۳ سال)", "کل شهریه و هزینه‌ها برای ۱۶ ماه: ≈ CAD 90,050 برای بین‌المللی‌ها (رسمی، ورودی سپتامبر ۲۰۲۶؛ شامل CAD 2,200 پیش‌برنامه)", ("CAD", 67540, None),
+    "کف SGS برای ایران ۱۵/۲۰ ولی MScAC عملاً A− = ۱۷/۲۰ روی سال‌های آخر (سال آخر شما ۱۷.۰۳، دو سال آخر ۱۶.۹۲ → مرزی)؛ مصاحبه؛ رقابت شدید", "7.0 (W/S ≥ 6.5)", "≈ 29 (QS 2026)", "Reach", "بهترین برند و بازار (تورنتو)؛ کارآموزی ۸ ماهه ≈ CAD 40–55k حقوق دارد ولی بعد از پرداخت شهریه؛ گام ۱ ❌ با فاصلهٔ زیاد ($63.5k شهریه)؛ مهلت ≈ ۱ دسامبر ۲۰۲۶ (چک شود)",
+    "https://mscac.utoronto.ca/apply/")
+add("کانادا", "Memorial University of Newfoundland (MUN)", "StJohns", "MASc Software Engineering (درسی، ۱۶ ماه)", "SE", "۱۶ ماه (۱.۳۳ سال)", "Payment Plan D: CAD 2,416.50 × ۴ + هزینهٔ ویژهٔ CAD 20,282 = CAD 29,948 برای کل دوره (رسمی 2026/27)", ("CAD", 22460, None),
+    "کارشناسی مهندسی/CS با B؛ درسی", "6.5 (هر بخش ≥ 6.0)", "≈ 800+ (QS 2026)", "Target", "همان ساختار و قیمت MAI؛ برای کسی که مهندسی نرم‌افزار می‌خواهد نه AI؛ داخل بودجه ($37.6k)",
+    "https://www.mun.ca/sgs/media/production/memorial/academic/school-of-graduate-studies/school-of-graduate-studies/media-library/MinimumExpense.pdf")
 
 PROGRAMS = P
 

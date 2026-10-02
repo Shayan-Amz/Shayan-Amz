@@ -12,6 +12,9 @@ Universities.xlsx کاربر (۷ دانشگاه کانادا: آلبرتا، ک�
 فرض «فقط معدل سال آخر».
 
 تاریخ داده‌ها: ۱ اکتبر ۲۰۲۶ (Guelph: ۲ اکتبر ۲۰۲۶) · نرخ ارز: CAD 1 = USD 0.705 (۲۹ سپتامبر ۲۰۲۶)
+
+شیت‌های ۴ و ۵ («خوابگاه» و «خوابگاه — قیمت‌ها»، ۲ اکتبر ۲۰۲۶، به درخواست کاربر): خوابگاه ارشد در هر ۸ دانشگاه از صفحه‌های رسمی — تضمین، ددلاین،
+ودیعه و بازپرداخت با رد ویزا، و قیمت‌های 2026–27 با منبع و تاریخ هر عدد؛ مقایسه با بودجهٔ ماهانهٔ مدل و اتاق خصوصی.
 """
 
 from openpyxl import Workbook
@@ -268,11 +271,12 @@ c = ws.cell(row=note_r, column=1, value=(
     "راهنما: ✅ داخل بودجه در گام۱ (آنچه سفارت می‌بیند) · ❌ بیرون بودجه در گام۱ · ⚠️ مشروط/نیازمند تأیید. "
     "ستون «مسیر جایگزین» مهم‌ترین ستون این فایل است: در کانادا مسیر پایان‌نامه‌ای (با فاندینگ) معمولاً ارزان‌تر از مسیر درسیِ همین دانشگاه است — چیزی که فایل قبلی شما کلاً نداشت. "
     "بودجهٔ نهایی شما $40,000 برای کل دوره است، نه ۳۲ هزار دلار در سال که فایل قبلی فرض کرده بود. "
-    "ردیف ۸ (Guelph) در فایل اصلی شما نبود و بعداً اضافه شد؛ برخلاف ردیف‌های ۱–۷ (فقط شهریه)، گام۱ آن هزینهٔ اجباری و UHIP را هم دارد؛ رنگ زرد یعنی «مشروط به نامهٔ فاندینگ»."
+    "ردیف ۸ (Guelph) در فایل اصلی شما نبود و بعداً اضافه شد؛ برخلاف ردیف‌های ۱–۷ (فقط شهریه)، گام۱ آن هزینهٔ اجباری و UHIP را هم دارد؛ رنگ زرد یعنی «مشروط به نامهٔ فاندینگ». "
+    "خوابگاه هر ۸ دانشگاه (تضمین، ددلاین، ودیعه، قیمت 2026–27 با منبع) در شیت‌های «خوابگاه» و «خوابگاه — قیمت‌ها» است؛ در گام۱ نیست و در گام۲ (زندگی واقعی) می‌آید."
 ))
 c.font = f_note
 c.alignment = a_rtl
-ws.row_dimensions[note_r].height = 62
+ws.row_dimensions[note_r].height = 80
 ws.freeze_panes = "C5"
 
 # ============================================================
@@ -410,11 +414,531 @@ for i in range(len(alt)):
 ws3.freeze_panes = "A5"
 
 # ============================================================
-# شیت ۴ — منابع
+# شیت ۴ و ۵ — خوابگاه (قوانین/تضمین/ددلاین/ودیعه) و خوابگاه — قیمت‌ها (۸ دانشگاه) — ۲ اکتبر ۲۰۲۶
+# ============================================================
+import math
+
+HOUS_DATE = "۲ اکتبر ۲۰۲۶"
+CAD_USD = 0.705  # همان نرخ ۲۹ سپتامبر ۲۰۲۶ بقیهٔ فایل
+
+# ---- نشانی‌های رسمی (یک‌جا؛ هم در شیت‌ها هم در «منابع» استفاده می‌شود) ----
+U = {
+    "ab_unit": "https://www.ualberta.ca/en/residence/our-residences/unit-types.html",
+    "ab_grad": "https://www.ualberta.ca/en/residence/our-residences/graduate-residence.html",
+    "ab_hub": "https://www.ualberta.ca/en/residence/our-residences/hub.html",
+    "ab_apply": "https://www.ualberta.ca/en/residence/apply/index.html",
+    "ab_guar": "https://www.ualberta.ca/en/residence/apply/guaranteed-housing.html",
+    "ab_cancel": "https://www.ualberta.ca/en/residence/apply/cancellation-policy.html",
+    "cg_rates": "https://www.ucalgary.ca/ancillary/residence/live-us/places-live/rates-2026-2027",
+    "cg_crow": "https://www.ucalgary.ca/ancillary/residence/live-us/places-live/graduate/crowsnest-hall",
+    "cg_apply": "https://www.ucalgary.ca/ancillary/residence/live-with-us/application-information/application-process",
+    "uo_cmp": "https://www.uottawa.ca/campus-life/housing/compare-residences",
+    "uo_hs": "https://www.uottawa.ca/campus-life/housing/hyman-soloway",
+    "uo_apply": "https://www.uottawa.ca/campus-life/housing/apply-residence",
+    "uo_dates": "https://www.uottawa.ca/campus-life/housing/dates-deadlines",
+    "mc_price": "https://housing.mcmaster.ca/10bay-pricing/",
+    "mc_apply": "https://housing.mcmaster.ca/graduate-residence/10bayapply/",
+    "mc_faqs": "https://10bayliving.ca/faqs/",
+    "mc_resfaq": "https://housing.mcmaster.ca/residence-faq/",
+    "mc_news": "https://news.mcmaster.ca/mcmasters-graduate-residence-means-new-housing-options-for-students/",
+    "dl_cost": "https://www.dal.ca/life-at-dal/housing/apply-for-residence/getting-started/costs-fees.html",
+    "dl_dates": "https://www.dal.ca/life-at-dal/housing/apply-for-residence/getting-started/important-dates-deadlines.html",
+    "dl_offer": "https://www.dal.ca/life-at-dal/housing/apply-for-residence/accepting-room-offer.html",
+    "dl_apply": "https://www.dal.ca/life-at-dal/housing/apply-for-residence.html",
+    "dl_gh": "https://www.dal.ca/life-at-dal/housing/residences/halifax-campus/grad-house.html",
+    "dl_gl": "https://www.dal.ca/life-at-dal/housing/residences/halifax-campus/glengary-apartments.html",
+    "uv_fees": "https://www.uvic.ca/residence/future-residents/fees/index.php",
+    "uv_grad": "https://www.uvic.ca/residence/future-residents/apply/graduate/index.php",
+    "uv_contract": "https://www.uvic.ca/residence/assets/docs/residence-contract-2026-27.pdf",
+    "uv_summer": "https://www.uvic.ca/residence/future-residents/apply/summer/index.php",
+    "cu_fees": "https://housing.carleton.ca/future-residents/fees/",
+    "cu_apply": "https://housing.carleton.ca/future-residents/apply-to-residence/",
+    "cu_leeds": "https://housing.carleton.ca/buildings/leeds-house/",
+    "gu_apply": "https://www.uoguelph.ca/housing/apply",
+    "gu_fees": "https://www.uoguelph.ca/housing/fees-deposits",
+    "gu_wv": "https://www.uoguelph.ca/housing/communities/west-village",
+    "gu_cmp": "https://www.uoguelph.ca/housing/communities/compare-communities",
+}
+
+
+def urls(*keys):
+    return "\n".join(U[k] for k in keys)
+
+
+# ---- بودجهٔ ماهانهٔ مدل (کل زندگی) و اتاق خصوصی (CAD/ماه) — از Table_final / گزارش §28.7 ----
+BUDGET = {"Edmonton": (1500, 1800), "Calgary": (1650, 2000), "Ottawa": (1800, 2200), "Hamilton": (1400, 1700),
+          "Halifax": (1650, 2000), "Victoria": (1900, 2300), "Guelph": (1800, 1900)}
+PRIVATE = {"Edmonton": (700, 1000), "Calgary": (800, 1200), "Ottawa": (800, 1200), "Halifax": (750, 1100),
+           "Victoria": (900, 1300)}  # همیلتون و گوئلف: رقم نداریم
+
+
+def fmt(n):
+    return f"{int(round(n)):,}"
+
+
+def rng(lo, hi=None):
+    if hi is None or int(round(lo)) == int(round(hi)):
+        return fmt(lo)
+    return f"{fmt(lo)}–{fmt(hi)}"
+
+
+def signed(n):
+    n = int(round(n))
+    return ("+" if n > 0 else ("−" if n < 0 else "")) + f"{abs(n):,}"
+
+
+# ============================================================
+# شیت ۴ — «خوابگاه»: یک ردیف برای هر دانشگاه
+# ============================================================
+ws_h = new_sheet(
+    "خوابگاه", [5, 14, 46, 38, 34, 46, 50, 46, 40, 60, 14],
+    "خوابگاه ارشد — ۸ دانشگاه: چه دارند، تضمین هست یا نه، کی اپلای، چقدر پیش‌پرداخت، ودیعه با رد ویزا چه می‌شود",
+    f"بازدید {HOUS_DATE} · فقط صفحه‌های رسمی خودِ دانشگاه‌ها · ورودی هدف سپتامبر ۲۰۲۷ (تاریخ‌های ۲۰۲۷ از صفحه‌های امسال؛ هر جا نیست «تأییدنشده» نوشته شده) · "
+    "نتیجه: در هر ۸ دانشگاه خوابگاه جدا از شهریه است (قرارداد، ودیعه و صورت‌حساب جدا) و در گام۲ بودجه می‌آید، نه گام۱ · تضمین برای ارشدِ بین‌المللی فقط در Guelph است · "
+    "قیمت‌ها در شیت «خوابگاه — قیمت‌ها».",
+)
+header_row(ws_h, 4, [
+    "ردیف", "دانشگاه", "خوابگاه مناسب ارشد (چه دارند)", "تضمین برای ارشدِ بین‌المللی؟",
+    "جدا از شهریه؟ (صورت‌حساب و شمول)", "شروع درخواست و ددلاین (Fall 2027)",
+    "پیش‌پرداخت و بازپرداخت (ودیعه ← رد ویزا)", "قرارداد و تابستان", "تأییدنشده / نکته",
+    "منابع رسمی", "تاریخ بازدید",
+])
+
+hous = [
+    [
+        "۱", "Alberta — ادمونتون",
+        "• Graduate Residence — فقط ارشد؛ ۴ ساختمان (Rockcress، Stonecrop، Juniper، Speedwell)؛ واحد مبلهٔ مشترک یا استودیو که تک‌تک اجاره می‌شود\n"
+        "• HUB — ارشد و کارشناسیِ سال‌بالا؛ استودیو و یک‌خوابه (زوج‌ها در یک‌خوابه)",
+        "❌ ندارد — تضمین فقط برای «سال اول کارشناسی» است (ددلاین ۳۰ آوریل)\n"
+        "• ارشد: انتخاب ساختمان و اتاق با time slot است و ترتیبش به تاریخ درخواست بستگی دارد؛ پس زود اپلای کنید",
+        "جدا — اجارهٔ ماهانه/قرارداد خوابگاه، نه بخشی از شهریه یا هزینه‌های اجباری؛ روش صورت‌حساب در صفحه‌ها نیامده\n"
+        "• HUB: اجاره شامل اینترنت بی‌سیم، گرما، آب و برق است",
+        "• الان باز است: Fall 2027 و Winter 2028\n"
+        "• برای فرم فقط CCID لازم است؛ بعد از ثبت درخواست برنامه ≤ ۷۲ ساعت صادر می‌شود و پذیرش لازم نیست\n"
+        "• پیشنهاد اتاق: اواخر بهار (ایمیل دانشگاه)",
+        "• درخواست CAD 25 (غیرقابل‌برگشت)\n"
+        "• ودیعهٔ CAD 500 برای قبول offer (= اجارهٔ ماه اول؛ غیرقابل‌برگشت)\n"
+        "• ✅ اگر ویزا رد شود ودیعه برمی‌گردد: ظرف ۱۰ روز از اطلاع، با نامهٔ رد و پیش از move-in\n"
+        "• لغو بدون جریمهٔ قرارداد تا ۳۱ ژوئیه (Fall)؛ بعد از گرفتن کلید باید اجارهٔ باقی‌ماندهٔ قرارداد را بدهید (+ یک ماه اگر کمتر از ۳۰ روز خبر بدهید)",
+        "• Graduate Residence: قرارداد سالانه تا ۳۱ جولای (اولی ۱۱ ماه، تمدیدها ۱۲ ماه)\n"
+        "• HUB: استودیو و یک‌خوابه ماه‌به‌ماه؛ ۲ و ۴ خوابه ۸ ماهه (+ تابستان ۲–۴ ماهه)",
+        "⚠️ صفحهٔ Unit Types سال نرخ ندارد؛ نرخ صفحهٔ خود Graduate Residence لود نشد؛ شمول قبوض فقط در HUB تصریح شده\n"
+        "⚠️ همان صفحه می‌گوید فقط «current U of A students» واجدند — از housing@ualberta.ca بپرسید دانشجوی جدید ارشد پیش از پذیرش می‌تواند یا نه",
+        urls("ab_unit", "ab_grad", "ab_hub", "ab_apply", "ab_guar", "ab_cancel"), HOUS_DATE,
+    ],
+    [
+        "۲", "Calgary — کلگری",
+        "• Crowsnest Hall — برای ارشد، دارندگان مدرک کارشناسی و mature (۲۷+ سال)؛ استودیو، یک‌خوابه و دوخوابه با آشپزخانهٔ کامل",
+        "❌ ندارد — قرعه؛ صفحه صریح می‌گوید تضمین نمی‌کند که متقاضی offer بگیرد\n"
+        "• تضمین فقط برای سال‌اولیِ تازه‌دیپلمه (زیر ۲۱ سال) با درخواست تا ۱ مه",
+        "جدا — قسط‌های خوابگاه (سیکل 2026–27: ۱۸ سپتامبر و ۲۹ ژانویه) مستقل از شهریه\n"
+        "• شامل مبلمان، قبوض، اینترنت، فعالیت‌های ساکنان و بیمهٔ مستأجر",
+        "• سیکل 2026/27: صفحه از ≈ دسامبر ۲۰۲۵ «Applications are open» بود\n"
+        "• درخواست‌های تا ۱۰ فوریه وارد قرعهٔ time slot (انتخاب اتاق) می‌شوند\n"
+        "• تاریخ‌های ۲۰۲۷ هنوز منتشر نشده — احتمالاً مشابه (تأییدنشده)",
+        "• درخواست CAD 65 (غیرقابل‌برگشت)\n"
+        "• advance payment برای قبول offer: سال‌اولی‌ها CAD 1,000؛ مبلغ ارشد پیدا نشد\n"
+        "• بازپرداخت در صورت رد ویزا: ذکر نشده",
+        "• ۸ ماه (سپتامبر–آوریل)\n"
+        "• تابستان 2026 جدا، هر ترم (۳ مه–۲۲ ژوئن و ۲۸ ژوئن–۱۶ اوت): Crowsnest استودیو CAD 2,795 · یک‌خوابه 2,985 · دوخوابه 2,306\n"
+        "• meal plan فقط برای سال‌اولی‌ها اجباری است",
+        "دوخوابهٔ مشترک Crowsnest ارزان‌ترین خوابگاهِ ارشد در هر ۸ دانشگاه است (≈ CAD 1,153 در ماه)",
+        urls("cg_rates", "cg_crow", "cg_apply"), HOUS_DATE,
+    ],
+    [
+        "۳", "uOttawa — اتاوا",
+        "• ساختمان ویژهٔ ارشد ندارد؛ ارشدها برای همان قراردادهای عمومی درخواست می‌دهند\n"
+        "• ۱۲ ماهه (سپتامبر–اوت): Hyman Soloway (روی کمپوس، ۲۳۹ تخت، اتاق در آپارتمان ۲–۴ خوابه)، 45 Mann (کنار کمپوس، حمام خصوصی)، Annex\n"
+        "• ۸ ماهه: Rideau و Friel (غذا اختیاری)؛ سنتی‌ها، Henderson و 90 University با meal plan اجباری",
+        "❌ ندارد — تضمین بین‌المللی فقط برای «کارشناسی تمام‌وقت یا graduate diploma» است (متن Fall 2026)؛ master مشمول نیست\n"
+        "• تضمین کانادایی‌ها هم فقط کارشناسیِ سال اول",
+        "جدا — اقساط خوابگاه (پاییز ۲۰۲۶: ۲ اکتبر · زمستان ۲۰۲۷: ۲۹ ژانویه؛ ۱۲ماهه‌ها قسط تابستانی هم دارند — در سیکل قبل ۲۲ مه)\n"
+        "• Hyman Soloway: گرما، برق، Wi-Fi و تهویه شامل است؛ meal plan اختیاری",
+        "• ۸ دسامبر ۲۰۲۶ ساعت ۹ صبح (وقت اتاوا): شروع درخواستِ تازه‌پذیرفته‌شده‌ها، بعد از دریافت offer\n"
+        "• به غیرتضمینی‌ها offer از اواسط ژوئن شروع می‌شود و تا تابستان ادامه دارد؛ ترتیب = اولین‌نفر\n"
+        "• اگر تا اواسط ژوئیه offer نگرفتید، خود دانشگاه می‌گوید بازار بیرون را بگردید",
+        "• ودیعهٔ CAD 950 (قواعد 2026–27)\n"
+        "• بازگشت: تا ۱۵ ژوئن ۱۰۰٪ منهای CAD 105؛ تا ۳۰ ژوئن ۵۰٪؛ بعدش صفر\n"
+        "• مبلغ به student account برمی‌گردد (برای برگشت به کارت باید فرم بدهید)\n"
+        "• رد ویزا: ذکر نشده",
+        "• ۱۲ ماه (سپتامبر–اوت) برای Hyman Soloway، 45 Mann و Annex\n"
+        "• ۸ ماه (سپتامبر–آوریل) برای بقیه",
+        "⚠️ شمول قبوض در 45 Mann و Annex تأیید نشد (فقط Hyman Soloway)\n"
+        "⚠️ تاریخ‌ها و ودیعهٔ ۲۰۲۷–۲۸ هنوز منتشر نشده",
+        urls("uo_cmp", "uo_hs", "uo_apply", "uo_dates"), HOUS_DATE,
+    ],
+    [
+        "۴", "McMaster — همیلتون",
+        "• 10 Bay — خوابگاهِ McMaster در پایین‌شهر همیلتون (برج ۳۰ طبقه، ۶۴۴ اتاق، شاتل مستقیم به کمپوس)؛ ارشد، پسادکتری، کارشناسی و کارکنان\n"
+        "• خوابگاه‌های داخل کمپوس: اولویت با تازه‌دیپلمه‌هاست (FAQ رسمی)؛ ساختمان جدای ارشد در کمپوس پیدا نکردم",
+        "⚠️ ذکر نشده — تضمین یا لیست انتظار در صفحه‌ها نیامده؛ ولی ورود آسان است: بدون ودیعه، بدون اجارهٔ اولین/آخرین ماه، بدون چک اعتباری و سابقهٔ اجاره",
+        "جدا — اجارهٔ ماهانه مستقیماً روی McMaster student account می‌نشیند، نه شهریه\n"
+        "• شامل مبلمان، گرما، آب، برق، Wi-Fi و شاتل",
+        "• رولینگ؛ تاریخ مشخص پیدا نشد (سایت 10bayliving.ca برای من لود نشد؛ فقط خلاصهٔ جست‌وجو)\n"
+        "• اپلای از طریق Residence Application و Housing Portal (پیش‌نیازِ پذیرش در صفحه‌ها ذکر نشده)",
+        "• ودیعه ندارد؛ اجارهٔ اولین/آخرین ماه ندارد (صفحهٔ رسمی)\n"
+        "• قرارداد ۱۲ ماهه: شرایط لغو زودهنگام در صفحه‌ها نیامده",
+        "• ۱۲ ماه، از اول هر ماه؛ گزینهٔ چندساله هم هست",
+        "⚠️ قیمت‌ها سال ندارند (صفحهٔ مک‌مستر ژوئن ۲۰۲۵؛ همان اعداد در آگهی‌های مه ۲۰۲۶)؛ یک‌خوابه در آگهی‌ها تا CAD 2,426 (ثانویه)",
+        urls("mc_price", "mc_apply", "mc_faqs", "mc_resfaq", "mc_news"), HOUS_DATE,
+    ],
+    [
+        "۵", "Dalhousie — هالیفاکس",
+        "• Graduate House — فقط ۱۳ نفر؛ Sexton Campus؛ تک‌اتاق؛ بدون RA\n"
+        "• Glengary Apartments — ۴۰ نفر؛ ۱۲ آپارتمان سه‌اتاقه + ۴ bachelor؛ (returning و transfer)\n"
+        "• سنتی‌ها (Howe، Shirreff، Gerard، Risley، LeMarchant) برای کارشناسی با meal plan اجباری",
+        "❌ ندارد — «New student room guarantee» فقط برای تازه‌دیپلمه‌هاست؛ تخصیص اتاق اولین‌نفر",
+        "جدا — روی همان student account (قسط پاییز ۲۲ سپتامبر 2026)؛ شامل Wi-Fi، گرما، آب و برق\n"
+        "• meal plan در Graduate House و Glengary اختیاری است",
+        "• درخواست‌های 2027/28: ≈ ۱ اکتبر ۲۰۲۶ (tentative)\n"
+        "• مهلت اول ۲ دسامبر ۲۰۲۶ فقط برای returning residents (≤ ۲۵۰ جا)؛ بقیه اولین‌نفر تا پر شدن\n"
+        "• باید دانشجوی تمام‌وقت و پذیرفته‌شده باشید",
+        "• درخواست CAD 50 (غیرقابل‌برگشت)\n"
+        "• ودیعهٔ تأیید اتاق CAD 500 — غیرقابل‌برگشت؛ استیناف فقط برای شرایط خارج از کنترل (پزشکی/خانوادگی)؛ «رد ویزا» ذکر نشده",
+        "• ۸ ماه (سپتامبر–آوریل)\n"
+        "• summer residence جدا",
+        "ظرفیت ناچیز (≈ ۵۳ تخت برای همهٔ returning/transfer/ارشد)\n"
+        "⚠️ دو صفحه ددلاین تضمینِ تازه‌دیپلمه را ۱ مه و ۱۵ مه نوشته‌اند (به ارشد ربطی ندارد، فقط ناهماهنگی)",
+        urls("dl_cost", "dl_dates", "dl_offer", "dl_apply", "dl_gh", "dl_gl"), HOUS_DATE,
+    ],
+    [
+        "۶", "UVic — ویکتوریا",
+        "• قرعهٔ ارشد برای Fall 2027: ≈ ۵۰ جا\n"
+        "• ارشدها در تابستان به cluster (۴ و ۲ خوابه)، آپارتمان (bachelor/یک‌خوابه) و pod دسترسی دارند؛ برای سال تحصیلی صفحهٔ ارشد نوع اتاق را نمی‌گوید — Kaplan (ثانویه): یک‌خوابه برای ارشد، cluster/pod برای کارشناسیِ سال‌بالا\n"
+        "• dormitory (با meal plan اجباری) برای تازه‌دیپلمه‌هاست",
+        "❌ ندارد — قرعه؛ صفحه می‌گوید فضای ارشد محدود است؛ تضمین فقط سال‌اولیِ تازه‌دیپلمه",
+        "جدا — قرارداد Residence Services (قسط‌ها: ۱ اوت و ۱۵ نوامبر در 2026–27)\n"
+        "• شامل گرما، آب گرم، برق و اینترنت؛ meal plan در آپارتمان و cluster اختیاری",
+        "• درخواست از اولین دوشنبهٔ اکتبر ساعت ۹ صبح PDT = ۵ اکتبر ۲۰۲۶\n"
+        "• ددلاین ورود به قرعه ۱۵ مه ۲۰۲۷ — فقط با درخواست ۸ ماهه (سپتامبر–آوریل)؛ بعد از ۱۵ مه یا فقط-ترم-پاییز = لیست انتظار\n"
+        "• offerها از ۱۵ مه تا اواخر اوت؛ ۴۸ ساعت برای پذیرش",
+        "• درخواست CAD 50 (غیرقابل‌برگشت)\n"
+        "• بعد از offer: acceptance fee CAD 1,000 (قرارداد 2026–27؛ از اجارهٔ ترم کم می‌شود، غیرقابل‌برگشت) + CAD 250 security deposit\n"
+        "• رد ویزا: ذکر نشده\n"
+        "• bursary تا CAD 1,500 فقط برای کانادایی‌هاست",
+        "• ۸ ماه (سپتامبر–آوریل)\n"
+        "• تابستان 2026 جدا (حداقل ۳۰ شب): bachelor CAD 1,334 + CAD 44.47 هر شب اضافه؛ یک‌خوابه CAD 1,666 + CAD 55.53",
+        "⚠️ نوع اتاقِ ارشد در سال تحصیلی تأیید رسمی ندارد (از جدول تابستان و Kaplan برداشت شد)",
+        urls("uv_fees", "uv_grad", "uv_contract", "uv_summer"), HOUS_DATE,
+    ],
+    [
+        "۷", "Carleton — اتاوا",
+        "• Leeds House طبقهٔ ۵ و ۶ — مخصوص ارشد؛ بیشتر سوئیت‌های دونفره (دو تک‌اتاق + یک سرویس) و یک سوئیت چهارنفره در هر طبقه؛ co-ed؛ meal plan اختیاری",
+        "❌ ندارد — صف؛ در 2026–27 «Residence is currently full» است\n"
+        "• صف: اگر تا ۲ اکتبر ۲۰۲۶ offer نیاید درخواست منقضی می‌شود\n"
+        "• تضمین فقط سال‌اولیِ تازه‌دیپلمه",
+        "جدا — روی student account؛ شامل اتاق، قبوض، اینترنت، حق عضویت Graduate Residence Council و بیمهٔ مستأجر (+ غذا اگر بخواهید)",
+        "• سیکل 2026–27: درخواست‌ها از ۲ فوریه ۲۰۲۶ باز شد؛ time ticket ۲۳ فوریه؛ انتخاب اتاق از ۳ مارس\n"
+        "• پیش‌نیاز: پذیرش در برنامهٔ ارشد (تمام‌وقت) و accept کردن offer؛ وضعیت «Applicant Acceptance» ۳–۴ روز بعد دیده می‌شود\n"
+        "• ۲۰۲۷: انتظار می‌رود مشابه (اوایل فوریه) — تأییدنشده",
+        "• درخواست CAD 50 (غیرقابل‌برگشت)\n"
+        "• Residence Advance Payment CAD 700 (قسط اول اجارهٔ خوابگاه)؛ شرایط بازگشتش برای ارشد در صفحه نیامده",
+        "• ۸ ماه (سپتامبر–آوریل)\n"
+        "• تابستان 2026: کل تابستان (۵ مه–۲۴ اوت) CAD 4,218؛ هر نیمه CAD 2,052؛ غذای تابستانی اختیاری CAD 3,190 (کل)\n"
+        "• «Guaranteed 12-Month Residence for International Students» (از سپتامبر ۲۰۲۵): ۸ ماه تضمین‌شده + تمدید تابستانی با درخواست جدا — صراحتاً شامل ارشد نمی‌گوید",
+        "ارشد اولویت ندارد و Leeds تنها خوابگاه ارشد است\n"
+        "⚠️ شمول «12-month guaranteed» برای ارشد تأییدنشده",
+        urls("cu_fees", "cu_apply", "cu_leeds"), HOUS_DATE,
+    ],
+    [
+        "۸", "Guelph — گوئلف",
+        "• West Village (۷۸ College Ave W): تاون‌هاوس ۲–۳ خوابه و آپارتمان ۲ خوابه؛ «ارشد» صراحتاً در مشخصات آمده؛ meal plan اختیاری؛ اینترنت و لاندری داخل\n"
+        "• ساختمان‌های سنتی (South، Mills، …): meal plan اجباری",
+        "✅ دارد — «دانشجوی بین‌المللیِ جدیدِ master تضمین خوابگاه دانشگاه را تا پایان دورهٔ تحصیل دارد» (متن Fall 2027–Winter 2028)\n"
+        "• شرط: درخواست + ودیعهٔ CAD 750 + قبول پذیرش — هر سه تا ۱ ژوئن\n"
+        "• PhD بین‌المللی: فقط سال اول؛ ارشد کانادایی: بدون تضمین (لیست انتظار)",
+        "جدا از شهریه و هزینه‌های اجباری؛ همه روی student account (فقط ودیعه با کارت در Housing Portal)\n"
+        "• اینترنت، لاندری، مبلمان داخل است",
+        "• Fall 2027–Winter 2028: باز شدن ۱ فوریه ۲۰۲۷\n"
+        "• برای درخواست باید offer پذیرش داشته باشید؛ ودیعه تا ۱ ژوئن لازم نیست",
+        "• ودیعهٔ CAD 750 (به Winter 2028 می‌رود؛ بعد از تضمین غیرقابل‌برگشت؛ استثناها: لغو در صف/لیست انتظار، ابطال پذیرش، تعویق)\n"
+        "• رد ویزا جزو استثناها نیست (استیناف برای شرایط خاص)\n"
+        "• جانبی: IHC CAD 28.84 در ترم؛ ماندن در تعطیلات زمستان +CAD 500؛ ورود/خروج زودتر CAD 40 در شب؛ Temporary Expanded Space CAD 3,500 در ترم",
+        "• ۸ ماه (سپتامبر–آوریل)؛ تعطیلات زمستان خارج از قرارداد\n"
+        "• تابستان 2026 جدا: تاون‌هاوس تک‌اتاق CAD 2,500 · آپارتمان یک‌نفره 3,000 · اتاق در دوخوابه 2,750 · دونفره 2,500",
+        "⚠️ نرخ‌ها tentative‌اند (۲۰۲۷–۲۸ را هیئت امنا بهار ۲۰۲۷ تعیین می‌کند)\n"
+        "⚠️ تضمین، نوع یا ساختمان اتاق را مشخص نمی‌کند (ساختمان سنتی = meal plan اجباری)\n"
+        "تنها دانشگاهِ این جدول با تضمین ارشدِ بین‌المللی",
+        urls("gu_apply", "gu_fees", "gu_wv", "gu_cmp"), HOUS_DATE,
+    ],
+]
+
+
+def est_h(values, widths, line_pt=15.0, pad=10.0, cpl_ratio=0.95, min_h=34.0, max_h=409.0):
+    """برآورد ارتفاع ردیف از طول متن و پهنای ستون (در محیط بدون رندر)."""
+    best = 1
+    for v, w in zip(values, widths):
+        if v is None:
+            continue
+        cpl = max(6, int(w * cpl_ratio))
+        n = 0
+        for seg in str(v).split("\n"):
+            n += max(1, math.ceil(len(seg) / cpl))
+        best = max(best, n)
+    return max(min_h, min(max_h, best * line_pt + pad))
+
+
+h_widths = [5, 14, 46, 38, 34, 46, 50, 46, 40, 60, 14]
+body_rows(ws_h, 5, hous, heights=[est_h(r, h_widths) for r in hous], fill_fn=None, bold_cols=(2,))
+for i in range(len(hous)):
+    for j in range(1, 12):
+        c = ws_h.cell(row=5 + i, column=j)
+        if j == 4:
+            fl = verdict_of(c.value)
+            if fl:
+                c.fill = fl
+        elif j == 9:
+            c.fill = fill_warn if "⚠️" in str(c.value) else (fill_alt if i % 2 == 1 else PatternFill(fill_type=None))
+        elif j == 10:
+            c.font = f_src
+            if i % 2 == 1:
+                c.fill = fill_alt
+        elif i % 2 == 1:
+            c.fill = fill_alt
+        c.border = border
+hn = 5 + len(hous) + 1
+ws_h.merge_cells(start_row=hn, start_column=1, end_row=hn, end_column=11)
+c = ws_h.cell(row=hn, column=1, value=(
+    "راهنما: ✅ تضمین دارد · ❌ ندارد · ⚠️ ذکر نشده/مشروط. همهٔ مبالغ CAD‌اند (دلار در شیت «خوابگاه — قیمت‌ها»). "
+    "ودیعه و رد ویزا: فقط Alberta صریحاً بازپرداخت را می‌نویسد؛ Guelph، Dalhousie و UVic غیرقابل‌برگشت‌اند و «رد ویزا» را استثنا نکرده‌اند، uOttawa فقط تا ۳۰ ژوئن، 10 Bay ودیعه ندارد — قبل از پرداخت کتباً بپرسید. "
+    "نکتهٔ سیاست: خوابگاه ظرفیت کم و قرعه/صف دارد (Dal ≈ ۵۳ تخت، UVic ≈ ۵۰ جا، Carleton امسال پر)؛ جز Guelph و Alberta روی آن به‌عنوان برنامهٔ اصلی حساب نکنید؛ برنامهٔ ب = اتاق خصوصی (شیت «خوابگاه و مسکن» در Table_final)."
+))
+c.font = f_note
+c.alignment = a_rtl
+ws_h.row_dimensions[hn].height = 78
+ws_h.freeze_panes = "C5"
+
+# ============================================================
+# شیت ۵ — «خوابگاه — قیمت‌ها»: یک ردیف برای هر قیمت (منبع و تاریخ هر عدد)
+# ============================================================
+OFF = "رسمی 2026–27"
+OFF_UNDATED = "رسمی؛ سال نرخ ذکر نشده"
+OFF_TENT = "رسمی 2026–27 (tentative)"
+
+# (دانشگاه، شهر مبنا، گزینه، برچسب قرارداد، ماه، کل_از، کل_تا، ماهانه_از، ماهانه_تا، شامل، وضع عدد، منبع)
+# اگر «ماهانه» None باشد از کل÷ماه محاسبه می‌شود؛ اگر «کل» None باشد از ماهانه×ماه (با ≈).
+PRICES = [
+    ("Alberta", "Edmonton", "Graduate Residence — اتاق در آپارتمان مشترک", "۱۱ (قرارداد اول؛ تمدیدها ۱۲)", 11, None, None, 1335, None,
+     "گرما/آب/برق/اینترنت: برای Graduate Residence تصریح نشده (HUB: شامل)", OFF_UNDATED, urls("ab_unit", "ab_grad")),
+    ("Alberta", "Edmonton", "Graduate Residence — استودیو", "۱۱ (قرارداد اول؛ تمدیدها ۱۲)", 11, None, None, 1595, None,
+     "همان بالا", OFF_UNDATED, urls("ab_unit", "ab_grad")),
+    ("Alberta", "Edmonton", "HUB — استودیو (ماه‌به‌ماه)", "ماه‌به‌ماه", None, None, None, 1595, None,
+     "اینترنت بی‌سیم، گرما، آب، برق", OFF_UNDATED, urls("ab_hub", "ab_unit")),
+    ("Alberta", "Edmonton", "HUB — یک‌خوابه (ماه‌به‌ماه؛ زوج‌ها مجازند)", "ماه‌به‌ماه", None, None, None, 1996, None,
+     "اینترنت بی‌سیم، گرما، آب، برق", OFF_UNDATED, urls("ab_hub", "ab_unit")),
+    ("Calgary", "Calgary", "Crowsnest Hall — اتاق در آپارتمان دوخوابه (مشترک)", "۸ (سپتامبر–آوریل)", 8, 9224, None, None, None,
+     "مبلمان، قبوض، اینترنت، بیمهٔ مستأجر؛ meal plan ندارد", OFF, urls("cg_rates")),
+    ("Calgary", "Calgary", "Crowsnest Hall — استودیو", "۸ (سپتامبر–آوریل)", 8, 11178, None, None, None,
+     "همان بالا", OFF, urls("cg_rates")),
+    ("Calgary", "Calgary", "Crowsnest Hall — یک‌خوابه", "۸ (سپتامبر–آوریل)", 8, 11937, None, None, None,
+     "همان بالا", OFF, urls("cg_rates")),
+    ("Calgary", None, "Crowsnest — تابستان 2026، هر ترم ≈۷ هفته (استودیو 2,795 · یک‌خوابه 2,985 · دوخوابه 2,306)", "تابستان (۲ ترم)", None, 2306, 2985, None, None,
+     "همان بالا", OFF, urls("cg_rates")),
+    ("uOttawa", "Ottawa", "Hyman Soloway — اتاق در آپارتمان ۴خوابه", "۱۲ (سپتامبر–اوت)", 12, 15601, None, None, None,
+     "گرما، برق، Wi-Fi، تهویه؛ meal plan اختیاری", OFF, urls("uo_hs", "uo_cmp")),
+    ("uOttawa", "Ottawa", "Hyman Soloway — اتاق در آپارتمان ۳خوابه", "۱۲ (سپتامبر–اوت)", 12, 16501, None, None, None,
+     "همان بالا", OFF, urls("uo_hs")),
+    ("uOttawa", "Ottawa", "Hyman Soloway — اتاق در آپارتمان ۲خوابه", "۱۲ (سپتامبر–اوت)", 12, 18757, None, None, None,
+     "همان بالا", OFF, urls("uo_hs")),
+    ("uOttawa", "Ottawa", "45 Mann — اتاق تک با حمام خصوصی (دامنهٔ قیمت)", "۱۲ (سپتامبر–اوت)", 12, 16600, 26308, None, None,
+     "شمول قبوض تأیید نشد؛ meal plan اختیاری", OFF, urls("uo_cmp")),
+    ("uOttawa", "Ottawa", "Annex — اتاق (دامنهٔ قیمت)", "۱۲ (سپتامبر–اوت)", 12, 15574, 27304, None, None,
+     "شمول قبوض تأیید نشد؛ meal plan اختیاری", OFF, urls("uo_cmp")),
+    ("McMaster", "Hamilton", "10 Bay — اتاق در دوخوابه (Standard)", "۱۲ (از اول هر ماه)", 12, None, None, 1416, None,
+     "مبله، گرما/آب/برق، Wi-Fi، شاتل؛ بدون ودیعه", OFF_UNDATED, urls("mc_price", "mc_apply")),
+    ("McMaster", "Hamilton", "10 Bay — اتاق در دوخوابه (Premium)", "۱۲ (از اول هر ماه)", 12, None, None, 1543, None,
+     "همان بالا", OFF_UNDATED, urls("mc_price")),
+    ("McMaster", "Hamilton", "10 Bay — استودیو (Basic / Standard / Premium)", "۱۲ (از اول هر ماه)", 12, None, None, 1920, 1957,
+     "همان بالا", OFF_UNDATED, urls("mc_price")),
+    ("McMaster", "Hamilton", "10 Bay — یک‌خوابه", "۱۲ (از اول هر ماه)", 12, None, None, 2126, None,
+     "همان بالا (آگهی‌ها تا 2,426 — ثانویه)", OFF_UNDATED, urls("mc_price")),
+    ("Dalhousie", "Halifax", "Graduate House — تک‌اتاق", "۸ (سپتامبر–آوریل)", 8, 10606, None, None, None,
+     "Wi-Fi، گرما، آب، برق؛ meal plan اختیاری", OFF, urls("dl_cost", "dl_gh")),
+    ("Dalhousie", "Halifax", "Glengary — تک‌اتاق در آپارتمان ۳خوابه", "۸ (سپتامبر–آوریل)", 8, 10761, None, None, None,
+     "همان بالا", OFF, urls("dl_cost", "dl_gl")),
+    ("Dalhousie", "Halifax", "Glengary — bachelor", "۸ (سپتامبر–آوریل)", 8, 12684, None, None, None,
+     "همان بالا", OFF, urls("dl_cost", "dl_gl")),
+    ("UVic", "Victoria", "Cluster — اتاق در واحد ۴خوابه", "۸ (سپتامبر–آوریل)", 8, 10330, None, None, None,
+     "گرما، آب گرم، برق، اینترنت؛ meal plan اختیاری", OFF, urls("uv_fees")),
+    ("UVic", "Victoria", "Bachelor apartment", "۸ (سپتامبر–آوریل)", 8, 10374, None, None, None,
+     "همان بالا", OFF, urls("uv_fees", "uv_contract")),
+    ("UVic", "Victoria", "One-bedroom apartment", "۸ (سپتامبر–آوریل)", 8, 12954, None, None, None,
+     "همان بالا", OFF, urls("uv_fees")),
+    ("UVic", "Victoria", "Cluster — اتاق در تاون‌هاوس ۲خوابه", "۸ (سپتامبر–آوریل)", 8, 13432, None, None, None,
+     "همان بالا", OFF, urls("uv_fees")),
+    ("Carleton", "Ottawa", "Leeds House ۵–۶ (ارشد) — فقط اتاق", "۸ (سپتامبر–آوریل)", 8, 11292, None, None, None,
+     "اتاق، قبوض، اینترنت، حق عضویت GRC، بیمهٔ مستأجر؛ بدون غذا", OFF, urls("cu_fees")),
+    ("Carleton", "Ottawa", "Leeds ۵–۶ — با meal plan Reduced (۱۰ وعده در هفته + CAD 300 Dining Dollars)", "۸ (سپتامبر–آوریل)", 8, 16112.67, None, None, None,
+     "همان بالا + غذا", OFF, urls("cu_fees")),
+    ("Carleton", "Ottawa", "Leeds ۵–۶ — با meal plan All Access (نامحدود + CAD 200 Dining Dollars)", "۸ (سپتامبر–آوریل)", 8, 18093.27, None, None, None,
+     "همان بالا + غذا", OFF, urls("cu_fees")),
+    ("Carleton", None, "تابستان 2026 — کل تابستان (۵ مه–۲۴ اوت)، اتاق تک در سوئیت مشترک", "تابستان (≈ ۳٫۷ ماه)", None, 4218, None, None, None,
+     "غذای تابستانی اختیاری: CAD 3,190 (کل)", OFF, urls("cu_apply")),
+    ("Guelph", "Guelph", "West Village — اتاق تک در تاون‌هاوس", "۸ (سپتامبر–آوریل)", 8, 10992, None, None, None,
+     "اینترنت، لاندری، مبلمان؛ meal plan اختیاری", OFF_TENT, urls("gu_fees", "gu_wv")),
+    ("Guelph", "Guelph", "West Village — آپارتمان یک‌نفره", "۸ (سپتامبر–آوریل)", 8, 11592, None, None, None,
+     "همان بالا", OFF_TENT, urls("gu_fees", "gu_wv")),
+    ("Guelph", "Guelph", "West Village — اتاق در آپارتمان دوخوابه", "۸ (سپتامبر–آوریل)", 8, 11042, None, None, None,
+     "همان بالا", OFF_TENT, urls("gu_fees", "gu_wv")),
+    ("Guelph", "Guelph", "West Village — اتاق دونفره در آپارتمان", "۸ (سپتامبر–آوریل)", 8, 10592, None, None, None,
+     "همان بالا", OFF_TENT, urls("gu_fees", "gu_wv")),
+    ("Guelph", None, "ساختمان سنتی (South، Mills، …) — اتاق تک؛ meal plan اجباری و قیمتش پیدا نشد", "۸ (سپتامبر–آوریل)", 8, 10482, None, None, None,
+     "فقط اتاق؛ meal plan اجباری جداست (کل بالاتر از این)", OFF_TENT, urls("gu_fees", "gu_cmp")),
+    ("Guelph", None, "West Village — تابستان 2026 (تاون‌هاوس تک 2,500 · آپارتمان یک‌نفره 3,000 · دوخوابه 2,750 · دونفره 2,500)", "ترم تابستان (طول در صفحه نیامده)", None, 2500, 3000, None, None,
+     "همان بالا", "رسمی تابستان 2026", urls("gu_fees")),
+]
+
+ws_p = new_sheet(
+    "خوابگاه — قیمت‌ها", [5, 13, 46, 20, 16, 12, 12, 34, 22, 14, 20, 20, 58, 14],
+    "قیمت خوابگاه ارشد — هر عدد با منبع و تاریخ (CAD؛ دلار با 0.705)",
+    f"بازدید {HOUS_DATE} · «کل قرارداد» ≈ یعنی محاسبه (ماهانه × ماه) · «ماهانه» = کل ÷ ماه‌های قرارداد · دلار = CAD × 0.705 و گرد شده · "
+    "«٪ بودجه» = ماهانهٔ خوابگاه ÷ بودجهٔ ماهانهٔ کل زندگی در مدل (بازهٔ شهر) · «اختلاف» = خوابگاه − اتاق خصوصیِ همان شهر در Table_final (CAD در ماه؛ + یعنی خوابگاه گران‌تر) · "
+    "نرخ 2027–28 هنوز منتشر نشده؛ در Calgary و uOttawa سال‌به‌سال +2.5٪ تا +6٪ بوده (قاعدهٔ حکم در شیت «مفروضات و هشدارها»).",
+)
+header_row(ws_p, 4, [
+    "ردیف", "دانشگاه", "گزینه (ساختمان — نوع اتاق)", "قرارداد (ماه)", "کل قرارداد (CAD)",
+    "ماهانه (CAD)", "ماهانه (USD)", "شامل چه؟", "وضع عدد", "٪ بودجهٔ ماهانهٔ مدل",
+    "اختلاف با اتاق خصوصی (CAD/ماه)", "حکم نسبت به بودجهٔ مدل", "منبع رسمی (نشانی)", "تاریخ بازدید",
+])
+
+prow = []
+for k, (uni, city, opt, clabel, nmo, t_lo, t_hi, m_lo, m_hi, inc, status, src_u) in enumerate(PRICES, start=1):
+    t_txt = "—"
+    m_txt = "—"
+    usd_txt = "—"
+    share = "—"
+    delta = "—"
+    verdict = "—"
+    mo_lo, mo_hi = m_lo, m_hi
+    if mo_lo is None and t_lo is not None and nmo:
+        mo_lo = t_lo / nmo
+        mo_hi = (t_hi / nmo) if t_hi is not None else None
+    if t_lo is not None:
+        t_txt = rng(t_lo, t_hi)
+    elif mo_lo is not None and nmo:
+        t_txt = "≈ " + rng(mo_lo * nmo, (mo_hi * nmo) if mo_hi is not None else None)
+    if t_lo is not None and nmo is None:
+        t_txt = rng(t_lo, t_hi) + " (کل ترم)"
+    if mo_lo is not None:
+        m_txt = rng(mo_lo, mo_hi)
+        usd_txt = rng(mo_lo * CAD_USD, (mo_hi * CAD_USD) if mo_hi is not None else None)
+        if city in BUDGET:
+            L, H = BUDGET[city]
+            hi_v = mo_hi if mo_hi is not None else mo_lo
+            s_lo = round(100 * mo_lo / H)
+            s_hi = round(100 * hi_v / L)
+            share = (f"{s_lo}–{s_hi}٪" if s_lo != s_hi else f"{s_lo}٪")
+            if s_hi <= 80:
+                verdict = "✅ جا می‌شود"
+            elif s_lo >= 90:
+                verdict = "❌ از بودجه می‌زند"
+            else:
+                verdict = "⚠️ فشار"
+        if city in PRIVATE:
+            plo, phi = PRIVATE[city]
+            d_lo = mo_lo - phi
+            d_hi = (mo_hi if mo_hi is not None else mo_lo) - plo
+            delta = (f"{signed(d_lo)} تا {signed(d_hi)}" if int(round(d_lo)) != int(round(d_hi)) else signed(d_lo))
+    if city is None:
+        share = "—"
+        delta = "—"
+    if "meal plan اجباری و قیمتش پیدا نشد" in opt:
+        verdict = "⚠️ کل = اتاق + meal plan اجباری (قیمت meal plan را پیدا نکردم)"
+    prow.append([str(k), uni, opt, clabel, t_txt, m_txt, usd_txt, inc, status, share, delta, verdict, src_u, HOUS_DATE])
+
+p_widths = [5, 13, 46, 20, 16, 12, 12, 34, 22, 14, 20, 20, 58, 14]
+body_rows(ws_p, 5, prow, heights=[est_h(r, p_widths, min_h=36) for r in prow], fill_fn=None, bold_cols=(2,))
+for i in range(len(prow)):
+    for j in range(1, 15):
+        c = ws_p.cell(row=5 + i, column=j)
+        if j == 12:
+            fl = verdict_of(c.value)
+            if fl:
+                c.fill = fl
+        elif j == 9:
+            c.fill = fill_warn if ("tentative" in str(c.value) or "نشده" in str(c.value)) else fill_info
+        elif j == 13:
+            c.font = f_src
+            if i % 2 == 1:
+                c.fill = fill_alt
+        elif i % 2 == 1:
+            c.fill = fill_alt
+        c.border = border
+pn = 5 + len(prow) + 1
+ws_p.merge_cells(start_row=pn, start_column=1, end_row=pn, end_column=14)
+c = ws_p.cell(row=pn, column=1, value=(
+    "راهنما: آبی = رسمی 2026–27 · زرد = رسمیِ بدون سال یا tentative یا ناقص · حکم: ✅ سهم خوابگاه ≤ ٪۸۰ بودجهٔ ماهانه حتی در کم‌ترین بودجهٔ شهر · ❌ ≥ ٪۹۰ حتی در بیشترین بودجه · ⚠️ بین این دو "
+    "(قاعدهٔ خودم، نه رقم دانشگاه). همیلتون و گوئلف اتاق خصوصی در جدول‌های ما ندارند، پس ستون اختلافشان «—» است. "
+    "قراردادهای ۸ ماهه مه–اوت را پوشش نمی‌دهند؛ ردیف‌های تابستان جدا حساب شده‌اند."
+))
+c.font = f_note
+c.alignment = a_rtl
+ws_p.row_dimensions[pn].height = 62
+ws_p.row_dimensions[2].height = 62
+ws_p.freeze_panes = "D5"
+
+# ---- منابع خوابگاه (به شیت «منابع» اضافه می‌شود) ----
+HOUSING_SRC = [
+    ["خوابگاه Alberta — Unit Types: نرخ ماهانه (مشترک 1,335 · استودیو 1,595 · یک‌خوابه 1,996؛ سال ذکر نشده)", U["ab_unit"], "رسمی"],
+    ["خوابگاه Alberta — Graduate Residence (۴ ساختمان، قرارداد ۱۱/۱۲ ماهه، فقط ارشد)", U["ab_grad"], "رسمی"],
+    ["خوابگاه Alberta — HUB (ماه‌به‌ماه، شمول اینترنت/گرما/آب/برق)", U["ab_hub"], "رسمی"],
+    ["خوابگاه Alberta — درخواست (Fall 2027 باز است، CCID، CAD 25)", U["ab_apply"], "رسمی"],
+    ["خوابگاه Alberta — Guaranteed Housing (فقط سال اول کارشناسی)", U["ab_guar"], "رسمی"],
+    ["خوابگاه Alberta — لغو، ودیعه CAD 500 و بازپرداخت با رد ویزا", U["ab_cancel"], "رسمی"],
+    ["خوابگاه Calgary — نرخ 2026–27 (Crowsnest 11,178 / 11,937 / 9,224؛ تابستان؛ تاریخ اقساط)", U["cg_rates"], "رسمی"],
+    ["خوابگاه Calgary — Crowsnest Hall (ارشد، قرعه، درخواست تا ۱۰ فوریه)", U["cg_crow"], "رسمی"],
+    ["خوابگاه Calgary — فرایند درخواست (CAD 65، advance payment، تضمین سال‌اولی‌ها)", U["cg_apply"], "رسمی"],
+    ["خوابگاه uOttawa — مقایسهٔ خوابگاه‌ها و نرخ 2026–27 (۸ و ۱۲ ماهه)", U["uo_cmp"], "رسمی"],
+    ["خوابگاه uOttawa — Hyman Soloway (نرخ 2026–27، قبوض، ۲۳۹ تخت)", U["uo_hs"], "رسمی"],
+    ["خوابگاه uOttawa — درخواست و تضمین (بین‌المللی: فقط کارشناسی/graduate diploma؛ شروع ۸ دسامبر)", U["uo_apply"], "رسمی"],
+    ["خوابگاه uOttawa — تاریخ‌ها، ودیعه CAD 950 و جدول بازپرداخت", U["uo_dates"], "رسمی"],
+    ["خوابگاه McMaster — 10 Bay: قیمت ماهانه (سال ذکر نشده؛ متن از خلاصهٔ جست‌وجو)", U["mc_price"], "رسمی (متن از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه McMaster — 10 Bay: شرایط اجاره (۱۲ ماه، بدون ودیعه، پرداخت روی student account)", U["mc_apply"], "رسمی (متن از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه McMaster — 10 Bay: سؤال‌های متداول (کی می‌تواند اجاره کند)", U["mc_faqs"], "رسمی (متن از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه McMaster — FAQ خوابگاه (اولویت تازه‌دیپلمه‌ها؛ 10 Bay برای سال‌بالا)", U["mc_resfaq"], "رسمی (متن از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه McMaster — خبر رسمی گشایش 10 Bay (۶۴۴ اتاق، ۲۰۲۳)", U["mc_news"], "رسمی (متن از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه Dalhousie — Costs and fees 2026/27 (Graduate House، Glengary)", U["dl_cost"], "رسمی"],
+    ["خوابگاه Dalhousie — تاریخ‌ها (درخواست‌های 2027/28 از ≈ ۱ اکتبر، tentative)", U["dl_dates"], "رسمی"],
+    ["خوابگاه Dalhousie — پذیرش اتاق، ودیعه CAD 500 و استیناف", U["dl_offer"], "رسمی"],
+    ["خوابگاه Dalhousie — درخواست و ضمانت تازه‌دیپلمه (CAD 50)", U["dl_apply"], "رسمی"],
+    ["خوابگاه Dalhousie — Graduate House (۱۳ نفر)", U["dl_gh"], "رسمی (متن از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه Dalhousie — Glengary Apartments (۴۰ نفر؛ returning/transfer)", U["dl_gl"], "رسمی"],
+    ["خوابگاه UVic — نرخ 2026–27 (bachelor/یک‌خوابه/cluster، شمول قبوض)", U["uv_fees"], "رسمی"],
+    ["خوابگاه UVic — قرعهٔ ارشد Fall 2027 (≈۵۰ جا، ۱۵ مه، شروع اولین دوشنبهٔ اکتبر)", U["uv_grad"], "رسمی"],
+    ["خوابگاه UVic — قرارداد 2026–27 (درخواست CAD 50، acceptance fee CAD 1,000)", U["uv_contract"], "رسمی (بخش‌هایی از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه UVic — تابستان: ارشد و نوع اتاق + نرخ", U["uv_summer"], "رسمی (متن از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه Carleton — نرخ 2026–27 (Leeds ارشد: فقط اتاق / با غذا)", U["cu_fees"], "رسمی"],
+    ["خوابگاه Carleton — درخواست ارشد، صف، تابستان، «12-month» بین‌المللی", U["cu_apply"], "رسمی"],
+    ["خوابگاه Carleton — Leeds House (طبقهٔ ۵–۶ ارشد)", U["cu_leeds"], "رسمی (متن از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه Guelph — درخواست و تضمین ارشد بین‌المللی (Fall 2027–Winter 2028)", U["gu_apply"], "رسمی"],
+    ["خوابگاه Guelph — نرخ Fall 2026–Winter 2027 (tentative)، ودیعه $750، هزینه‌های جانبی", U["gu_fees"], "رسمی"],
+    ["خوابگاه Guelph — West Village (ارشد، meal plan اختیاری)", U["gu_wv"], "رسمی"],
+    ["خوابگاه Guelph — مقایسهٔ ساختمان‌ها (meal plan اجباری در South)", U["gu_cmp"], "رسمی (متن از خلاصهٔ جست‌وجو)"],
+    ["خوابگاه — مبنای مقایسه با مدل (بودجهٔ ماهانهٔ شهرها و اتاق خصوصی)", "Migration-Analysis.md §28.7 و Table_final.xlsx (شیت «خوابگاه و مسکن») در همین ریپو", "داخلی"],
+]
+
+# ---- مفروضات خوابگاه (به شیت «مفروضات و هشدارها» اضافه می‌شود) ----
+HOUSING_ASM = [
+    ["خوابگاه — دامنه و تاریخ",
+     "شیت‌های «خوابگاه» و «خوابگاه — قیمت‌ها» (۲ اکتبر ۲۰۲۶، به درخواست شما): هشت دانشگاهِ همین فایل، فقط از صفحه‌های رسمی خود دانشگاه‌ها. نرخ‌ها 2026–27 هستند (برای ورودی‌های سپتامبر ۲۰۲۶)؛ نرخ ورودی شما (2027–28) هنوز در هیچ‌کدام منتشر نشده. روند سال‌به‌سال از جدول‌های رسمی خودشان (2025–26 ← 2026–27): Calgary Crowsnest +2.5٪ (استودیو و یک‌خوابه) و +5٪ (دوخوابه)؛ uOttawa Hyman Soloway +5.9٪ تا +6.0٪، 45 Mann +6.0٪، Annex +3.6٪ تا +6.0٪ → برای 2027–28 ≈ +3 تا +6٪ فرض کنید (برآورد من، تضمین نیست)."],
+    ["خوابگاه — اعداد چطور ساخته شد",
+     "«ماهانه» = کل قرارداد ÷ ماه‌های قرارداد (۸ ماه = سپتامبر–آوریل؛ ۱۱ ماه برای Graduate Residence آلبرتا؛ ۱۲ ماه برای uOttawa و 10 Bay). فقط Alberta و 10 Bay قیمت ماهانهٔ رسمی دارند و «کل» از ماهانه × ماه‌ها محاسبه شده (با ≈ مشخص است). دلار = CAD × 0.705 (۲۹ سپتامبر ۲۰۲۶) و گرد شده. ماه‌های مه–اوت در قرارداد ۸ ماهه نیستند و جدا حساب می‌شوند (ردیف‌های تابستان)."],
+    ["خوابگاه — مبنای مقایسه با مدل",
+     "«بودجهٔ ماهانهٔ مدل» = بازهٔ کل زندگی ماهانهٔ شهر در تحلیل قبلی (CAD): ادمونتون 1,500–1,800 · کلگری 1,650–2,000 · اتاوا 1,800–2,200 · همیلتون 1,400–1,700 · هالیفاکس 1,650–2,000 · ویکتوریا 1,900–2,300 · گوئلف 1,800–1,900. «اتاق خصوصی» = بازهٔ اتاق در خانهٔ مشترک در شیت «خوابگاه و مسکن» Table_final (CAD): ادمونتون 700–1,000 · کلگری و اتاوا 800–1,200 · هالیفاکس 750–1,100 · ویکتوریا 900–1,300؛ برای همیلتون و گوئلف رقمی نداریم و ستون اختلافشان «—» است. حکم: ✅ اگر سهم خوابگاه ≤ ٪۸۰ بودجه حتی در کم‌ترین بودجهٔ شهر؛ ❌ اگر ≥ ٪۹۰ حتی در بیشترین بودجه؛ ⚠️ بین این دو. این قاعده از خودم است، نه رقم دانشگاه، و بودجهٔ مدل را عوض نمی‌کند. (در پیام چت ادمونتون 650–1,000 را برای اتاق خصوصی گفته بودم؛ جدول Table_final 700–1,000 دارد و اینجا همان مبناست — اختلاف آلبرتا ۵۰ دلار کانادا کم می‌شود.)"],
+    ["خوابگاه — ودیعه و ویزا",
+     "فقط Alberta صریحاً می‌گوید با رد ویزا ودیعهٔ CAD 500 برمی‌گردد (اطلاع ظرف ۱۰ روز با نامهٔ رد). Guelph (CAD 750، بعد از تضمین)، Dalhousie (CAD 500) و UVic (acceptance fee CAD 1,000) غیرقابل‌برگشت‌اند و «رد ویزا» جزو استثناهایشان نیامده؛ uOttawa (CAD 950) فقط تا ۳۰ ژوئن برمی‌گرداند (۱۰۰٪ تا ۱۵ ژوئن منهای CAD 105)؛ 10 Bay ودیعه ندارد؛ شرط Calgary و Carleton برای ارشد پیدا نشد. قبل از پرداخت کتباً بپرسید. ویزای ایرانی‌ها دیر می‌رسد (ردیف «ویزا» همین شیت)."],
+    ["خوابگاه — تأییدنشده‌ها",
+     "Alberta: صفحهٔ Unit Types سال نرخ ندارد؛ نرخ صفحهٔ خود Graduate Residence لود نشد؛ شمول قبوض فقط در HUB تصریح شده؛ همان صفحه می‌گوید فقط «current U of A students» واجدند (CCID بعد از ثبت درخواست برنامه صادر می‌شود). McMaster: قیمت 10 Bay سال ندارد (همان اعداد در آگهی‌های مه ۲۰۲۶ است) و سایت 10bayliving.ca برایم لود نشد؛ ددلاین درخواست پیدا نشد. Calgary: advance payment ارشد و تاریخ‌های ۲۰۲۷ تأیید نشد. UVic: نوع اتاق ارشدها در سال تحصیلی از جدول تابستان و Kaplan (ثانویه) برداشت شد. Carleton: «Guaranteed 12-Month Residence for International Students» صراحتاً ارشد را نمی‌گوید. Guelph: نرخ‌ها tentative؛ تضمین نوع ساختمان را مشخص نمی‌کند (ساختمان سنتی = meal plan اجباری). Dalhousie: دو صفحه ددلاین تضمین تازه‌دیپلمه را ۱ و ۱۵ مه نوشته‌اند. uOttawa: شمول قبوض 45 Mann و Annex تأیید نشد."],
+    ["اصلاح Table_final و گزارش",
+     "همین تاریخ ≈های خوابگاه Alberta/UVic/Carleton/Dalhousie در Table_final.xlsx (شیت «خوابگاه و مسکن») با اعداد رسمی جایگزین شد و جملهٔ «هیچ دانشگاهی ارشد بین‌المللی را تضمین نمی‌کند» (گزارش §28.7 و Table_final) با استثنای Guelph اصلاح شد (نسخهٔ ۳.۱۵ گزارش). بزرگ‌ترین اختلاف: Carleton با غذا — قبلاً ≈ $845–1,130 در ماه، رسمی $1,420–1,594 (Leeds با meal plan)؛ فقط‌اتاق $995. جملهٔ قبلی «Carleton با غذا اجباری است» هم برای Leeds غلط بود (meal plan اختیاری است)."],
+]
+
+# ============================================================
+# شیت ۶ — منابع
 # ============================================================
 ws4 = new_sheet(
     "منابع", [30, 90, 18],
-    "منابع راستی‌آزمی (بازدید ۱ اکتبر ۲۰۲۶؛ منابع Guelph: ۲ اکتبر ۲۰۲۶)",
+    "منابع راستی‌آزمی (بازدید ۱ اکتبر ۲۰۲۶؛ منابع Guelph و همهٔ ردیف‌های «خوابگاه»: ۲ اکتبر ۲۰۲۶)",
     "«رسمی» = صفحهٔ خود دانشگاه یا نهاد دولتی · «ثانویه» = سرویس‌های اپلای/اطلاعات دوره (شیکشا، مسترزپورتال، کالج‌دونیا، اپلای‌بورد، آی‌دی‌پی) — برای اپلای با صفحهٔ رسمی چک شود.",
 )
 header_row(ws4, 4, ["موضوع", "نشانی", "وضع منبع"])
@@ -460,6 +984,7 @@ src = [
     ["تمکن مالی مجوز تحصیل — $16,500 (سپتامبر ۲۰۲۶، خارج کبک)", "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/proof-funds.html", "رسمی"],
     ["تحلیل کامل قبلی (بخش ۲۸: کانادا با اعداد رسمی)", "Migration-Analysis.md در همین ریپو", "داخلی"],
 ]
+src[-1:-1] = HOUSING_SRC  # منابع خوابگاه قبل از ردیف «داخلی» آخر
 body_rows(ws4, 5, src, heights=None)
 for i in range(len(src)):
     for j in range(1, 4):
@@ -474,7 +999,7 @@ for i in range(len(src)):
 ws4.freeze_panes = "A5"
 
 # ============================================================
-# شیت ۵ — مفروضات و هشدارها
+# شیت ۷ — مفروضات و هشدارها
 # ============================================================
 ws5 = new_sheet(
     "مفروضات و هشدارها",
@@ -496,10 +1021,12 @@ asm = [
     ["Guelph — مبنای گام۱", "برخلاف ردیف‌های ۱–۷ که فقط شهریه داشتند، برای Guelph هزینهٔ اجباری رسمی (CAD 2,215.56 در سال: پاییز 937.21 + زمستان 642.80 + تابستان 635.55) و بیمهٔ UHIP (CAD 792 در سال) هم در گام۱ آمده، چون رسمی و بزرگ‌اند (≈ $4,200 برای ۲ سال). شهریهٔ ۶ ترم = 6 × CAD 6,837.54 = CAD 41,025 ≈ $28,900 (نرخ ۲۰۲۶/۲۷؛ نرخ ورودی ۲۰۲۷ هنوز منتشر نشده — با +۱۰٪، گام۱ با فاندینگ MSc ≈ $24,400 می‌شود و باز داخل بودجه است). برای مقایسهٔ هم‌پایه با ردیف‌های قبلی: فقط شهریه و بدون فاندینگ = $28,900 + $16,500 = $45,400. زندگی: برآورد رسمی دانشگاه CAD 22,494 در سال ≈ CAD 1,875 در ماه."],
     ["Guelph — فاندینگ", "«با فاندینگ» یعنی نامهٔ رسمی فاندینگ دست شماست؛ تا آن موقع عدد بدون فاندینگ ($49,700 ❌) مبناست. MASc: صفحهٔ برنامهٔ College of Engineering برای شروع از S26 به بعد حداقل CAD 35,500 در سال (۲ سال) می‌گوید، ولی صفحهٔ Funding همان کالج هنوز CAD 23,400 (S25+) دارد؛ مبنای محافظه‌کارانهٔ این فایل CAD 23,400 است (گام۱ ≈ $16,700). MSc: CAD 20,000 در سال (حداکثر ۲ سال) فقط در صفحهٔ برنامهٔ MSc آمده و صفحهٔ Funding خود SoCS برای بین‌المللی‌های MSc چنین قولی نمی‌دهد. در محاسبه، فاندینگ بیش از شهریه + هزینهٔ اجباری + UHIP حساب نشده (مثل Calgary) و قبل از مالیات/CPP است. هر دو مسیر به پذیرفته‌شدن توسط یک استاد وابسته‌اند."],
     ["Guelph — معدل و نمرهٔ ایران", "Guelph معادل‌سازی را خودش انجام می‌دهد (در MASc، WES پذیرفته نمی‌شود) و برای جدول نمره‌دهی کشورها به Scholaro ارجاع می‌دهد: ایران ۱۸–۲۰ = A+، ۱۷–۱۷.۹۹ = A، ۱۴–۱۶.۹۹ = B. دو سال آخر شما ۱۶.۹۲ است، یعنی ۰.۰۸ زیر مرز A؛ کف ۷۵٪ (B) را رد می‌کند ولی در معیارهایی که A− می‌خواهند (مثل Vector Scholarship، طبق منابع قدیمی‌تر؛ معیار فعلی را چک کنید) مرزی است. معادل‌سازی نهایی با دفتر تحصیلات تکمیلی Guelph است، نه با این فایل."],
-    ["Guelph — ناهماهنگی صفحه‌های رسمی", "ددلاین MASc: بالای صفحه ۱۵ آوریل (بین‌المللی، Fall) ولی جدول ۲۰۲۶ همان صفحه ۱۵ مارس؛ SoCS برای Fall 2027 صریحاً ۱ مارس ۲۰۲۷ نوشته. مبنای ما: ۱ مارس. مدارک MASc تا یک ماه بعد از ددلاین پذیرفته می‌شود ولی توصیهٔ رسمی، اپلای ≥ ۹ ماه قبل از شروع است. خوابگاه تضمینی برای بین‌المللی‌ها در دادهٔ ۲۰۲۶ بود (درخواست و ودیعه تا ۱ ژوئن)؛ برای ۲۰۲۷ دوباره چک شود."],
-    ["آنچه این فایل نیست", "این فایل جایگزین چک‌لیست کانادا و شیت «تصمیم» در Table_final.xlsx نیست؛ فقط نسخهٔ اصلاح‌شدهٔ همان جدول ۷ ردیفی شماست. هشت درخواست اروپایی و مسیر پایان‌نامه‌ای موازات کانادا (تحلیل بخش ۲۸) سر جای خودشان باقی‌اند. ردیف ۸ (Guelph) بعداً، ۲ اکتبر ۲۰۲۶، به درخواست شما اضافه شد."],
+    ["Guelph — ناهماهنگی صفحه‌های رسمی", "ددلاین MASc: بالای صفحه ۱۵ آوریل (بین‌المللی، Fall) ولی جدول ۲۰۲۶ همان صفحه ۱۵ مارس؛ SoCS برای Fall 2027 صریحاً ۱ مارس ۲۰۲۷ نوشته. مبنای ما: ۱ مارس. مدارک MASc تا یک ماه بعد از ددلاین پذیرفته می‌شود ولی توصیهٔ رسمی، اپلای ≥ ۹ ماه قبل از شروع است. خوابگاه: صفحهٔ رسمی Fall 2027–Winter 2028 (۲ اکتبر ۲۰۲۶) تضمین خوابگاه برای ارشدِ بین‌المللیِ جدید (master) را تا پایان دوره تأیید می‌کند — شرط: درخواست + ودیعهٔ CAD 750 + قبول پذیرش، هر سه تا ۱ ژوئن؛ جزئیات و ریسک ودیعه در شیت «خوابگاه»."],
+    ["آنچه این فایل نیست", "این فایل جایگزین چک‌لیست کانادا و شیت «تصمیم» در Table_final.xlsx نیست؛ فقط نسخهٔ اصلاح‌شدهٔ همان جدول ۷ ردیفی شماست. هشت درخواست اروپایی و مسیر پایان‌نامه‌ای موازات کانادا (تحلیل بخش ۲۸) سر جای خودشان باقی‌اند. ردیف ۸ (Guelph) بعداً، ۲ اکتبر ۲۰۲۶، به درخواست شما اضافه شد. شیت‌های «خوابگاه» و «خوابگاه — قیمت‌ها» هم همان روز، به درخواست شما، اضافه شدند."],
 ]
-body_rows(ws5, 5, asm, heights=[86, 78, 62, 46, 46, 78, 62, 62, 46, 135, 150, 95, 95, 78])
+asm[-1:-1] = HOUSING_ASM  # مفروضات خوابگاه قبل از ردیف «آنچه این فایل نیست»
+body_rows(ws5, 5, asm, heights=[86, 78, 62, 46, 46, 78, 62, 62, 46, 135, 150, 95, 95]
+          + [est_h(r, [26, 90], min_h=60) for r in HOUSING_ASM] + [95])
 for i in range(len(asm)):
     for j in (1, 2):
         c = ws5.cell(row=5 + i, column=j)

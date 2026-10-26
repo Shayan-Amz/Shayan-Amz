@@ -1,0 +1,68 @@
+From 0f70908e9d6beb07f156f9900bc3f4bef26119cb Mon Sep 17 00:00:00 2001
+From: Shayan Amouzadeh <135848305+Shayan-Amz@users.noreply.github.com>
+Date: Mon, 26 Oct 2026 22:49:47 +0000
+Subject: [PATCH] Add Zenodo DOI (10.5281/zenodo.23677513) badge and citation
+ identifiers
+
+---
+ .zenodo.json | 7 ++++++-
+ CITATION.cff | 6 +++++-
+ README.md    | 3 ++-
+ 3 files changed, 13 insertions(+), 3 deletions(-)
+
+diff --git a/.zenodo.json b/.zenodo.json
+index b8a631f..ff851de 100644
+--- a/.zenodo.json
++++ b/.zenodo.json
+@@ -24,6 +24,11 @@
+       "relation": "isSupplementTo",
+       "resource_type": "software",
+       "scheme": "url"
++    },
++    {
++      "identifier": "10.5281/zenodo.23677513",
++      "relation": "isVersionOf",
++      "scheme": "doi"
+     }
+   ]
+-}
+\ No newline at end of file
++}
+diff --git a/CITATION.cff b/CITATION.cff
+index bcd74b0..4d8504c 100644
+--- a/CITATION.cff
++++ b/CITATION.cff
+@@ -18,4 +18,8 @@ keywords:
+   - fpu
+   - cpp17
+   - differential-testing
+-# doi: 10.5281/zenodo.XXXXXXX   # fill in with the "concept DOI" Zenodo shows after the first release
++doi: 10.5281/zenodo.23677513
++identifiers:
++  - type: doi
++    value: 10.5281/zenodo.23677513
++    description: "Concept DOI (all versions) on Zenodo"
+diff --git a/README.md b/README.md
+index 4eccef1..f009d85 100644
+--- a/README.md
++++ b/README.md
+@@ -4,6 +4,7 @@
+ [![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)](include/fp32/fp32.hpp)
+ [![Header-only](https://img.shields.io/badge/library-header--only-blue)](include/fp32/fp32.hpp)
+ [![IEEE 754](https://img.shields.io/badge/IEEE_754-binary32-orange)](https://en.wikipedia.org/wiki/IEEE_754)
++[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23677513.svg)](https://doi.org/10.5281/zenodo.23677513)
+ [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+ 
+ A single-precision floating-point unit written in C++17 using **integer arithmetic only**. Addition,
+@@ -262,7 +263,7 @@ Releases are archived on Zenodo; cite via the "Cite this repository" button (fro
+ 
+ ```
+ Amouzadeh, S. (2026). Floating-Point-ALU: a bit-exact C++17 software model of an IEEE 754 binary32 ALU
+-(Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
++(Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23677513
+ ```
+ 
+ ---
+-- 
+2.39.5
+

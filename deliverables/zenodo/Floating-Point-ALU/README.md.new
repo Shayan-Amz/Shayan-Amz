@@ -4,6 +4,7 @@
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)](include/fp32/fp32.hpp)
 [![Header-only](https://img.shields.io/badge/library-header--only-blue)](include/fp32/fp32.hpp)
 [![IEEE 754](https://img.shields.io/badge/IEEE_754-binary32-orange)](https://en.wikipedia.org/wiki/IEEE_754)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23677513.svg)](https://doi.org/10.5281/zenodo.23677513)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 A single-precision floating-point unit written in C++17 using **integer arithmetic only**. Addition,
@@ -262,7 +263,7 @@ Releases are archived on Zenodo; cite via the "Cite this repository" button (fro
 
 ```
 Amouzadeh, S. (2026). Floating-Point-ALU: a bit-exact C++17 software model of an IEEE 754 binary32 ALU
-(Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+(Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23677513
 ```
 
 ---

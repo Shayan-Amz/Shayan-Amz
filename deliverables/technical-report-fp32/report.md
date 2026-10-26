@@ -2,7 +2,7 @@
 
 **Shayan Amouzadeh**
 Technical Report · Version 1.0 · October 2026
-Code: https://github.com/Shayan-Amz/Floating-Point-ALU (MIT) · DOI: *to be assigned by Zenodo*
+Code: https://github.com/Shayan-Amz/Floating-Point-ALU (MIT) · Software DOI: https://doi.org/10.5281/zenodo.23677513
 
 ## Abstract
 

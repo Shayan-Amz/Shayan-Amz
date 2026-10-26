@@ -48,5 +48,5 @@ deliverables/
 ## جمله‌هایی که بعد از این مراحل در رزومه قابل‌دفاع می‌شوند
 
 * «Field-level micro-F1 = __ % (exact-match __ %) on a 50-case Persian real-estate extraction set, 3 repeats, scorer and gold set public at ‹commit›.» ← جای خالی را فقط از `results/README.md` پر کنید.
-* «Technical report: *Bit-exact software modelling of IEEE 754 binary32 arithmetic with 32-million-case differential verification*, Zenodo, doi:10.5281/zenodo.______ (2026).»
-* «Software archived with DOI: Floating-Point-ALU v1.0.0, doi:10.5281/zenodo.______.»
+* «Technical report: *Bit-exact software modelling of IEEE 754 binary32 arithmetic with 32-million-case differential verification*, Zenodo, doi:10.5281/zenodo.______ (2026).» ← فقط اگر گزارش را جداگانه هم آپلود کنید
+* «Software archived with DOI: Floating-Point-ALU v1.0.0, **doi:10.5281/zenodo.23677513** (Zenodo, 2026).» ✅

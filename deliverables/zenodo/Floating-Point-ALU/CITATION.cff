@@ -18,4 +18,8 @@ keywords:
   - fpu
   - cpp17
   - differential-testing
-# doi: 10.5281/zenodo.XXXXXXX   # fill in with the "concept DOI" Zenodo shows after the first release
+doi: 10.5281/zenodo.23677513
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23677513
+    description: "Concept DOI (all versions) on Zenodo"

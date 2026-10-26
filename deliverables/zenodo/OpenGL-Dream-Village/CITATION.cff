@@ -6,7 +6,7 @@ abstract: "Animated 2D village scene in immediate-mode OpenGL (C++17, FreeGLUT) 
 authors:
   - family-names: Amouzadeh
     given-names: Shayan
-    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add once you have an ORCID iD (free, 2 min: orcid.org/register)
+    orcid: "https://orcid.org/0009-0002-5518-1729"
 repository-code: "https://github.com/Shayan-Amz/OpenGL-Dream-Village"
 license: MIT
 version: 1.0.0

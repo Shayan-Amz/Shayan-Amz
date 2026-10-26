@@ -3,10 +3,27 @@
   "description": "Bit-exact software model of an IEEE 754 binary32 arithmetic unit in C++17: addition, subtraction, multiplication and division with guard/round/sticky rounding in all four IEEE rounding modes, full subnormal, infinity and NaN handling, constexpr-evaluable core, and a differential test suite (32,026,992 checks, 0 failures) against the host FPU on GCC, Clang, AppleClang and MSVC.",
   "upload_type": "software",
   "license": "MIT",
-  "creators": [ { "name": "Amouzadeh, Shayan" } ],
-  "keywords": [ "IEEE 754", "floating-point", "computer arithmetic", "FPU", "C++17", "differential testing" ],
+  "creators": [
+    {
+      "name": "Amouzadeh, Shayan",
+      "orcid": "0009-0002-5518-1729"
+    }
+  ],
+  "keywords": [
+    "IEEE 754",
+    "floating-point",
+    "computer arithmetic",
+    "FPU",
+    "C++17",
+    "differential testing"
+  ],
   "access_right": "open",
   "related_identifiers": [
-    { "identifier": "https://github.com/Shayan-Amz/Floating-Point-ALU", "relation": "isSupplementTo", "resource_type": "software", "scheme": "url" }
+    {
+      "identifier": "https://github.com/Shayan-Amz/Floating-Point-ALU",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
   ]
 }

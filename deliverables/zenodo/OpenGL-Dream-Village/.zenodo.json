@@ -1,0 +1,12 @@
+{
+  "title": "OpenGL-Dream-Village: deterministic immediate-mode OpenGL animation with a pixel-exact software-rasteriser test harness",
+  "description": "Animated 2D village scene in immediate-mode OpenGL (C++17, FreeGLUT) restructured into an explicit AnimationState and a pure render function; a purpose-written software rasteriser (49 GL/GLUT entry points, top-left fill rule, double-precision edge functions) enables pixel-exact regression tests on CI (0 pixel differences on 4 scenes, 0 GL errors) across Linux, macOS and Windows/VS2022. Scene geometry by krishnodey/Dream-Village (attributed).",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [ { "name": "Amouzadeh, Shayan" } ],
+  "keywords": [ "OpenGL", "computer graphics", "software rasteriser", "regression testing", "C++17" ],
+  "access_right": "open",
+  "related_identifiers": [
+    { "identifier": "https://github.com/Shayan-Amz/OpenGL-Dream-Village", "relation": "isSupplementTo", "resource_type": "software", "scheme": "url" }
+  ]
+}

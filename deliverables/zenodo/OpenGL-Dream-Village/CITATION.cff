@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "OpenGL-Dream-Village: deterministic immediate-mode OpenGL animation with a pixel-exact software-rasteriser test harness"
+abstract: "Animated 2D village scene in immediate-mode OpenGL (C++17, FreeGLUT) restructured into an explicit AnimationState and a pure render function; a purpose-written software rasteriser (49 GL/GLUT entry points, top-left fill rule, double-precision edge functions) enables pixel-exact regression tests on CI (0 pixel differences on 4 scenes, 0 GL errors) across Linux, macOS and Windows/VS2022. Scene geometry by krishnodey/Dream-Village (attributed)."
+authors:
+  - family-names: Amouzadeh
+    given-names: Shayan
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add once you have an ORCID iD (free, 2 min: orcid.org/register)
+repository-code: "https://github.com/Shayan-Amz/OpenGL-Dream-Village"
+license: MIT
+version: 1.0.0
+date-released: "2026-10-27"
+keywords:
+  - opengl
+  - computer-graphics
+  - software-rasterizer
+  - regression-testing
+  - cpp17
+# doi: 10.5281/zenodo.XXXXXXX   # fill in with the "concept DOI" Zenodo shows after the first release

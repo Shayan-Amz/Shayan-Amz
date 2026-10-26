@@ -1,0 +1,30 @@
+{
+  "title": "Amlak Man: a Persian voice/LLM-assisted real-estate listing manager with a reproducible evaluation harness",
+  "description": "Multi-tenant PHP/MySQL web application for Persian real-estate agencies with a voice-to-structured-listing pipeline (Whisper-large-v3 transcription, LLM field extraction constrained to a 26-field allow-list) and an academic evaluation harness (word-level Levenshtein WER, field-level micro P/R/F1 with predeclared scoring rules and a 50-case Persian gold set). B.Sc. thesis software artefact.",
+  "upload_type": "software",
+  "license": "other-closed",
+  "creators": [
+    {
+      "name": "Amouzadeh, Shayan"
+    }
+  ],
+  "keywords": [
+    "Persian",
+    "speech-to-text",
+    "information extraction",
+    "LLM",
+    "real estate",
+    "evaluation harness"
+  ],
+  "access_right": "restricted",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Shayan-Amz/Real-Estate-File-Manager-Project",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
+  "access_conditions": "Source code is proprietary (see LICENSE). Access may be granted to academic reviewers on request.",
+  "notes": "The repository LICENSE is proprietary. If you want an OPEN record (recommended for a CV / Zenodo badge), switch the repository to MIT or Apache-2.0 first, then set access_right to open and license to MIT."
+}

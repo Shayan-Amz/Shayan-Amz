@@ -121,7 +121,7 @@ Project work in computer architecture, algorithm design, computer graphics, web 
 3. **[Interactive Engine / OOP Framework]** - Core mechanics and state machines built in C#.
 ## 💼 Experience
 
-**Computer Specialist** · Khak Ab Sazeh Qumis, Semnan, Iran · *Mar 2025 – Present*
+**Computer Specialist** · Khakab Sazeh Qomes, Semnan, Iran · *Mar 2025 – Present*
 - Maintain the company's computers, network and user accounts — installation, troubleshooting and day-to-day IT support.
 - Build data and reporting workflows in Microsoft Excel: structured entry sheets, formulas and pivot-based summaries for engineering and management reports.
 - Automate recurring office and documentation tasks with scripts and small utilities, reducing manual data handling.
